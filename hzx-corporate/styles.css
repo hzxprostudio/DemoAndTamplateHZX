@@ -149,7 +149,7 @@ h1, h2, h3, h4, .logo, .form-title {
 .btn-secondary {
     background-color: transparent;
     border: 1px solid var(--border-color);
-    color: var(--blue);
+    color: #2563EB;
 }
 .btn-secondary:hover {
     background-color: var(--navy-primary);
