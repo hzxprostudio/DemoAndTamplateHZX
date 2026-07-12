@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Club | Exclusive Developer & Designer Community Portal</title>
+    <meta name="description" content="Showcase portfolio HZX Club oleh HZXPro Studio. Portal keanggotaan eksklusif desainer dan pengembang aplikasi profesional untuk berbagi insight, proyek, dan webinar.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Club
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#keuntungan" class="nav-link">Keuntungan</a>
+                <a href="#forum" class="nav-link">Forum Diskusi</a>
+                <a href="#paket" class="nav-link">Paket Member</a>
+                <a href="#gabung" class="nav-link nav-link-btn">Daftar Club</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#keuntungan" class="mobile-nav-link">Keuntungan</a>
+        <a href="#forum" class="mobile-nav-link">Forum Diskusi</a>
+        <a href="#paket" class="mobile-nav-link">Paket Member</a>
+        <a href="#gabung" class="mobile-nav-link mobile-nav-btn">Daftar Club</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="Developer and designer collaborative meeting teamwork background" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Elevate Your Skill.<br><span class="accent-text">Connect With The Elite.</span></h1>
+                <p class="hero-description">
+                    Club keanggotaan eksklusif tertutup untuk desainer antarmuka dan *software developer* profesional. Akses forum diskusi teknis harian, repositori kode premium, dan jejaring relasi industri berskala global.
+                </p>
+                
+                <!-- Member Statistics -->
+                <div class="hero-stats-row">
+                    <div class="stat-item">
+                        <h4>1.2k+</h4>
+                        <span>Active Members</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>50+</h4>
+                        <span>Weekly Jobs</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>100+</h4>
+                        <span>Premium Templates</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Club Benefits Section -->
+    <section id="keuntungan" class="benefits-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Fasilitas Anggota</span>
+            <h2 class="section-title">Value Terbaik Untuk Karir Anda</h2>
+            <p class="section-desc">Setiap fasilitas dirancang untuk membantu Anda meningkatkan portofolio keahlian teknis serta mempercepat eskalasi gaji.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <!-- Benefit 1 -->
+            <div class="benefit-card">
+                <div class="benefit-icon"><i data-lucide="message-square"></i></div>
+                <h3 class="benefit-title">Private Discord Server</h3>
+                <p class="benefit-desc">Saluran diskusi eksklusif per sub-keahlian (React, Figma, Flutter, AWS) untuk berbagi solusi *error code*, review portofolio, serta info loker VIP agensi luar negeri.</p>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="benefit-card">
+                <div class="benefit-icon"><i data-lucide="video"></i></div>
+                <h3 class="benefit-title">Weekly Masterclass</h3>
+                <p class="benefit-desc">Webinar interaktif mingguan bersama para CTO startup unicorn dan Principal Designer global mengenai dokumentasi API, micro-services, dan manajemen sistem desain.</p>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="benefit-card">
+                <div class="benefit-icon"><i data-lucide="folder-kanban"></i></div>
+                <h3 class="benefit-title">Premium Asset Library</h3>
+                <p class="benefit-desc">Akses tak terbatas ke basis data template UI Kit Figma komersial, pustaka repositori boilerplate Next.js/TailwindCSS, serta ikon vektor kustom.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Forum Preview Section -->
+    <section id="forum" class="forum-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Live Community Forum</span>
+            <h2 class="section-title">Tinjau Diskusi Aktif Anggota</h2>
+            <p class="section-desc">Simulasi dasbor forum privat anggota HZX Club. Anda bisa menyaring berdasarkan topik atau berkontribusi memposting thread diskusi simulasi baru.</p>
+        </div>
+
+        <div class="forum-dashboard-card">
+            <!-- Sidebar / Form simulation -->
+            <div class="forum-post-sidebar">
+                <h3 class="sidebar-title">Posting Thread Diskusi</h3>
+                <form id="forumPostForm">
+                    <div class="form-group">
+                        <label for="threadTitle">Judul Diskusi</label>
+                        <input type="text" id="threadTitle" placeholder="Masukkan judul diskusi Anda" required>
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="threadCategory">Topik Kategori</label>
+                            <select id="threadCategory" required>
+                                <option value="Design">Design</option>
+                                <option value="Code">Code</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="threadAuthor">Nama Anda</label>
+                            <input type="text" id="threadAuthor" placeholder="Nama samaran" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="plus-circle"></i>
+                        <span>Posting Sekarang</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Feed Feed list -->
+            <div class="forum-feed-area">
+                <!-- Filter Tabs Row -->
+                <div class="forum-filter-row">
+                    <button class="forum-filter-tab active" data-filter="all">Semua Topik</button>
+                    <button class="forum-filter-tab" data-filter="Design">Design</button>
+                    <button class="forum-filter-tab" data-filter="Code">Code</button>
+                </div>
+
+                <!-- Feed Cards Feed -->
+                <div class="forum-feed-list" id="forumFeedContainer">
+                    <!-- Thread 1 -->
+                    <div class="feed-card" data-category="Design">
+                        <div class="feed-header">
+                            <span class="feed-tag">Design</span>
+                            <span class="feed-author">Randi (UI Engineer)</span>
+                        </div>
+                        <h4 class="feed-title">Tips Menyusun Figma Dev-Handoff v5 yang Rapi & Minim Revisi</h4>
+                        <div class="feed-footer">
+                            <span><i data-lucide="thumbs-up"></i> 24 Likes</span>
+                            <span><i data-lucide="message-square"></i> 8 Balasan</span>
+                        </div>
+                    </div>
+
+                    <!-- Thread 2 -->
+                    <div class="feed-card" data-category="Code">
+                        <div class="feed-header">
+                            <span class="feed-tag">Code</span>
+                            <span class="feed-author">Diaz (Fullstack Dev)</span>
+                        </div>
+                        <h4 class="feed-title">Panduan Setup Webpack & Next.js 15 Fast Reload untuk Project Skala Besar</h4>
+                        <div class="feed-footer">
+                            <span><i data-lucide="thumbs-up"></i> 32 Likes</span>
+                            <span><i data-lucide="message-square"></i> 12 Balasan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Pricing Packages Section -->
+    <section id="paket" class="pricing-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Tingkat Keanggotaan</span>
+            <h2 class="section-title">Pilih Opsi Gabung Club</h2>
+            <p class="section-desc">Bergabunglah dengan ratusan pengembang & desainer bertalenta lainnya. Investasikan masa depan karir digital Anda hari ini.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Card 1 -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Monthly Creator Pass</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 99.000 <span>/ bulan</span></h4>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Akses Forum Diskusi Teknis Privat</li>
+                    <li><i data-lucide="check"></i> Rekaman Webinar & Workshop Mingguan</li>
+                    <li><i data-lucide="check"></i> Update Library Boilerplate Aset Ringan</li>
+                    <li class="disabled"><i data-lucide="x"></i> Peran VIP Discord Role Tag</li>
+                    <li class="disabled"><i data-lucide="x"></i> Sesi Riviu Portofolio Bulanan</li>
+                </ul>
+                <button class="btn btn-secondary btn-signup-club" data-tier="Monthly Creator Pass">Pilih Paket</button>
+            </div>
+
+            <!-- Card 2 (Featured Gold Pass) -->
+            <div class="pricing-card featured">
+                <span class="featured-badge">Terpopuler</span>
+                <h3 class="tier-name">Annual Pro Pass</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 790.000 <span>/ tahun</span></h4>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Semua Benefit Paket Monthly Pass</li>
+                    <li><i data-lucide="check"></i> Akses File Boilerplate Github Repository</li>
+                    <li><i data-lucide="check"></i> Peran Spesial VIP Discord Role Tag</li>
+                    <li><i data-lucide="check"></i> Undangan Saluran Loker Agensi Luar</li>
+                    <li class="disabled"><i data-lucide="x"></i> Sesi Riviu Portofolio Bulanan</li>
+                </ul>
+                <button class="btn btn-primary btn-signup-club" data-tier="Annual Pro Pass">Pilih Paket</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Lifetime VIP Elite</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 2.490.000 <span>/ lifetime</span></h4>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Semua Benefit Paket Annual Pass</li>
+                    <li><i data-lucide="check"></i> Akses Selamanya Tanpa Perpanjangan</li>
+                    <li><i data-lucide="check"></i> 1x Sesi Riviu Portofolio & CV Bulanan</li>
+                    <li><i data-lucide="check"></i> Grup Telegram Rahasia 1-on-1 Mentor</li>
+                    <li><i data-lucide="check"></i> Garansi 100% Uang Kembali (30 Hari)</li>
+                </ul>
+                <button class="btn btn-secondary btn-signup-club" data-tier="Lifetime VIP Elite">Pilih Paket</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Registration Form Section -->
+    <section id="gabung" class="join-section container">
+        <div class="join-grid">
+            <!-- Left Info Panel -->
+            <div class="join-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Formulir Keanggotaan</span>
+                    <h2 class="section-title">Ajukan Aplikasi Anggota Baru</h2>
+                </div>
+                <p class="join-desc">
+                    Lengkapi formulir di samping untuk mengajukan undangan gabung HZX Club. Kami menyaring ketat motivasi dan kecocokan keterampilan setiap pelamar guna menjaga ekosistem diskusi tetap sehat dan bermutu tinggi.
+                </p>
+                
+                <div class="rule-box">
+                    <h4>Pedoman Komunitas HZX Club:</h4>
+                    <ul class="rule-list">
+                        <li><strong>Respectful Communication</strong>: Saling menghormati perbedaan pendapat dan latar belakang tingkat keahlian anggota.</li>
+                        <li><strong>No Self-Promotion Spam</strong>: Dilarang keras menaruh link jualan produk komersial pihak ketiga di luar forum yang disediakan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Signup Form Card -->
+            <div class="booking-form-card">
+                <h3 class="form-title">Pendaftaran Anggota</h3>
+                <form id="clubSignupForm">
+                    <div class="form-group">
+                        <label for="memberName">Nama Lengkap Anda</label>
+                        <input type="text" id="memberName" placeholder="Masukkan nama lengkap Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="memberPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="memberPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="memberTier">Pilihan Paket Keanggotaan</label>
+                            <select id="memberTier" required>
+                                <option value="" disabled selected>-- Pilih Paket --</option>
+                                <option value="Monthly Creator Pass">Monthly Creator Pass (Rp 99rb/bln)</option>
+                                <option value="Annual Pro Pass">Annual Pro Pass (Rp 790kb/thn)</option>
+                                <option value="Lifetime VIP Elite">Lifetime VIP Elite (Rp 2.49jt/lifetime)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberMotivation">Ceritakan Ringkas Latar Belakang & Motivasi Gabung Club</label>
+                        <textarea id="memberMotivation" rows="4" placeholder="Jelaskan ringkas tumpukan teknologi (tech-stack) yang Anda kuasai saat ini, target karir Anda, serta apa yang ingin Anda kontribusikan dalam grup..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Ajukan Aplikasi via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Club</h3>
+                <p>Website landing page portal keanggotaan privat komunitas kreator oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Forum</h4>
+                <a href="#forum">Design System</a>
+                <a href="#forum">Dev-Ops Engineering</a>
+                <a href="#forum">Career Opportunities</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Club. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portal keanggotaan. Alamat server Discord, live feed thread, dan ulasan bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

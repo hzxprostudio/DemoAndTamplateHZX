@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yayasan HZX Care | Salurkan Donasi Pendidikan & Sosial Nusantara</title>
+    <meta name="description" content="Showcase portfolio HZX Care oleh HZXPro Studio. Platform donasi sosial dan kemanusiaan terpercaya untuk membantu anak pedalaman, stunting, dan tanggap bencana.">
+    <!-- Google Fonts: Plus Jakarta Sans (Clean, Trustworthy Sans-Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Care
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#kampanye" class="nav-link">Kampanye Donasi</a>
+                <a href="#dampak" class="nav-link">Laporan Dampak</a>
+                <a href="#donasi" class="nav-link nav-link-btn">Donasi Sekarang</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#kampanye" class="mobile-nav-link">Kampanye Donasi</a>
+        <a href="#dampak" class="mobile-nav-link">Laporan Dampak</a>
+        <a href="#donasi" class="mobile-nav-link mobile-nav-btn">Donasi Sekarang</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-grid">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <div class="studio-tag">
+                        <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                    </div>
+                    <h1 class="hero-title">Bersama Hubungkan<br><span class="accent-text">Kebaikan Nusantara.</span></h1>
+                    <p class="hero-description">
+                        Salurkan bantuan Anda secara transparan dan tepat sasaran untuk program pembangunan sarana sekolah di pelosok, pemenuhan paket gizi balita, serta bantuan darurat bencana.
+                    </p>
+                    
+                    <div class="hero-review-row">
+                        <i data-lucide="shield-check" class="shield-icon"></i>
+                        <span>Diaudit Berkala - 100% Laporan Penyaluran Dana Terbuka Secara Publik</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#donasi" class="btn btn-primary">
+                            <span>Mulai Donasi</span>
+                            <i data-lucide="heart"></i>
+                        </a>
+                        <a href="#kampanye" class="btn btn-secondary">
+                            <span>Lihat Kampanye</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Cover Photo -->
+                <div class="hero-graphic">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Children smiling and playing in school classroom study" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaigns Section -->
+    <section id="kampanye" class="campaign-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Program Donasi Pilihan</span>
+            <h2 class="section-title">Bantu Mereka yang Membutuhkan</h2>
+            <p class="section-desc">Pilih program kemanusiaan di bawah ini untuk menyalurkan kebaikan hati Anda langsung ke lapangan.</p>
+        </div>
+
+        <div class="campaign-grid">
+            <!-- Campaign 1 -->
+            <div class="campaign-card" data-campaign="Renovasi Sekolah Pelosok">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=400&auto=format&fit=crop" alt="Anak-anak belajar di ruang kelas sekolah dasar pelosok">
+                    <span class="card-badge">Pendidikan</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="campaign-title">Renovasi Ruang Kelas SD Marginal Pelosok</h3>
+                    <p class="campaign-desc">Bantu membelikan semen, genteng, bangku belajar, dan papan tulis layak untuk sekolah dasar di pedalaman Nusa Tenggara.</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-box">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 72%;"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Terkumpul: <strong>Rp 108.000.000</strong></span>
+                            <span>Target: Rp 150.000.000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="percentage-badge">72% Terpenuhi</span>
+                        <button class="btn btn-secondary btn-donate-now" data-campaign="Renovasi Sekolah Pelosok">Donasi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campaign 2 -->
+            <div class="campaign-card" data-campaign="Peduli Gizi Balita">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=400&auto=format&fit=crop" alt="Bantuan paket makanan gizi balita stunting">
+                    <span class="card-badge">Kesehatan</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="campaign-title">Bantuan Paket Makanan Gizi Balita Stunting</h3>
+                    <p class="campaign-desc">Salurkan pasokan susu formula, vitamin, bubur gizi, serta telur untuk menekan angka stunting balita di kawasan padat penduduk.</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-box">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 48%;"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Terkumpul: <strong>Rp 38.400.000</strong></span>
+                            <span>Target: Rp 80.000.000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="percentage-badge">48% Terpenuhi</span>
+                        <button class="btn btn-secondary btn-donate-now" data-campaign="Peduli Gizi Balita">Donasi</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campaign 3 -->
+            <div class="campaign-card" data-campaign="Bantuan Tanggap Bencana">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=400&auto=format&fit=crop" alt="Relawan posko bantuan darurat korban gempa dan banjir">
+                    <span class="card-badge">Tanggap Darurat</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="campaign-title">Posko Bantuan Darurat Korban Gempa & Banjir</h3>
+                    <p class="campaign-desc">Penyediaan tenda pengungsian, selimut hangat, air bersih higienis, dapur umum portabel, obat-obatan darurat korban bencana.</p>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-box">
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                        <div class="progress-stats">
+                            <span>Terkumpul: <strong>Rp 170.000.000</strong></span>
+                            <span>Target: Rp 200.000.000</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="percentage-badge">85% Terpenuhi</span>
+                        <button class="btn btn-secondary btn-donate-now" data-campaign="Bantuan Tanggap Bencana">Donasi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audited Impact stats section -->
+    <section id="dampak" class="impact-stats-section">
+        <div class="container stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 class="stat-number">12.5k+</h3>
+                    <p class="stat-label">Penerima Manfaat Penyaluran</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">Rp 1.2M+</h3>
+                    <p class="stat-label">Dana Donasi Disalurkan</p>
+                </div>
+                <div class="stat-card">
+                    <h3 class="stat-number">100%</h3>
+                    <p class="stat-label">Laporan Transparan Teredit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form & Calculator Section -->
+    <section id="donasi" class="donation-form-section container">
+        <div class="donation-grid">
+            <!-- Left Info Panel -->
+            <div class="donation-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Donasi Instan</span>
+                    <h2 class="section-title">Tentukan Nominal Donasi Kebaikan Anda</h2>
+                </div>
+                <p class="donation-desc">
+                    Silakan tentukan nominal bantuan Anda di samping. Kalkulator dampak kami akan menyusun rincian bantuan kemanusiaan yang akan terealisasi berkat kepedulian Anda.
+                </p>
+                
+                <div class="trust-list">
+                    <div class="trust-item">
+                        <i data-lucide="shield-check" class="trust-icon"></i>
+                        <div class="trust-details">
+                            <h4>Jaminan Keamanan Escrow</h4>
+                            <p>Dana donasi ditransfer ke rekening resmi yayasan berizin resmi Kementerian Sosial RI.</p>
+                        </div>
+                    </div>
+                    <div class="trust-item">
+                        <i data-lucide="refresh-cw" class="trust-icon"></i>
+                        <div class="trust-details">
+                            <h4>Laporan Publik Mingguan</h4>
+                            <p>Rincian bukti nota belanja logistik lapangan dikirimkan berkala ke email donatur terdaftar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Donation Selector Form Card -->
+            <div class="booking-form-card">
+                <h3 class="form-title">Formulir Donasi</h3>
+                <form id="donationCheckoutForm">
+                    
+                    <!-- Pre-set Amount Buttons Grid -->
+                    <div class="form-group">
+                        <label>Pilih Nominal Donasi (Rupiah)</label>
+                        <div class="amount-presets-grid">
+                            <button type="button" class="preset-btn active" data-amount="50000">50K</button>
+                            <button type="button" class="preset-btn" data-amount="100000">100K</button>
+                            <button type="button" class="preset-btn" data-amount="250000">250K</button>
+                            <button type="button" class="preset-btn" data-amount="500000">500K</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donasiCustomAmount">Nominal Kustom (Minimal Rp 10.000)</label>
+                        <input type="number" id="donasiCustomAmount" min="10000" step="5000" value="50000" placeholder="Masukkan jumlah nominal donasi manual Anda" required>
+                    </div>
+
+                    <!-- Impact Message Display Box -->
+                    <div class="impact-statement-box" id="donasiImpactBox">
+                        <i data-lucide="sparkles"></i>
+                        <span id="donasiImpactText">Donasi Rp 50.000 membantu membelikan 1 paket susu gizi balita stunting di pelosok.</span>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="donorName">Nama Lengkap Donatur</label>
+                            <input type="text" id="donorName" placeholder="Masukkan nama Anda (atau Hamba Allah)" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="donorPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="donorPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donationCampaign">Pilih Program Kampanye Donasi</label>
+                        <select id="donationCampaign" required>
+                            <option value="Renovasi Sekolah Pelosok" selected>Renovasi Sekolah Marginal Pelosok</option>
+                            <option value="Peduli Gizi Balita">Bantuan Paket Makanan Gizi Balita</option>
+                            <option value="Bantuan Tanggap Bencana">Posko Bantuan Darurat Bencana</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Konfirmasi Donasi via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Stories Section -->
+    <section class="testimonials-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Testimoni Guru & Warga</span>
+            <h2 class="section-title">Pesan Harapan Penerima Manfaat</h2>
+            <p class="section-desc">Kisah singkat penuh syukur dari mereka yang mendapatkan dampak nyata penyaluran bantuan donatur.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Terima kasih donatur HZX Care! Sekarang anak-anak didik kami tidak perlu cemas bocor saat musim hujan badai karena genteng dan plafon ruang kelas sekolah kami sudah diganti kokoh."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Ibu Surtini, S.Pd.</h4>
+                    <span>Kepala Sekolah SD Pelosok - NTT</span>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Alhamdulillah, gempa susulan kemarin membuat kami cemas, tapi posko dapur darurat dan suplai popok obat instan dari HZX Care cepat sekali merespon di tenda pengungsian kami."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Bapak Yusuf K.</h4>
+                    <span>Koordinator Warga Pengungsi - Majene</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Care</h3>
+                <p>Website landing page penggalangan dana sosial & kemanusiaan non-profit oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Program</h4>
+                <a href="#kampanye">Pendidikan</a>
+                <a href="#kampanye">Kesehatan Gizi</a>
+                <a href="#kampanye">Tanggap Darurat</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Care. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo landing page donasi non-profit. Nomor rekening, testimoni warga, dan penyaluran dana bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

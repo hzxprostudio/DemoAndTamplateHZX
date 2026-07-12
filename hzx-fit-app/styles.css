@@ -1,0 +1,770 @@
+/* ==========================================================================
+   HZX Fit App - Carbon Dark & Neon Lime Workout App Design System
+   Portfolio Showcase by HZXPro Studio
+   ========================================================================== */
+
+/* --- CSS Variables & Style Tokens --- */
+:root {
+    /* Color Palette */
+    --bg-base: #090D16;          /* Carbon Void Black */
+    --bg-surface: #151B26;       /* Slate Carbon Card */
+    --border-color: rgba(255, 255, 255, 0.05);
+    --border-color-focus: #84CC16;
+    
+    --text-primary: #FFFFFF;     /* White Text */
+    --text-secondary: #94A3B8;   /* Muted Slate Gray */
+    --text-muted: #475569;
+    
+    --lime: #84CC16;             /* Neon Lime Green Primary */
+    --lime-hover: #65A30D;
+    --lime-glow: rgba(132, 204, 22, 0.15);
+    
+    --danger: #EF4444;
+    
+    /* Typography */
+    --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Layout Tokens */
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Hierarchy */
+    --z-screen: 10;
+    --z-tab-bar: 50;
+    --z-toast: 1100;
+}
+
+/* --- Resets & Global CSS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #030509;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* If on desktop, show as a mobile frame. If on mobile, take full screen. */
+@media (min-width: 576px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+    .mobile-wrapper {
+        width: 375px;
+        height: 760px;
+        border: 12px solid #1E293B; /* premium device frame */
+        border-radius: 40px;
+        background-color: var(--bg-base);
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        overflow: hidden;
+    }
+}
+@media (max-width: 575px) {
+    .mobile-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--bg-base);
+        position: relative;
+        overflow-x: hidden;
+    }
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--lime);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--lime);
+    color: #000;
+    border: 1px solid var(--lime);
+}
+.btn-primary:hover {
+    background-color: var(--lime-hover);
+    border-color: var(--lime-hover);
+    box-shadow: 0 4px 15px var(--lime-glow);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+.btn-secondary:hover {
+    background-color: var(--lime-glow);
+    border-color: var(--lime);
+    color: var(--lime);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.icon-btn:hover {
+    background-color: var(--lime-glow);
+    color: var(--lime);
+}
+.icon-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ==========================================================================
+   Header Navigation
+   ========================================================================== */
+.app-header {
+    height: 68px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+}
+
+.app-brand {
+    font-size: 18px;
+    font-weight: 800;
+}
+.brand-accent {
+    color: var(--lime);
+}
+
+.fit-activity-badge {
+    background-color: var(--lime-glow);
+    color: var(--lime);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.fit-activity-badge .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--lime);
+    border-radius: 50%;
+}
+
+.screen-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Screen Layout Framework
+   ========================================================================== */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    z-index: var(--z-screen);
+    background-color: var(--bg-base);
+}
+.screen.active {
+    display: flex;
+}
+
+.screen-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 88px 20px 84px 20px; /* offset top header & bottom tab bar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Home Fitness Dashboard
+   ========================================================================== */
+.progress-summary-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.circle-chart-box {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-chart {
+    width: 100%;
+    height: 100%;
+}
+.circle-bg {
+    fill: none;
+    stroke: #1E293B;
+    stroke-width: 3.2;
+}
+.circle-fill {
+    fill: none;
+    stroke: var(--lime);
+    stroke-width: 3.2;
+    stroke-linecap: round;
+    transition: var(--transition-smooth);
+}
+
+.circle-label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+.circle-label .val {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff;
+}
+.circle-label .unit {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.progress-details {
+    flex-grow: 1;
+}
+.progress-details h4 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.progress-details p {
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Today's exercise checklists */
+.fit-list-section h3 {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.exercises-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.exercise-item {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: var(--transition-smooth);
+}
+.exercise-item:hover {
+    border-color: rgba(132, 204, 22, 0.2);
+}
+
+/* Custom checkbox circle styling */
+.checkbox-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+.checkbox-wrapper input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkbox-wrapper label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: rgba(255,255,255,0.03);
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.checkbox-wrapper input[type="checkbox"]:checked ~ label {
+    background-color: var(--lime);
+    border-color: var(--lime);
+}
+.checkbox-wrapper label::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.checkbox-wrapper input[type="checkbox"]:checked ~ label::after {
+    display: block;
+}
+
+.ex-info {
+    flex-grow: 1;
+    transition: var(--transition-smooth);
+}
+.ex-info h4 {
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 2px;
+}
+.ex-info span {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* Strikethrough style when checked */
+.exercise-item.completed .ex-info h4 {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+.exercise-item.completed {
+    border-color: var(--lime);
+    background-color: rgba(132,204,22,0.02);
+}
+
+/* Quick shortcut to timer card */
+.quick-timer-shortcut-card {
+    background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(132,204,22,0.05) 100%);
+    border: 1px dashed var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.quick-timer-shortcut-card:hover {
+    border-color: var(--lime);
+    box-shadow: 0 4px 15px var(--lime-glow);
+}
+.shortcut-details h4 {
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 2px;
+}
+.shortcut-details p {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+.shortcut-icon svg {
+    width: 24px;
+    height: 24px;
+    color: var(--lime);
+}
+
+/* ==========================================================================
+   Workout Timer Screen Elements
+   ========================================================================== */
+.align-center-timer {
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 100px;
+}
+
+.countdown-timer-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-circular-chart {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+.timer-circle-bg {
+    fill: none;
+    stroke: #1E293B;
+    stroke-width: 2;
+}
+.timer-circle-fill {
+    fill: none;
+    stroke: var(--lime);
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.1s linear;
+}
+
+.timer-label {
+    position: absolute;
+    font-size: 42px;
+    font-weight: 800;
+    font-family: monospace;
+    color: #fff;
+    text-shadow: 0 0 15px var(--lime-glow);
+}
+
+/* Preset timer pills */
+.preset-timers-row {
+    display: flex;
+    gap: 16px;
+}
+.preset-time-btn {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.preset-time-btn:hover {
+    border-color: var(--lime);
+    color: var(--lime);
+}
+.preset-time-btn.active {
+    background-color: var(--lime);
+    border-color: var(--lime);
+    color: #000;
+    box-shadow: 0 4px 12px var(--lime-glow);
+}
+
+.timer-actions-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 260px;
+}
+.timer-actions-row .btn {
+    flex-grow: 1;
+}
+
+/* ==========================================================================
+   History Logs List
+   ========================================================================== */
+.activity-logs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.log-item-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.log-details h4 {
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 2px;
+}
+.log-details span {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+.log-value {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--lime);
+}
+
+/* ==========================================================================
+   Profile Screen Elements
+   ========================================================================== */
+.align-center {
+    align-items: center;
+    padding-top: 100px;
+}
+
+.profile-avatar-frame {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.profile-avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+.profile-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--lime);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--lime-glow);
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+}
+
+.profile-options-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.profile-option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-option-item:last-child {
+    border-bottom: none;
+}
+.profile-option-item:hover {
+    background-color: var(--bg-base);
+}
+.profile-option-item span {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+.profile-option-item span svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}
+.profile-option-item:hover span {
+    color: var(--lime);
+}
+.profile-option-item:hover span svg {
+    color: var(--lime);
+}
+.profile-option-item .lucide-chevron-right {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Bottom Navigation Bar
+   ========================================================================== */
+.bottom-tab-bar {
+    height: 64px;
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(9, 13, 22, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-tab-bar);
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.tab-item svg {
+    width: 18px;
+    height: 18px;
+    transition: var(--transition-smooth);
+}
+.tab-item span {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.tab-item.active {
+    color: var(--lime);
+}
+.tab-item.active svg {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px var(--lime-glow));
+}
+
+/* ==========================================================================
+   Toast Notification System
+   ========================================================================= */
+.toast-container {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    right: 20px;
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: toast-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    pointer-events: auto;
+}
+
+.toast.success {
+    border-left: 4px solid var(--lime);
+}
+.toast.success svg {
+    color: var(--lime);
+}
+
+.toast.danger {
+    border-left: 4px solid var(--danger);
+}
+.toast.danger svg {
+    color: var(--danger);
+}
+
+.toast-message {
+    font-size: 11px;
+    font-weight: 700;
+    flex-grow: 1;
+}
+
+.toast-close {
+    color: var(--text-secondary);
+}
+.toast-close:hover {
+    color: var(--text-primary);
+}
+
+@keyframes toast-in {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-out {
+    to {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+}

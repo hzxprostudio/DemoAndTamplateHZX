@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Study | Bimbingan Belajar & Les Privat Terbaik</title>
+    <meta name="description" content="Showcase portfolio HZX Study oleh HZXPro Studio. Pendampingan belajar siswa SD, SMP, SMA, dan persiapan UTBK secara terstruktur bersama tutor lulusan PTN terbaik.">
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Study
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#program" class="nav-link">Program Kelas</a>
+                <a href="#tutor" class="nav-link">Pengajar</a>
+                <a href="#testimoni" class="nav-link">Testimoni</a>
+                <a href="#daftar" class="nav-link nav-link-btn">Daftar Sekarang</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#program" class="mobile-nav-link">Program Kelas</a>
+        <a href="#tutor" class="mobile-nav-link">Pengajar</a>
+        <a href="#testimoni" class="mobile-nav-link">Testimoni</a>
+        <a href="#daftar" class="mobile-nav-link mobile-nav-btn">Daftar Sekarang</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-shapes">
+            <div class="shape circle-1"></div>
+            <div class="shape circle-2"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Raih Prestasi Gemilang Bersama <span class="gradient-text">HZX Study.</span></h1>
+                <p class="hero-description">
+                    Kami menghadirkan bimbingan belajar berkualitas dengan metode interaktif, menyenangkan, dan mudah dipahami. Dibimbing langsung oleh tutor berpengalaman lulusan PTN favorit (UI, ITB, UGM) untuk membantu putra-putri Anda menguasai materi pelajaran sekolah dan lolos ujian impian.
+                </p>
+                <div class="hero-actions">
+                    <a href="#daftar" class="btn btn-primary">
+                        <span>Daftar Sekarang</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#program" class="btn btn-secondary">
+                        <span>Lihat Pilihan Kelas</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-visual-card">
+                    <div class="card-decoration"></div>
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop" alt="Students studying together in library" class="hero-img">
+                    <div class="hero-floating-stat">
+                        <div class="stat-icon"><i data-lucide="users"></i></div>
+                        <div>
+                            <h4>1.200+ Siswa</h4>
+                            <p>Telah bergabung & berprestasi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutoring Programs Section -->
+    <section id="program" class="programs-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Investasi Masa Depan</span>
+            <h2 class="section-title">Pilihan Program Belajar Terstruktur</h2>
+            <p class="section-desc">Pilih jenjang pendidikan yang sesuai untuk mendapatkan bimbingan intensif sesuai kurikulum sekolah nasional terbaru.</p>
+            
+            <!-- Category Level Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="sd">Jenjang SD</button>
+                <button class="filter-btn" data-category="smp">Jenjang SMP</button>
+                <button class="filter-btn" data-category="sma">Jenjang SMA</button>
+                <button class="filter-btn" data-category="intensif">UTBK / Intensif</button>
+            </div>
+        </div>
+
+        <!-- Programs Grid -->
+        <div class="programs-grid" id="programsGrid">
+            <!-- Program 1 (SD) -->
+            <div class="program-card" data-category="sd">
+                <div class="program-badge">Jenjang SD</div>
+                <div class="program-body">
+                    <h3 class="program-name">Kelas SD (Matematika & Tematik)</h3>
+                    <p class="program-desc">Bimbingan belajar matematika dasar, pemahaman membaca, sains dasar, dan pendampingan pengerjaan tugas tematik sekolah.</p>
+                    <div class="program-meta">
+                        <div class="meta-row"><i data-lucide="calendar"></i> <span>Jadwal: Selasa & Kamis</span></div>
+                        <div class="meta-row"><i data-lucide="clock"></i> <span>Waktu: 15.30 - 17.00 WIB</span></div>
+                        <div class="meta-row price"><i data-lucide="credit-card"></i> <span>Rp 350.000 / Bulan</span></div>
+                    </div>
+                    <button class="btn btn-select-program btn-block" data-prog-name="Kelas SD (Matematika & Tematik)">
+                        <span>Pilih Kelas Ini</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Program 2 (SMP) -->
+            <div class="program-card" data-category="smp">
+                <div class="program-badge">Jenjang SMP</div>
+                <div class="program-body">
+                    <h3 class="program-name">Kelas SMP (Matematika & IPA)</h3>
+                    <p class="program-desc">Fokus penguasaan konsep rumus matematika, fisika dasar, biologi dasar, serta persiapan Penilaian Tengah & Akhir Semester.</p>
+                    <div class="program-meta">
+                        <div class="meta-row"><i data-lucide="calendar"></i> <span>Jadwal: Senin, Rabu, Jumat</span></div>
+                        <div class="meta-row"><i data-lucide="clock"></i> <span>Waktu: 16.00 - 17.30 WIB</span></div>
+                        <div class="meta-row price"><i data-lucide="credit-card"></i> <span>Rp 450.000 / Bulan</span></div>
+                    </div>
+                    <button class="btn btn-select-program btn-block" data-prog-name="Kelas SMP (Matematika & IPA)">
+                        <span>Pilih Kelas Ini</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Program 3 (SMA) -->
+            <div class="program-card" data-category="sma">
+                <div class="program-badge">Jenjang SMA</div>
+                <div class="program-body">
+                    <h3 class="program-name">Kelas SMA (Fisika & Matematika Peminatan)</h3>
+                    <p class="program-desc">Persiapan mendalam menghadapi materi kalkulus, aljabar linear, mekanika klasik, dan persiapan ujian akhir sekolah tingkat SMA.</p>
+                    <div class="program-meta">
+                        <div class="meta-row"><i data-lucide="calendar"></i> <span>Jadwal: Senin & Rabu</span></div>
+                        <div class="meta-row"><i data-lucide="clock"></i> <span>Waktu: 18.30 - 20.00 WIB</span></div>
+                        <div class="meta-row price"><i data-lucide="credit-card"></i> <span>Rp 550.000 / Bulan</span></div>
+                    </div>
+                    <button class="btn btn-select-program btn-block" data-prog-name="Kelas SMA (Fisika & Matematika Peminatan)">
+                        <span>Pilih Kelas Ini</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Program 4 (SMA) -->
+            <div class="program-card" data-category="sma">
+                <div class="program-badge">Jenjang SMA</div>
+                <div class="program-body">
+                    <h3 class="program-name">Kelas SMA (Kimia & Biologi)</h3>
+                    <p class="program-desc">Memahami reaksi kimia, struktur atom, anatomi biologi, genetika, dilengkapi pembahasan soal ujian terstruktur.</p>
+                    <div class="program-meta">
+                        <div class="meta-row"><i data-lucide="calendar"></i> <span>Jadwal: Selasa & Kamis</span></div>
+                        <div class="meta-row"><i data-lucide="clock"></i> <span>Waktu: 18.30 - 20.00 WIB</span></div>
+                        <div class="meta-row price"><i data-lucide="credit-card"></i> <span>Rp 550.000 / Bulan</span></div>
+                    </div>
+                    <button class="btn btn-select-program btn-block" data-prog-name="Kelas SMA (Kimia & Biologi)">
+                        <span>Pilih Kelas Ini</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Program 5 (Intensif) -->
+            <div class="program-card highlighted" data-category="intensif">
+                <div class="program-badge">UTBK / SNBT</div>
+                <div class="program-badge-popular">Unggulan</div>
+                <div class="program-body">
+                    <h3 class="program-name">Kelas Intensif Persiapan UTBK-SNBT</h3>
+                    <p class="program-desc">Fokus pelatihan Tes Potensi Skolastik (TPS), penalaran matematika, literasi bahasa, dan simulasi try-out berkala sistem CAT.</p>
+                    <div class="program-meta">
+                        <div class="meta-row"><i data-lucide="calendar"></i> <span>Jadwal: Senin s/d Jumat</span></div>
+                        <div class="meta-row"><i data-lucide="clock"></i> <span>Waktu: 13.30 - 15.30 WIB</span></div>
+                        <div class="meta-row price"><i data-lucide="credit-card"></i> <span>Rp 850.000 / Bulan</span></div>
+                    </div>
+                    <button class="btn btn-select-program btn-block" data-prog-name="Kelas Intensif Persiapan UTBK-SNBT">
+                        <span>Pilih Kelas Ini</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutor Profiles Section -->
+    <section id="tutor" class="tutors-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Pengajar Berkualitas</span>
+            <h2 class="section-title">Didampingi Tutor Lulusan PTN Terbaik</h2>
+            <p class="section-desc">Pengajar kami adalah mentor profesional pilihan yang memiliki cara mengajar interaktif, santai, bersahabat, dan mudah dipahami anak.</p>
+        </div>
+
+        <div class="tutors-grid">
+            <!-- Tutor 1 -->
+            <div class="tutor-card">
+                <div class="tutor-avatar-wrapper">
+                    <div class="tutor-avatar bg-teal">AH</div>
+                </div>
+                <div class="tutor-info">
+                    <h3>Kak Adi Hidayat, M.Si.</h3>
+                    <span class="tutor-credentials">Lulusan S2 Matematika Universitas Indonesia</span>
+                    <p class="tutor-desc">Spesialis mengajar Matematika tingkat SMP & SMA. Memiliki metode "Jembatan Keledai" untuk memudahkan pemahaman rumus-rumus rumit secara cepat.</p>
+                </div>
+            </div>
+
+            <!-- Tutor 2 -->
+            <div class="tutor-card">
+                <div class="tutor-avatar-wrapper">
+                    <div class="tutor-avatar bg-amber">SD</div>
+                </div>
+                <div class="tutor-info">
+                    <h3>Kak Sarah Dewanti, B.Sc.</h3>
+                    <span class="tutor-credentials">Lulusan Fisika Institut Teknologi Bandung</span>
+                    <p class="tutor-desc">Mengajar Fisika dan IPA Terpadu. Senang menggunakan simulasi visual dan eksperimen sederhana agar konsep alamiah fisika terasa menyenangkan.</p>
+                </div>
+            </div>
+
+            <!-- Tutor 3 -->
+            <div class="tutor-card">
+                <div class="tutor-avatar-wrapper">
+                    <div class="tutor-avatar bg-blue">BP</div>
+                </div>
+                <div class="tutor-info">
+                    <h3>Kak Bambang Pratama, S.Pd.</h3>
+                    <span class="tutor-credentials">Lulusan Pendidikan Biologi Universitas Gadjah Mada</span>
+                    <p class="tutor-desc">Mengajar Biologi & Kimia SMA. Memiliki teknik penyampaian interaktif menggunakan ilustrasi gambar visual yang mudah diingat untuk hafalan materi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="daftar" class="registration-section">
+        <div class="container registration-container">
+            <!-- Left Information Column -->
+            <div class="registration-info">
+                <span class="section-subtitle">Pendaftaran</span>
+                <h2 class="section-title">Formulir Penerimaan Siswa Baru</h2>
+                <p class="registration-desc">
+                    Lengkapi kolom formulir di samping untuk mendaftarkan putra-putri Anda di HZX Study. Setelah data masuk, tim administrasi kami akan segera menghubungi nomor WhatsApp orang tua tertera untuk koordinasi jadwal kelas dan tes penempatan awal (*Placement Test*).
+                </p>
+                
+                <div class="accreditation-list">
+                    <div class="accreditation-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <h4>Bimbingan Konseling Gratis</h4>
+                            <p>Konsultasi arah karir kuliah & rapor berkala bersama tim akademik.</p>
+                        </div>
+                    </div>
+                    <div class="accreditation-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <h4>Modul Belajar Lengkap</h4>
+                            <p>Dapatkan modul rangkuman materi ringkas dan bank soal terupdate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Form Card Column -->
+            <div class="registration-form-card">
+                <h3 class="form-title">Pendaftaran HZX Study</h3>
+                <form id="enrollmentForm">
+                    <div class="form-group">
+                        <label for="studentName">Nama Lengkap Siswa</label>
+                        <input type="text" id="studentName" placeholder="Masukkan nama siswa" required autocomplete="name">
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="studentLevel">Jenjang Sekolah</label>
+                            <select id="studentLevel" required>
+                                <option value="" disabled selected>-- Pilih Jenjang --</option>
+                                <option value="SD">Sekolah Dasar (SD)</option>
+                                <option value="SMP">Sekolah Menengah Pertama (SMP)</option>
+                                <option value="SMA">Sekolah Menengah Atas (SMA)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentGrade">Kelas saat Ini</label>
+                            <input type="text" id="studentGrade" placeholder="Contoh: Kelas 8 / Kelas 11" required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectedProgram">Program Bimbel yang Dipilih</label>
+                        <select id="selectedProgram" required>
+                            <option value="" disabled selected>-- Pilih Program Kelas --</option>
+                            <option value="Kelas SD (Matematika & Tematik)">Kelas SD (Matematika & Tematik) - Rp 350.000/bln</option>
+                            <option value="Kelas SMP (Matematika & IPA)">Kelas SMP (Matematika & IPA) - Rp 450.000/bln</option>
+                            <option value="Kelas SMA (Fisika & Matematika Peminatan)">Kelas SMA (Fisika & Matematika Peminatan) - Rp 550.000/bln</option>
+                            <option value="Kelas SMA (Kimia & Biologi)">Kelas SMA (Kimia & Biologi) - Rp 550.000/bln</option>
+                            <option value="Kelas Intensif Persiapan UTBK-SNBT">Kelas Intensif Persiapan UTBK-SNBT - Rp 850.000/bln</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentName">Nama Orang Tua / Wali</label>
+                        <input type="text" id="parentName" placeholder="Masukkan nama Bapak/Ibu wali murid" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentPhone">Nomor WhatsApp Orang Tua</label>
+                        <input type="tel" id="parentPhone" placeholder="Contoh: 081234567890" required autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enrollmentNotes">Catatan Khusus (Opsional)</label>
+                        <textarea id="enrollmentNotes" rows="3" placeholder="Tuliskan keluhan belajar siswa atau permintaan khusus jadwal les privat di sini..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="check-square"></i>
+                        <span>Kirim Pendaftaran via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="testimonials-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Cerita Sukses</span>
+            <h2 class="section-title">Kata Orang Tua & Siswa HZX Study</h2>
+            <p class="section-desc">Berikut ulasan tulus dari para wali murid dan siswa yang telah merasakan peningkatan prestasi akademik dan kenyamanan belajar bersama kami.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                </div>
+                <p class="testimonial-quote">"Sangat bersyukur mendaftarkan anak saya yang kelas 12 di program intensif UTBK HZX Study. Penjelasan tutornya sangat masuk akal, tidak melulu menghafal rumus cepat. Puji syukur anak saya lolos masuk Teknik Sipil UI tahun ini!"</p>
+                <div class="author-info">
+                    <div class="avatar bg-teal">IH</div>
+                    <div>
+                        <h4>Ibu Indah Hapsari</h4>
+                        <span>Orang Tua Murid (Persiapan UTBK-SNBT)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                </div>
+                <p class="testimonial-quote">"Belajar matematika sama Kak Adi seru banget! Dulu aku selalu remedial UTS Matematika di sekolah, tapi setelah dibimbing di HZX Study pakai metode gambar analogi, nilaiku langsung naik di atas KKM. Tutornya asyik diajak bercanda."</p>
+                <div class="author-info">
+                    <div class="avatar bg-amber">RD</div>
+                    <div>
+                        <h4>Reza Dewangga</h4>
+                        <span>Siswa Kelas 8 SMP (Matematika & IPA)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="kontak" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Info Column -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Hubungi Kami</span>
+                    <h2 class="section-title">Lokasi Cabang & Kontak</h2>
+                </div>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Pusat HZX Study</h4>
+                            <p>Kawasan Ruko Sentra Edukasi Blok A No. 15, Serpong, Tangerang Selatan, 15310</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Jam Kerja & Konsultasi</h4>
+                            <p>Senin - Sabtu: 13:00 - 20:00 WIB (Minggu Libur)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>WhatsApp Layanan Murid</h4>
+                            <p>+62 812-3456-789 (Hanya Chat)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="instagram" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Instagram Resmi</h4>
+                            <p>@hzxstudy.official</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Panel -->
+            <div class="map-card">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15863.606830722238!2d106.66668785!3d-6.28189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb7a718797f7%3A0xe54e60b2923ea022!2sSerpong%2C%20Kec.%20Serpong%2C%20Kota%20Tangerang%20Selatan%2C%20Banten!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HZX Study Center Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Study</h3>
+                <p>Website showcase portofolio lembaga bimbingan belajar/edukasi oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Halaman</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#program">Program Kelas</a>
+                <a href="#tutor">Pengajar</a>
+                <a href="#daftar">Pendaftaran</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Study. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio. Pendaftaran murid, tutor pengajar, dan ulasan bersifat fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

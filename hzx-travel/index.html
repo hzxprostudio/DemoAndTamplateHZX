@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Travel | Eksplorasi Keindahan Nusantara & Dunia</title>
+    <meta name="description" content="Showcase portfolio HZX Travel oleh HZXPro Studio. Layanan pemesanan paket wisata Bali, Bromo, Raja Ampat, dan destinasi menarik lainnya secara praktis.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Travel
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#paket" class="nav-link">Paket Wisata</a>
+                <a href="#keunggulan" class="nav-link">Keunggulan</a>
+                <a href="#booking" class="nav-link nav-link-btn">Pesan Sekarang</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#paket" class="mobile-nav-link">Paket Wisata</a>
+        <a href="#keunggulan" class="mobile-nav-link">Keunggulan</a>
+        <a href="#booking" class="mobile-nav-link mobile-nav-btn">Pesan Sekarang</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=1200&auto=format&fit=crop" alt="Tropical Island Sunset Sea" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Explore The Beauty Of <span class="accent-text">The Archipelago.</span></h1>
+                <p class="hero-description">
+                    Wujudkan petualangan impian Anda menjelajahi pantai eksotis, pegunungan megah, dan budaya luhur Nusantara bersama pemandu profesional kami.
+                </p>
+            </div>
+
+            <!-- Instant Search Bar Card -->
+            <div class="search-bar-card">
+                <div class="search-field">
+                    <label for="heroSearchInput"><i data-lucide="map-pin"></i> Destinasi</label>
+                    <input type="text" id="heroSearchInput" placeholder="Cari: Bali, Bromo, Raja Ampat...">
+                </div>
+                <div class="search-field">
+                    <label for="heroMonthSelect"><i data-lucide="calendar"></i> Bulan Keberangkatan</label>
+                    <select id="heroMonthSelect">
+                        <option value="">Semua Bulan</option>
+                        <option value="Juli">Juli 2026</option>
+                        <option value="Agustus">Agustus 2026</option>
+                        <option value="September">September 2026</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="heroCategorySelect"><i data-lucide="compass"></i> Kategori Wisata</label>
+                    <select id="heroCategorySelect">
+                        <option value="all">Semua Kategori</option>
+                        <option value="Pantai">Pantai & Bahari</option>
+                        <option value="Gunung">Pegunungan & Trekking</option>
+                        <option value="Budaya">Sejarah & Budaya</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="btnHeroSearch">
+                    <i data-lucide="search"></i>
+                    <span>Cari</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Packages Section -->
+    <section id="paket" class="packages-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Paket Wisata Pilihan</span>
+            <h2 class="section-title">Destinasi Petualangan Populer</h2>
+            <p class="section-desc">Pilihan paket perjalanan wisata teratur dengan fasilitas lengkap yang siap memberikan pengalaman liburan tak terlupakan.</p>
+        </div>
+
+        <!-- Filter Tab Buttons -->
+        <div class="filter-tabs-row">
+            <button class="filter-tab active" data-category="all">Semua Destinasi</button>
+            <button class="filter-tab" data-category="Pantai">Pantai & Bahari</button>
+            <button class="filter-tab" data-category="Gunung">Pegunungan</button>
+            <button class="filter-tab" data-category="Budaya">Budaya & Sejarah</button>
+        </div>
+
+        <!-- Packages Grid -->
+        <div class="packages-grid" id="packagesGrid">
+            <!-- Package Card 1 -->
+            <div class="package-card" data-category="Pantai" data-name="Bali Tropical" data-month="Juli">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=400&auto=format&fit=crop" alt="Pura Ulun Danu Bratan Bali">
+                    <span class="card-badge">Terlaris</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="duration"><i data-lucide="clock"></i> 3 Hari 2 Malam</span>
+                        <span class="rating"><i data-lucide="star"></i> 4.9 (84 Ulasan)</span>
+                    </div>
+                    <h3 class="package-title">Pesona Bali Tropical Getaway</h3>
+                    <p class="package-description">Menikmati sunset tanah lot, eksplorasi keindahan tebing Nusa Penida, dan pertunjukan tari kecak di Uluwatu.</p>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Mulai Dari</span>
+                            <h4 class="price-value">Rp 3.200.000 <span>/ pax</span></h4>
+                        </div>
+                        <button class="btn btn-secondary btn-order" data-package="Pesona Bali Tropical Getaway">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 2 -->
+            <div class="package-card" data-category="Gunung" data-name="Gunung Bromo" data-month="Agustus">
+                <div class="card-img-wrapper">
+                    <img src="bromo.jpg" alt="Mount Bromo Crater Sunrise">
+                    <span class="card-badge">Petualangan</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="duration"><i data-lucide="clock"></i> 2 Hari 1 Malam</span>
+                        <span class="rating"><i data-lucide="star"></i> 4.8 (46 Ulasan)</span>
+                    </div>
+                    <h3 class="package-title">Eksplorasi Sunrise Gunung Bromo</h3>
+                    <p class="package-description">Menyaksikan matahari terbit legendaris via jeep 4x4, menanjaki tangga kawah aktif Bromo, dan melintasi pasir berbisik.</p>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Mulai Dari</span>
+                            <h4 class="price-value">Rp 1.450.000 <span>/ pax</span></h4>
+                        </div>
+                        <button class="btn btn-secondary btn-order" data-package="Eksplorasi Sunrise Gunung Bromo">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 3 -->
+            <div class="package-card" data-category="Pantai" data-name="Raja Ampat" data-month="September">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400&auto=format&fit=crop" alt="Raja Ampat Islands Snorkeling Sea">
+                    <span class="card-badge">Premium</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="duration"><i data-lucide="clock"></i> 5 Hari 4 Malam</span>
+                        <span class="rating"><i data-lucide="star"></i> 5.0 (32 Ulasan)</span>
+                    </div>
+                    <h3 class="package-title">Surga Bahari Raja Ampat</h3>
+                    <p class="package-description">Island hopping kepulauan Wayag, snorkeling di perairan terumbu karang terkaya di dunia, dan berinteraksi dengan warga desa wisata.</p>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Mulai Dari</span>
+                            <h4 class="price-value">Rp 7.800.000 <span>/ pax</span></h4>
+                        </div>
+                        <button class="btn btn-secondary btn-order" data-package="Surga Bahari Raja Ampat">Pesan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Card 4 -->
+            <div class="package-card" data-category="Budaya" data-name="Yogyakarta Candi" data-month="Juli">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1584810359583-96fc3448beaa?q=80&w=400&auto=format&fit=crop" alt="Candi Prambanan Yogyakarta">
+                    <span class="card-badge">Edukasi</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="duration"><i data-lucide="clock"></i> 3 Hari 2 Malam</span>
+                        <span class="rating"><i data-lucide="star"></i> 4.7 (58 Ulasan)</span>
+                    </div>
+                    <h3 class="package-title">Budaya Luhur Yogyakarta</h3>
+                    <p class="package-description">Menyusuri kompleks Keraton Kesultanan Yogyakarta, menyaksikan kemegahan Candi Borobudur, dan belajar membatik tradisional.</p>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Mulai Dari</span>
+                            <h4 class="price-value">Rp 1.950.000 <span>/ pax</span></h4>
+                        </div>
+                        <button class="btn btn-secondary btn-order" data-package="Budaya Luhur Yogyakarta">Pesan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="keunggulan" class="benefits-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Kenapa Pilih Kami</span>
+            <h2 class="section-title">Keamanan & Kenyamanan Petualangan Anda</h2>
+            <p class="section-desc">Kami memastikan setiap aspek rencana perjalanan liburan Anda diurus secara profesional dari awal hingga kembali pulang.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i data-lucide="shield-check"></i>
+                <h4>Asuransi Perjalanan Penuh</h4>
+                <p>Setiap tiket perjalanan yang dipesan melalui kami sudah mencakup asuransi proteksi keselamatan penuh.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <i data-lucide="users"></i>
+                <h4>Pemandu Lokal Berlisensi</h4>
+                <p>Didampingi oleh tour guide berlisensi resmi yang memahami seluk-beluk sejarah, rute, dan spot foto tersembunyi.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <i data-lucide="sliders"></i>
+                <h4>Rencana Perjalanan Kustom</h4>
+                <p>Ingin rute di luar paket? Kami melayani kustomisasi destinasi (open-trip / private-trip) sesuai anggaran Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Testimoni Traveler</span>
+            <h2 class="section-title">Kisah Liburan Mereka</h2>
+            <p class="section-desc">Apa kata para penjelajah yang telah menyelesaikan petualangan serunya bersama HZX Travel.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Liburan keluarga ke Bali kemarin sangat berkesan. Jadwal tour tersusun rapi, mobil bersih, dan pemandu lokalnya sangat sabar mengarahkan gaya berfoto untuk kami sekeluarga."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Ibu Sandra Pertiwi</h4>
+                    <span>Traveler Keluarga - Jakarta</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Open trip Gunung Bromo sangat seru! Koordinasi jeep 4x4 di pasir berbisik sangat tepat waktu, sehingga kami mendapat posisi terbaik untuk menyaksikan sunrise tanpa berdesakan."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Kak Ridho Ramadhan</h4>
+                    <span>Solo Traveler - Bandung</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking-section container">
+        <div class="booking-grid">
+            <!-- Left Info Panel -->
+            <div class="booking-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Formulir Booking</span>
+                    <h2 class="section-title">Rencanakan Perjalanan Impian Anda</h2>
+                </div>
+                <p class="booking-desc">
+                    Silakan isi formulir di samping untuk melakukan pemesanan paket wisata atau konsultasi rute khusus. Setelah mengirimkan data, customer service kami akan menghubungi Anda kembali via WhatsApp dalam waktu maksimal 15 menit.
+                </p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Kantor Layanan HZX Travel</h4>
+                            <p>Creative Travel Hub Building Lt. 3 Suite 14B, Sudirman, Jakarta Selatan, 12190</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Hotline Whatsapp (24/7)</h4>
+                            <p>+62 812-3456-789</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="mail" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>E-mail Booking & Inquiry</h4>
+                            <p>booking@hztravel.io</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Booking Form Card -->
+            <div class="booking-form-card">
+                <h3 class="form-title">Pemesanan Paket Wisata</h3>
+                <form id="travelBookingForm">
+                    <div class="form-group">
+                        <label for="bookingName">Nama Lengkap Pemesan</label>
+                        <input type="text" id="bookingName" placeholder="Masukkan nama lengkap Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="bookingPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="bookingPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingDate">Tanggal Keberangkatan</label>
+                            <input type="date" id="bookingDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="bookingPackage">Pilih Paket Wisata</label>
+                            <select id="bookingPackage" required>
+                                <option value="" disabled selected>-- Pilih Paket --</option>
+                                <option value="Pesona Bali Tropical Getaway">Pesona Bali Tropical Getaway</option>
+                                <option value="Eksplorasi Sunrise Gunung Bromo">Eksplorasi Sunrise Gunung Bromo</option>
+                                <option value="Surga Bahari Raja Ampat">Surga Bahari Raja Ampat</option>
+                                <option value="Budaya Luhur Yogyakarta">Budaya Luhur Yogyakarta</option>
+                                <option value="Kustomisasi Rute Perjalanan Sendiri">Kustom Rute Perjalanan Sendiri</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingGuests">Jumlah Peserta (Pax)</label>
+                            <input type="number" id="bookingGuests" min="1" max="100" value="2" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingRequests">Catatan Tambahan / Permintaan Khusus</label>
+                        <textarea id="bookingRequests" rows="3" placeholder="Contoh: Butuh kasur ekstra (extra bed), makanan vegetarian, sewa kamera dokumentasi, dll..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Kirim via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Travel</h3>
+                <p>Website showcase portofolio sewa paket wisata dan perjalanan oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Destinasi</h4>
+                <a href="#paket">Bali</a>
+                <a href="#paket">Bromo</a>
+                <a href="#paket">Raja Ampat</a>
+                <a href="#paket">Yogyakarta</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Travel. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio sewa paket wisata. Alamat, nomor hotline, dan rincian harga bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

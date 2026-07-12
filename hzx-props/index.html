@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Props | Premium Property Listing & Developer</title>
+    <meta name="description" content="Showcase portfolio HZX Props oleh HZXPro Studio. Temukan hunian mewah, apartemen eksklusif, dan ruko strategis di Jakarta Selatan dan sekitarnya.">
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> PROPS
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#listings" class="nav-link">Listing Properti</a>
+                <a href="#kpr" class="nav-link">Kalkulator KPR</a>
+                <a href="#kontak" class="nav-link nav-link-btn">Hubungi Agen</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#listings" class="mobile-nav-link">Listing Properti</a>
+        <a href="#kpr" class="mobile-nav-link">Kalkulator KPR</a>
+        <a href="#kontak" class="mobile-nav-link mobile-nav-btn">Hubungi Agen</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Luxury Modern Villa Architecture" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Temukan Hunian Impian <br>dengan <span class="accent-text">Kemewahan Sejati.</span></h1>
+                <p class="hero-description">
+                    HZX Props menghadirkan kurasi properti premium terpilih. Mulai dari hunian modern minimalis berfasilitas smart-home, apartemen mewah eksklusif di pusat kota, hingga ruko strategis untuk ekspansi bisnis Anda.
+                </p>
+            </div>
+            
+            <!-- Instant Search Bar Card -->
+            <div class="search-bar-card">
+                <div class="search-field">
+                    <label for="searchKeyword"><i data-lucide="search"></i> Cari Lokasi/Nama</label>
+                    <input type="text" id="searchKeyword" placeholder="Cari Kemang, BSD, dll...">
+                </div>
+                <div class="search-field">
+                    <label for="searchType"><i data-lucide="home"></i> Tipe Properti</label>
+                    <select id="searchType">
+                        <option value="all">Semua Tipe</option>
+                        <option value="Rumah">Rumah</option>
+                        <option value="Apartemen">Apartemen</option>
+                        <option value="Ruko">Ruko</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="searchLocation"><i data-lucide="map-pin"></i> Lokasi Wilayah</label>
+                    <select id="searchLocation">
+                        <option value="all">Semua Lokasi</option>
+                        <option value="Jakarta Selatan">Jakarta Selatan</option>
+                        <option value="Tangerang Selatan">Tangerang Selatan</option>
+                        <option value="Bogor">Bogor</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="btnHeroSearch">
+                    <span>Cari</span>
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Listings Section -->
+    <section id="listings" class="listings-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Katalog Terkini</span>
+            <h2 class="section-title">Eksplorasi Properti Pilihan</h2>
+            <p class="section-desc">Gunakan filter penyaringan di bawah ini untuk mempermudah pencarian rumah atau unit investasi yang sesuai dengan anggaran Anda.</p>
+        </div>
+
+        <!-- Filter Controls Panel -->
+        <div class="filter-panel-row">
+            <div class="price-slider-group">
+                <label for="priceMax">Harga Maksimum: <span id="priceMaxVal">Rp 10.0 Miliar</span></label>
+                <input type="range" id="priceMax" min="1000000000" max="10000000000" step="500000000" value="10000000000">
+            </div>
+            
+            <div class="filter-stats">
+                Menampilkan <span id="propertyCount">0</span> Unit Properti
+            </div>
+        </div>
+
+        <!-- Property Grid Wrapper -->
+        <div class="listings-grid" id="listingsGrid">
+            <!-- Dynamic listings injected here via JavaScript -->
+            <div class="loading-state">
+                <i data-lucide="loader" class="spin-icon"></i>
+                <p>Memuat katalog properti...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPR Mortgage Calculator Section -->
+    <section id="kpr" class="kpr-section">
+        <div class="container kpr-container">
+            <!-- Left Info Column -->
+            <div class="kpr-info">
+                <span class="section-subtitle">Rencana Finansial</span>
+                <h2 class="section-title">Kalkulator KPR Sederhana</h2>
+                <p class="kpr-desc">
+                    Simulasikan besaran rencana cicilan KPR bulanan Anda berdasarkan harga unit properti, persentase uang muka (DP), suku bunga bunga bank pilihan Anda, serta lamanya masa pinjaman (tenor).
+                </p>
+                <div class="calc-noticeline">
+                    <i data-lucide="info"></i>
+                    <span>Hasil simulasi cicilan bulanan bersifat estimasi dasar kasar belum termasuk biaya admin, provisi, dan asuransi jiwa bank.</span>
+                </div>
+            </div>
+
+            <!-- Right Calculator Card -->
+            <div class="kpr-card">
+                <h3 class="form-title">Hitung Simulasi Cicilan</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="kprPrice">Harga Properti (Rupiah)</label>
+                        <input type="number" id="kprPrice" value="2500000000" step="50000000" min="100000000">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="kprDp">Uang Muka / DP (Rupiah)</label>
+                            <input type="number" id="kprDp" value="500000000" step="10000000" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="kprInterest">Suku Bunga / Tahun (%)</label>
+                            <input type="number" id="kprInterest" value="6.5" step="0.1" min="1" max="20">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kprTenure">Jangka Waktu / Tenor (Tahun)</label>
+                        <select id="kprTenure">
+                            <option value="5">5 Tahun</option>
+                            <option value="10">10 Tahun</option>
+                            <option value="15" selected>15 Tahun</option>
+                            <option value="20">20 Tahun</option>
+                            <option value="25">25 Tahun</option>
+                        </select>
+                    </div>
+
+                    <div class="kpr-result-box">
+                        <span>Estimasi Cicilan Bulanan:</span>
+                        <h4 id="kprInstallment">Rp 16.980.000 / bln</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal Template (Injected dynamically) -->
+    <div class="detail-modal" id="detailModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose"><i data-lucide="x"></i></button>
+            <div class="modal-content" id="modalContent">
+                <!-- Data populated dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Survey Location & Contact Section -->
+    <section id="kontak" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Info Panel -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Survey Lapangan</span>
+                    <h2 class="section-title">Atur Jadwal Kunjungan Lokasi</h2>
+                </div>
+                
+                <div class="agent-profile">
+                    <div class="agent-avatar"><i data-lucide="user"></i></div>
+                    <div class="agent-details">
+                        <h4>HZX Agent Team</h4>
+                        <p>Senior Property Consultant & Advisor</p>
+                    </div>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Kantor Pemasaran HZX Props</h4>
+                            <p>Creative Corporate Hub Suite 402B, Sudirman, Jakarta Selatan, 12190</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="phone" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Hubungi Layanan Konsumen</h4>
+                            <p>+62 812-3456-789 (Senin - Minggu: 09:00 - 18:00 WIB)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Survey Booking Form Card -->
+            <div class="survey-form-card">
+                <h3 class="form-title">Formulir Pengajuan Survey</h3>
+                <form id="surveyForm">
+                    <div class="form-group">
+                        <label for="surveyName">Nama Lengkap Pemohon</label>
+                        <input type="text" id="surveyName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="surveyPhone">Nomor WhatsApp Aktif</label>
+                        <input type="tel" id="surveyPhone" placeholder="Contoh: 081234567890" required autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surveyProperty">Unit Properti Sasaran</label>
+                        <input type="text" id="surveyProperty" placeholder="Ketik unit incaran atau biarkan default dari klik detail" required autocomplete="off">
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="surveyDate">Rencana Hari Survey</label>
+                            <input type="date" id="surveyDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="surveyTime">Rencana Jam Survey</label>
+                            <input type="time" id="surveyTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surveyNotes">Catatan Tambahan (Opsional)</label>
+                        <textarea id="surveyNotes" rows="2" placeholder="Tuliskan jika ingin dijemput di stasiun terdekat, atau catatan lainnya..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="calendar"></i>
+                        <span>Jadwalkan Survey via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> PROPS</h3>
+                <p>Website showcase portofolio agen pemasaran & pengembang real-estate premium.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Halaman</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#listings">Listing Properti</a>
+                <a href="#kpr">Kalkulator KPR</a>
+                <a href="#kontak">Survey Lokasi</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Props. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio listing agen. Unit properti, spesifikasi kamar, kalkulator, dan data agen bersifat simulasi fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

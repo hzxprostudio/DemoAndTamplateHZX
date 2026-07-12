@@ -1,0 +1,818 @@
+/* ==========================================================================
+   HZX Food - Fresh Orange Appetite Food App Design System
+   Portfolio Showcase by HZXPro Studio
+   ========================================================================== */
+
+/* --- CSS Variables & Style Tokens --- */
+:root {
+    /* Color Palette */
+    --bg-base: #FAF9F6;          /* Warm Sand Background */
+    --bg-surface: #FFFFFF;       /* Crisp White Card */
+    --border-color: #E2E8F0;
+    --border-color-focus: #F97316;
+    
+    --text-primary: #1E293B;     /* Charcoal Dark */
+    --text-secondary: #64748B;   /* Muted Gray */
+    --text-muted: #94A3B8;
+    
+    --orange: #F97316;           /* Fresh Orange Primary */
+    --orange-hover: #EA580C;
+    --orange-glow: rgba(249, 115, 22, 0.12);
+    
+    --rating-gold: #EAB308;
+    --danger: #EF4444;
+    
+    /* Typography */
+    --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    
+    /* Layout Tokens */
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Hierarchy */
+    --z-screen: 10;
+    --z-tab-bar: 50;
+    --z-toast: 1100;
+}
+
+/* --- Resets & Global CSS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F1F1EB;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* If on desktop, show as a mobile frame. If on mobile, take full screen. */
+@media (min-width: 576px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+    .mobile-wrapper {
+        width: 375px;
+        height: 760px;
+        border: 12px solid #E2E8F0; /* premium white-silver device frame */
+        border-radius: 40px;
+        background-color: var(--bg-base);
+        position: relative;
+        box-shadow: 0 25px 50px -12px rgba(30, 41, 59, 0.08);
+        overflow: hidden;
+    }
+}
+@media (max-width: 575px) {
+    .mobile-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--bg-base);
+        position: relative;
+        overflow-x: hidden;
+    }
+}
+
+/* --- Custom Scrollbar --- */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--orange);
+    color: #fff;
+    border: 1px solid var(--orange);
+}
+.btn-primary:hover {
+    background-color: var(--orange-hover);
+    border-color: var(--orange-hover);
+    box-shadow: 0 4px 15px var(--orange-glow);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+.icon-btn:hover {
+    background-color: var(--orange-glow);
+    color: var(--orange);
+}
+.icon-btn svg {
+    width: 18px;
+    height: 18px;
+}
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--orange);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--bg-surface);
+}
+
+/* ==========================================================================
+   Header Navigation
+   ========================================================================== */
+.app-header {
+    height: 68px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(250, 249, 246, 0.95);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+}
+
+.header-address {
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+}
+.addr-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+.addr-label svg {
+    width: 12px;
+    height: 12px;
+    color: var(--orange);
+}
+.addr-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.screen-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Screen Layout Framework
+   ========================================================================== */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    z-index: var(--z-screen);
+    background-color: var(--bg-base);
+}
+.screen.active {
+    display: flex;
+}
+
+.screen-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 88px 20px 84px 20px; /* offset top header & bottom tab bar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Home Screen elements
+   ========================================================================== */
+.search-bar-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+}
+.search-bar-wrapper input {
+    width: 100%;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 12px 20px 12px 48px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+}
+.search-bar-wrapper input:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 10px var(--orange-glow);
+}
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--text-secondary);
+}
+
+/* Active Promotion Banner */
+.promo-banner {
+    background: linear-gradient(135deg, #ff9f43 0%, #ff6b6b 100%);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.15);
+}
+.promo-tag {
+    background-color: rgba(255,255,255,0.25);
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+.promo-banner h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+.promo-banner p {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+/* Category round circles */
+.categories-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+.category-circle-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-grow: 1;
+}
+.cat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+}
+.cat-icon svg {
+    width: 20px;
+    height: 20px;
+}
+.category-circle-btn:hover .cat-icon {
+    color: var(--orange);
+    border-color: var(--orange);
+}
+.category-circle-btn.active .cat-icon {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: #fff;
+    box-shadow: 0 6px 15px var(--orange-glow);
+}
+.category-circle-btn span:last-child {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+/* Food Listings Grid */
+.menu-section h3 {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.food-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+}
+
+.food-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1.2;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+.food-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.food-card-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.food-card-body h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.food-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.food-meta .price {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--orange);
+}
+.food-meta .rating {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+.food-meta .rating svg {
+    width: 10px;
+    height: 10px;
+    color: var(--rating-gold);
+    fill: var(--rating-gold);
+}
+
+.btn-add-food {
+    width: 100%;
+    background-color: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.btn-add-food:hover {
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: #fff;
+}
+
+/* ==========================================================================
+   Shopping Cart Screen Elements
+   ========================================================================== */
+.cart-items-list-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Empty State */
+.cart-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    text-align: center;
+    padding: 20px;
+}
+.cart-empty-state .empty-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+.cart-empty-state p {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Cart Items Scroll list */
+.cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cart-item-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cart-item-details h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.cart-item-details span {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.cart-item-cost {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+.btn-remove-food {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Form & Pricing Summary Footer */
+.cart-checkout-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    background-color: var(--bg-base);
+    margin-top: auto;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.summary-row span {
+    font-size: 13px;
+    font-weight: 700;
+}
+.summary-row .total-price-value {
+    font-size: 18px;
+    color: var(--orange-hover);
+    font-weight: 800;
+}
+
+/* Form Styles */
+.mobile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-group label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+.form-group input,
+.form-group textarea {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--text-primary);
+    width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--orange);
+}
+
+/* ==========================================================================
+   Profile Screen Elements
+   ========================================================================== */
+.align-center {
+    align-items: center;
+    padding-top: 100px;
+}
+
+.profile-avatar-frame {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.profile-avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+.profile-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--orange-glow);
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+}
+
+.profile-options-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.profile-option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.profile-option-item:last-child {
+    border-bottom: none;
+}
+.profile-option-item:hover {
+    background-color: var(--bg-base);
+}
+.profile-option-item span {
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+.profile-option-item span svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}
+.profile-option-item:hover span {
+    color: var(--orange);
+}
+.profile-option-item:hover span svg {
+    color: var(--orange);
+}
+.profile-option-item .lucide-chevron-right {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Bottom Navigation Bar
+   ========================================================================== */
+.bottom-tab-bar {
+    height: 64px;
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-tab-bar);
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: relative;
+}
+.tab-item svg {
+    width: 18px;
+    height: 18px;
+    transition: var(--transition-smooth);
+}
+.tab-item span {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.tab-item.active {
+    color: var(--orange);
+}
+.tab-item.active svg {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 0 6px var(--orange-glow));
+}
+
+.badge-tab-count {
+    position: absolute;
+    top: -4px;
+    right: 0px;
+    background-color: var(--orange);
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+}
+
+/* ==========================================================================
+   Toast Notification System
+   ========================================================================= */
+.toast-container {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    right: 20px;
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    transform: translateY(10px);
+    opacity: 0;
+    animation: toast-in 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    pointer-events: auto;
+}
+
+.toast.success {
+    border-left: 4px solid var(--orange);
+}
+.toast.success svg {
+    color: var(--orange);
+}
+
+.toast.danger {
+    border-left: 4px solid var(--danger);
+}
+.toast.danger svg {
+    color: var(--danger);
+}
+
+.toast-message {
+    font-size: 11px;
+    font-weight: 700;
+    flex-grow: 1;
+}
+
+.toast-close {
+    color: var(--text-secondary);
+}
+.toast-close:hover {
+    color: var(--text-primary);
+}
+
+@keyframes toast-in {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-out {
+    to {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+}

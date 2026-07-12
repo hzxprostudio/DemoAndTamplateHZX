@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Fit App | Mobile Workout Tracker & Timer App Demo</title>
+    <meta name="description" content="Showcase portfolio mobile gym tracker HZX Fit App oleh HZXPro Studio. Fitur penghitung kalori harian, checklist latihan fisik, dan stopwatch timer istirahat set.">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Desktop Floating Phone Device Frame Wrapper -->
+    <div class="mobile-wrapper">
+        
+        <!-- Screen 1: Home Fitness Dashboard Screen -->
+        <div class="screen active" id="screen-home">
+            <header class="app-header">
+                <div class="app-brand">
+                    <span class="brand-accent">HZX</span> Fit
+                </div>
+                <div class="fit-activity-badge">
+                    <span class="pulse-dot"></span> Active Now
+                </div>
+            </header>
+
+            <div class="screen-content">
+                <!-- Calorie burned circular chart summary card -->
+                <div class="progress-summary-card">
+                    <div class="circle-chart-box">
+                        <!-- SVG Circle progress bar -->
+                        <svg class="circular-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="62, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="circle-label">
+                            <span class="val" id="kcal-burned-val">620</span>
+                            <span class="unit">Kcal</span>
+                        </div>
+                    </div>
+                    <div class="progress-details">
+                        <h4>Target Kalori Harian</h4>
+                        <p>Tercapai 62% dari target harian 1.000 Kcal Anda hari ini.</p>
+                    </div>
+                </div>
+
+                <!-- Today's exercises checklist list -->
+                <div class="fit-list-section">
+                    <h3>Rencana Latihan Hari Ini</h3>
+                    <div class="exercises-checklist">
+                        <!-- Item 1 -->
+                        <div class="exercise-item">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="ex-check" id="ex1" data-kcal="120" data-name="Flat Barbell Bench Press">
+                                <label for="ex1"></label>
+                            </div>
+                            <div class="ex-info">
+                                <h4>Flat Bench Press</h4>
+                                <span>4 Set x 10 Reps • +120 Kcal</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="exercise-item">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="ex-check" id="ex2" data-kcal="80" data-name="Incline Dumbbell Fly">
+                                <label for="ex2"></label>
+                            </div>
+                            <div class="ex-info">
+                                <h4>Incline Dumbbell Fly</h4>
+                                <span>3 Set x 12 Reps • +80 Kcal</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="exercise-item">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="ex-check" id="ex3" data-kcal="150" data-name="Overhead Cable Tricep Extension">
+                                <label for="ex3"></label>
+                            </div>
+                            <div class="ex-info">
+                                <h4>Overhead Tricep Extension</h4>
+                                <span>4 Set x 12 Reps • +150 Kcal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick shortcut to timer card -->
+                <div class="quick-timer-shortcut-card" id="card-go-timer">
+                    <div class="shortcut-details">
+                        <h4>Timer Istirahat Set</h4>
+                        <p>Hitung waktu jeda antar-set latihan Anda.</p>
+                    </div>
+                    <div class="shortcut-icon"><i data-lucide="play-circle"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Workout Timer Widget Screen -->
+        <div class="screen" id="screen-timer">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Timer Istirahat</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content align-center-timer">
+                <!-- Large Round Timer Countdown -->
+                <div class="countdown-timer-circle">
+                    <svg class="timer-circular-chart" viewBox="0 0 36 36">
+                        <path class="timer-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="timer-circle-fill" id="timer-progress-fill" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <div class="timer-label" id="timer-display-string">00:45</div>
+                </div>
+
+                <!-- Set preset timers row -->
+                <div class="preset-timers-row">
+                    <button class="preset-time-btn active" data-seconds="45">45s</button>
+                    <button class="preset-time-btn" data-seconds="60">60s</button>
+                    <button class="preset-time-btn" data-seconds="90">90s</button>
+                </div>
+
+                <!-- Action Controls buttons row -->
+                <div class="timer-actions-row">
+                    <button class="btn btn-secondary" id="btn-timer-reset">Reset</button>
+                    <button class="btn btn-primary" id="btn-timer-toggle">Mulai</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: History Activity Log Screen -->
+        <div class="screen" id="screen-history">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Log Latihan</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content">
+                <div class="activity-logs-list" id="activity-logs-container">
+                    <!-- Dynamic rendering -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: User Profile Screen -->
+        <div class="screen" id="screen-profile">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Profil Saya</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content align-center">
+                <div class="profile-avatar-frame">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="User profile avatar photo">
+                </div>
+                <h3 class="profile-name">Rendi Arisandi</h3>
+                <span class="profile-tag">HZX Fit Elite Athlete</span>
+                
+                <div class="profile-options-menu">
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="activity"></i> Statistik Fisik</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="settings"></i> Target Latihan</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                    <a href="#" class="profile-option-item" id="btn-demo-reset">
+                        <span><i data-lucide="refresh-cw"></i> Reset Demo Log</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Tab Navigation Bar -->
+        <nav class="bottom-tab-bar">
+            <button class="tab-item active" data-screen="screen-home">
+                <i data-lucide="dumbbell"></i>
+                <span>Workout</span>
+            </button>
+            <button class="tab-item" data-screen="screen-timer">
+                <i data-lucide="timer"></i>
+                <span>Timer</span>
+            </button>
+            <button class="tab-item" data-screen="screen-history">
+                <i data-lucide="clipboard-list"></i>
+                <span>History</span>
+            </button>
+            <button class="tab-item" data-screen="screen-profile">
+                <i data-lucide="user"></i>
+                <span>Profile</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

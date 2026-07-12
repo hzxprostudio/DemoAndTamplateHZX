@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Digipro | UI/UX Design System Masterclass E-Book & Course</title>
+    <meta name="description" content="Showcase portfolio HZX Digipro oleh HZXPro Studio. E-book dan video course lengkap belajar membuat Design System berskala industri dari nol.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Digipro
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#materi" class="nav-link">Materi Belajar</a>
+                <a href="#paket" class="nav-link">Paket Belajar</a>
+                <a href="#penulis" class="nav-link">Penulis</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#beli" class="nav-link nav-link-btn">Beli Sekarang</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#materi" class="mobile-nav-link">Materi Belajar</a>
+        <a href="#paket" class="mobile-nav-link">Paket Belajar</a>
+        <a href="#penulis" class="mobile-nav-link">Penulis</a>
+        <a href="#faq" class="mobile-nav-link">FAQ</a>
+        <a href="#beli" class="mobile-nav-link mobile-nav-btn">Beli Sekarang</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" alt="Abstract modern vector line network background" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-grid">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <div class="studio-tag">
+                        <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                    </div>
+                    <h1 class="hero-title">Mastering Design Systems <br><span class="accent-text">In 30 Days.</span></h1>
+                    <p class="hero-description">
+                        E-Book & Video Course panduan lengkap menyusun fondasi token desain, auto-layout komponen interaktif figma, dan serah terima pengembang (*dev-handoff*) berskala industri dari nol.
+                    </p>
+                    
+                    <div class="hero-review-row">
+                        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                        <span>4.9 / 5 (Ditinjau oleh 240+ Alumni Mahasiswa & Desainer)</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#beli" class="btn btn-primary">
+                            <span>Dapatkan Akses</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                        <a href="#materi" class="btn btn-secondary">
+                            <span>Pelajari Kurikulum</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right E-Book Mockup Graphic -->
+                <div class="hero-graphic">
+                    <div class="book-mockup-wrapper">
+                        <div class="book-spine"></div>
+                        <div class="book-cover">
+                            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=400&auto=format&fit=crop" alt="UI/UX Design System Book Cover Mockup">
+                            <div class="cover-overlay-text">
+                                <h3>DESIGN SYSTEM</h3>
+                                <span>Masterclass Guide</span>
+                                <p class="cover-author">HZX Academy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="materi" class="curriculum-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Kurikulum Belajar</span>
+            <h2 class="section-title">Apa yang Akan Anda Kuasai?</h2>
+            <p class="section-desc">Materi disusun secara terstruktur dari konsep dasar desain hingga teknik pengemasan aset yang siap diserahkan kepada tim developer.</p>
+        </div>
+
+        <div class="curriculum-grid">
+            <!-- Modul 1 -->
+            <div class="curriculum-card">
+                <div class="card-badge-num">01</div>
+                <h3 class="card-title">Dasar Design Tokens</h3>
+                <p class="card-desc">Memahami hierarki warna, skala tipografi dinamis, aturan grid tata letak (*layout grids*), bayangan, serta cara menyematkannya sebagai variabel token desain global.</p>
+            </div>
+
+            <!-- Modul 2 -->
+            <div class="curriculum-card">
+                <div class="card-badge-num">02</div>
+                <h3 class="card-title">Komponen Interaktif</h3>
+                <p class="card-desc">Panduan menyusun komponen atomis (tombol, input, checkbox), komponen molekul (header, card), auto-layout tingkat lanjut, varian status komponen, dan mikro-interaksi.</p>
+            </div>
+
+            <!-- Modul 3 -->
+            <div class="curriculum-card">
+                <div class="card-badge-num">03</div>
+                <h3 class="card-title">Dev-Handoff & Dokumentasi</h3>
+                <p class="card-desc">SOP dokumentasi komponen di Figma, cara menerjemahkan aset visual ke pustaka Storybook, ekspor kode JSON tokens, serta kolaborasi lancar dengan pengembang front-end.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages Section -->
+    <section id="paket" class="pricing-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Paket Belajar</span>
+            <h2 class="section-title">Pilihan Bundel Belajar</h2>
+            <p class="section-desc">Pilih opsi materi belajar yang sesuai dengan cara belajar Anda. Tersedia lisensi akses selamanya tanpa biaya bulanan.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Card 1 -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Lite E-Book Pass</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 149.000</h4>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> E-Book PDF Edisi Lengkap (320 Halaman)</li>
+                    <li><i data-lucide="check"></i> File Latihan Token Desain Figma (.fig)</li>
+                    <li><i data-lucide="check"></i> Akses Grup Telegram Alumni Kelas</li>
+                    <li class="disabled"><i data-lucide="x"></i> 12 Video Tutorial Praktek Eksklusif</li>
+                    <li class="disabled"><i data-lucide="x"></i> Sesi Riviu Portofolio UI 1-on-1</li>
+                </ul>
+                <button class="btn btn-secondary btn-buy-bundle" data-plan="Lite E-Book Pass">Pilih Paket</button>
+            </div>
+
+            <!-- Card 2 (Featured Pro Pass) -->
+            <div class="pricing-card featured">
+                <span class="featured-badge">Terpopuler</span>
+                <h3 class="tier-name">Pro Course Masterclass</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 299.000</h4>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Semua Benefit Paket Lite E-Book</li>
+                    <li><i data-lucide="check"></i> 12 Video Praktek Desain Sistem Komponen</li>
+                    <li><i data-lucide="check"></i> Templat UI Kit Figma Premium Siap Pakai</li>
+                    <li><i data-lucide="check"></i> Sertifikat Penyelesaian Kelas Digital</li>
+                    <li class="disabled"><i data-lucide="x"></i> Sesi Riviu Portofolio UI 1-on-1</li>
+                </ul>
+                <button class="btn btn-primary btn-buy-bundle" data-plan="Pro Course Masterclass">Pilih Paket</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pricing-card">
+                <h3 class="tier-name">VIP Design Mentorship</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 999.000</h4>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Semua Benefit Paket Pro Masterclass</li>
+                    <li><i data-lucide="check"></i> 1x Sesi Riviu Desain & Portofolio 1-on-1</li>
+                    <li><i data-lucide="check"></i> Konsultasi Chat Privat via WA/Discord</li>
+                    <li><i data-lucide="check"></i> Prioritas Undangan Rekomendasi Kerja</li>
+                    <li><i data-lucide="check"></i> Garansi 100% Uang Kembali</li>
+                </ul>
+                <button class="btn btn-secondary btn-buy-bundle" data-plan="VIP Design Mentorship">Pilih Paket</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="penulis" class="author-section container">
+        <div class="author-grid">
+            <div class="author-avatar-col">
+                <div class="avatar-frame">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" alt="Coach Rian - Principal UI/UX Designer">
+                </div>
+            </div>
+            
+            <div class="author-info-col">
+                <span class="section-subtitle">Mengenal Penulis</span>
+                <h2 class="section-title">Dibuat oleh Praktisi Industri</h2>
+                <p class="author-bio">
+                    Halo! Saya <strong>Coach Rian</strong>, praktisi desainer produk yang telah berkecimpung di industri desain digital selama lebih dari 8 tahun. Sepanjang karir, saya telah membantu merancang dasbor internal dan sistem komponen produk untuk beberapa startup unicorn dan agensi global.
+                </p>
+                <p class="author-bio-extra">
+                    Buku dan kursus video ini saya susun secara praktis untuk membantu Anda memotong kurva belajar desain token dan auto-layout figma agar siap bersaing di pasar kerja level mid-senior.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordions Section -->
+    <section id="faq" class="faq-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">FAQ</span>
+            <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+            <p class="section-desc">Temukan jawaban atas beberapa keraguan yang umum diajukan oleh calon desainer sebelum membeli.</p>
+        </div>
+
+        <div class="faq-accordion-list">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>Apakah kelas ini cocok untuk desainer pemula (pemula)?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Ya! Materi dalam e-book dan video dirancang bertahap dari pemahaman konsep dasar token desain sebelum melangkah ke teknik pembuatan komponen figma tingkat lanjut yang kompleks.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>Bagaimana cara mengakses berkas latihan figma & video?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Setelah pembayaran Anda terverifikasi oleh CS kami, tautan akses unduh PDF, aset UI Kit Figma, dan kredensial portal tontonan video course akan dikirimkan langsung ke e-mail Anda.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    <span>Apakah ada batas masa aktif akses materi?</span>
+                    <i data-lucide="chevron-down" class="faq-icon"></i>
+                </button>
+                <div class="faq-body">
+                    <p>Tidak ada batas masa aktif. Setiap paket belajar yang dibeli mendapatkan akses selamanya (*lifetime access*) termasuk pembaruan materi secara berkala gratis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Order Form Section -->
+    <section id="beli" class="checkout-section container">
+        <div class="checkout-grid">
+            <!-- Left Info Panel -->
+            <div class="checkout-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Formulir Klaim Akses</span>
+                    <h2 class="section-title">Dapatkan Lisensi Belajar Anda</h2>
+                </div>
+                <p class="checkout-desc">
+                    Silakan isi data Anda di samping dan pilih bundel paket belajar yang diinginkan. Setelah mengklik tombol kirim, Anda akan diarahkan ke WhatsApp CS kami untuk mendapatkan nomor rekening pembayaran dan proses pengiriman berkas.
+                </p>
+                
+                <div class="guarantee-box">
+                    <i data-lucide="shield-check" class="guarantee-icon"></i>
+                    <div class="guarantee-details">
+                        <h4>Garansi Kepuasan Belajar</h4>
+                        <p>Kami menjamin garansi 100% uang kembali dalam 7 hari jika Anda merasa kualitas materi di e-book dan video tidak memberikan manfaat praktis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Checkout Form Card -->
+            <div class="booking-form-card">
+                <h3 class="form-title">Pendaftaran Pembelian</h3>
+                <form id="digitalCheckoutForm">
+                    <div class="form-group">
+                        <label for="buyerName">Nama Lengkap Pembeli</label>
+                        <input type="text" id="buyerName" placeholder="Masukkan nama lengkap Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="buyerPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="buyerPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="buyerBundle">Pilihan Paket Belajar</label>
+                            <select id="buyerBundle" required>
+                                <option value="" disabled selected>-- Pilih Paket --</option>
+                                <option value="Lite E-Book Pass">Lite E-Book Pass (Rp 149.000)</option>
+                                <option value="Pro Course Masterclass">Pro Course Masterclass (Rp 299.000)</option>
+                                <option value="VIP Design Mentorship">VIP Design Mentorship (Rp 999.000)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ketentuan Berkas & Lisensi</label>
+                        <ul class="form-notice-list">
+                            <li>Lisensi pendaftaran bersifat personal (*single-user license*).</li>
+                            <li>Dilarang mendistribusikan ulang atau menjual kembali berkas PDF & video tanpa izin tertulis.</li>
+                        </ul>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Klaim Akses via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Digipro</h3>
+                <p>Website landing page penjualan produk digital e-book & course oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Paket</h4>
+                <a href="#paket">Lite Pass</a>
+                <a href="#paket">Pro Masterclass</a>
+                <a href="#paket">VIP Mentorship</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Digipro. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo landing page produk digital. Nomor rekening pembayaran, ulasan alumni, dan profil penulis bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

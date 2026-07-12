@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Marketplace | Multi-Vendor E-Commerce Portal</title>
+    <meta name="description" content="Showcase portfolio HZX Marketplace oleh HZXPro Studio. Portal e-commerce multi-seller terlengkap dengan keranjang belanja terintegrasi.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <span class="logo-accent">HZX</span> Hub
+                    <span class="logo-badge">Showcase</span>
+                </a>
+            </div>
+
+            <!-- Integrated Search Bar -->
+            <div class="nav-search-bar">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="navbarSearchInput" placeholder="Cari barang atau nama toko mitra...">
+            </div>
+            
+            <div class="nav-right">
+                <nav class="nav-menu">
+                    <a href="#hero" class="nav-link">Beranda</a>
+                    <a href="#toko" class="nav-link">Toko Mitra</a>
+                    <a href="#produk" class="nav-link">Produk</a>
+                </nav>
+
+                <!-- Cart Button with Count Badge -->
+                <button class="nav-cart-btn" id="navCartBtn" aria-label="Buka Keranjang">
+                    <i data-lucide="shopping-cart"></i>
+                    <span class="cart-badge" id="cartCountBadge">0</span>
+                </button>
+
+                <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#toko" class="mobile-nav-link">Toko Mitra</a>
+        <a href="#produk" class="mobile-nav-link">Produk</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1200&auto=format&fit=crop" alt="E-Commerce package box shopping shelves background" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Beli Langsung Dari<br><span class="accent-text">Produsen Terbaik.</span></h1>
+                <p class="hero-description">
+                    Platform perantara pasar multi-vendor yang mempertemukan Anda dengan puluhan perajin lokal, produsen fashion ritel, distributor gadget, dan UMKM kuliner pilihan.
+                </p>
+                
+                <!-- Escrow & Trust Stats -->
+                <div class="hero-stats-row">
+                    <div class="stat-item">
+                        <h4>50+</h4>
+                        <span>Toko Mitra</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>10k+</h4>
+                        <span>Barang Terkirim</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <span>Rekber Aman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tabs Navigation Grid -->
+    <section class="categories-section container">
+        <div class="categories-grid">
+            <button class="category-btn active" data-category="all">
+                <i data-lucide="layout-grid"></i>
+                <span>Semua</span>
+            </button>
+            <button class="category-btn" data-category="Elektronik">
+                <i data-lucide="smartphone"></i>
+                <span>Gadgets</span>
+            </button>
+            <button class="category-btn" data-category="Fashion">
+                <i data-lucide="shirt"></i>
+                <span>Fashion</span>
+            </button>
+            <button class="category-btn" data-category="Kuliner">
+                <i data-lucide="soup"></i>
+                <span>Food & Drink</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Featured Vendor Stores Section -->
+    <section id="toko" class="vendor-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Toko Mitra Pilihan</span>
+            <h2 class="section-title">Kunjungi Merchant Unggulan</h2>
+            <p class="section-desc">Pusat transaksi terpercaya yang memproduksi langsung komoditas barang dagangannya dengan jaminan garansi mutu.</p>
+        </div>
+
+        <div class="vendor-grid">
+            <!-- Vendor 1 -->
+            <div class="vendor-card" data-vendor="Digital Gadget Store">
+                <div class="vendor-banner-header bg-grad-purple"></div>
+                <div class="vendor-content">
+                    <div class="vendor-avatar">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100&auto=format&fit=crop" alt="Digital Gadget Store logo avatar">
+                    </div>
+                    <h3 class="vendor-name">Digital Gadget Store</h3>
+                    <span class="vendor-tag">Elektronik & Aksesori</span>
+                    <div class="vendor-rating"><i data-lucide="star"></i> 4.9 (80+ Ulasan)</div>
+                    <button class="btn btn-secondary btn-visit-store" data-search="Digital Gadget Store">Lihat Produk</button>
+                </div>
+            </div>
+
+            <!-- Vendor 2 -->
+            <div class="vendor-card" data-vendor="Gaya Trendi Boutique">
+                <div class="vendor-banner-header bg-grad-pink"></div>
+                <div class="vendor-content">
+                    <div class="vendor-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Gaya Trendi Boutique logo avatar">
+                    </div>
+                    <h3 class="vendor-name">Gaya Trendi Boutique</h3>
+                    <span class="vendor-tag">Fashion Ritel Lokal</span>
+                    <div class="vendor-rating"><i data-lucide="star"></i> 4.8 (120+ Ulasan)</div>
+                    <button class="btn btn-secondary btn-visit-store" data-search="Gaya Trendi Boutique">Lihat Produk</button>
+                </div>
+            </div>
+
+            <!-- Vendor 3 -->
+            <div class="vendor-card" data-vendor="Dapur Lezat Kuliner">
+                <div class="vendor-banner-header bg-grad-orange"></div>
+                <div class="vendor-content">
+                    <div class="vendor-avatar">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=100&auto=format&fit=crop" alt="Dapur Lezat Kuliner logo avatar">
+                    </div>
+                    <h3 class="vendor-name">Dapur Lezat Kuliner</h3>
+                    <span class="vendor-tag">F&B - Bumbu & Makanan</span>
+                    <div class="vendor-rating"><i data-lucide="star"></i> 4.7 (40+ Ulasan)</div>
+                    <button class="btn btn-secondary btn-visit-store" data-search="Dapur Lezat Kuliner">Lihat Produk</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Listings Section -->
+    <section id="produk" class="product-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Katalog Produk</span>
+            <h2 class="section-title">Semua Produk Merchant</h2>
+            <p class="section-desc">Eksplorasi beraneka jenis barang dagangan yang ditawarkan langsung oleh mitra produsen kami dengan harga kompetitif.</p>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Product 1 -->
+            <div class="product-card" data-category="Elektronik" data-vendor="Digital Gadget Store" data-name="Mechanical Keyboard RGB">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=400&auto=format&fit=crop" alt="Mechanical Keyboard RGB">
+                    <span class="card-vendor-badge">Digital Gadget Store</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="product-title">Mechanical Keyboard RGB</h3>
+                    <div class="product-meta-row">
+                        <span class="product-price">Rp 850.000</span>
+                        <div class="rating"><i data-lucide="star"></i> 4.9</div>
+                    </div>
+                    <button class="btn btn-primary btn-add-cart" data-id="p1" data-name="Mechanical Keyboard RGB" data-price="850000" data-vendor="Digital Gadget Store">
+                        <i data-lucide="shopping-cart"></i>
+                        <span>Tambah</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" data-category="Fashion" data-vendor="Gaya Trendi Boutique" data-name="Premium Linen Shirt">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=400&auto=format&fit=crop" alt="Premium Linen Shirt">
+                    <span class="card-vendor-badge">Gaya Trendi Boutique</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="product-title">Premium Linen Shirt</h3>
+                    <div class="product-meta-row">
+                        <span class="product-price">Rp 195.000</span>
+                        <div class="rating"><i data-lucide="star"></i> 4.8</div>
+                    </div>
+                    <button class="btn btn-primary btn-add-cart" data-id="p2" data-name="Premium Linen Shirt" data-price="195000" data-vendor="Gaya Trendi Boutique">
+                        <i data-lucide="shopping-cart"></i>
+                        <span>Tambah</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" data-category="Elektronik" data-vendor="Digital Gadget Store" data-name="Ergonomic Office Chair">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1505797149-43b0069ec26b?q=80&w=400&auto=format&fit=crop" alt="Ergonomic Office Chair Workspace Setup">
+                    <span class="card-vendor-badge">Digital Gadget Store</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="product-title">Ergonomic Office Chair</h3>
+                    <div class="product-meta-row">
+                        <span class="product-price">Rp 1.450.000</span>
+                        <div class="rating"><i data-lucide="star"></i> 4.9</div>
+                    </div>
+                    <button class="btn btn-primary btn-add-cart" data-id="p3" data-name="Ergonomic Office Chair" data-price="1450000" data-vendor="Digital Gadget Store">
+                        <i data-lucide="shopping-cart"></i>
+                        <span>Tambah</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" data-category="Kuliner" data-vendor="Dapur Lezat Kuliner" data-name="Bumbu Rendang Padang">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=400&auto=format&fit=crop" alt="Bumbu Rendang Padang Spice Box">
+                    <span class="card-vendor-badge">Dapur Lezat Kuliner</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="product-title">Bumbu Rendang Padang</h3>
+                    <div class="product-meta-row">
+                        <span class="product-price">Rp 45.000</span>
+                        <div class="rating"><i data-lucide="star"></i> 4.7</div>
+                    </div>
+                    <button class="btn btn-primary btn-add-cart" data-id="p4" data-name="Bumbu Rendang Padang" data-price="45000" data-vendor="Dapur Lezat Kuliner">
+                        <i data-lucide="shopping-cart"></i>
+                        <span>Tambah</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Slide-out Drawer Panel -->
+    <div class="cart-drawer-backdrop" id="cartDrawerBackdrop"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <h3 class="cart-title"><i data-lucide="shopping-bag"></i> Keranjang Belanja</h3>
+            <button class="cart-drawer-close" id="cartDrawerClose"><i data-lucide="x"></i></button>
+        </div>
+        
+        <!-- Cart Items List Container -->
+        <div class="cart-items-wrapper">
+            <div class="cart-empty-state" id="cartEmptyState">
+                <i data-lucide="shopping-cart" class="empty-icon"></i>
+                <p>Keranjang belanja Anda masih kosong. Silakan tambahkan beberapa barang dari merchant.</p>
+            </div>
+            
+            <div class="cart-items-list" id="cartDrawerList">
+                <!-- Grouped products by vendor will render dynamically here -->
+            </div>
+        </div>
+
+        <!-- Checkout Form inside Drawer -->
+        <div class="cart-drawer-footer" id="cartDrawerFooter">
+            <div class="cart-summary-row">
+                <span>Subtotal Tagihan:</span>
+                <span class="total-value" id="cartDrawerTotal">Rp 0</span>
+            </div>
+            
+            <div class="cart-checkout-form">
+                <h4 class="checkout-form-title">Informasi Pengiriman</h4>
+                <form id="cartCheckoutForm">
+                    <div class="form-group">
+                        <label for="checkoutName">Nama Lengkap Penerima</label>
+                        <input type="text" id="checkoutName" placeholder="Masukkan nama penerima barang" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutPhone">Nomor WhatsApp</label>
+                        <input type="tel" id="checkoutPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutAddress">Alamat Lengkap Pengiriman</label>
+                        <textarea id="checkoutAddress" rows="2" placeholder="Tuliskan nama jalan, blok, nomor rumah, RT/RW, kelurahan, dan kota tujuan..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="btnCheckout">
+                        <i data-lucide="send"></i>
+                        <span>Checkout via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Hub</h3>
+                <p>Website showcase portofolio portal belanja multi-vendor e-commerce oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Kategori</h4>
+                <a href="#produk">Fashion</a>
+                <a href="#produk">Gadgets & Electronics</a>
+                <a href="#produk">Workspace Setup</a>
+                <a href="#produk">Food & Culinary</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Hub. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portal e-commerce multi-seller. Alamat kantor, status pesanan, nominal harga, dan transaksi bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Food | Mobile Food Delivery & Ordering App Demo</title>
+    <meta name="description" content="Showcase portfolio mobile food delivery HZX Food oleh HZXPro Studio. Fitur penambahan menu makanan ke keranjang, dan pesan instan via WhatsApp.">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Desktop Floating Phone Device Frame Wrapper -->
+    <div class="mobile-wrapper">
+        
+        <!-- Screen 1: Home Dashboard Screen -->
+        <div class="screen active" id="screen-home">
+            <header class="app-header">
+                <div class="header-address">
+                    <span class="addr-label"><i data-lucide="map-pin"></i> Kirim ke</span>
+                    <span class="addr-value" id="home-address-display">Creative Ruko Square, Sudirman</span>
+                </div>
+                <button class="icon-btn" id="btn-home-cart"><i data-lucide="shopping-bag"></i><span class="cart-badge" id="badge-home-cart">0</span></button>
+            </header>
+
+            <div class="screen-content">
+                <!-- Search bar input -->
+                <div class="search-bar-wrapper">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="foodSearchInput" placeholder="Cari pizza, burger, bento...">
+                </div>
+
+                <!-- Banner Promotion Slider -->
+                <div class="promo-banner">
+                    <div class="promo-content">
+                        <span class="promo-tag">Diskon 50%</span>
+                        <h4>Spesial Weekend Gajian!</h4>
+                        <p>Klaim voucher makan enak sepuasnya.</p>
+                    </div>
+                </div>
+
+                <!-- Category Round Circles -->
+                <div class="categories-row">
+                    <button class="category-circle-btn active" data-category="all">
+                        <span class="cat-icon"><i data-lucide="utensils"></i></span>
+                        <span>Semua</span>
+                    </button>
+                    <button class="category-circle-btn" data-category="Burger">
+                        <span class="cat-icon"><i data-lucide="beef"></i></span>
+                        <span>Burger</span>
+                    </button>
+                    <button class="category-circle-btn" data-category="Pizza">
+                        <span class="cat-icon"><i data-lucide="pizza"></i></span>
+                        <span>Pizza</span>
+                    </button>
+                    <button class="category-circle-btn" data-category="Minuman">
+                        <span class="cat-icon"><i data-lucide="cup-soda"></i></span>
+                        <span>Drink</span>
+                    </button>
+                </div>
+
+                <!-- Food Menu List Grid -->
+                <div class="menu-section">
+                    <h3>Menu Terpopuler</h3>
+                    <div class="food-grid" id="food-grid-list">
+                        <!-- Item 1 -->
+                        <div class="food-card" data-category="Burger" data-name="Cheese Burger Extra Beef">
+                            <div class="food-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=200&auto=format&fit=crop" alt="Cheese Burger Extra Beef photo">
+                            </div>
+                            <div class="food-card-body">
+                                <h4>Cheese Burger Extra</h4>
+                                <div class="food-meta">
+                                    <span class="price">Rp 45.000</span>
+                                    <span class="rating"><i data-lucide="star"></i> 4.8</span>
+                                </div>
+                                <button class="btn-add-food" data-id="f1" data-name="Cheese Burger Extra" data-price="45000">Tambah</button>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="food-card" data-category="Pizza" data-name="Meat Lovers Pizza Medium">
+                            <div class="food-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=200&auto=format&fit=crop" alt="Meat Lovers Pizza Medium photo">
+                            </div>
+                            <div class="food-card-body">
+                                <h4>Meat Lovers Pizza</h4>
+                                <div class="food-meta">
+                                    <span class="price">Rp 95.000</span>
+                                    <span class="rating"><i data-lucide="star"></i> 4.9</span>
+                                </div>
+                                <button class="btn-add-food" data-id="f2" data-name="Meat Lovers Pizza" data-price="95000">Tambah</button>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="food-card" data-category="Minuman" data-name="Iced Brown Sugar Coffee Latte">
+                            <div class="food-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=200&auto=format&fit=crop" alt="Iced Brown Sugar Coffee Latte photo">
+                            </div>
+                            <div class="food-card-body">
+                                <h4>Brown Sugar Coffee</h4>
+                                <div class="food-meta">
+                                    <span class="price">Rp 28.000</span>
+                                    <span class="rating"><i data-lucide="star"></i> 4.7</span>
+                                </div>
+                                <button class="btn-add-food" data-id="f3" data-name="Brown Sugar Coffee" data-price="28000">Tambah</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Shopping Cart Drawer Screen -->
+        <div class="screen" id="screen-cart">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Keranjang Saya</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content">
+                <div class="cart-items-list-wrapper">
+                    <!-- Empty State -->
+                    <div class="cart-empty-state" id="food-cart-empty">
+                        <i data-lucide="shopping-basket" class="empty-icon"></i>
+                        <p>Belum ada makanan terpilih. Silakan tambahkan dari menu beranda.</p>
+                    </div>
+
+                    <!-- Cart List -->
+                    <div class="cart-items-list" id="food-cart-list">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <!-- Footer Summary & Checkout form -->
+                <div class="cart-checkout-footer" id="food-cart-footer" style="display: none;">
+                    <div class="summary-row">
+                        <span>Total Tagihan:</span>
+                        <span class="total-price-value" id="food-cart-total">Rp 0</span>
+                    </div>
+
+                    <form id="foodCheckoutForm" class="mobile-form">
+                        <div class="form-group">
+                            <label for="foodOrderName">Nama Penerima</label>
+                            <input type="text" id="foodOrderName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="foodOrderAddress">Alamat Lengkap Pengiriman</label>
+                            <textarea id="foodOrderAddress" rows="2" placeholder="Nama jalan, nomor rumah, lantai, unit apartemen..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i data-lucide="send"></i>
+                            <span>Pesan via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: User Profile Screen -->
+        <div class="screen" id="screen-profile">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Profil Saya</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content align-center">
+                <div class="profile-avatar-frame">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="User profile avatar photo">
+                </div>
+                <h3 class="profile-name">Melina Safitri</h3>
+                <span class="profile-tag">HZX Food Gold Member</span>
+                
+                <div class="profile-options-menu">
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="map-pin"></i> Daftar Alamat</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="wallet"></i> Metode Pembayaran</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="percent"></i> Voucher Promo Saya</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Tab Navigation Bar -->
+        <nav class="bottom-tab-bar">
+            <button class="tab-item active" data-screen="screen-home">
+                <i data-lucide="store"></i>
+                <span>Explore</span>
+            </button>
+            <button class="tab-item" data-screen="screen-cart" id="tab-item-cart">
+                <i data-lucide="shopping-bag"></i>
+                <span class="badge-tab-count" id="badge-tab-cart">0</span>
+                <span>Cart</span>
+            </button>
+            <button class="tab-item" data-screen="screen-profile">
+                <i data-lucide="user"></i>
+                <span>Profile</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

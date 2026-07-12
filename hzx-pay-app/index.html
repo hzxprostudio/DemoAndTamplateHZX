@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Pay | Mobile E-Wallet & Fintech App Demo</title>
+    <meta name="description" content="Showcase portfolio mobile e-wallet HZX Pay oleh HZXPro Studio. Fitur kirim saldo, scan QR bayar belanja, dan tinjau riwayat transaksi.">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Desktop Floating Phone Device Frame Wrapper -->
+    <div class="mobile-wrapper">
+        
+        <!-- Screen 1: Home Dashboard Screen -->
+        <div class="screen active" id="screen-home">
+            <header class="app-header">
+                <div class="app-brand">
+                    <span class="brand-accent">HZX</span> Pay
+                </div>
+                <button class="icon-btn" id="btn-bell"><i data-lucide="bell"></i></button>
+            </header>
+
+            <div class="screen-content">
+                <!-- Balance Details Card -->
+                <div class="balance-card">
+                    <span class="card-label">Saldo Aktif Anda</span>
+                    <h2 class="balance-amount" id="home-balance">Rp 1.450.000</h2>
+                    <span class="card-user">Fathahaz Nur Ramdhani</span>
+                </div>
+
+                <!-- Quick Action Buttons Row -->
+                <div class="quick-actions-row">
+                    <button class="action-btn" id="action-topup">
+                        <span class="action-icon"><i data-lucide="plus"></i></span>
+                        <span>Top Up</span>
+                    </button>
+                    <button class="action-btn" id="action-send">
+                        <span class="action-icon"><i data-lucide="send"></i></span>
+                        <span>Kirim</span>
+                    </button>
+                    <button class="action-btn" id="action-qr">
+                        <span class="action-icon"><i data-lucide="qr-code"></i></span>
+                        <span>Scan QR</span>
+                    </button>
+                    <button class="action-btn" id="action-history">
+                        <span class="action-icon"><i data-lucide="history"></i></span>
+                        <span>Riwayat</span>
+                    </button>
+                </div>
+
+                <!-- Recent Transactions Feed list -->
+                <div class="feed-section">
+                    <div class="feed-header-row">
+                        <h3>Transaksi Terakhir</h3>
+                        <a href="#" class="see-all-link" id="link-see-all-history">Semua</a>
+                    </div>
+                    
+                    <div class="transactions-list" id="recent-transactions-list">
+                        <!-- Card 1 -->
+                        <div class="transaction-item expense">
+                            <div class="tx-icon"><i data-lucide="shopping-bag"></i></div>
+                            <div class="tx-details">
+                                <h4>Kopi Latte Espresso</h4>
+                                <span>HZX Coffee Store</span>
+                            </div>
+                            <span class="tx-amount">-Rp 35.000</span>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="transaction-item income">
+                            <div class="tx-icon"><i data-lucide="arrow-down-left"></i></div>
+                            <div class="tx-details">
+                                <h4>Transfer Masuk</h4>
+                                <span>Dari Fatah R.</span>
+                            </div>
+                            <span class="tx-amount">+Rp 500.000</span>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="transaction-item expense">
+                            <div class="tx-icon"><i data-lucide="smartphone"></i></div>
+                            <div class="tx-details">
+                                <h4>Pembayaran Tagihan Listrik</h4>
+                                <span>PLN Pascabayar</span>
+                            </div>
+                            <span class="tx-amount">-Rp 120.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Send Money Form Screen -->
+        <div class="screen" id="screen-send">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Kirim Saldo</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content">
+                <form id="paySendForm" class="mobile-form">
+                    <div class="form-group">
+                        <label for="sendRecipient">Nomor HP / Nomor Rekening Tujuan</label>
+                        <input type="text" id="sendRecipient" placeholder="Masukkan nomor handphone tujuan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sendAmount">Jumlah Nominal (Rupiah)</label>
+                        <input type="number" id="sendAmount" min="10000" placeholder="Minimal Rp 10.000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sendNote">Catatan Kiriman (Opsional)</label>
+                        <input type="text" id="sendNote" placeholder="Tulis pesan catatan transfer">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 24px;">
+                        <i data-lucide="send"></i>
+                        <span>Transfer Sekarang</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Screen 3: Transaction History List Screen -->
+        <div class="screen" id="screen-history">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Semua Riwayat</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content">
+                <div class="transactions-list-scrollable" id="history-scroll-list">
+                    <!-- History content will duplicate recent ones for demonstration -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 4: User Profile Screen -->
+        <div class="screen" id="screen-profile">
+            <header class="app-header">
+                <button class="icon-btn btn-back-home"><i data-lucide="arrow-left"></i></button>
+                <div class="screen-title">Profil Saya</div>
+                <div style="width: 44px;"></div>
+            </header>
+
+            <div class="screen-content align-center">
+                <div class="profile-avatar-frame">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=150&auto=format&fit=crop" alt="User profile avatar photo">
+                </div>
+                <h3 class="profile-name">Fathahaz Nur Ramdhani</h3>
+                <span class="profile-tag">Akun Premium Verified</span>
+                
+                <div class="profile-options-menu">
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="shield"></i> Keamanan Akun</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                    <a href="#" class="profile-option-item">
+                        <span><i data-lucide="credit-card"></i> Pilihan Bank</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                    <a href="#" class="profile-option-item" id="btn-demo-reset">
+                        <span><i data-lucide="refresh-cw"></i> Reset Demo Saldo</span>
+                        <i data-lucide="chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- QR Scan viewfinder Modal (Simulated camera overlay) -->
+        <div class="qr-camera-overlay" id="qr-camera-overlay">
+            <button class="close-overlay-btn" id="btn-close-qr-overlay"><i data-lucide="x"></i></button>
+            <div class="camera-lens-frame">
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+                <span class="camera-guide-text">Arahkan lensa ke QR Code</span>
+            </div>
+        </div>
+
+        <!-- Bottom Tab Navigation Bar -->
+        <nav class="bottom-tab-bar">
+            <button class="tab-item active" data-screen="screen-home">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </button>
+            <button class="tab-item" data-screen="screen-send">
+                <i data-lucide="send"></i>
+                <span>Kirim</span>
+            </button>
+            <button class="tab-item" data-screen="screen-history">
+                <i data-lucide="history"></i>
+                <span>Riwayat</span>
+            </button>
+            <button class="tab-item" data-screen="screen-profile">
+                <i data-lucide="user"></i>
+                <span>Profil</span>
+            </button>
+        </nav>
+
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

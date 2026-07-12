@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Serv | Gadget Repair Tracker & Tech Lab</title>
+    <meta name="description" content="Showcase portfolio HZX Serv oleh HZXPro Studio. Lacak status perbaikan gadget, laptop, dan konsol game Anda secara real-time dengan widget tracking transparan.">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Serv
+                <span class="logo-badge">Lab Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#layanan" class="nav-link">Layanan</a>
+                <a href="#tracking" class="nav-link">Cek Status</a>
+                <a href="#order" class="nav-link">Order Baru</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#layanan" class="mobile-nav-link">Layanan</a>
+        <a href="#tracking" class="mobile-nav-link">Cek Status</a>
+        <a href="#order" class="mobile-nav-link">Order Baru</a>
+        <a href="#kontak" class="mobile-nav-link">Kontak</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-mesh"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Showcase by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Servis Gadget Profesional, <br><span class="gradient-text">Transparan, & Terlacak.</span></h1>
+                <p class="hero-description">
+                    Selamat datang di HZX Serv, laboratorium reparasi perangkat keras elektronik terpercaya. Kami melayani perbaikan smartphone, laptop, dan konsol game dengan standar teknisi profesional. Lacak langsung kemajuan perbaikan gadget Anda kapan saja melalui sistem tracking digital kami.
+                </p>
+                <div class="hero-actions">
+                    <a href="#tracking" class="btn btn-primary">
+                        <i data-lucide="search"></i>
+                        <span>Cek Status Servis</span>
+                    </a>
+                    <a href="#order" class="btn btn-secondary">
+                        <i data-lucide="plus-circle"></i>
+                        <span>Ajukan Order Baru</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-visual-card">
+                    <div class="card-glow"></div>
+                    <img src="assets/hero.jpg" alt="Tech Repair Lab Workstation" class="hero-img">
+                    <div class="hero-floating-info">
+                        <div class="info-icon-badge"><i data-lucide="wrench"></i></div>
+                        <div>
+                            <h4>Suku Cadang Asli</h4>
+                            <p>Garansi reparasi hingga 90 hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Directory & Prices -->
+    <section id="layanan" class="services-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Spesialisasi Kami</span>
+            <h2 class="section-title">Layanan Reparasi & Diagnosa</h2>
+            <p class="section-desc">Pilih kategori perbaikan untuk melihat estimasi pengerjaan awal dan melakukan pengajuan servis perangkat.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/smartphone.jpg" alt="Smartphone Repair" class="service-img">
+                </div>
+                <div class="service-body">
+                    <h3 class="service-name">Smartphone Repair</h3>
+                    <p class="service-desc">Perbaikan layar retak, penggantian baterai bocor, konektor charger rusak, hingga perbaikan IC motherboard akibat korsleting air.</p>
+                    <div class="service-meta">
+                        <span>Estimasi: 1-3 Hari</span>
+                        <span class="price-range">Mulai Rp 100rb</span>
+                    </div>
+                    <a href="#order" class="btn btn-select btn-block" data-service="Smartphone Repair">
+                        <span>Pilih Layanan</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/laptop.jpg" alt="Laptop & Macbook Repair" class="service-img">
+                </div>
+                <div class="service-body">
+                    <h3 class="service-name">MacBook & Laptop Service</h3>
+                    <p class="service-desc">Reparasi engsel patah, keyboard error, ganti pasta thermal, perbaikan chipset grafis (GPU), upgrade SSD & RAM untuk performa optimal.</p>
+                    <div class="service-meta">
+                        <span>Estimasi: 2-5 Hari</span>
+                        <span class="price-range">Mulai Rp 250rb</span>
+                    </div>
+                    <a href="#order" class="btn btn-select btn-block" data-service="MacBook & Laptop Service">
+                        <span>Pilih Layanan</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/console.jpg" alt="Gaming Console Repair" class="service-img">
+                </div>
+                <div class="service-body">
+                    <h3 class="service-name">Gaming Console Repair</h3>
+                    <p class="service-desc">Perbaikan Playstation, Nintendo Switch, atau Xbox. Mengatasi isu over-heating (thermal repaste), stick drift, hingga chip HDMI mati.</p>
+                    <div class="service-meta">
+                        <span>Estimasi: 2-4 Hari</span>
+                        <span class="price-range">Mulai Rp 200rb</span>
+                    </div>
+                    <a href="#order" class="btn btn-select btn-block" data-service="Gaming Console Repair">
+                        <span>Pilih Layanan</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Status Tracking Widget Section -->
+    <section id="tracking" class="tracking-section">
+        <div class="container tracking-container">
+            <div class="tracking-search-box">
+                <span class="section-subtitle">Real-time Tracker</span>
+                <h2 class="section-title">Lacak Status Perbaikan</h2>
+                <p class="section-desc">Masukkan nomor order/nota servis Anda untuk melihat progres pengerjaan terkini oleh tim teknisi kami.</p>
+                
+                <form id="trackingForm" class="tracking-form-row">
+                    <div class="input-with-icon">
+                        <i data-lucide="hash"></i>
+                        <input type="text" id="trackingCode" placeholder="Contoh: HZX-9021" required autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i data-lucide="search"></i>
+                        <span>Lacak Pesanan</span>
+                    </button>
+                </form>
+                
+                <div class="demo-helpers">
+                    <p>💡 Kode Demo Portofolio: 
+                        <span class="demo-code" data-code="HZX-1100">HZX-1100 (Baru)</span> | 
+                        <span class="demo-code" data-code="HZX-9021">HZX-9021 (Diproses)</span> | 
+                        <span class="demo-code" data-code="HZX-7788">HZX-7788 (Dalam QC)</span> | 
+                        <span class="demo-code" data-code="HZX-4412">HZX-4412 (Selesai)</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tracking Output Details Area (Hidden initially, shown by JS) -->
+            <div class="tracking-result-panel" id="trackingResultPanel">
+                <div class="result-placeholder" id="resultPlaceholder">
+                    <i data-lucide="clock" class="placeholder-icon"></i>
+                    <h3>Menunggu Pencarian...</h3>
+                    <p>Silakan masukkan nomor order servis atau klik salah satu kode demo di atas.</p>
+                </div>
+                
+                <!-- Loading State Spinner -->
+                <div class="tracking-loading" id="trackingLoading">
+                    <div class="spinner"></div>
+                    <p>Menghubungkan ke database lab...</p>
+                </div>
+
+                <!-- Error State Block -->
+                <div class="tracking-error" id="trackingError">
+                    <i data-lucide="alert-triangle"></i>
+                    <h3>Nomor Order Tidak Ditemukan</h3>
+                    <p>Pastikan kode order yang dimasukkan benar. Format kode adalah HZX-XXXX.</p>
+                </div>
+
+                <!-- Actual Data Result Output -->
+                <div class="tracking-success-content" id="trackingSuccessContent">
+                    <div class="result-header">
+                        <div class="device-details">
+                            <span class="result-badge-code" id="resCode">HZX-9021</span>
+                            <h3 id="resDevice">iPhone 13 Pro Max</h3>
+                            <p id="resService">Smartphone Repair - Ganti Layar & LCD</p>
+                        </div>
+                        <div class="result-eta-card">
+                            <span class="eta-label">Estimasi Selesai</span>
+                            <h4 id="resEta">14 Juli 2026</h4>
+                        </div>
+                    </div>
+
+                    <!-- Step Progress Timeline Indicator -->
+                    <div class="status-timeline-container">
+                        <div class="timeline-progress-bar">
+                            <div class="progress-bar-fill" id="progressBarFill" style="width: 50%;"></div>
+                        </div>
+                        <div class="timeline-steps">
+                            <!-- Step 1 -->
+                            <div class="timeline-step" id="step-1">
+                                <div class="step-dot"><i data-lucide="check"></i></div>
+                                <span class="step-label">Diterima</span>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="timeline-step" id="step-2">
+                                <div class="step-dot"><i data-lucide="check"></i></div>
+                                <span class="step-label">Diagnosa</span>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="timeline-step" id="step-3">
+                                <div class="step-dot"><i data-lucide="check"></i></div>
+                                <span class="step-label">Pengerjaan</span>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="timeline-step" id="step-4">
+                                <div class="step-dot"><i data-lucide="check"></i></div>
+                                <span class="step-label">QC Uji Coba</span>
+                            </div>
+                            <!-- Step 5 -->
+                            <div class="timeline-step" id="step-5">
+                                <div class="step-dot"><i data-lucide="check"></i></div>
+                                <span class="step-label">Siap Ambil</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Technician Logs -->
+                    <div class="tech-logs-wrapper">
+                        <h4 class="logs-section-title"><i data-lucide="clipboard-list"></i> Log Pengerjaan Teknisi</h4>
+                        <div class="tech-logs-timeline" id="techLogsTimeline">
+                            <!-- Logs will be populated here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Order Request Form -->
+    <section id="order" class="order-section container">
+        <div class="order-grid-container">
+            <!-- Left Info Panel -->
+            <div class="order-info-details">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Mulai Servis</span>
+                    <h2 class="section-title">Ajukan Perbaikan Gadget Baru</h2>
+                </div>
+                <p class="order-desc">
+                    Isi detail kerusakan perangkat Anda melalui formulir di samping. Setelah mengajukan, tim admin kami akan memverifikasi estimasi biaya awal dan memandu Anda untuk penyerahan perangkat (bisa kirim via ekspedisi, kurir ojek online, atau datang langsung).
+                </p>
+                <div class="guarantee-list">
+                    <div class="guarantee-item">
+                        <div class="g-icon"><i data-lucide="shield-check"></i></div>
+                        <div>
+                            <h4>Sistem Terlacak</h4>
+                            <p>Dapatkan nomor order untuk melacak progres servis secara live.</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="g-icon"><i data-lucide="sparkles"></i></div>
+                        <div>
+                            <h4>No Fix No Fee</h4>
+                            <p>Jika kerusakan tidak bisa diperbaiki, biaya servis gratis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="order-form-card">
+                <h3 class="form-title">Formulir Pendaftaran Servis</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="orderName">Nama Lengkap</label>
+                        <input type="text" id="orderName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="orderPhone">Nomor WhatsApp</label>
+                        <input type="tel" id="orderPhone" placeholder="Contoh: 081234567890" required autocomplete="tel">
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="orderService">Jenis Layanan</label>
+                            <select id="orderService" required>
+                                <option value="" disabled selected>-- Pilih Layanan --</option>
+                                <option value="Smartphone Repair">Smartphone Repair</option>
+                                <option value="MacBook & Laptop Service">MacBook & Laptop Service</option>
+                                <option value="Gaming Console Repair">Gaming Console Repair</option>
+                                <option value="Upgrade & Custom PC">Upgrade & Custom PC</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderDevice">Merk & Tipe Device</label>
+                            <input type="text" id="orderDevice" placeholder="Contoh: Asus ROG Strix G15" required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orderDamage">Detail Kerusakan / Masalah</label>
+                        <textarea id="orderDamage" rows="4" placeholder="Tuliskan keluhan atau kronologi kerusakan gadget Anda..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Daftarkan via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="kontak" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Info Panel -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Hubungi Kami</span>
+                    <h2 class="section-title">Lokasi Lab & Kontak</h2>
+                </div>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Alamat Laboratorium</h4>
+                            <p>Kawasan Ruko Sentra Tekno Blok B9 No. 17, Grogol, Jakarta Barat, 11440</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Jam Kerja Operasional</h4>
+                            <p>Senin - Sabtu: 10:00 - 19:00 WIB (Minggu Libur)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>WhatsApp CS Admin</h4>
+                            <p>+62 812-3456-789 (Hanya Chat)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="instagram" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Instagram</h4>
+                            <p>@hzxserv.repairlab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Panel -->
+            <div class="map-card">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15866.425447717457!2d106.78768785!3d-6.18338905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f6e1f0e4bbf9%3A0xe5a3637e1904a434!2sGrogol%20Petamburan%2C%20Kota%20Jakarta%20Barat!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HZX Serv Lab Map Location">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Serv</h3>
+                <p>Website showcase pelacakan status pengerjaan kategori servis & lab oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Halaman</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#tracking">Cek Status</a>
+                <a href="#order">Order Baru</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Serv. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio. Hubungan reparasi, nomor order, logs teknisi, dan tempat bersifat fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

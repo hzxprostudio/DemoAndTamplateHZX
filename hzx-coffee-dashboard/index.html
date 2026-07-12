@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Coffee | POS & Owner Dashboard</title>
+    <meta name="description" content="Dashboard internal POS dan manajemen kasir HZX Coffee. Dikembangkan oleh HZXPro Studio.">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+       LOGIN VIEW WRAPPER
+       ========================================================================== -->
+    <div id="loginWrapper" class="login-wrapper">
+        <div class="login-card">
+            <div class="login-brand">
+                <i data-lucide="coffee" class="login-logo-icon"></i>
+                <h2>HZX Coffee</h2>
+                <p>Dashboard POS Kasir & Manajemen Internal</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginUser">Username</label>
+                    <input type="text" id="loginUser" placeholder="Masukkan username (admin)" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="loginPass">Password</label>
+                    <input type="password" id="loginPass" placeholder="Masukkan password (password)" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span>Masuk ke Sistem</span>
+                    <i data-lucide="log-in"></i>
+                </button>
+            </form>
+            <p class="login-credentials-tip">Tip: Gunakan user: <strong>admin</strong> | pass: <strong>password</strong></p>
+            <div class="login-footer">
+                <p>&copy; 2026 HZX Coffee. Portofolio by HZXPro Studio</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       MAIN APP DASHBOARD WRAPPER (Initially Hidden)
+       ========================================================================== -->
+    <div id="appWrapper" class="app-wrapper" style="display: none;">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i data-lucide="coffee" class="sidebar-logo-icon"></i>
+                <h3>HZX Coffee</h3>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <a href="#ringkasan" class="sidebar-link active" data-target="ringkasan">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Ringkasan</span>
+                </a>
+                <a href="#pos" class="sidebar-link" data-target="pos">
+                    <i data-lucide="shopping-cart"></i>
+                    <span>Kasir POS</span>
+                </a>
+                <a href="#produk" class="sidebar-link" data-target="produk">
+                    <i data-lucide="coffee"></i>
+                    <span>Manajemen Produk</span>
+                </a>
+                <a href="#laporan" class="sidebar-link" data-target="laporan">
+                    <i data-lucide="trending-up"></i>
+                    <span>Laporan Penjualan</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button id="btnLogout" class="btn-logout">
+                    <i data-lucide="log-out"></i>
+                    <span>Keluar Sistem</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Right Main Panel Container -->
+        <main class="main-panel">
+            
+            <!-- Topbar Header -->
+            <header class="topbar">
+                <div class="topbar-title-wrap">
+                    <h2 id="topbarTitle">Ringkasan Penjualan</h2>
+                </div>
+                <div class="topbar-actions">
+                    <div class="datetime-indicator">
+                        <i data-lucide="clock"></i>
+                        <span id="liveClock">12 Juli 2026, 10:00:00 WIB</span>
+                    </div>
+                    <div class="cashier-profile">
+                        <div class="profile-avatar"><i data-lucide="user"></i></div>
+                        <div class="profile-info">
+                            <h4>Administrator</h4>
+                            <p>Kasir Utama</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Panel Content Canvas -->
+            <div class="content-canvas">
+
+                <!-- -----------------------------------------------------------
+                   SECTION 1: DASHBOARD SUMMARY
+                   ----------------------------------------------------------- -->
+                <section id="section-ringkasan" class="dashboard-section active">
+                    <!-- Statistics Row Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-emerald"><i data-lucide="dollar-sign"></i></div>
+                            <div class="stat-details">
+                                <span>Pendapatan Hari Ini</span>
+                                <h3 id="statRevenue">Rp 0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-blue"><i data-lucide="receipt"></i></div>
+                            <div class="stat-details">
+                                <span>Total Transaksi</span>
+                                <h3 id="statTxCount">0</h3>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-amber"><i data-lucide="coffee"></i></div>
+                            <div class="stat-details">
+                                <span>Cangkir Terjual</span>
+                                <h3 id="statItemsSold">0</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Split Row Layout -->
+                    <div class="dashboard-split-row">
+                        <!-- Recent Transactions Table -->
+                        <div class="card-panel transaction-panel">
+                            <div class="panel-header">
+                                <h3>Daftar Transaksi Terbaru</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table" id="recentTxTable">
+                                    <thead>
+                                        <tr>
+                                            <th>ID Struk</th>
+                                            <th>Waktu</th>
+                                            <th>Total Belanja</th>
+                                            <th>Tunai</th>
+                                            <th>Kembalian</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Injected via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Best Selling Items Progress Bar -->
+                        <div class="card-panel best-sellers-panel">
+                            <div class="panel-header">
+                                <h3>Produk Terlaris Hari Ini</h3>
+                            </div>
+                            <div class="best-sellers-list" id="bestSellersList">
+                                <!-- Injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- -----------------------------------------------------------
+                   SECTION 2: POINT OF SALE (POS) KASIR
+                   ----------------------------------------------------------- -->
+                <section id="section-pos" class="dashboard-section">
+                    <div class="pos-split-grid">
+                        <!-- Left Products Catalog List -->
+                        <div class="pos-catalog-panel">
+                            <div class="catalog-header">
+                                <div class="catalog-filters">
+                                    <button class="pos-filter-btn active" data-category="all">Semua</button>
+                                    <button class="pos-filter-btn" data-category="Kopi">Kopi</button>
+                                    <button class="pos-filter-btn" data-category="Non-Kopi">Non-Kopi</button>
+                                    <button class="pos-filter-btn" data-category="Makanan">Makanan</button>
+                                </div>
+                            </div>
+                            <div class="pos-products-grid" id="posProductsGrid">
+                                <!-- Injected via JS -->
+                            </div>
+                        </div>
+
+                        <!-- Right Cart / Checkout Panel -->
+                        <div class="pos-cart-panel">
+                            <div class="cart-header">
+                                <h3>Pesanan Aktif</h3>
+                                <button class="btn-clear-cart" id="btnClearCart"><i data-lucide="trash-2"></i></button>
+                            </div>
+                            
+                            <!-- Cart Items List (Scrollable) -->
+                            <div class="cart-items-wrapper" id="cartItemsWrapper">
+                                <!-- Dynamic cart rows injected here -->
+                                <div class="empty-cart-state">
+                                    <i data-lucide="shopping-bag"></i>
+                                    <p>Keranjang belanja kosong.<br>Klik produk di sebelah kiri untuk menambahkan.</p>
+                                </div>
+                            </div>
+
+                            <!-- Cart Totals & Cash Intake Form -->
+                            <div class="cart-checkout-form">
+                                <div class="price-row">
+                                    <span>Subtotal:</span>
+                                    <span id="cartSubtotal">Rp 0</span>
+                                </div>
+                                <div class="price-row">
+                                    <span>Pajak (10%):</span>
+                                    <span id="cartTax">Rp 0</span>
+                                </div>
+                                <div class="price-row total">
+                                    <span>Total Bayar:</span>
+                                    <span id="cartTotal">Rp 0</span>
+                                </div>
+                                
+                                <div class="cash-input-group">
+                                    <div class="form-group">
+                                        <label for="cashAmount">Uang Diterima (Rp)</label>
+                                        <input type="number" id="cashAmount" placeholder="Contoh: 50000" min="0">
+                                    </div>
+                                    <div class="quick-cash-buttons">
+                                        <button class="btn-quick-cash" data-amount="15000">15k</button>
+                                        <button class="btn-quick-cash" data-amount="20000">20k</button>
+                                        <button class="btn-quick-cash" data-amount="50000">50k</button>
+                                        <button class="btn-quick-cash" data-amount="100000">100k</button>
+                                    </div>
+                                </div>
+
+                                <div class="price-row change">
+                                    <span>Kembalian:</span>
+                                    <span id="cashChange">Rp 0</span>
+                                </div>
+
+                                <button class="btn btn-primary btn-block" id="btnCheckout" disabled>
+                                    <i data-lucide="printer"></i>
+                                    <span>Proses Transaksi & Cetak</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- -----------------------------------------------------------
+                   SECTION 3: CRUD PRODUCT MANAGEMENT
+                   ----------------------------------------------------------- -->
+                <section id="section-produk" class="dashboard-section">
+                    <div class="card-panel">
+                        <div class="panel-header flex-header">
+                            <div class="header-actions-left">
+                                <div class="search-box">
+                                    <i data-lucide="search"></i>
+                                    <input type="text" id="productSearchInput" placeholder="Cari nama produk...">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="btnOpenAddProductModal">
+                                <i data-lucide="plus"></i>
+                                <span>Tambah Produk Baru</span>
+                            </button>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table" id="productCrudTable">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nama Produk</th>
+                                        <th>Kategori</th>
+                                        <th>Harga Unit</th>
+                                        <th>Stok Tersedia</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productCrudBody">
+                                    <!-- Injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- -----------------------------------------------------------
+                   SECTION 4: WEEKLY SALES ANALYTICS REPORTS
+                   ----------------------------------------------------------- -->
+                <section id="section-laporan" class="dashboard-section">
+                    <div class="card-panel">
+                        <div class="panel-header">
+                            <h3>Laporan Tren Penjualan Mingguan</h3>
+                        </div>
+                        <div class="chart-canvas-container">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                        <div class="report-stats-summary">
+                            <div class="report-stat-item">
+                                <span>Total Penjualan Mingguan</span>
+                                <h4 id="reportTotalSales">Rp 0</h4>
+                            </div>
+                            <div class="report-stat-item">
+                                <span>Rata-Rata Harian</span>
+                                <h4 id="reportDailyAverage">Rp 0</h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ==========================================================================
+       CRUD ADD/EDIT PRODUCT MODAL
+       ========================================================================== -->
+    <div class="modal" id="productModal">
+        <div class="modal-overlay" id="productModalOverlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="productModalClose"><i data-lucide="x"></i></button>
+            <div class="modal-content">
+                <h3 id="productModalTitle" class="form-title">Tambah Produk Baru</h3>
+                <form id="productCrudForm">
+                    <input type="hidden" id="crudProductId">
+                    
+                    <div class="form-group">
+                        <label for="crudProductName">Nama Produk</label>
+                        <input type="text" id="crudProductName" required placeholder="Contoh: Espresso Double">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="crudProductCategory">Kategori</label>
+                            <select id="crudProductCategory" required>
+                                <option value="Kopi">Kopi</option>
+                                <option value="Non-Kopi">Non-Kopi</option>
+                                <option value="Makanan">Makanan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="crudProductStock">Stok Awal</label>
+                            <input type="number" id="crudProductStock" required min="0" value="50">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="crudProductPrice">Harga Jual (Rp)</label>
+                        <input type="number" id="crudProductPrice" required min="0" placeholder="Contoh: 15000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="crudProductImage">Link Gambar (Opsional)</label>
+                        <input type="url" id="crudProductImage" placeholder="https://images.unsplash.com/...">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" id="btnSubmitCrudForm">
+                        <i data-lucide="save"></i>
+                        <span>Simpan Data Produk</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+       SIMULATED RECEIPTS MODAL (THERMAL VIEW)
+       ========================================================================== -->
+    <div class="modal" id="receiptModal">
+        <div class="modal-overlay" id="receiptModalOverlay"></div>
+        <div class="receipt-container">
+            <button class="receipt-close-btn" id="receiptModalClose"><i data-lucide="x"></i></button>
+            
+            <!-- Struk Thermal Paper -->
+            <div class="thermal-receipt" id="thermalReceiptPrintArea">
+                <div class="receipt-center-text">
+                    <h3>HZX COFFEE</h3>
+                    <p>Ruko Creative Center No. 12C, Jakarta</p>
+                    <p>Telp: +62 812-3456-789</p>
+                </div>
+                
+                <div class="receipt-dashed-line"></div>
+                
+                <div class="receipt-meta-rows">
+                    <div class="meta-row"><span>Struk:</span> <span id="receiptId">#TX-10001</span></div>
+                    <div class="meta-row"><span>Waktu:</span> <span id="receiptTime">12/07/2026 10:00</span></div>
+                    <div class="meta-row"><span>Kasir:</span> <span>Administrator</span></div>
+                </div>
+                
+                <div class="receipt-dashed-line"></div>
+                
+                <!-- Items list -->
+                <div class="receipt-items-list" id="receiptItemsList">
+                    <!-- Dynamic struk rows -->
+                </div>
+                
+                <div class="receipt-dashed-line"></div>
+                
+                <div class="receipt-totals-area">
+                    <div class="total-row"><span>Subtotal:</span> <span id="receiptSubtotal">Rp 0</span></div>
+                    <div class="total-row"><span>Pajak (10%):</span> <span id="receiptTax">Rp 0</span></div>
+                    <div class="total-row grand-total"><span>Total Akhir:</span> <span id="receiptTotal">Rp 0</span></div>
+                    <div class="receipt-dashed-line"></div>
+                    <div class="total-row"><span>Tunai:</span> <span id="receiptCash">Rp 0</span></div>
+                    <div class="total-row"><span>Kembalian:</span> <span id="receiptChange">Rp 0</span></div>
+                </div>
+                
+                <div class="receipt-dashed-line"></div>
+                
+                <div class="receipt-center-text receipt-thankyou">
+                    <p>Terima kasih atas kunjungan Anda!</p>
+                    <p>Silakan berkunjung kembali ☕</p>
+                </div>
+            </div>
+            
+            <!-- Modal Actions -->
+            <div class="receipt-modal-actions">
+                <button class="btn btn-primary" id="btnReceiptPrint">
+                    <i data-lucide="printer"></i>
+                    <span>Cetak Struk (Print)</span>
+                </button>
+                <button class="btn btn-secondary" id="btnReceiptClose">Tutup Jendela</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

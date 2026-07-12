@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX SHOP | Premium Minimalist Lifestyle & Tech Gadgets</title>
+    <meta name="description" content="Showcase portfolio HZX SHOP oleh HZXPro Studio. Temukan kurasi produk gaya hidup minimalis, aksesoris premium, dan gadget teknologi terbaik dengan desain berkelas.">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Dynamic Header -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> SHOP
+                <span class="logo-badge">Portfolio Demo</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#katalog" class="nav-link">Produk</a>
+                <a href="#promo" class="nav-link">Promo</a>
+                <a href="#lokasi" class="nav-link">Lokasi</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-trigger" id="cartTrigger" aria-label="Buka Keranjang">
+                    <i data-lucide="shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Menu Utama">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#katalog" class="mobile-nav-link">Produk</a>
+        <a href="#promo" class="mobile-nav-link">Promo</a>
+        <a href="#lokasi" class="mobile-nav-link">Lokasi</a>
+        <a href="#kontak" class="mobile-nav-link">Kontak</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-glow"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portfolio Showcase by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Gaya Hidup Modern, <br><span class="gradient-text">Gadget Pilihan.</span></h1>
+                <p class="hero-description">
+                    Selamat datang di HZX SHOP, kurasi produk esensial untuk melengkapi produktivitas dan estetika harian Anda. Dari mechanical keyboard hingga tumbler premium, temukan barang impian Anda di sini.
+                </p>
+                <div class="hero-actions">
+                    <a href="#katalog" class="btn btn-primary">
+                        <span>Lihat Produk</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/628123456789?text=Halo%20HZX%20SHOP,%20saya%20ingin%20bertanya%20tentang%20produk%20Anda." target="_blank" class="btn btn-secondary">
+                        <i data-lucide="message-square"></i>
+                        <span>WhatsApp Kami</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-visual-card">
+                    <div class="card-glow"></div>
+                    <img src="assets/keyboard.jpg" alt="Minimalist Mechanical Keyboard" class="hero-img">
+                    <div class="hero-visual-badge">
+                        <div class="badge-title">Best Seller</div>
+                        <div class="badge-desc">Mechanical Keyboard</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo / Discount Section -->
+    <section id="promo" class="promo-section container">
+        <div class="promo-banner">
+            <div class="promo-glow"></div>
+            <div class="promo-content">
+                <span class="promo-tag">LIMITED SPECIAL DEAL</span>
+                <h2 class="promo-title">Diskon Spesial 10% untuk Pembelian Pertama!</h2>
+                <p class="promo-description">
+                    Gunakan kode kupon di bawah ini saat melakukan checkout untuk mendapatkan diskon langsung 10% tanpa minimum pembelian.
+                </p>
+                <div class="coupon-box">
+                    <code class="coupon-code" id="couponCode">HZXPRODEMO</code>
+                    <button class="btn btn-copy" id="btnCopyCoupon" aria-label="Salin Kode Kupon">
+                        <i data-lucide="copy" id="copyIcon"></i>
+                        <span id="copyText">Salin Kode</span>
+                    </button>
+                </div>
+            </div>
+            <div class="promo-visual-side">
+                <div class="promo-percent">10%<span class="off">OFF</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <section id="katalog" class="catalog-section container">
+        <div class="section-header">
+            <div class="section-title-wrap">
+                <span class="section-subtitle">Pilihan Terbaik</span>
+                <h2 class="section-title">Katalog Produk</h2>
+            </div>
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="gadget">Gadget</button>
+                <button class="filter-btn" data-category="aksesori">Aksesori</button>
+                <button class="filter-btn" data-category="lifestyle">Gaya Hidup</button>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Product Card 1 -->
+            <div class="product-card" data-category="gadget">
+                <div class="product-image-wrapper">
+                    <img src="assets/keyboard.jpg" alt="Mechanical Keyboard" class="product-image">
+                    <span class="product-badge">Hot</span>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Gadget</span>
+                    <h3 class="product-name">HZX Mechanical Keyboard</h3>
+                    <p class="product-price">Rp 899.000</p>
+                    <button class="btn-add-to-cart btn-block" data-id="p1" data-name="HZX Mechanical Keyboard" data-price="899000" data-img="assets/keyboard.jpg">
+                        <i data-lucide="plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card" data-category="lifestyle">
+                <div class="product-image-wrapper">
+                    <img src="assets/tumbler.jpg" alt="Smart Thermos Tumbler" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Gaya Hidup</span>
+                    <h3 class="product-name">HZX Smart Tumbler Matte Black</h3>
+                    <p class="product-price">Rp 249.000</p>
+                    <button class="btn-add-to-cart btn-block" data-id="p2" data-name="HZX Smart Tumbler Matte Black" data-price="249000" data-img="assets/tumbler.jpg">
+                        <i data-lucide="plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card" data-category="aksesori">
+                <div class="product-image-wrapper">
+                    <img src="assets/charger.jpg" alt="Wireless Desk Charger" class="product-image">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Aksesori</span>
+                    <h3 class="product-name">HZX Wooden Wireless Charger</h3>
+                    <p class="product-price">Rp 399.000</p>
+                    <button class="btn-add-to-cart btn-block" data-id="p3" data-name="HZX Wooden Wireless Charger" data-price="399000" data-img="assets/charger.jpg">
+                        <i data-lucide="plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card" data-category="lifestyle">
+                <div class="product-image-wrapper">
+                    <img src="assets/backpack.jpg" alt="Minimalist Backpack" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Gaya Hidup</span>
+                    <h3 class="product-name">HZX Tech Backpack Charcoal</h3>
+                    <p class="product-price">Rp 649.000</p>
+                    <button class="btn-add-to-cart btn-block" data-id="p4" data-name="HZX Tech Backpack Charcoal" data-price="649000" data-img="assets/backpack.jpg">
+                        <i data-lucide="plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="product-card" data-category="aksesori">
+                <div class="product-image-wrapper">
+                    <img src="assets/deskmat.jpg" alt="Felt Desk Mat" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Aksesori</span>
+                    <h3 class="product-name">HZX Minimalist Felt Desk Mat</h3>
+                    <p class="product-price">Rp 179.000</p>
+                    <button class="btn-add-to-cart btn-block" data-id="p5" data-name="HZX Minimalist Felt Desk Mat" data-price="179000" data-img="assets/deskmat.jpg">
+                        <i data-lucide="plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Card 6 -->
+            <div class="product-card" data-category="gadget">
+                <div class="product-image-wrapper">
+                    <img src="assets/lamp.jpg" alt="Smart Ambient Light" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Gadget</span>
+                    <h3 class="product-name">HZX Smart RGB Cylinder Lamp</h3>
+                    <p class="product-price">Rp 349.000</p>
+                    <button class="btn-add-to-cart btn-block" data-id="p6" data-name="HZX Smart RGB Cylinder Lamp" data-price="349000" data-img="assets/lamp.jpg">
+                        <i data-lucide="plus"></i>
+                        <span>Tambah ke Keranjang</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Store Hours Section -->
+    <section id="lokasi" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Panel: Info and Hours -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Kunjungi Kami</span>
+                    <h2 class="section-title">Lokasi & Jam Operasional</h2>
+                </div>
+                
+                <div class="status-badge-container">
+                    <span class="status-badge" id="statusBadge">
+                        <span class="status-dot"></span>
+                        <span id="statusText">Mengecek Status Toko...</span>
+                    </span>
+                    <span class="status-subtext" id="statusSubtext">Toko HZX SHOP buka setiap hari</span>
+                </div>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Alamat Toko</h4>
+                            <p>Kawasan Kreatif HZXPro Blok D No. 12, Jakarta Selatan, 12190</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Jam Operasional</h4>
+                            <p>Senin - Minggu: 10:00 - 21:00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="calendar" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Hari Libur</h4>
+                            <p>Tutup pada Libur Nasional (Diumumkan di IG)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Google Maps Embed (placeholder/iframe) -->
+            <div class="map-card">
+                <div class="map-glow"></div>
+                <!-- Premium Google Maps iframe embed styling -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.076840003058!2d106.80415309999999!3d-6.22818965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f150530d9703%3A0x67db23e9cb190539!2sSudirman%20Central%20Business%20District!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HZX SHOP Store Location Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Socials Section -->
+    <section id="kontak" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-details">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Hubungi Kami</span>
+                    <h2 class="section-title">Ada Pertanyaan? Kami Siap Membantu</h2>
+                </div>
+                <p class="contact-desc">
+                    Butuh bantuan memilih produk, komplain pesanan, atau tertarik untuk kolaborasi branding dengan HZXPro Studio? Kirim pesan langsung melalui kontak resmi kami.
+                </p>
+                
+                <div class="social-channels">
+                    <a href="https://wa.me/628123456789?text=Halo%20HZX%20SHOP" target="_blank" class="social-btn whatsapp">
+                        <i data-lucide="message-circle"></i>
+                        <div class="social-btn-info">
+                            <span class="label">WhatsApp Official</span>
+                            <span class="val">+62 812-3456-789</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://instagram.com/hzxpro.studio_demo" target="_blank" class="social-btn instagram">
+                        <i data-lucide="instagram"></i>
+                        <div class="social-btn-info">
+                            <span class="label">Instagram Portfolio</span>
+                            <span class="val">@hzxpro.studio</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Quick Message Form -->
+            <div class="contact-form-card">
+                <div class="form-glow"></div>
+                <h3 class="form-title">Kirim Pesan Cepat</h3>
+                <form id="quickContactForm">
+                    <div class="form-group">
+                        <label for="formName">Nama Lengkap</label>
+                        <input type="text" id="formName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="formMessage">Pesan</label>
+                        <textarea id="formMessage" rows="4" placeholder="Tuliskan pertanyaan Anda di sini..." required autocomplete="off"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Kirim via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> SHOP</h3>
+                <p>Website showcase komprehensif kategori ritel/toko oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#katalog">Katalog</a>
+                <a href="#promo">Promo</a>
+                <a href="#lokasi">Lokasi</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX SHOP. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio. Semua produk, lokasi, dan transaksi bersifat fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer (Right Side) -->
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3><i data-lucide="shopping-bag"></i> Keranjang Belanja</h3>
+            <button class="cart-close" id="cartClose"><i data-lucide="x"></i></button>
+        </div>
+        
+        <div class="cart-body" id="cartBody">
+            <!-- Empty state (shown by default/js) -->
+            <div class="cart-empty-state" id="cartEmptyState">
+                <i data-lucide="shopping-cart" class="empty-icon"></i>
+                <p>Keranjang belanja Anda masih kosong</p>
+                <a href="#katalog" class="btn btn-secondary btn-sm" id="btnShopNow">Mulai Belanja</a>
+            </div>
+            
+            <!-- Cart items list (populated by js) -->
+            <div class="cart-items-list" id="cartItemsList"></div>
+        </div>
+        
+        <div class="cart-footer" id="cartFooter">
+            <!-- Coupon alert/info inside cart -->
+            <div class="cart-coupon-info" id="cartCouponInfo">
+                <span class="badge-success">Kupon Terpasang</span>
+                <span class="coupon-details">HZXPRODEMO (Diskon 10%)</span>
+            </div>
+            
+            <div class="cart-totals">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span id="cartSubtotal">Rp 0</span>
+                </div>
+                <div class="total-row discount-row" id="cartDiscountRow">
+                    <span>Potongan Kupon (10%)</span>
+                    <span id="cartDiscount">Rp 0</span>
+                </div>
+                <div class="total-row grand-total-row">
+                    <span>Total Pembayaran</span>
+                    <span id="cartTotal">Rp 0</span>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary btn-block btn-checkout" id="btnCheckout">
+                <i data-lucide="message-square"></i>
+                <span>Checkout via WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

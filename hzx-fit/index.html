@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Fit | Gym, Fitness Center & Personal Trainer</title>
+    <meta name="description" content="Showcase portfolio HZX Fit oleh HZXPro Studio. Fasilitas gym lengkap, kelas Muay Thai, Yoga, HIIT, dan program Personal Trainer terpercaya.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Fit
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#kelas" class="nav-link">Jadwal Kelas</a>
+                <a href="#paket" class="nav-link">Paket Membership</a>
+                <a href="#instruktur" class="nav-link">Instruktur</a>
+                <a href="#daftar" class="nav-link nav-link-btn">Mulai Latihan</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#kelas" class="mobile-nav-link">Jadwal Kelas</a>
+        <a href="#paket" class="mobile-nav-link">Paket Membership</a>
+        <a href="#instruktur" class="mobile-nav-link">Instruktur</a>
+        <a href="#daftar" class="mobile-nav-link mobile-nav-btn">Mulai Latihan</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Gym weights exercise room background" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Unleash Your Limits.<br><span class="accent-text">Build Your Strength.</span></h1>
+                <p class="hero-description">
+                    Capai bentuk fisik impian Anda bersama fasilitas alat gym modern lengkap, program kelas harian variatif, dan panduan latihan intensif dari personal trainer bersertifikat kami.
+                </p>
+                <div class="hero-actions">
+                    <a href="#daftar" class="btn btn-primary">
+                        <span>Mulai Latihan</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#kelas" class="btn btn-secondary">
+                        <span>Lihat Jadwal Kelas</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Schedule Section -->
+    <section id="kelas" class="classes-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Jadwal Kelas Mingguan</span>
+            <h2 class="section-title">Temukan Kelas Latihan Anda</h2>
+            <p class="section-desc">Pilih sesi kelas latihan kelompok harian yang dipandu oleh instruktur berpengalaman untuk meningkatkan pembakaran kalori dan stamina Anda.</p>
+        </div>
+
+        <!-- Day Selector Buttons -->
+        <div class="day-tabs-row">
+            <button class="day-tab active" data-day="Senin">Senin</button>
+            <button class="day-tab" data-day="Selasa">Selasa</button>
+            <button class="day-tab" data-day="Rabu">Rabu</button>
+            <button class="day-tab" data-day="Kamis">Kamis</button>
+            <button class="day-tab" data-day="Jumat">Jumat</button>
+            <button class="day-tab" data-day="Sabtu">Sabtu</button>
+        </div>
+
+        <!-- Classes Grid Content -->
+        <div class="classes-grid" id="classesGrid">
+            <!-- Dynamic items rendered via app.js -->
+        </div>
+    </section>
+
+    <!-- Membership Pricing Section -->
+    <section id="paket" class="pricing-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Paket Membership</span>
+            <h2 class="section-title">Pilihan Program Latihan</h2>
+            <p class="section-desc">Pilih tingkat keanggotaan gym yang paling sesuai dengan kebutuhan sasaran latihan fisik dan alokasi waktu luang Anda.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Card 1 -->
+            <div class="pricing-card">
+                <h3 class="tier-name">Basic Gym Pass</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 250.000</h4>
+                    <span class="price-period">/ Bulan</span>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Akses Area Angkat Beban</li>
+                    <li><i data-lucide="check"></i> Akses Mesin Kardio Lengkap</li>
+                    <li><i data-lucide="check"></i> Fasilitas Locker & Shower Air Hangat</li>
+                    <li class="disabled"><i data-lucide="x"></i> Bebas Mengikuti Semua Kelas Kelompok</li>
+                    <li class="disabled"><i data-lucide="x"></i> Sesi Private Trainer 1-on-1</li>
+                </ul>
+                <button class="btn btn-secondary btn-signup-pax" data-plan="Basic Gym Pass">Pilih Paket</button>
+            </div>
+
+            <!-- Card 2 (Featured Pro Athlete) -->
+            <div class="pricing-card featured">
+                <span class="featured-badge">Terpopuler</span>
+                <h3 class="tier-name">Pro Athlete Pass</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 450.000</h4>
+                    <span class="price-period">/ Bulan</span>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Semua Akses Alat & Fasilitas Basic</li>
+                    <li><i data-lucide="check"></i> Bebas Mengikuti Semua Kelas (Yoga, Muay Thai)</li>
+                    <li><i data-lucide="check"></i> Pengukuran Komposisi Tubuh Bulanan</li>
+                    <li><i data-lucide="check"></i> Akses Komunitas HZX Fit Member</li>
+                    <li class="disabled"><i data-lucide="x"></i> Sesi Private Trainer 1-on-1</li>
+                </ul>
+                <button class="btn btn-primary btn-signup-pax" data-plan="Pro Athlete Pass">Pilih Paket</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pricing-card">
+                <h3 class="tier-name">VIP Private Coaching</h3>
+                <div class="price-box">
+                    <h4 class="price-value">Rp 1.500.000</h4>
+                    <span class="price-period">/ Bulan</span>
+                </div>
+                <div class="tier-divider"></div>
+                <ul class="tier-benefits">
+                    <li><i data-lucide="check"></i> Semua Akses Alat & Kelas Pro</li>
+                    <li><i data-lucide="check"></i> 10x Sesi Private Trainer 1-on-1</li>
+                    <li><i data-lucide="check"></i> Program Nutrisi & Diet Meal-Plan</li>
+                    <li><i data-lucide="check"></i> Konsultasi Chat Privat dengan Coach</li>
+                    <li><i data-lucide="check"></i> Garansi Uang Kembali / Cuti Member</li>
+                </ul>
+                <button class="btn btn-secondary btn-signup-pax" data-plan="VIP Private Coaching">Pilih Paket</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers/Coaches Section -->
+    <section id="instruktur" class="trainers-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Instruktur Kami</span>
+            <h2 class="section-title">Pelatih Bersertifikat Profesional</h2>
+            <p class="section-desc">Tim coach kami berkomitmen mendampingi koreksi gerakan angkat beban Anda secara aman demi mencapai efektivitas latihan yang maksimal.</p>
+        </div>
+
+        <div class="trainers-grid">
+            <!-- Trainer 1 -->
+            <div class="trainer-card">
+                <div class="trainer-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=300&auto=format&fit=crop" alt="Coach Randy">
+                </div>
+                <h3 class="trainer-name">Coach Randy</h3>
+                <span class="trainer-specialty">Bodybuilding & CrossFit Specialist</span>
+                <p class="trainer-bio">Memiliki pengalaman melatih lebih dari 6 tahun dengan lisensi formal APKI. Ahli dalam peningkatan massa otot hipertrofi.</p>
+            </div>
+
+            <!-- Trainer 2 -->
+            <div class="trainer-card">
+                <div class="trainer-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?q=80&w=300&auto=format&fit=crop" alt="Coach Sarah">
+                </div>
+                <h3 class="trainer-name">Coach Sarah</h3>
+                <span class="trainer-specialty">Yoga Flow & Pilates Certified</span>
+                <p class="trainer-bio">Membantu perbaikan fleksibilitas tubuh, postur tulang belakang, serta melatih ketahanan otot dalam dengan pendekatan suportif.</p>
+            </div>
+
+            <!-- Trainer 3 -->
+            <div class="trainer-card">
+                <div class="trainer-avatar-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?q=80&w=300&auto=format&fit=crop" alt="Coach Diaz">
+                </div>
+                <h3 class="trainer-name">Coach Diaz</h3>
+                <span class="trainer-specialty">Muay Thai & Kickboxing Expert</span>
+                <p class="trainer-bio">Mantan atlet kickboxing daerah yang berfokus melatih cardio martial-arts intensitas tinggi pembakar kalori.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="daftar" class="register-section container">
+        <div class="register-grid">
+            <!-- Left Info Panel -->
+            <div class="register-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Registrasi Anggota</span>
+                    <h2 class="section-title">Mulai Transformasi Fisik Anda Hari Ini</h2>
+                </div>
+                <p class="register-desc">
+                    Silakan isi data diri Anda untuk klaim *free trial* 1-day pass atau langsung mendaftar paket keanggotaan. Representatif gym kami akan memproses data Anda via WhatsApp dan menjadwalkan kunjungan perdana Anda ke gym HZX Fit.
+                </p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Lokasi HZX Fit Center</h4>
+                            <p>Kawasan Ruko Creative Sudirman Square Blok A5-A7, Sudirman, Jakarta Selatan, 12190</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Hubungi CS / Registrasi</h4>
+                            <p>+62 812-3456-789 (Senin - Sabtu: 06:00 - 21:00 WIB)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="mail" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Email Korespondensi</h4>
+                            <p>membership@hzxfit.io</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Registration Form Card -->
+            <div class="register-form-card">
+                <h3 class="form-title">Pendaftaran Member Baru</h3>
+                <form id="gymSignupForm">
+                    <div class="form-group">
+                        <label for="memberName">Nama Lengkap Calon Member</label>
+                        <input type="text" id="memberName" placeholder="Masukkan nama lengkap Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="memberPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="memberPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="memberPlan">Pilihan Paket Membership</label>
+                            <select id="memberPlan" required>
+                                <option value="" disabled selected>-- Pilih Paket --</option>
+                                <option value="Basic Gym Pass">Basic Gym Pass (Rp 250k/bln)</option>
+                                <option value="Pro Athlete Pass">Pro Athlete Pass (Rp 450k/bln)</option>
+                                <option value="VIP Private Coaching">VIP Private Coaching (Rp 1.5M/bln)</option>
+                                <option value="Free Trial 1-Day Pass">Klaim Coba Gratis (Free Trial 1-Day)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memberHealth">Catatan Riwayat Medis / Cedera (Opsional)</label>
+                        <textarea id="memberHealth" rows="3" placeholder="Tuliskan jika memiliki riwayat cedera sendi lutut, asma, vertigo, atau masalah jantung agar coach kami dapat memandu gerakan latihan yang aman..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Daftar via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Fit</h3>
+                <p>Website showcase portofolio sewa keanggotaan gym & fitness oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Program</h4>
+                <a href="#kelas">Muay Thai</a>
+                <a href="#kelas">Yoga Flow</a>
+                <a href="#kelas">Body Building</a>
+                <a href="#kelas">HIIT Cardio</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Fit. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio sewa membership gym. Alamat kantor, testimoni peserta, dan rincian nominal bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

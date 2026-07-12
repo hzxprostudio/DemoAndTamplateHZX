@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Creative | Design Agency & UI-UX Development Studio</title>
+    <meta name="description" content="Showcase portfolio HZX Creative oleh HZXPro Studio. Layanan desain UI/UX mobile app, web development Next.js, dan perancangan identitas brand premium.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Creative
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#jasa" class="nav-link">Jasa Kami</a>
+                <a href="#karya" class="nav-link">Karya</a>
+                <a href="#estimator" class="nav-link">Kalkulator Biaya</a>
+                <a href="#estimator" class="nav-link nav-link-btn">Hubungi Kami</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#jasa" class="mobile-nav-link">Jasa Kami</a>
+        <a href="#karya" class="mobile-nav-link">Karya</a>
+        <a href="#estimator" class="mobile-nav-link">Kalkulator Biaya</a>
+        <a href="#estimator" class="mobile-nav-link mobile-nav-btn">Hubungi Kami</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop" alt="Cyber abstract data connection background" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">We Craft Premium<br><span class="accent-text">Digital Experiences.</span></h1>
+                <p class="hero-description">
+                    Kami membantu mendigitalisasi visi bisnis Anda melalui desain antarmuka aplikasi seluler (UI/UX) yang intuitif, pengembangan website performa tinggi, serta branding korporat yang bernilai jual tinggi.
+                </p>
+                <div class="hero-actions">
+                    <a href="#karya" class="btn btn-primary">
+                        <span>Lihat Hasil Karya</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#estimator" class="btn btn-secondary">
+                        <span>Hitung Estimasi Biaya</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="jasa" class="services-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Layanan Kami</span>
+            <h2 class="section-title">Solusi Desain & Pengembangan</h2>
+            <p class="section-desc">Kami menghadirkan standar pengerjaan tingkat tinggi di setiap lini jasa kreatif yang kami tawarkan.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="smartphone"></i></div>
+                <h3 class="service-title">UI/UX Design</h3>
+                <p class="service-desc">Perancangan arsitektur informasi, wireframing, desain antarmuka visual mobile app/web, pembuatan prototipe interaktif, dan pengujian kegunaan (*usability testing*).</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="code-2"></i></div>
+                <h3 class="service-title">Web Development</h3>
+                <p class="service-desc">Pembuatan website interaktif responsif berbasis Next.js, React, atau WordPress, pengoptimalan SEO teknis, serta integrasi dashboard manajemen konten.</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon"><i data-lucide="palette"></i></div>
+                <h3 class="service-title">Brand Identity</h3>
+                <p class="service-desc">Pembuatan logo unik korporasi, panduan gaya warna dan tipografi (*brand guidelines*), desain kemasan produk, serta materi visual kampanye pemasaran digital.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="karya" class="portfolio-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Showcase Portofolio</span>
+            <h2 class="section-title">Karya Kreatif Terbaru</h2>
+            <p class="section-desc">Eksplorasi beberapa proyek desain dan sistem digital yang telah kami rampungkan untuk membantu klien bertumbuh.</p>
+        </div>
+
+        <!-- Filter Tab Buttons -->
+        <div class="filter-tabs-row">
+            <button class="filter-tab active" data-category="all">Semua Proyek</button>
+            <button class="filter-tab" data-category="UI/UX">UI/UX</button>
+            <button class="filter-tab" data-category="Web">Website</button>
+            <button class="filter-tab" data-category="Branding">Branding</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="UI/UX">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=400&auto=format&fit=crop" alt="Fintech Mobile App UI/UX Mockup">
+                </div>
+                <div class="card-content">
+                    <span class="project-tag">UI/UX Design</span>
+                    <h3 class="project-title">Fintech Mobile Wallet</h3>
+                    <p class="project-desc">Perancangan ulang total alur transaksi, pembayaran QR, dan dasbor portofolio investasi reksa dana untuk aplikasi mobile.</p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-category="Web">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=400&auto=format&fit=crop" alt="E-Commerce Web Portal Dashboard Mockup">
+                </div>
+                <div class="card-content">
+                    <span class="project-tag">Web Development</span>
+                    <h3 class="project-title">Prima Retail E-Commerce</h3>
+                    <p class="project-desc">Pengembangan portal web e-commerce berkecepatan tinggi dengan integrasi API sistem kasir gudang lokal.</p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-category="Branding">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=400&auto=format&fit=crop" alt="Minimalist Branding Identity Box Mockup">
+                </div>
+                <div class="card-content">
+                    <span class="project-tag">Brand Identity</span>
+                    <h3 class="project-title">EcoPack Organic Identity</h3>
+                    <p class="project-desc">Pembuatan logo, rancangan pola kemasan ramah lingkungan, serta panduan branding visual digital di media sosial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Estimator & Contact Section -->
+    <section id="estimator" class="estimator-section container">
+        <div class="estimator-grid">
+            <!-- Left Info & Calculator Form -->
+            <div class="estimator-calc-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Estimator Biaya Proyek</span>
+                    <h2 class="section-title">Kalkulasi Anggaran Desain Anda</h2>
+                </div>
+                <p class="estimator-desc">
+                    Gunakan kalkulator interaktif ini untuk menghitung estimasi awal anggaran biaya pengerjaan proyek desain dan pengembangan digital Anda.
+                </p>
+                
+                <!-- Interactive Calculator Inputs -->
+                <div class="calc-box">
+                    <div class="calc-group">
+                        <label>Pilih Layanan Jasa</label>
+                        <div class="calc-checkbox-grid">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="serviceUi" value="5000000" checked>
+                                <span class="checkmark"></span>
+                                <span>UI/UX Design (Mulai Rp 5 Jt)</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="serviceWeb" value="10000000">
+                                <span class="checkmark"></span>
+                                <span>Web Development (Mulai Rp 10 Jt)</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="serviceBrand" value="4000000">
+                                <span class="checkmark"></span>
+                                <span>Brand Identity (Mulai Rp 4 Jt)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <div class="slider-label-row">
+                            <label for="calcPages">Jumlah Halaman / Modul</label>
+                            <span id="pagesLabel">5 Halaman</span>
+                        </div>
+                        <input type="range" id="calcPages" min="1" max="20" value="5" class="slider-input">
+                        <span class="slider-tip">*Biaya tambahan Rp 500.000 per halaman.</span>
+                    </div>
+
+                    <div class="calc-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="urgentService">
+                            <span class="checkmark"></span>
+                            <span>Layanan Kilat / Urgent (+30% Biaya Total)</span>
+                        </label>
+                    </div>
+
+                    <!-- Estimatied Output Box -->
+                    <div class="estimated-result-box">
+                        <span>Estimasi Total Anggaran:</span>
+                        <h4 id="calcResultDisplay">Rp 7.500.000</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Contact Card -->
+            <div class="booking-form-card">
+                <h3 class="form-title">Kirim Brief Proyek</h3>
+                <form id="creativeBookingForm">
+                    <div class="form-group">
+                        <label for="bookingName">Nama Lengkap / Instansi Klien</label>
+                        <input type="text" id="bookingName" placeholder="Masukkan nama Anda atau perusahaan" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="bookingPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="bookingPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingEmail">Alamat Email</label>
+                            <input type="email" id="bookingEmail" placeholder="nama@perusahaan.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingDescription">Deskripsi Ringkas Brief / Sasaran Proyek</label>
+                        <textarea id="bookingDescription" rows="4" placeholder="Jelaskan garis besar proyek aplikasi/web Anda, segmentasi target pasar, serta batas tenggat pengerjaan..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Ajukan Penawaran via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Ulasan Mitra Klien</span>
+            <h2 class="section-title">Kemitraan yang Berdampak</h2>
+            <p class="section-desc">Apa kata para pemilik bisnis yang telah mempercayakan pengerjaan sistem digitalnya kepada HZX Creative.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Desain prototipe Fintech Mobile Wallet dari HZX Creative sangat memukau calon investor kami saat sesi pitch-deck. Alur pendaftaran dikoreksi menjadi jauh lebih sederhana."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Bapak Kevin Adikusuma</h4>
+                    <span>Founder at FinPay Indonesia</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Portal e-commerce baru kami memiliki performa loading yang sangat cepat di HP dan PC. Pengerjaan rapi, dokumentasi kode lengkap, dan timnya sangat komunikatif."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Ibu Melia Anggraeni</h4>
+                    <span>Brand Manager at Prima Retailindo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Creative</h3>
+                <p>Website showcase portofolio perancangan produk digital & UI/UX oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Karya</h4>
+                <a href="#karya">UI/UX Mobile</a>
+                <a href="#karya">Web Portal</a>
+                <a href="#karya">Brand Guidelines</a>
+                <a href="#karya">Packaging</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Creative. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio creative agency. Testimoni klien, nominal harga, dan penawaran bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

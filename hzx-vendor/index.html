@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX VENDOR | Fine Art Wedding & Event Organizer</title>
+    <meta name="description" content="Showcase portfolio HZX VENDOR oleh HZXPro Studio. Rancang hari bahagia Anda secara elegan bersama tim wedding planner & event organizer profesional.">
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> VENDOR
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#galeri" class="nav-link">Portofolio</a>
+                <a href="#paket" class="nav-link">Paket Jasa</a>
+                <a href="#jadwal" class="nav-link">Cek Tanggal</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#galeri" class="mobile-nav-link">Portofolio</a>
+        <a href="#paket" class="mobile-nav-link">Paket Jasa</a>
+        <a href="#jadwal" class="mobile-nav-link">Cek Tanggal</a>
+        <a href="#kontak" class="mobile-nav-link">Kontak</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Beautiful Wedding Altar Setup" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Merajut Kisah Indah <br><span class="accent-text">yang Abadi.</span></h1>
+                <p class="hero-description">
+                    Kami hadir untuk menerjemahkan impian Anda menjadi perayaan yang terorganisir dengan sempurna. Dari pernikahan intim berkonsep fine-art hingga pesta megah yang mewah, tim event planner kami mengurasi setiap detail dengan rasa seni dan dedikasi penuh.
+                </p>
+                <div class="hero-actions">
+                    <a href="#galeri" class="btn btn-primary">
+                        <span>Lihat Portofolio</span>
+                        <i data-lucide="image"></i>
+                    </a>
+                    <a href="#jadwal" class="btn btn-secondary">
+                        <span>Cek Ketersediaan Tanggal</span>
+                        <i data-lucide="calendar"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fine-Art Portfolio Gallery Section -->
+    <section id="galeri" class="gallery-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Kumpulan Momen</span>
+            <h2 class="section-title">Galeri Portofolio Acara</h2>
+            <p class="section-desc">Klik pada setiap foto di bawah ini untuk memperbesar gambar (*Lightbox View*) dan merasakan kedalaman estetika momen yang pernah kami abadikan.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Item 1 -->
+            <div class="gallery-card">
+                <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop" 
+                         alt="Rustic Wedding Couple Session" 
+                         class="gallery-img"
+                         data-full-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop"
+                         data-caption="Rustic Wedding Couple Session — Kebersamaan hangat pengantin baru di alam terbuka.">
+                </div>
+                <div class="gallery-card-info">
+                    <h3>The Forest Ceremony</h3>
+                    <span>Pernikahan Outdoor</span>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-card">
+                <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600&auto=format&fit=crop" 
+                         alt="Groom and Bride Holding Hands" 
+                         class="gallery-img"
+                         data-full-src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=1200&auto=format&fit=crop"
+                         data-caption="Groom and Bride Holding Hands — Janji suci saling mengikat hati secara tulus.">
+                </div>
+                <div class="gallery-card-info">
+                    <h3>Warm Classic Vows</h3>
+                    <span>Pernikahan Intim</span>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-card">
+                <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=600&auto=format&fit=crop" 
+                         alt="Elegant Bridal Preparation Detail" 
+                         class="gallery-img"
+                         data-full-src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop"
+                         data-caption="Elegant Bridal Preparation Detail — Momen persiapan pengantin wanita mengenakan sepatu sebelum acara.">
+                </div>
+                <div class="gallery-card-info">
+                    <h3>Morning Preparation</h3>
+                    <span>Persiapan Akad</span>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-card">
+                <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=600&auto=format&fit=crop" 
+                         alt="Fine Dining Reception Table Arrangement" 
+                         class="gallery-img"
+                         data-full-src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1200&auto=format&fit=crop"
+                         data-caption="Fine Dining Reception Table Arrangement — Dekorasi meja makan bertema romantis lilin menyala.">
+                </div>
+                <div class="gallery-card-info">
+                    <h3>Champagne & Candles</h3>
+                    <span>Resepsi Malam</span>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-card">
+                <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=600&auto=format&fit=crop" 
+                         alt="Luxury Wedding Cake Setup" 
+                         class="gallery-img"
+                         data-full-src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=1200&auto=format&fit=crop"
+                         data-caption="Luxury Wedding Cake Setup — Detail kue pengantin bertingkat dengan hiasan kelopak mawar.">
+                </div>
+                <div class="gallery-card-info">
+                    <h3>Sweet Tributes</h3>
+                    <span>Kue Pernikahan</span>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-card">
+                <div class="gallery-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600&auto=format&fit=crop" 
+                         alt="Grand Corporate Dinner Event Ballroom Decoration" 
+                         class="gallery-img"
+                         data-full-src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop"
+                         data-caption="Grand Corporate Dinner Event Ballroom Decoration — Penataan panggung dengan pencahayaan mewah dramatis.">
+                </div>
+                <div class="gallery-card-info">
+                    <h3>The Golden Gala Dinner</h3>
+                    <span>Acara Perusahaan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Packages Section -->
+    <section id="paket" class="packages-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Paket Layanan</span>
+            <h2 class="section-title">Curation of Packages</h2>
+            <p class="section-desc">Pilih tingkat bantuan pengorganisasian acara yang paling sesuai dengan impian dan rencana anggaran pesta Anda.</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3 class="package-tier">Intimate Celebration</h3>
+                    <span class="package-price">Mulai Rp 15.000.000</span>
+                    <p class="package-desc">Dirancang khusus untuk pernikahan berkapasitas terbatas dengan fokus pada kesyahduan momen hangat keluarga.</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i data-lucide="check"></i> 1 Terapis / Planner Utama</li>
+                        <li><i data-lucide="check"></i> Penyelarasan konsep & rancangan rundown</li>
+                        <li><i data-lucide="check"></i> Koordinasi dengan max 8 vendor terpilih</li>
+                        <li><i data-lucide="check"></i> 3 Kru pengawas lapangan hari H</li>
+                        <li><i data-lucide="check"></i> Maksimal kapasitas 150 tamu undangan</li>
+                    </ul>
+                    <a href="#jadwal" class="btn btn-primary btn-block btn-select-pkg" data-pkg-name="Intimate Celebration">
+                        <span>Pilih Paket</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card highlighted">
+                <div class="package-badge-tag">Terfavorit</div>
+                <div class="package-header">
+                    <h3 class="package-tier">Elegant Classic</h3>
+                    <span class="package-price">Mulai Rp 28.000.000</span>
+                    <p class="package-desc">Paket lengkap menyeluruh dari perencanaan awal hingga akhir hari H untuk memastikan pesta Anda berjalan mulus.</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i data-lucide="check"></i> Pendampingan meeting berkala & konsultasi</li>
+                        <li><i data-lucide="check"></i> Manajemen & negosiasi seluruh vendor acara</li>
+                        <li><i data-lucide="check"></i> 6 Kru koordinator lapangan berpengalaman</li>
+                        <li><i data-lucide="check"></i> Gladi bersih terstruktur H-1</li>
+                        <li><i data-lucide="check"></i> Maksimal kapasitas 500 tamu undangan</li>
+                    </ul>
+                    <a href="#jadwal" class="btn btn-primary btn-block btn-select-pkg" data-pkg-name="Elegant Classic">
+                        <span>Pilih Paket</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+                <div class="package-header">
+                    <h3 class="package-tier">Royal Grande Celebration</h3>
+                    <span class="package-price">Mulai Rp 45.000.000</span>
+                    <p class="package-desc">Layanan eksklusif bintang lima untuk pernikahan bertema megah, megah dekorasi, dan kustomisasi penuh.</p>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i data-lucide="check"></i> Konsep 3D Layout & visual panggung kustom</li>
+                        <li><i data-lucide="check"></i> Asisten pribadi khusus pengantin (*Bride Assistant*)</li>
+                        <li><i data-lucide="check"></i> Pendampingan VIP guests & MC briefing</li>
+                        <li><i data-lucide="check"></i> 10+ Kru koordinator lapangan di hari H</li>
+                        <li><i data-lucide="check"></i> Kapasitas tamu tidak terbatas (unlimited)</li>
+                    </ul>
+                    <a href="#jadwal" class="btn btn-primary btn-block btn-select-pkg" data-pkg-name="Royal Grande Celebration">
+                        <span>Pilih Paket</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Date Availability Booking Form Section -->
+    <section id="jadwal" class="schedule-section">
+        <div class="container schedule-container">
+            <!-- Left Info Panel -->
+            <div class="schedule-info">
+                <span class="section-subtitle">Waktu Bahagia</span>
+                <h2 class="section-title">Periksa Ketersediaan Jadwal</h2>
+                <p class="schedule-desc">
+                    Tanggal-tanggal istimewa di akhir pekan cepat sekali terisi penuh oleh calon pengantin lainnya. Isi formulir di samping untuk memeriksa ketersediaan slot tim planner kami untuk mengawal perayaan penting Anda.
+                </p>
+                <div class="schedule-stats">
+                    <div class="stat-item">
+                        <h3>120+</h3>
+                        <span>Wedding Terlaksana</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>99%</h3>
+                        <span>Tingkat Kepuasan</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="schedule-form-card">
+                <h3 class="form-title">Formulir Cek Tanggal Acara</h3>
+                <form id="availabilityForm">
+                    <div class="form-group">
+                        <label for="formName">Nama Lengkap</label>
+                        <input type="text" id="formName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="formPhone">Nomor WhatsApp</label>
+                        <input type="tel" id="formPhone" placeholder="Contoh: 081234567890" required autocomplete="tel">
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="formDate">Rencana Tanggal</label>
+                            <input type="date" id="formDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="formType">Jenis Acara</label>
+                            <select id="formType" required>
+                                <option value="" disabled selected>-- Pilih Acara --</option>
+                                <option value="Pernikahan (Wedding)">Pernikahan (Wedding)</option>
+                                <option value="Lamaran (Engagement)">Lamaran (Engagement)</option>
+                                <option value="Ulang Tahun (Sweet 17)">Ulang Tahun (Sweet 17)</option>
+                                <option value="Acara Perusahaan (Corporate)">Acara Perusahaan (Corporate)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formGuests">Estimasi Kapasitas Tamu</label>
+                        <select id="formGuests" required>
+                            <option value="" disabled selected>-- Pilih Jumlah Tamu --</option>
+                            <option value="Di bawah 150 orang">Di bawah 150 orang</option>
+                            <option value="150 s.d 500 orang">150 s.d 500 orang</option>
+                            <option value="Di atas 500 orang">Di atas 500 orang</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formPackage">Paket Pilihan (Opsional)</label>
+                        <input type="text" id="formPackage" placeholder="Pilih paket atau tulis keinginan konsep Anda" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="calendar-search"></i>
+                        <span>Cek Jadwal via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Ulasan Hangat</span>
+            <h2 class="section-title">Apa Kata Pasangan HZX?</h2>
+            <p class="section-desc">Kisah sukses dan kesan mendalam dari mereka yang telah memercayakan hari besarnya di bawah pengawasan tim kami.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Kami mengambil paket Elegant Classic dan itu keputusan terbaik yang pernah kami ambil. HZX VENDOR mendampingi kami meeting dengan vendor dekorasi, catering, dan gaun secara profesional. Rundown acara hari H sangat tepat waktu. Terima kasih banyak!"
+                </p>
+                <div class="testimonial-author">
+                    <h4>Rian & Amel</h4>
+                    <span>Pernikahan di Glass House, Juni 2026</span>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Rekomendasi visual panggung kustom 3D yang dibuat benar-benar terwujud di gedung resepsi kami. Barisan VIP Guest terkoordinasi dengan sangat baik oleh tim kru lapangan yang tanggap. Highly recommended!"
+                </p>
+                <div class="testimonial-author">
+                    <h4>Budi & Siska</h4>
+                    <span>Resepsi Gala di Grand Ballroom, Maret 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="kontak" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Info Card -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Hubungi Kami</span>
+                    <h2 class="section-title">Alamat Galeri & Kontak</h2>
+                </div>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Studio Pernikahan HZX</h4>
+                            <p>Kawasan Ruko Creative Hub No. 12C, Senayan, Jakarta Pusat, 10270</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Jam Pertemuan (Kunjungan Konsultasi)</h4>
+                            <p>Selasa - Minggu: 10:00 - 18:00 WIB (Senin Libur & By Appointment)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>WhatsApp Planner</h4>
+                            <p>+62 812-3456-789 (Hanya Chat Reservasi Jadwal)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="instagram" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Instagram Portofolio</h4>
+                            <p>@hzxvendor.weddingorganizer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Panel -->
+            <div class="map-card">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.021021235472!2d106.79724185!3d-6.229089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f147b0a70197%3A0xc3b8393e8271a39f!2sSenayan%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HZX VENDOR Senayan Studio Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> VENDOR</h3>
+                <p>Website showcase portofolio planner & event organizer oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Halaman</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#galeri">Portofolio</a>
+                <a href="#paket">Paket Jasa</a>
+                <a href="#jadwal">Cek Tanggal</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX VENDOR. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio. Hubungan tanggal ketersediaan, terapis/crew, dan galeri bersifat fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Lightbox Modal Overlay -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <div class="lightbox-overlay" id="lightboxOverlay"></div>
+        <button class="lightbox-close" id="lightboxClose" aria-label="Tutup Galeri"><i data-lucide="x"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <p class="lightbox-caption" id="lightboxCaption">Deskripsi foto disini...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Coffee | Cozy Coffee Shop & Bistro</title>
+    <meta name="description" content="Showcase portfolio HZX Coffee oleh HZXPro Studio. Nikmati suasana kafe yang hangat & nyaman dengan sajian kopi artisan, hidangan lezat, dan kemudahan reservasi meja online.">
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Coffee
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#reservasi" class="nav-link">Reservasi</a>
+                <a href="#galeri" class="nav-link">Galeri</a>
+                <a href="#kontak" class="nav-link">Kontak</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#menu" class="mobile-nav-link">Menu</a>
+        <a href="#reservasi" class="mobile-nav-link">Reservasi</a>
+        <a href="#galeri" class="mobile-nav-link">Galeri</a>
+        <a href="#kontak" class="mobile-nav-link">Kontak</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="assets/hero.jpg" alt="Steaming Cup of Espresso" class="hero-bg-img">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Secangkir Ketenangan <br>di Tengah <span class="accent-text">Kesibukan.</span></h1>
+                <p class="hero-description">
+                    Temukan ruang nyaman untuk bersantai, bekerja, atau berbagi cerita. Menyajikan racikan kopi arabika pilihan dari petani lokal, dipadukan dengan hidangan artisan dan suasana hangat yang menenangkan.
+                </p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-primary">
+                        <span>Lihat Menu</span>
+                        <i data-lucide="coffee"></i>
+                    </a>
+                    <a href="#reservasi" class="btn btn-secondary">
+                        <span>Reservasi Meja</span>
+                        <i data-lucide="calendar"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Menu Section -->
+    <section id="menu" class="menu-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Menu Terkurasi</span>
+            <h2 class="section-title">Nikmati Sajian Khas Kami</h2>
+            <p class="section-desc">Setiap cangkir kopi dan hidangan disiapkan dengan ketelitian tinggi oleh barista dan chef kami menggunakan bahan-bahan segar berkualitas.</p>
+            
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="kopi">Kopi</button>
+                <button class="filter-btn" data-category="non-kopi">Non-Kopi</button>
+                <button class="filter-btn" data-category="makanan">Makanan</button>
+                <button class="filter-btn" data-category="dessert">Dessert</button>
+            </div>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="menu-grid" id="menuGrid">
+            <!-- Item 1 (Kopi) -->
+            <div class="menu-card" data-category="kopi">
+                <div class="menu-img-wrapper">
+                    <img src="assets/espresso.jpg" alt="Espresso Double" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">HZX Espresso Double</h3>
+                        <span class="menu-price">Rp 25.000</span>
+                    </div>
+                    <p class="menu-item-desc">Double shot espresso yang diekstraksi dari biji kopi arabika house blend kami. Memiliki bodi tebal dengan notes cokelat gelap.</p>
+                </div>
+            </div>
+
+            <!-- Item 2 (Kopi) -->
+            <div class="menu-card" data-category="kopi">
+                <div class="menu-img-wrapper">
+                    <img src="assets/latte.jpg" alt="Classic Cafe Latte" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">Classic Cafe Latte</h3>
+                        <span class="menu-price">Rp 35.000</span>
+                    </div>
+                    <p class="menu-item-desc">Kombinasi seimbang dari espresso aromatik dan susu segar bertekstur lembut (*steamed milk*) dengan seni latte art yang indah.</p>
+                </div>
+            </div>
+
+            <!-- Item 3 (Kopi) -->
+            <div class="menu-card" data-category="kopi">
+                <div class="menu-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=400&auto=format&fit=crop" alt="Palm Sugar Latte" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">Brown Sugar Iced Coffee</h3>
+                        <span class="menu-price">Rp 28.000</span>
+                    </div>
+                    <p class="menu-item-desc">Es kopi susu kekinian yang memadukan espresso manis, krimer nabati, susu cair segar, dan sirup gula aren murni.</p>
+                </div>
+            </div>
+
+            <!-- Item 4 (Non-Kopi) -->
+            <div class="menu-card" data-category="non-kopi">
+                <div class="menu-img-wrapper">
+                    <img src="assets/tea.jpg" alt="Artisan Chamomile Tea" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">Artisan Chamomile Tea</h3>
+                        <span class="menu-price">Rp 30.000</span>
+                    </div>
+                    <p class="menu-item-desc">Seduhan bunga chamomile kering berkualitas tinggi dalam teko kaca hangat. Memberikan efek menenangkan setelah hari yang sibuk.</p>
+                </div>
+            </div>
+
+            <!-- Item 5 (Makanan) -->
+            <div class="menu-card" data-category="makanan">
+                <div class="menu-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=400&auto=format&fit=crop" alt="Croissant Sandwich" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">Classic Croissant Sandwich</h3>
+                        <span class="menu-price">Rp 45.000</span>
+                    </div>
+                    <p class="menu-item-desc">Croissant mentega yang renyah diisi dengan smoked beef premium, telur orak-arik lembut, irisan keju cheddar, dan sayuran segar.</p>
+                </div>
+            </div>
+
+            <!-- Item 6 (Makanan) -->
+            <div class="menu-card" data-category="makanan">
+                <div class="menu-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=400&auto=format&fit=crop" alt="Truffle Fries" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">HZX Truffle Parmesan Fries</h3>
+                        <span class="menu-price">Rp 38.000</span>
+                    </div>
+                    <p class="menu-item-desc">Kentang goreng renyah beraroma minyak truffle putih mewah, ditaburi parutan keju parmesan impor yang gurih dan daun peterseli.</p>
+                </div>
+            </div>
+
+            <!-- Item 7 (Dessert) -->
+            <div class="menu-card" data-category="dessert">
+                <div class="menu-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=400&auto=format&fit=crop" alt="Classic Tiramisu" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">HZX Signature Tiramisu</h3>
+                        <span class="menu-price">Rp 40.000</span>
+                    </div>
+                    <p class="menu-item-desc">Kue tiramisu klasik Italia yang direndam dalam sirup kopi espreso pekat, dibalut whipped cream keju mascarpone yang lumer.</p>
+                </div>
+            </div>
+
+            <!-- Item 8 (Dessert) -->
+            <div class="menu-card" data-category="dessert">
+                <div class="menu-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=400&auto=format&fit=crop" alt="Caramel Waffle" class="menu-img">
+                </div>
+                <div class="menu-body">
+                    <div class="menu-title-row">
+                        <h3 class="menu-item-name">Caramel Butter Waffle</h3>
+                        <span class="menu-price">Rp 35.000</span>
+                    </div>
+                    <p class="menu-item-desc">Waffle ragi hangat bertekstur garing di luar dan lembut di dalam, disajikan dengan es krim vanila dan saus karamel mentega gurih.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Reservation Form Section -->
+    <section id="reservasi" class="reservation-section">
+        <div class="container reservation-container">
+            <!-- Left Info Column -->
+            <div class="reservation-info">
+                <span class="section-subtitle">Pesan Tempat</span>
+                <h2 class="section-title">Amankan Meja Anda Lebih Awal</h2>
+                <p class="reservation-desc">
+                    Apakah Anda merencanakan rapat santai, kerja kelompok, atau makan malam bersama keluarga? Lakukan reservasi meja dengan mudah. Tim HZX Coffee akan menyiapkan area terbaik agar momen Anda berjalan lancar.
+                </p>
+                <div class="reservation-features">
+                    <div class="res-feat-item">
+                        <i data-lucide="shield-check"></i>
+                        <span>Reservasi Gratis Tanpa Biaya Tambahan</span>
+                    </div>
+                    <div class="res-feat-item">
+                        <i data-lucide="wifi"></i>
+                        <span>Tersedia Stopkontak & Akses Wi-Fi Cepat</span>
+                    </div>
+                    <div class="res-feat-item">
+                        <i data-lucide="user-check"></i>
+                        <span>Pelayanan Khusus Barista & Crew Kafe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Form Card Column -->
+            <div class="reservation-form-card">
+                <h3 class="form-title">Formulir Reservasi Meja</h3>
+                <form id="reservationForm">
+                    <div class="form-group">
+                        <label for="resName">Nama Lengkap</label>
+                        <input type="text" id="resName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resGuests">Jumlah Tamu</label>
+                        <select id="resGuests" required>
+                            <option value="" disabled selected>-- Pilih Jumlah Orang --</option>
+                            <option value="1-2 Orang">1-2 Orang</option>
+                            <option value="3-4 Orang">3-4 Orang</option>
+                            <option value="5-6 Orang">5-6 Orang</option>
+                            <option value="7-10 Orang">7-10 Orang</option>
+                            <option value="Diatas 10 Orang (Grup Besar)">Diatas 10 Orang (Grup Besar)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="resDate">Tanggal Kunjungan</label>
+                            <input type="date" id="resDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="resTime">Jam Kedatangan</label>
+                            <input type="time" id="resTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resNotes">Catatan Khusus (Opsional)</label>
+                        <textarea id="resNotes" rows="3" placeholder="Tuliskan jika ada kebutuhan khusus (misal: area bebas rokok, butuh stopkontak banyak, dekorasi ultah, dll)"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="calendar-check"></i>
+                        <span>Konfirmasi via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atmosphere Gallery Section -->
+    <section id="galeri" class="gallery-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Sudut Ruang</span>
+            <h2 class="section-title">Galeri Suasana Kafe</h2>
+            <p class="section-desc">Nikmati penampakan estetika visual kafe kami yang dirancang dengan nuansa kayu hangat dan tanaman hijau segar.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item large">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=800&auto=format&fit=crop" alt="Cozy Cafe Corner" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Reading & Work Corner</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/hero.jpg" alt="Barista station pouring latte art" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Barista Station</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/tea.jpg" alt="Artisan Tea Table Setting" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Tea Table Setting</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=400&auto=format&fit=crop" alt="Pouring pour-over filter coffee" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Slow Brew Session</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Kata Pengunjung</span>
+            <h2 class="section-title">Suara dari Sahabat HZX</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-card">
+                <div class="rating-stars">
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                </div>
+                <p class="testimonial-quote">"HZX Coffee adalah tempat kerja favorit saya. Wifinya kencang, kopinya juara (terutama Brown Sugar Latte), dan pelayanannya ramah banget. Musik yang diputar juga menenangkan, tidak berisik."</p>
+                <div class="customer-info">
+                    <div class="avatar">DA</div>
+                    <div>
+                        <h4>Danang Adiansyah</h4>
+                        <span>Remote Software Engineer</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card">
+                <div class="rating-stars">
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                </div>
+                <p class="testimonial-quote">"Tiramisunya lumer di mulut dan pas manisnya, sangat cocok dipadukan dengan Artisan Chamomile Tea hangat. Suasana kafe yang asri dan bertema kayu membuat betah nongkrong berjam-jam."</p>
+                <div class="customer-info">
+                    <div class="avatar">AM</div>
+                    <div>
+                        <h4>Amalia Marta</h4>
+                        <span>Kreator Konten / Freelancer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Opening Hours Section -->
+    <section id="kontak" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Info Column -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Kunjungi Kami</span>
+                    <h2 class="section-title">Lokasi Kafe & Jam Buka</h2>
+                </div>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Alamat Kafe</h4>
+                            <p>Kawasan Rindang Hijau No. 24, Senopati, Jakarta Selatan, 12110</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Jam Buka & Operasional</h4>
+                            <p>Senin - Minggu: 08:00 - 22:00 WIB (Buka Setiap Hari)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>WhatsApp CS Kami</h4>
+                            <p>+62 812-3456-789 (Hanya Chat Reservasi)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="instagram" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Instagram Resmi</h4>
+                            <p>@hzxcoffee.senopati</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Panel -->
+            <div class="map-card">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15865.25055811776!2d106.80489955!3d-6.222389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1500d00fddb%3A0xe6bf446ee74c2e64!2sSenopati%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2012110!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HZX Coffee Location Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Coffee</h3>
+                <p>Website showcase menu digital & reservasi kategori kafe oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Halaman</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#menu">Menu</a>
+                <a href="#reservasi">Reservasi Meja</a>
+                <a href="#galeri">Galeri Suasana</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Coffee. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio. Hubungan reservasi, menu, chef, dan tempat bersifat fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
