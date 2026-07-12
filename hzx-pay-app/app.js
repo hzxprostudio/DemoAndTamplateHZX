@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     // State & Constants
     // ==========================================================================
-    let userBalance = 1450000;
+    let userBalance = 999999999;
 
     // Mock history base for full screen
     const MOCK_HISTORY_ITEMS = [
