@@ -6,30 +6,53 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=DM+Serif+Display:ital@0;1&display=swap');
 
 /* ── Reset ── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
-img{display:block;max-width:100%}
-a{text-decoration:none}
-button{cursor:pointer;font:inherit;border:none;background:none}
-
-/* ── Tokens ── */
-:root{
-  --ink:      #111110;
-  --ink-soft: #444440;
-  --line:     #e2e0db;
-  --sand:     #f5f2ec;
-  --white:    #ffffff;
-  --accent:   #1a1a1a;
-  --tag-bg:   #ebebeb;
-  --tag-txt:  #555;
-  --hover:    #f9f7f3;
-  --radius:   6px;
-  --mono:     'DM Sans', system-ui, sans-serif;
-  --serif:    'DM Serif Display', Georgia, serif;
-  --ease:     cubic-bezier(.25,.46,.45,.94);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
 }
 
-body{
+html {
+  font-size: 16px;
+  scroll-behavior: smooth
+}
+
+img {
+  display: block;
+  max-width: 100%
+}
+
+a {
+  text-decoration: none
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background: none
+}
+
+/* ── Tokens ── */
+:root {
+  --ink: #111110;
+  --ink-soft: #444440;
+  --line: #e2e0db;
+  --sand: #f5f2ec;
+  --white: #ffffff;
+  --accent: #1a1a1a;
+  --tag-bg: #ebebeb;
+  --tag-txt: #555;
+  --hover: #f9f7f3;
+  --radius: 6px;
+  --mono: 'DM Sans', system-ui, sans-serif;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --ease: cubic-bezier(.25, .46, .45, .94);
+}
+
+body {
   font-family: var(--mono);
   background: var(--white);
   color: var(--ink);
@@ -37,257 +60,482 @@ body{
 }
 
 /* ── Layout ── */
-.wrap{ max-width:1240px; margin:0 auto; padding:0 24px }
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px
+}
 
 /* ── Header ── */
-.site-header{
-  position: sticky; top:0; z-index:50;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   background: var(--white);
   border-bottom: 1px solid var(--line);
   padding: 0 24px;
 }
-.header-inner{
-  max-width: 1240px; margin:0 auto;
+
+.header-inner {
+  max-width: 1240px;
+  margin: 0 auto;
   height: 58px;
-  display: flex; align-items:center; justify-content:space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.header-logo{
-  font-family: var(--serif);
-  font-size: 1.3rem;
+
+.header-logo {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5rem;
   color: var(--ink);
-  display: flex; align-items: baseline; gap: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  letter-spacing: .10em;
 }
-.logo-dot{ color:#999; margin:0 2px }
-.header-right{ display:flex; align-items:center; gap:20px }
-.header-count{
-  font-size: .75rem; font-weight:500;
-  letter-spacing: .08em; text-transform: uppercase;
+
+.logo-dot {
+  color: #999;
+  margin: 0 2px
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px
+}
+
+.header-count {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   color: var(--ink-soft);
 }
-.header-link{
-  font-size: .82rem; font-weight:500;
-  color: var(--ink); border-bottom: 1px solid var(--ink);
+
+.header-link {
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
   padding-bottom: 1px;
   transition: opacity .2s;
 }
-.header-link:hover{ opacity:.5 }
+
+.header-link:hover {
+  opacity: .5
+}
 
 /* ── Intro strip ── */
-.intro{
+.intro {
   padding: 72px 24px 56px;
-  max-width: 1240px; margin: 0 auto;
+  max-width: 1240px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: end;
 }
-.intro-heading{
+
+.intro-heading {
   font-family: var(--serif);
   font-size: clamp(2.2rem, 4.5vw, 3.4rem);
   line-height: 1.1;
   letter-spacing: -.02em;
   color: var(--ink);
 }
-.intro-heading em{
+
+.intro-heading em {
   font-style: italic;
   color: var(--ink-soft);
 }
-.intro-right{
+
+.intro-right {
   padding-bottom: 6px;
 }
-.intro-copy{
+
+.intro-copy {
   font-size: 1rem;
   line-height: 1.75;
   color: var(--ink-soft);
   max-width: 420px;
 }
-.intro-meta{
+
+.intro-meta {
   margin-top: 28px;
-  display: flex; gap: 32px;
+  display: flex;
+  gap: 32px;
 }
-.meta-item strong{ display:block; font-size:1.6rem; font-weight:700; color:var(--ink); line-height:1 }
-.meta-item span{ font-size:.75rem; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-soft) }
+
+.meta-item strong {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1
+}
+
+.meta-item span {
+  font-size: .75rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-soft)
+}
 
 /* ── Filter bar ── */
-.filter-strip{
+.filter-strip {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
 }
-.filter-strip::-webkit-scrollbar{ display:none }
-.filter-inner{
-  max-width: 1240px; margin:0 auto; padding: 0 24px;
-  display: flex; gap:0;
+
+.filter-strip::-webkit-scrollbar {
+  display: none
 }
-.f-btn{
+
+.filter-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 0;
+}
+
+/* ============================================================
+   PERBAIKAN FILTER STRIP UNTUK MOBILE (MAKSIMAL 768PX)
+   ============================================================ */
+@media (max-width: 768px) {
+  .filter-strip {
+    /* Tetap matikan scroll horizontal bawaan desktop */
+    overflow-x: visible;
+    white-space: normal;
+  }
+
+  .filter-inner {
+    /* Mengubah dari susunan horizontal menjadi Grid 3 Kolom */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; /* Menempelkan tombol agar garis pembatasnya menyatu rapi */
+    padding: 0; /* Padding penuh ke ujung layar agar terlihat seamless */
+  }
+
+  .f-btn {
+    display: block;
+    width: 100%;
+    text-align: center; /* Teks di tengah agar estetik dalam format kolom */
+    padding: 14px 8px; /* Menyesuaikan padding agar pas di layar kecil */
+    font-size: 0.8rem;
+    
+    /* Mempertahankan gaya border desktop: garis pembatas hanya di sisi kanan */
+    border-left: none;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line); /* Tambahan border bawah karena dia berbaris */
+    border-radius: 0; /* Pastikan tidak kotak rounded terpisah */
+  }
+
+  /* Hilangkan border kanan pada kolom ke-3 (paling kanan di setiap baris) agar tidak double dengan tepi layar */
+  .f-btn:nth-child(3n) {
+    border-right: none;
+  }
+
+  /* Khusus tombol pertama, hilangkan proteksi border-left bawaan desktop */
+  .f-btn:first-child {
+    border-left: none;
+  }
+}
+
+.f-btn {
   padding: 14px 22px;
-  font-size: .8rem; font-weight:500;
-  letter-spacing: .06em; text-transform: uppercase;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   color: var(--ink-soft);
   border-right: 1px solid var(--line);
   background: none;
   transition: color .18s, background .18s;
   white-space: nowrap;
 }
-.f-btn:first-child{ border-left: 1px solid var(--line) }
-.f-btn:hover{ background: var(--hover); color: var(--ink) }
-.f-btn.active{ background: var(--ink); color: var(--white) }
+
+.f-btn:first-child {
+  border-left: 1px solid var(--line)
+}
+
+.f-btn:hover {
+  background: var(--hover);
+  color: var(--ink)
+}
+
+.f-btn.active {
+  background: var(--ink);
+  color: var(--white)
+}
 
 /* ── Grid ── */
-.grid-wrap{
-  max-width: 1240px; margin:0 auto;
+.grid-wrap {
+  max-width: 1240px;
+  margin: 0 auto;
   padding: 40px 24px 80px;
 }
-.template-grid{
+
+.template-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  background: transparent;
+  column-gap: 48px; /* Renggang kanan-kiri */
+  row-gap: 32px;    /* Renggang atas-bawah */
 }
-@media(max-width:900px){ .template-grid{ grid-template-columns: repeat(2,1fr) } }
-@media(max-width:560px){ .template-grid{ grid-template-columns: 1fr } }
+
+@media(max-width:900px) {
+  .template-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+  }
+}
+
+@media(max-width:560px) {
+  .template-grid {
+    grid-template-columns: 1fr;
+    row-gap: 48px;
+  }
+}
 
 /* ── Card ── */
-.card{
-  background: var(--white);
-  display: flex; flex-direction: column;
-  transition: background .18s var(--ease);
-  position: relative;
-}
-.card.hidden{ display:none }
-.card:hover{ background: var(--hover) }
+.card {
+  background: #eaeaea;
+  /* Menggunakan warna putih padat agar kontras dengan bg sand */
+  border: 1px solid #dcdadb;
+  /* Border digelapkan dikit agar garis tepinya tegas */
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
-.card-thumb{
+  /* Efek bayangan halus agar card terlihat terpisah dari background */
+  box-shadow: 0 4px 12px rgba(17, 17, 16, 0.03),
+    0 1px 3px rgba(17, 17, 16, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Efek saat kursor diarahkan ke card (Hover) */
+.card:hover {
+  transform: translateY(-4px);
+  /* Card agak naik sedikit */
+  border-color: var(--white);
+  /* Garis tepi berubah jadi lebih gelap */
+  box-shadow: 0 12px 24px rgba(17, 17, 16, 0.08),
+    0 2px 6px rgba(17, 17, 16, 0.04);
+}
+
+.card.hidden {
+  display: none
+}
+
+.card:hover {
+  background: var(--hover)
+}
+
+.card-thumb {
   position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
   background: var(--sand);
   border-bottom: 1px solid var(--line);
 }
-.card-thumb img{
-  width:100%; height:100%;
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
   transition: transform .45s var(--ease);
   display: block;
 }
-.card:hover .card-thumb img{ transform: scale(1.03) }
+
+.card:hover .card-thumb img {
+  transform: scale(1.03)
+}
 
 /* fallback gradient shown when img fails */
-.card-thumb.no-img{
-  display: flex; align-items:center; justify-content:center;
-  flex-direction: column; gap:8px;
+.card-thumb.no-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
 }
-.card-thumb.no-img .thumb-emoji{ font-size:2.2rem; line-height:1 }
-.card-thumb.no-img .thumb-cat{ font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6) }
 
-.card-body{
-  padding: 20px 22px 22px;
-  display: flex; flex-direction:column; flex:1;
+.card-thumb.no-img .thumb-emoji {
+  font-size: 2.2rem;
+  line-height: 1
 }
-.card-cat{
-  font-size: .68rem; font-weight:600;
-  letter-spacing: .1em; text-transform:uppercase;
+
+.card-thumb.no-img .thumb-cat {
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .6)
+}
+
+.card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-cat {
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: var(--ink-soft);
   margin-bottom: 6px;
 }
-.card-title{
+
+.card-title {
   font-family: var(--serif);
   font-size: 1.15rem;
   color: var(--ink);
   margin-bottom: 8px;
   line-height: 1.3;
 }
-.card-desc{
-  font-size: .82rem; line-height:1.65;
+
+.card-desc {
+  font-size: .82rem;
+  line-height: 1.65;
   color: var(--ink-soft);
   flex: 1;
 }
-.card-footer{
+
+.card-footer {
   margin-top: 18px;
-  display: flex; justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
-.btn-open{
-  font-size: .78rem; font-weight:600;
-  letter-spacing:.04em; text-transform:uppercase;
+
+.btn-open {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
   color: var(--ink);
   border-bottom: 1px solid currentColor;
   padding-bottom: 1px;
   transition: opacity .18s;
 }
-.btn-open:hover{ opacity:.45 }
+
+.btn-open:hover {
+  opacity: .45
+}
 
 /* ── Footer ── */
-.site-footer{
+.site-footer {
   border-top: 1px solid var(--line);
   padding: 32px 24px;
 }
-.footer-inner{
-  max-width: 1240px; margin:0 auto;
-  display: flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+
+.footer-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
 }
-.footer-brand{
-  font-family: var(--serif); font-size:1rem; color:var(--ink);
+
+.footer-brand {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
 }
-.footer-copy{ font-size:.78rem; color:#aaa }
-.footer-ext{
-  font-size:.78rem; font-weight:500; color:var(--ink);
+
+.footer-copy {
+  font-size: .78rem;
+  color: #aaa
+}
+
+.footer-ext {
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--ink);
   border-bottom: 1px solid currentColor;
   transition: opacity .18s;
 }
-.footer-ext:hover{ opacity:.45 }
+
+.footer-ext:hover {
+  opacity: .45
+}
 
 /* ============================================================
    RESPONSIVE / MOBILE FIXES
    ============================================================ */
 
 @media (max-width: 768px) {
+
   /* 1. Rapikan Header */
   .site-header {
     padding: 0 16px;
   }
+
   .header-right {
-    gap: 12px; /* Mengurangi gap dari 20px */
+    gap: 12px;
+    /* Mengurangi gap dari 20px */
   }
+
   .header-count {
     /* Menyembunyikan jumlah template agar logo dan link tidak terlalu sesak di layar kecil */
-    display: none; 
+    display: none;
   }
 
   /* 2. Rapikan Intro (Ubah grid jadi 1 kolom ke bawah) */
   .intro {
-    grid-template-columns: 1fr; /* Mengganti 1fr 1fr menjadi 1 kolom */
-    gap: 24px; /* Mengurangi gap dari 48px */
-    padding: 40px 16px 32px; /* Mengurangi padding atas/bawah[cite: 4] */
+    grid-template-columns: 1fr;
+    /* Mengganti 1fr 1fr menjadi 1 kolom */
+    gap: 24px;
+    /* Mengurangi gap dari 48px */
+    padding: 40px 16px 32px;
+    /* Mengurangi padding atas/bawah[cite: 4] */
   }
+
   .intro-heading {
     /* Menyesuaikan ulang font size di mobile */
-    font-size: clamp(2rem, 8vw, 2.5rem); 
+    font-size: clamp(2rem, 8vw, 2.5rem);
   }
+
   .intro-copy {
     font-size: 0.95rem;
   }
+
   .intro-meta {
-    gap: 20px; /* Mengurangi gap dari 32px[cite: 4] */
-    flex-wrap: wrap; /* Membiarkan item turun jika layar terlalu sempit */
+    gap: 20px;
+    /* Mengurangi gap dari 32px[cite: 4] */
+    flex-wrap: wrap;
+    /* Membiarkan item turun jika layar terlalu sempit */
   }
 
   /* 3. Rapikan Padding Filter & Grid */
   .filter-inner {
     padding: 0 16px;
   }
+
   .grid-wrap {
-    padding: 32px 16px 64px; /* Mengurangi padding dari 40px 24px 80px[cite: 4] */
+    padding: 32px 16px 64px;
+    /* Mengurangi padding dari 40px 24px 80px[cite: 4] */
   }
 
   /* 4. Rapikan Footer */
   .footer-inner {
-    flex-direction: column; /* Menumpuk elemen footer ke bawah */
+    flex-direction: column;
+    /* Menumpuk elemen footer ke bawah */
     justify-content: center;
     text-align: center;
-    gap: 8px; /* Mengurangi gap dari 12px[cite: 4] */
+    gap: 8px;
+    /* Mengurangi gap dari 12px[cite: 4] */
   }
 }
