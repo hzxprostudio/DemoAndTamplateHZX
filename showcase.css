@@ -239,3 +239,55 @@ body{
   transition: opacity .18s;
 }
 .footer-ext:hover{ opacity:.45 }
+
+/* ============================================================
+   RESPONSIVE / MOBILE FIXES
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* 1. Rapikan Header */
+  .site-header {
+    padding: 0 16px;
+  }
+  .header-right {
+    gap: 12px; /* Mengurangi gap dari 20px */
+  }
+  .header-count {
+    /* Menyembunyikan jumlah template agar logo dan link tidak terlalu sesak di layar kecil */
+    display: none; 
+  }
+
+  /* 2. Rapikan Intro (Ubah grid jadi 1 kolom ke bawah) */
+  .intro {
+    grid-template-columns: 1fr; /* Mengganti 1fr 1fr menjadi 1 kolom */
+    gap: 24px; /* Mengurangi gap dari 48px */
+    padding: 40px 16px 32px; /* Mengurangi padding atas/bawah[cite: 4] */
+  }
+  .intro-heading {
+    /* Menyesuaikan ulang font size di mobile */
+    font-size: clamp(2rem, 8vw, 2.5rem); 
+  }
+  .intro-copy {
+    font-size: 0.95rem;
+  }
+  .intro-meta {
+    gap: 20px; /* Mengurangi gap dari 32px[cite: 4] */
+    flex-wrap: wrap; /* Membiarkan item turun jika layar terlalu sempit */
+  }
+
+  /* 3. Rapikan Padding Filter & Grid */
+  .filter-inner {
+    padding: 0 16px;
+  }
+  .grid-wrap {
+    padding: 32px 16px 64px; /* Mengurangi padding dari 40px 24px 80px[cite: 4] */
+  }
+
+  /* 4. Rapikan Footer */
+  .footer-inner {
+    flex-direction: column; /* Menumpuk elemen footer ke bawah */
+    justify-content: center;
+    text-align: center;
+    gap: 8px; /* Mengurangi gap dari 12px[cite: 4] */
+  }
+}
