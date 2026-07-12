@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Booking | Premium Wellness & Aesthetic Lounge</title>
+    <meta name="description" content="Showcase portfolio HZX Booking oleh HZXPro Studio. Reservasi jasa kecantikan, spa, dan grooming premium secara online dengan sistem kalender interaktif.">
+    <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Booking
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#layanan" class="nav-link">Layanan</a>
+                <a href="#galeri" class="nav-link">Galeri</a>
+                <a href="#testimoni" class="nav-link">Testimoni</a>
+                <a href="#booking" class="nav-link nav-link-btn">Reservasi Sekarang</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#layanan" class="mobile-nav-link">Layanan</a>
+        <a href="#galeri" class="mobile-nav-link">Galeri</a>
+        <a href="#testimoni" class="mobile-nav-link">Testimoni</a>
+        <a href="#booking" class="mobile-nav-link mobile-nav-btn">Reservasi Sekarang</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Rawat Diri Anda, <br>Jadwalkan <span class="accent-text">Kemudahan.</span></h1>
+                <p class="hero-description">
+                    Nikmati layanan spa, facial, dan hair styling kelas dunia di HZX Wellness & Grooming Lounge. Kami menghadirkan kemudahan reservasi waktu perawatan Anda dalam hitungan detik. Cukup pilih layanan, tentukan tanggal, dan konfirmasi langsung ke WhatsApp.
+                </p>
+                <div class="hero-actions">
+                    <a href="#booking" class="btn btn-primary">
+                        <span>Booking Sekarang</span>
+                        <i data-lucide="calendar"></i>
+                    </a>
+                    <a href="#layanan" class="btn btn-secondary">
+                        <span>Lihat Layanan</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-visual-frame">
+                    <img src="assets/hero.jpg" alt="Luxury Spa Room" class="hero-img">
+                    <div class="hero-floating-badge">
+                        <div class="badge-icon"><i data-lucide="award"></i></div>
+                        <div class="badge-text">
+                            <h4>Top Rated Service</h4>
+                            <p>Bintang 5 Ulasan Pelanggan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="services-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Layanan Eksklusif</span>
+            <h2 class="section-title">Menu Perawatan & Tarif</h2>
+            <p class="section-desc">
+                Pilih perawatan terbaik yang dirancang khusus oleh terapis profesional kami untuk memulihkan kebugaran dan menunjang penampilan Anda.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/haircut.jpg" alt="Haircut & Styling" class="service-img">
+                </div>
+                <div class="service-body">
+                    <h3 class="service-name">Signature Haircut & Styling</h3>
+                    <p class="service-desc">Potongan rambut premium disesuaikan dengan kontur wajah, termasuk cuci rambut, pijat kepala rileks, dan penataan dengan pomade kelas atas.</p>
+                    <div class="service-meta">
+                        <span class="meta-item"><i data-lucide="clock"></i> 45 Menit</span>
+                        <span class="meta-item price">Rp 150.000</span>
+                    </div>
+                    <button class="btn btn-select-service btn-block" data-service-id="s1" data-service-name="Signature Haircut & Styling">
+                        <span>Pilih Layanan</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/massage.jpg" alt="Spa & Massage" class="service-img">
+                </div>
+                <div class="service-body">
+                    <h3 class="service-name">Deep Relaxation Spa Massage</h3>
+                    <p class="service-desc">Pijat seluruh tubuh memadukan teknik aromaterapi tradisional Swedia untuk meredakan ketegangan otot mendalam dan melancarkan sirkulasi darah.</p>
+                    <div class="service-meta">
+                        <span class="meta-item"><i data-lucide="clock"></i> 60 Menit</span>
+                        <span class="meta-item price">Rp 250.000</span>
+                    </div>
+                    <button class="btn btn-select-service btn-block" data-service-id="s2" data-service-name="Deep Relaxation Spa Massage">
+                        <span>Pilih Layanan</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-img-wrapper">
+                    <img src="assets/facial.jpg" alt="Facial Treatment" class="service-img">
+                </div>
+                <div class="service-body">
+                    <h3 class="service-name">Radiance Skincare Facial</h3>
+                    <p class="service-desc">Eksfoliasi, ekstraksi komedo ringan, serum vitamin C, masker hidrasi dingin, dan totok wajah untuk memulihkan elastisitas kulit kusam.</p>
+                    <div class="service-meta">
+                        <span class="meta-item"><i data-lucide="clock"></i> 75 Menit</span>
+                        <span class="meta-item price">Rp 300.000</span>
+                    </div>
+                    <button class="btn btn-select-service btn-block" data-service-id="s3" data-service-name="Radiance Skincare Facial">
+                        <span>Pilih Layanan</span>
+                        <i data-lucide="check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeri" class="gallery-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Ruang Estetika</span>
+            <h2 class="section-title">Galeri Lounge & Studio</h2>
+            <p class="section-desc">Intip suasana studio kami yang menenangkan dan higienis, dirancang khusus untuk kenyamanan maksimal Anda.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item large">
+                <img src="assets/hero.jpg" alt="Luxury Lounge Area" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Lounge Area</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/haircut.jpg" alt="Haircut Station" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Styling Room</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/massage.jpg" alt="Massage Therapy Room" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Therapy Bed</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/facial.jpg" alt="Skincare Clinic Room" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span>Facial Lounge</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimoni" class="testimonials-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Ulasan Jujur</span>
+            <h2 class="section-title">Apa Kata Mereka?</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                </div>
+                <p class="testimonial-quote">"Reservasinya gampang banget! Desain websitenya rapi dan setelah isi tanggal & jam langsung otomatis redirect kirim detail booking ke WhatsApp salon. Pas datang langsung dilayani tanpa antre."</p>
+                <div class="client-info">
+                    <div class="client-avatar">AN</div>
+                    <div class="client-details">
+                        <h4>Ahmad Nurdiansyah</h4>
+                        <span>Pelanggan Setia (Signature Haircut)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                    <i data-lucide="star" class="fill"></i>
+                </div>
+                <p class="testimonial-quote">"Terapis spa di HZX sangat ramah dan terlatih. Pijat aromaterapi Swedianya sangat meluruhkan stres setelah seminggu bekerja. Ruangannya juga wangi, bersih, dan estetik."</p>
+                <div class="client-info">
+                    <div class="client-avatar">SP</div>
+                    <div class="client-details">
+                        <h4>Siti Pratiwi</h4>
+                        <span>Pegawai Swasta (Signature Spa Massage)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking-section">
+        <div class="container booking-container">
+            <!-- Left Side: Interactive Calendar -->
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <h3 class="calendar-title"><i data-lucide="calendar"></i> Pilih Tanggal Reservasi</h3>
+                    <div class="calendar-nav">
+                        <button class="calendar-btn-nav" id="btnPrevMonth" aria-label="Bulan Sebelumnya">
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <span class="calendar-month-year" id="calendarMonthYear">Juli 2026</span>
+                        <button class="calendar-btn-nav" id="btnNextMonth" aria-label="Bulan Berikutnya">
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Calendar Dates -->
+                <div class="calendar-weekdays">
+                    <span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
+                </div>
+                <div class="calendar-dates" id="calendarDates">
+                    <!-- Javascript will render grid here -->
+                </div>
+
+                <div class="calendar-legend">
+                    <div class="legend-item"><span class="legend-dot today"></span> Hari Ini</div>
+                    <div class="legend-item"><span class="legend-dot active"></span> Dipilih</div>
+                    <div class="legend-item"><span class="legend-dot full"></span> Penuh</div>
+                </div>
+
+                <!-- Time Slot Selector -->
+                <div class="time-slots-wrapper">
+                    <h4 class="slots-title"><i data-lucide="clock"></i> Pilih Jam Kunjungan</h4>
+                    <div class="time-slots-grid" id="timeSlotsGrid">
+                        <!-- Javascript will render buttons here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Details Form -->
+            <div class="booking-form-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Lengkapi Reservasi</span>
+                    <h2 class="section-title">Formulir Booking</h2>
+                </div>
+                
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="bookingService">Layanan Yang Dipilih</label>
+                        <select id="bookingService" required>
+                            <option value="" disabled selected>-- Pilih Layanan Perawatan --</option>
+                            <option value="Signature Haircut & Styling">Signature Haircut & Styling (Rp 150.000)</option>
+                            <option value="Deep Relaxation Spa Massage">Deep Relaxation Spa Massage (Rp 250.000)</option>
+                            <option value="Radiance Skincare Facial">Radiance Skincare Facial (Rp 300.000)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="bookingDateDisplay">Tanggal Kunjungan</label>
+                            <input type="text" id="bookingDateDisplay" placeholder="Pilih tanggal di kalender" readonly required>
+                            <input type="hidden" id="bookingDateRaw">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingTimeDisplay">Jam Kunjungan</label>
+                            <input type="text" id="bookingTimeDisplay" placeholder="Pilih jam kunjungan" readonly required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingName">Nama Lengkap</label>
+                        <input type="text" id="bookingName" placeholder="Masukkan nama Anda" required autocomplete="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingPhone">Nomor WhatsApp</label>
+                        <input type="tel" id="bookingPhone" placeholder="Contoh: 081234567890" required autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingNotes">Catatan Khusus (Opsional)</label>
+                        <textarea id="bookingNotes" rows="3" placeholder="Tuliskan jika ada permintaan khusus (misal: terapis wanita/pria, riwayat alergi serum, dll)"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-booking-submit">
+                        <i data-lucide="message-square"></i>
+                        <span>Kirim Booking via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Operating Hours Section -->
+    <section id="kontak" class="location-section container">
+        <div class="location-grid">
+            <!-- Left Info Panel -->
+            <div class="location-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Info Hubungi Kami</span>
+                    <h2 class="section-title">Kontak & Jam Buka</h2>
+                </div>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Lokasi Studio</h4>
+                            <p>Kawasan Ruko Wellness Suite No. 8A, Kebayoran Baru, Jakarta Selatan, 12130</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Jam Operasional</h4>
+                            <p>Setiap Hari: 09:00 - 20:00 WIB</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>WhatsApp Reservasi</h4>
+                            <p>+62 812-3456-789 (Hanya Chat)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="instagram" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Instagram</h4>
+                            <p>@hzxbooking.lounge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Map Panel -->
+            <div class="map-card">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2423377759885!2d106.7970929!3d-6.2317804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1406456cd75%3A0xe54e60b2923ea022!2sKebayoran%20Baru!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="HZX Booking Lounge Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Bottom -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Booking</h3>
+                <p>Website showcase reservasi digital terpadu kategori layanan oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Halaman</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#layanan">Layanan</a>
+                <a href="#galeri">Galeri</a>
+                <a href="#booking">Booking Form</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Booking. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio. Hubungan reservasi, layanan, terapis, dan tempat bersifat fiktif.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

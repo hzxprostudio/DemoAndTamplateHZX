@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZX Auto | Premium Car Rental & Chauffeur Services</title>
+    <meta name="description" content="Showcase portfolio HZX Auto oleh HZXPro Studio. Sewa mobil Alphard, CR-V, Avanza, dan Civic premium secara lepas kunci atau dengan pengemudi profesional.">
+    <!-- Google Fonts: Outfit (Header) & Plus Jakarta Sans (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <span class="logo-accent">HZX</span> Auto
+                <span class="logo-badge">Showcase</span>
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Beranda</a>
+                <a href="#armada" class="nav-link">Armada Kami</a>
+                <a href="#syarat" class="nav-link">Syarat & Ketentuan</a>
+                <a href="#booking" class="nav-link nav-link-btn">Hubungi Kami</a>
+            </nav>
+
+            <button class="mobile-menu-trigger" id="mobileMenuTrigger" aria-label="Buka Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose"><i data-lucide="x"></i></button>
+        <a href="#hero" class="mobile-nav-link">Beranda</a>
+        <a href="#armada" class="mobile-nav-link">Armada Kami</a>
+        <a href="#syarat" class="mobile-nav-link">Syarat & Ketentuan</a>
+        <a href="#booking" class="mobile-nav-link mobile-nav-btn">Hubungi Kami</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1200&auto=format&fit=crop" alt="Premium luxury black sedan car background" class="hero-bg-img">
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="studio-tag">
+                    <span class="pulse-dot"></span> Portofolio Demo by HZXPro Studio
+                </div>
+                <h1 class="hero-title">Drive Premium.<br><span class="accent-text">Travel In Comfort.</span></h1>
+                <p class="hero-description">
+                    Sewa kendaraan premium terawat untuk kebutuhan bisnis, perjalanan keluarga, atau VIP guest Anda. Tersedia layanan lepas kunci maupun pengemudi profesional berpengalaman.
+                </p>
+            </div>
+
+            <!-- Instant Search Bar Card -->
+            <div class="search-bar-card">
+                <div class="search-field">
+                    <label for="heroSearchInput"><i data-lucide="search"></i> Cari Armada</label>
+                    <input type="text" id="heroSearchInput" placeholder="Contoh: Alphard, Civic...">
+                </div>
+                <div class="search-field">
+                    <label for="heroServiceSelect"><i data-lucide="user-check"></i> Layanan</label>
+                    <select id="heroServiceSelect">
+                        <option value="Lepas Kunci">Lepas Kunci (Tanpa Sopir)</option>
+                        <option value="Dengan Sopir">Dengan Pengemudi</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="heroCategorySelect"><i data-lucide="sliders"></i> Tipe Mobil</label>
+                    <select id="heroCategorySelect">
+                        <option value="all">Semua Tipe</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="MPV">MPV</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="btnHeroSearch">
+                    <i data-lucide="compass"></i>
+                    <span>Cari</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section id="armada" class="fleet-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Armada Pilihan</span>
+            <h2 class="section-title">Koleksi Kendaraan Premium</h2>
+            <p class="section-desc">Setiap kendaraan kami selalu melalui pemeriksaan berkala yang ketat serta sterilisasi penuh demi menjamin keselamatan dan kenyamanan perjalanan Anda.</p>
+        </div>
+
+        <!-- Filter Tab Buttons -->
+        <div class="filter-tabs-row">
+            <button class="filter-tab active" data-category="all">Semua Mobil</button>
+            <button class="filter-tab" data-category="SUV">SUV</button>
+            <button class="filter-tab" data-category="Sedan">Sedan</button>
+            <button class="filter-tab" data-category="MPV">MPV</button>
+        </div>
+
+        <!-- Fleet Grid -->
+        <div class="fleet-grid" id="fleetGrid">
+            <!-- Car Card 1 -->
+            <div class="car-card" data-category="MPV" data-name="Toyota Alphard VIP">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=400&auto=format&fit=crop" alt="Toyota Alphard VIP Luxury White MPV">
+                    <span class="card-badge">Premium Class</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="car-title">Toyota Alphard VIP</h3>
+                    <div class="car-specs-grid">
+                        <div class="spec-item"><i data-lucide="users"></i> 7 Seat</div>
+                        <div class="spec-item"><i data-lucide="shield-check"></i> Matik</div>
+                        <div class="spec-item"><i data-lucide="briefcase"></i> 4 Koper</div>
+                        <div class="spec-item"><i data-lucide="gauge"></i> 2.5L Gas</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Harga Sewa / Hari</span>
+                            <h4 class="price-value">Rp 2.500.000</h4>
+                        </div>
+                        <button class="btn btn-secondary btn-rent-car" data-car="Toyota Alphard VIP">Sewa</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 2 -->
+            <div class="car-card" data-category="SUV" data-name="Honda CR-V Turbo">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=400&auto=format&fit=crop" alt="Honda CR-V Turbo Luxury SUV">
+                    <span class="card-badge">Adventure Class</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="car-title">Honda CR-V Turbo</h3>
+                    <div class="car-specs-grid">
+                        <div class="spec-item"><i data-lucide="users"></i> 5 Seat</div>
+                        <div class="spec-item"><i data-lucide="shield-check"></i> Matik</div>
+                        <div class="spec-item"><i data-lucide="briefcase"></i> 3 Koper</div>
+                        <div class="spec-item"><i data-lucide="gauge"></i> 1.5L Turbo</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Harga Sewa / Hari</span>
+                            <h4 class="price-value">Rp 850.000</h4>
+                        </div>
+                        <button class="btn btn-secondary btn-rent-car" data-car="Honda CR-V Turbo">Sewa</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 3 -->
+            <div class="car-card" data-category="MPV" data-name="Toyota Avanza Veloz">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=400&auto=format&fit=crop" alt="Toyota Avanza Veloz Family MPV">
+                    <span class="card-badge">Family Class</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="car-title">Toyota Avanza Veloz</h3>
+                    <div class="car-specs-grid">
+                        <div class="spec-item"><i data-lucide="users"></i> 7 Seat</div>
+                        <div class="spec-item"><i data-lucide="shield-check"></i> Manual</div>
+                        <div class="spec-item"><i data-lucide="briefcase"></i> 2 Koper</div>
+                        <div class="spec-item"><i data-lucide="gauge"></i> 1.5L Gas</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Harga Sewa / Hari</span>
+                            <h4 class="price-value">Rp 450.000</h4>
+                        </div>
+                        <button class="btn btn-secondary btn-rent-car" data-car="Toyota Avanza Veloz">Sewa</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Card 4 -->
+            <div class="car-card" data-category="Sedan" data-name="Honda Civic RS">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=400&auto=format&fit=crop" alt="Honda Civic RS Luxury Sport Sedan">
+                    <span class="card-badge">Sporty Class</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="car-title">Honda Civic RS</h3>
+                    <div class="car-specs-grid">
+                        <div class="spec-item"><i data-lucide="users"></i> 5 Seat</div>
+                        <div class="spec-item"><i data-lucide="shield-check"></i> Matik</div>
+                        <div class="spec-item"><i data-lucide="briefcase"></i> 2 Koper</div>
+                        <div class="spec-item"><i data-lucide="gauge"></i> 1.5L Turbo</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            <span class="price-label">Harga Sewa / Hari</span>
+                            <h4 class="price-value">Rp 1.200.000</h4>
+                        </div>
+                        <button class="btn btn-secondary btn-rent-car" data-car="Honda Civic RS">Sewa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Terms Section -->
+    <section id="syarat" class="terms-section container">
+        <div class="section-header">
+            <span class="section-subtitle">Syarat & Ketentuan</span>
+            <h2 class="section-title">Alur Sewa yang Praktis & Terpercaya</h2>
+            <p class="section-desc">Pahami tahapan singkat pemesanan sewa kendaraan premium kami demi memastikan administrasi berjalan lancar.</p>
+        </div>
+
+        <div class="terms-grid">
+            <div class="term-item">
+                <div class="term-num">01</div>
+                <h4>Pilih Mobil & Booking</h4>
+                <p>Tentukan tipe mobil yang sesuai kebutuhan Anda, lalu lengkapi jadwal penyewaan di form kontak.</p>
+            </div>
+            
+            <div class="term-item">
+                <div class="term-num">02</div>
+                <h4>Verifikasi Identitas</h4>
+                <p>Kirimkan foto KTP, SIM A aktif, dan bukti penjamin lain untuk kebutuhan validasi instan tim analis kami.</p>
+            </div>
+            
+            <div class="term-item">
+                <div class="term-num">03</div>
+                <h4>Ambil Unit / Diantar</h4>
+                <p>Kendaraan siap diambil di garasi kami dalam keadaan bersih steril atau langsung diantar ke kediaman Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section container">
+        <div class="section-header center">
+            <span class="section-subtitle">Testimoni Penyewa</span>
+            <h2 class="section-title">Kesan Kemitraan Kami</h2>
+            <p class="section-desc">Ulasan jujur dari korporasi dan pelanggan ritel yang mempercayakan kebutuhan sewa mobil harian mereka kepada kami.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Sangat puas menyewa Alphard dengan sopir di HZX Auto untuk menjemput klien asing kami. Sopirnya berseragam rapi, mengemudi dengan tenang, dan ramah. Pelayanan kelas satu!"
+                </p>
+                <div class="testimonial-author">
+                    <h4>Bapak Danang Wijaya</h4>
+                    <span>Direktur at PT Multi Sinergi Solusi</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <i data-lucide="quote" class="quote-icon"></i>
+                <p class="testimonial-text">
+                    "Proses sewa lepas kunci Honda CR-V sangat cepat dan syaratnya tidak ribet. Kondisi mobil sangat prima, bersih wangi, dan tarikan mesin turbo-nya mantap untuk rute luar kota."
+                </p>
+                <div class="testimonial-author">
+                    <h4>Ibu Melina Safitri</h4>
+                    <span>Penyewa Ritel Pribadi - Tangerang</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking-section container">
+        <div class="booking-grid">
+            <!-- Left Info Panel -->
+            <div class="booking-info-card">
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">Formulir Booking</span>
+                    <h2 class="section-title">Atur Jadwal Sewa Mobil Anda</h2>
+                </div>
+                <p class="booking-desc">
+                    Silakan isi data rencana perjalanan Anda di samping. Setelah tombol kirim diklik, sistem kami akan langsung menyusun rincian invoice sewa dan mengalihkan Anda ke WhatsApp Customer Service kami untuk konfirmasi slot armada.
+                </p>
+                
+                <div class="info-list">
+                    <div class="info-item">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>Pool & Garasi HZX Auto</h4>
+                            <p>Kawasan Ruko Creative Sudirman Square Blok B10-B12, Sudirman, Jakarta Selatan, 12190</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="message-circle" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>WhatsApp Reservasi (24/7)</h4>
+                            <p>+62 812-3456-789 (Respon Cepat Layanan Korporasi)</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i data-lucide="mail" class="info-icon"></i>
+                        <div class="info-details">
+                            <h4>E-mail Korespondensi Sewa</h4>
+                            <p>rental@hzxauto.io</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Booking Form Card -->
+            <div class="booking-form-card">
+                <h3 class="form-title">Pemesanan Sewa Mobil</h3>
+                <form id="carRentalBookingForm">
+                    <div class="form-group">
+                        <label for="bookingName">Nama Lengkap Penyewa / Perusahaan</label>
+                        <input type="text" id="bookingName" placeholder="Masukkan nama lengkap Anda atau instansi" required autocomplete="name">
+                    </div>
+                    
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="bookingPhone">Nomor WhatsApp</label>
+                            <input type="tel" id="bookingPhone" placeholder="Contoh: 08123456789" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingDate">Tanggal Mulai Sewa</label>
+                            <input type="date" id="bookingDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="bookingCar">Pilih Armada Mobil</label>
+                            <select id="bookingCar" required>
+                                <option value="" disabled selected>-- Pilih Mobil --</option>
+                                <option value="Toyota Alphard VIP">Toyota Alphard VIP (Rp 2.5jt/hari)</option>
+                                <option value="Honda CR-V Turbo">Honda CR-V Turbo (Rp 850k/hari)</option>
+                                <option value="Toyota Avanza Veloz">Toyota Avanza Veloz (Rp 450k/hari)</option>
+                                <option value="Honda Civic RS">Honda Civic RS (Rp 1.2jt/hari)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingService">Jenis Layanan</label>
+                            <select id="bookingService" required>
+                                <option value="Lepas Kunci">Lepas Kunci (Tanpa Sopir)</option>
+                                <option value="Dengan Sopir">Dengan Pengemudi Profesional</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookingDuration">Durasi Penyewaan (Hari)</label>
+                        <input type="number" id="bookingDuration" min="1" max="30" value="1" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i data-lucide="send"></i>
+                        <span>Kirim via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bottom">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h3 class="footer-logo"><span class="logo-accent">HZX</span> Auto</h3>
+                <p>Website showcase portofolio sewa mobil premium harian oleh HZXPro Studio.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Armada</h4>
+                <a href="#armada">SUV</a>
+                <a href="#armada">Sedan</a>
+                <a href="#armada">MPV</a>
+                <a href="#armada">VIP Class</a>
+            </div>
+            <div class="footer-rights">
+                <p>&copy; 2026 HZX Auto. Didesain secara premium oleh <a href="https://github.com/hzxpro" target="_blank" class="author-link">HZXPro Studio</a>.</p>
+                <p class="demo-notice">Ini adalah website demo portofolio sewa mobil. Alamat garasi, testimoni klien, dan rincian harga sewa bersifat simulasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
