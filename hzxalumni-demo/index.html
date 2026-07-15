@@ -3,246 +3,349 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Resmi Jejaring Ikatan Keluarga Alumni HZX Dago. Silaturahmi, Sinergi, dan Kontribusi Almamater. Powered by HZXPro Studio.">
-  <title>IKA HZX Dago | Portal Jejaring Alumni Resmi</title>
+  <meta name="description" content="Portal Resmi Ikatan Alumni HZX Bandung (IKA HZX). Menjaga Silaturahmi, Memperkuat Jaringan Profesional, &amp; Berkontribusi bagi Almamater.">
+  <title>IKA HZX Bandung - Ikatan Alumni SMA HZX Bandung</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar-header">
-    <div class="container navbar-container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
-        </span>
-        <span class="brand-name" data-alumni="name">IKA HZX Dago</span>
-      </a>
-      
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-
-      <nav class="navbar-menu" id="navbar-menu">
-        <a href="#hero" class="nav-link active">Beranda</a>
-        <a href="#tentang" class="nav-link">Tentang</a>
-        <a href="#direktori" class="nav-link">Direktori Alumni</a>
-        <a href="#event" class="nav-link">Event Reuni</a>
-        <a href="#daftar" class="nav-link">Daftar Anggota</a>
-        <a href="#forum" class="nav-link">Testimoni</a>
-        <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#daftar" class="btn btn-primary nav-cta-btn">Gabung Anggota</a>
-      </nav>
+    <!-- Top Row: Centered Logo -->
+    <div class="navbar-top-row">
+      <div class="container navbar-top-container">
+        <a href="#" class="navbar-brand">
+          <span class="brand-icon">🎓</span>
+          <span class="brand-name">IKATAN ALUMNI HZX</span>
+        </a>
+        
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bottom Row: Navigation Menu -->
+    <div class="navbar-bottom-row" id="navbar-menu-wrapper">
+      <div class="container navbar-bottom-container">
+        <nav class="navbar-menu" id="navbar-menu">
+          <a href="#hero" class="nav-link active">Beranda</a>
+          <a href="#tentang" class="nav-link">Tentang</a>
+          <a href="#direktori" class="nav-link">Direktori Alumni</a>
+          <a href="#event" class="nav-link">Agenda Reuni</a>
+          <a href="#forum" class="nav-link">Papan Kenangan</a>
+          <a href="#pendaftaran" class="nav-link">Daftar Anggota</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+          <a href="#pendaftaran" class="btn btn-secondary btn-sm nav-cta-btn">Registrasi Alumni</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline">Jejaring Silaturahmi Alumni</span>
-        <h1 class="hero-title" data-alumni="fullName">Ikatan Keluarga Alumni HZX Dago Bandung</h1>
-        <p class="hero-subtitle" data-alumni="tagline">Menjalin Silaturahmi, Membangun Sinergi, dan Berkontribusi untuk Almamater</p>
-        <div class="hero-actions">
-          <a href="#daftar" class="btn btn-primary btn-lg">Daftar Database Alumni</a>
-          <a href="#direktori" class="btn btn-outline btn-lg">Cari Rekan Alumni</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TENTANG ALUMNI -->
-  <section id="tentang" class="about-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Tentang Organisasi</span>
-        <h2>Rumah Kebersamaan Alumni HZX</h2>
-        <p class="section-desc">Membangun wadah kolaborasi antar angkatan guna meningkatkan karir bersama dan membantu perkembangan almamater tercinta.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <h3>Sejarah & Gerakan IKA</h3>
-          <p style="margin-bottom: 20px; color: #475569;">Ikatan Keluarga Alumni HZX Dago resmi didirikan pada tahun 2018 dengan tujuan menyatukan ribuan lulusan yang tersebar di berbagai kota dan industri. Kami percaya kekuatan jejaring alumni adalah pilar kesuksesan bagi generasi penerus.</p>
-          <p style="color: #475569;">Melalui iuran sukarela dan donasi rutin, IKA HZX secara aktif menyalurkan beasiswa pendidikan sekolah bagi siswa-siswi berprestasi yang kurang mampu di almamater Dago.</p>
-        </div>
-
-        <div class="about-stats">
-          <div class="stat-card text-center">
-            <span class="stat-num">1,500+</span>
-            <span class="stat-lbl">Alumni Terdata</span>
-          </div>
-          <div class="stat-card text-center">
-            <span class="stat-num">50+</span>
-            <span class="stat-lbl">Penerima Beasiswa</span>
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to right, rgba(30, 58, 138, 0.96) 30%, rgba(30, 58, 138, 0.6) 100%), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-tag">Wadah Silaturahmi Lintas Angkatan</span>
+          <h1 class="hero-title">Kembali Berkumpul, Berbagi Cerita Sejarah</h1>
+          <p class="hero-subtitle">Ikatan Alumni HZX Bandung menghubungkan kembali puluhan ribu lulusan sejak angkatan pertama tahun 1995 untuk bersinergi dan berkontribusi nyata bagi almamater tercinta.</p>
+          <div class="hero-actions">
+            <a href="#pendaftaran" class="btn btn-primary btn-lg">Daftar Anggota</a>
+            <a href="#direktori" class="btn btn-outline btn-lg">Cari Teman Angkatan</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- DIREKTORI ALUMNI (SEARCH & FILTER) -->
-  <section id="direktori" class="directory-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Jejaring Profesional</span>
-        <h2>Direktori Alumni Terdata</h2>
-        <p class="section-desc">Cari rekan angkatan atau jalin kolaborasi profesional berdasarkan tahun kelulusan dan profesi terkini.</p>
-      </div>
-
-      <!-- Filters wrapper -->
-      <div class="filter-controls-wrapper">
-        <div class="search-box">
-          <input type="text" id="dir-search" class="form-control search-input" placeholder="Cari nama, profesi, atau domisili...">
-        </div>
-        <div class="filter-select-box">
-          <select id="dir-filter-class" class="form-control select-filter">
-            <!-- Rendered by JS -->
-          </select>
-        </div>
-      </div>
-
-      <div class="directory-grid" id="directory-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- EVENT REUNI & KEGIATAN -->
-  <section id="event" class="events-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Agenda Alumni</span>
-        <h2>Event Reuni & Aksi Sosial</h2>
-        <p class="section-desc">Ketahui jadwal temu kangen alumni, reuni akbar tahunan, serta aksi sosial penggalangan dana peduli.</p>
-      </div>
-
-      <div class="events-grid" id="events-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM PENDAFTARAN ANGGOTA -->
-  <section id="daftar" class="register-section section-padding bg-light">
-    <div class="container">
-      <div class="register-card">
-        <div class="register-header text-center">
-          <span class="register-badge">Database Keanggotaan</span>
-          <h2>Formulir Pendaftaran Anggota IKA</h2>
-          <p>Lengkapi formulir di bawah ini untuk memperbarui biodata Anda ke dalam database alumni nasional. Verifikasi pendaftaran akan diproses ke WhatsApp Admin.</p>
-        </div>
-
-        <form id="register-form" class="register-form" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="reg-name">Nama Lengkap Alumni</label>
-              <input type="text" id="reg-name" class="form-control" placeholder="Contoh: Rian Hidayat" required>
+        <div class="hero-history-card">
+          <h4>Kilas Balik IKA HZX</h4>
+          <div class="stat-list">
+            <div class="stat-row">
+              <span class="stat-num">5,200+</span>
+              <p>Alumni Terdaftar Resmi</p>
             </div>
+            <div class="stat-row">
+              <span class="stat-num">30+</span>
+              <p>Angkatan Kelulusan (1995-2025)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="section-padding">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="section-tag">Sekilas Sejarah</span>
+            <h2>Merajut Kembali Kisah Masa Sekolah</h2>
+            <p>Didirikan atas inisiatif perwakilan alumni angkatan 1995-2005 pada reuni akbar tahun 2012, Ikatan Alumni HZX Bandung kini berkembang menjadi wadah formal yang tidak hanya mempererat persaudaraan kekeluargaan, tetapi juga sebagai pendorong kolaborasi bisnis dan karir profesional antar alumni binaan.</p>
+          </div>
+
+          <div class="about-vision-cards">
+            <div class="v-card">
+              <h4>Visi Organisasi</h4>
+              <p>"Terwujudnya ikatan alumni yang solid, profesional, menjunjung tinggi nilai kekeluargaan, serta menjadi motor penggerak kemajuan almamater dan masyarakat."</p>
+            </div>
+            <div class="m-card">
+              <h4>Misi Kami</h4>
+              <ul>
+                <li>Membangun database direktori alumni terintegrasi dan aman.</li>
+                <li>Menyelenggarakan forum reuni berkala dan temu bisnis.</li>
+                <li>Memberikan dana bantuan beasiswa bagi siswa berprestasi di sekolah.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIREKTORI ALUMNI (SEARCH & FILTER) -->
+    <section id="direktori" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Database Pusat</span>
+          <h2>Direktori Anggota Alumni</h2>
+          <p class="section-sub">Cari teman seangkatan atau temukan relasi profesional berdasarkan profesi mereka.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="Cari nama atau profesi alumni...">
+            <span class="search-icon">🔍</span>
+          </div>
+
+          <div class="filter-select-wrapper">
+            <select id="filter-angkatan">
+              <option value="all">Semua Angkatan</option>
+              <option value="1998">Angkatan 1998</option>
+              <option value="2005">Angkatan 2005</option>
+              <option value="2012">Angkatan 2012</option>
+              <option value="2018">Angkatan 2018</option>
+              <option value="2022">Angkatan 2022</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid of Profiles -->
+        <div class="direktori-grid" id="direktori-grid-el">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT & REUNI -->
+    <section id="event" class="section-padding">
+      <div class="container">
+        <div class="event-wrapper">
+          <div class="event-info">
+            <span class="section-tag">Agenda Reuni</span>
+            <h2>Event &amp; Temu Kangen Terdekat</h2>
+            <p>Hadiri agenda kumpul santai dan musyawarah kerja tahunan pengurus ikatan alumni. Daftarkan kehadiran Anda sekarang.</p>
+            
+            <div class="featured-event-card">
+              <span class="event-badge">Reuni Akbar</span>
+              <h4>Gala Dinner 30 Tahun Perak IKA HZX</h4>
+              <p class="time">⏰ Sabtu, 15 Agustus 2026 • Pukul 18:30 WIB</p>
+              <p class="loc">📍 Grand Ballroom Hotel Horison Bandung</p>
+              <p class="desc">Temu kangen lintas generasi dari lulusan angkatan 1995 sampai 2025. Dilengkapi pameran foto memori jadul sekolah.</p>
+              <a href="#pendaftaran" class="btn btn-primary btn-sm">Daftar Kehadiran</a>
+            </div>
+          </div>
+
+          <div class="event-past-gallery">
+            <h4>Dokumentasi Reuni Sebelumnya</h4>
+            <div class="past-gallery-grid">
+              <div class="gallery-item" data-src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800" data-caption="Keseruan Reuni Perak Angkatan 2000 di Lapangan Sekolah (2025)">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400" alt="Reuni 2000" loading="lazy">
+                <div class="gallery-overlay"><span>Zoom</span></div>
+              </div>
+              <div class="gallery-item" data-src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800" data-caption="Acara Halal Bihalal &amp; Santunan Sosial IKA HZX (2025)">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=400" alt="Halal Bihalal" loading="lazy">
+                <div class="gallery-overlay"><span>Zoom</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAPAN KENANGAN / TESTIMONI (FORUM STATIS) -->
+    <section id="forum" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Papan Kenangan</span>
+          <h2>Pesan &amp; Kesan Teman Seperjuangan</h2>
+          <p class="section-sub">Apa kata mereka mengenai memori bersejarah saat duduk di bangku sekolah dahulu?</p>
+        </div>
+
+        <div class="forum-grid">
+          <div class="forum-card">
+            <p class="message">"Nggak berasa udah puluhan tahun lulus. Paling kangen sama cilok kantin Bu De di belakang lab biologi, sama dihukum bareng gara-gara telat gerbang dikunci. Lewat IKA ini jadi bisa ketemu temen band lagi."</p>
+            <div class="author-info">
+              <h5>Dr. Aditya Pratama</h5>
+              <span>Angkatan 1998 • Spesialis Jantung</span>
+            </div>
+          </div>
+          
+          <div class="forum-card">
+            <p class="message">"Terima kasih IKA HZX, melalui program job placement alumni saya bisa dapet kesempatan magang kerja pertama kali. Jaringan alumni bener-bener solid dan ngebantu banget buat lulusan baru."</p>
+            <div class="author-info">
+              <h5>Sarah Amalia, S.Ds</h5>
+              <span>Angkatan 2022 • UI/UX Designer</span>
+            </div>
+          </div>
+
+          <div class="forum-card">
+            <p class="message">"Dulu zaman OSIS repot banget kalau bikin pensi. Sekarang lewat wadah alumni kita bisa bikin aksi sosial skala kelurahan bahkan kota Bandung. Bangga jadi bagian dari keluarga besar HZX."</p>
+            <div class="author-info">
+              <h5>Budi Setiawan</h5>
+              <span>Angkatan 2005 • Pengusaha Logistik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM PENDAFTARAN ANGGOTA ALUMNI -->
+    <section id="pendaftaran" class="section-padding">
+      <div class="container">
+        <div class="registration-wrapper">
+          <div class="reg-text">
+            <span class="section-tag">Pendaftaran Database</span>
+            <h2>Daftarkan Diri Anda ke Database Alumni Resmi</h2>
+            <p>Silakan isi data diri Anda di bawah ini untuk memperbarui database keanggotaan Ikatan Alumni HZX Bandung. Data Anda dijamin aman dan hanya digunakan untuk keperluan pendataan internal organisasi.</p>
+            
+            <div class="benefit-box">
+              <h5>Manfaat Terdaftar Resmi:</h5>
+              <p>Mendapatkan kartu anggota alumni digital, akses grup WhatsApp angkatan terverifikasi, serta undangan eksklusif reuni tahunan.</p>
+            </div>
+          </div>
+
+          <form class="alumni-form" id="alumni-form-el">
+            <h3>Form Registrasi Anggota</h3>
             
             <div class="form-group">
-              <label for="reg-class">Tahun Kelulusan (Angkatan)</label>
-              <input type="text" id="reg-class" class="form-control" maxlength="4" placeholder="Contoh: 2018" required>
+              <label for="alumni-name">Nama Lengkap Alumni *</label>
+              <input type="text" id="alumni-name" required placeholder="Masukkan nama lengkap Anda">
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="alumni-year">Tahun Kelulusan (Angkatan) *</label>
+                <select id="alumni-year" required>
+                  <option value="" disabled selected>Pilih angkatan...</option>
+                  <option value="1998">1998</option>
+                  <option value="2005">2005</option>
+                  <option value="2012">2012</option>
+                  <option value="2018">2018</option>
+                  <option value="2022">2022</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="alumni-phone">No. WhatsApp Aktif *</label>
+                <input type="tel" id="alumni-phone" required placeholder="Contoh: 08123456789">
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="reg-job">Profesi / Pekerjaan Saat Ini</label>
-              <input type="text" id="reg-job" class="form-control" placeholder="Contoh: Software Engineer / Dokter" required>
+              <label for="alumni-profession">Profesi / Pekerjaan Saat Ini *</label>
+              <input type="text" id="alumni-profession" required placeholder="Contoh: Dokter, PNS, Karyawan Swasta, Wirausaha">
             </div>
 
             <div class="form-group">
-              <label for="reg-city">Kota Domisili Tinggal</label>
-              <input type="text" id="reg-city" class="form-control" placeholder="Contoh: Bandung / Jakarta" required>
+              <label for="alumni-address">Kota Domisili Tinggal Sekarang *</label>
+              <input type="text" id="alumni-address" required placeholder="Contoh: Kota Bandung, Jakarta Selatan">
             </div>
 
-            <div class="form-group full-width">
-              <label for="reg-phone">Nomor WA / Handphone Aktif</label>
-              <input type="tel" id="reg-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            <button type="submit" class="btn btn-primary btn-block">Kirim Pendaftaran via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK PENGURUS -->
+    <section id="kontak" class="section-padding bg-light">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Sekretariat IKA</span>
+            <h2>Hubungi Pengurus Alumni</h2>
+            <p>Memiliki usulan program donasi sekolah, permohonan legalisir ijazah lewat perwakilan alumni, atau info sponsor event reuni? Silakan hubungi kami.</p>
+            
+            <div class="contact-items">
+              <div class="c-item">
+                <span class="c-icon">📍</span>
+                <p>Gedung Pusat Informasi Alumni SMA HZX, Jl. Sumatra No. 12, Sumur Bandung, Kota Bandung, Jawa Barat 40113</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">📞</span>
+                <p>0821-2829-7825</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">✉️</span>
+                <p>humas@ika-hzxbandung.org</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-actions text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Daftar Keanggotaan via WhatsApp</button>
-            <p class="form-note">Draf pendaftaran akan langsung dikirimkan ke administrator database ikatan alumni.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORUM / TESTIMONI ALUMNI -->
-  <section id="forum" class="testimonials-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Kabar Kebersamaan</span>
-        <h2>Apa Kata Rekan Alumni?</h2>
-        <p class="section-desc">Kesaksian dan cerita seru rekan alumni mengenai jaringan IKA HZX dalam membangun ekosistem karir bersama.</p>
-      </div>
-
-      <div class="testimonials-list" id="testimonials-list">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK PENGURUS -->
-  <section id="kontak" class="contact-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Hubungi Pengurus</span>
-        <h2>Kontak Kantor Sekretariat IKA</h2>
-        <p class="section-desc">Punya usulan program kerja, kerjasama sponsorship event, atau kesulitan pendaftaran database?</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Balai Kesekretariatan</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;" data-alumni="address">Sekretariat IKA HZX, Jl. Ir. H. Juanda No. 90, Dago, Bandung 40132</p>
-          
-          <div class="contact-details">
-            <p><strong>Hotline Kesekretariatan:</strong> <span data-alumni="phone">(022) 7777-6666</span></p>
-            <p><strong>WhatsApp Humas:</strong> <span data-alumni="whatsappAdmin">6281234567890</span></p>
-            <p><strong>Email Resmi:</strong> <span data-alumni="email">alumni@hzxdago.org</span></p>
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.852959146197!2d107.6106831!3d-6.910693999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e640b2848c7f%3A0xc3cfad8748df1265!2sSumur%20Bandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:12px; box-shadow: 0 4px 12px rgba(30,58,138,0.06);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
-
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Lightbox View">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-alumni="name">IKA HZX Dago</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">🎓 IKA HZX BANDUNG</span>
+        <p>Wadah Resmi Keluarga Besar Lulusan SMA HZX Bandung. Saling Menghubungkan angkatan, Memberikan Sinergi Terbaik.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#direktori">Direktori Alumni</a>
+        <a href="#event">Agenda Reuni</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>Ikatan Keluarga Alumni HZX Bandung</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Navbar toggler
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>

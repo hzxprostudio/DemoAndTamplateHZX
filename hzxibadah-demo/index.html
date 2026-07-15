@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Resmi & Transparansi Donasi Masjid Al-Muhajirin. Menuju Masjid yang Mandiri, Makmur, dan Transparan. Powered by HZXPro Studio.">
-  <title>Masjid Al-Muhajirin | Portal Resmi & Laporan Donasi</title>
+  <meta name="description" content="Portal Resmi Masjid Jami Al-Muhajirin - Wadah Umat Islam dalam Beribadah, Belajar, dan Berbagi. Informasi Transparansi Kas & Infaq Online.">
+  <title>Masjid Jami Al-Muhajirin - Tenang &amp; Transparan</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,13 +20,11 @@
   <header class="navbar-header">
     <div class="container navbar-container">
       <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-        </span>
-        <span class="brand-name" data-mosque="name">Masjid Al-Muhajirin</span>
+        <span class="brand-icon">🕌</span>
+        <span class="brand-name">MASJID AL-MUHAJIRIN</span>
       </a>
       
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+      <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
         <span class="toggler-icon"></span>
         <span class="toggler-icon"></span>
         <span class="toggler-icon"></span>
@@ -30,216 +32,344 @@
 
       <nav class="navbar-menu" id="navbar-menu">
         <a href="#hero" class="nav-link active">Beranda</a>
-        <a href="#kegiatan" class="nav-link">Kegiatan</a>
-        <a href="#pengurus" class="nav-link">Pengurus</a>
-        <a href="#transparansi" class="nav-link">Transparansi Kas</a>
-        <a href="#donasi" class="nav-link">Donasi</a>
+        <a href="#kegiatan" class="nav-link">Jadwal Kegiatan</a>
+        <a href="#pengurus" class="nav-link">Takmir</a>
+        <a href="#transparansi" class="nav-link">Keuangan Kas</a>
+        <a href="#donasi" class="nav-link">Donasi &amp; Infaq</a>
+        <a href="#galeri" class="nav-link">Galeri</a>
         <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#donasi" class="btn btn-primary nav-cta-btn">Infaq Online</a>
+        <a href="#donasi" class="btn btn-secondary nav-cta-btn">Infaq Online</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline">Portal Informasi & Transparansi</span>
-        <h1 class="hero-title" data-mosque="fullName">Masjid Raya Al-Muhajirin Bandung</h1>
-        <p class="hero-subtitle" data-mosque="tagline">Menebar Kedamaian, Membina Keimanan, dan Memakmurkan Umat</p>
-        <div class="hero-actions">
-          <a href="#donasi" class="btn btn-primary btn-lg">Donasi & Infaq Online</a>
-          <a href="#kegiatan" class="btn btn-outline btn-lg">Jadwal Kajian</a>
-        </div>
-      </div>
-      
-      <!-- Sholat Schedule Card Panel -->
-      <div class="sholat-card-wrapper">
-        <div class="sholat-card-header text-center">
-          <h3>Jadwal Sholat Fardhu Hari Ini</h3>
-          <p>Waktu Bandung dan Sekitarnya</p>
-        </div>
-        <div class="sholat-times-grid" id="sholat-times-grid">
-          <!-- Rendered dynamically by app.js -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- JADWAL KEGIATAN -->
-  <section id="kegiatan" class="activities-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Agenda Masjid</span>
-        <h2>Jadwal Kegiatan & Kajian Rutin</h2>
-        <p class="section-desc">Mari makmurkan masjid dengan menghadiri bimbingan keilmuan, majelis taklim, dan program pemberdayaan umat.</p>
-      </div>
-
-      <div class="activities-list-wrapper" id="activities-list">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFIL PENGURUS/TAKMIR -->
-  <section id="pengurus" class="takmir-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Struktur Takmir</span>
-        <h2>Pengurus & Takmir Masjid</h2>
-        <p class="section-desc">Panitia pelaksana kegiatan kemasjidan dan pengelola amanah dana infaq umat.</p>
-      </div>
-
-      <div class="takmir-grid" id="takmir-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- TRANSPARANSI KAS -->
-  <section id="transparansi" class="transparansi-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Laporan Keuangan</span>
-        <h2>Transparansi Laporan Kas Masjid</h2>
-        <p class="section-desc">Berikut rekapitulasi data pemasukan infaq jamaah dan pengeluaran operasional masjid secara akuntabel dan aktual.</p>
-      </div>
-
-      <div class="cash-card-summary">
-        <div class="cash-card text-center">
-          <span class="cash-lbl">Total Pemasukan Bulan Ini</span>
-          <h3 class="cash-amount text-success" id="total-in">Rp 0</h3>
-        </div>
-        <div class="cash-card text-center">
-          <span class="cash-lbl">Total Pengeluaran Bulan Ini</span>
-          <h3 class="cash-amount text-danger" id="total-out">Rp 0</h3>
-        </div>
-        <div class="cash-card text-center">
-          <span class="cash-lbl">Saldo Bersih (Net)</span>
-          <h3 class="cash-amount text-primary" id="net-balance">Rp 0</h3>
-        </div>
-      </div>
-
-      <div class="cash-table-wrapper">
-        <table class="cash-table">
-          <thead>
-            <tr>
-              <th>Tanggal</th>
-              <th>Keterangan / Alokasi Kegiatan</th>
-              <th class="text-right">Pemasukan (+)</th>
-              <th class="text-right">Pengeluaran (-)</th>
-            </tr>
-          </thead>
-          <tbody id="cash-tbody">
-            <!-- Rendered dynamically by app.js -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- DONASI ONLINE -->
-  <section id="donasi" class="donation-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Amal Jariyah</span>
-        <h2>Donasi & Infaq Online</h2>
-        <p class="section-desc">Salurkan infaq terbaik Anda untuk operasional dakwah, pemeliharaan fasilitas masjid, serta pembinaan anak yatim.</p>
-      </div>
-
-      <div class="donation-grid">
-        <div class="bank-info-panel">
-          <h3>Informasi Rekening Resmi</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;">Silakan transfer melalui bank di bawah ini, lalu isi formulir konfirmasi di sebelah kanan.</p>
-          
-          <div id="bank-info-container">
-            <!-- Bank account template rendered by app.js -->
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to bottom, rgba(6, 78, 59, 0.94) 0%, rgba(6, 78, 59, 0.7) 100%), url('https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-arabesque">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+          <h1 class="hero-title">Masjid Jami Al-Muhajirin</h1>
+          <p class="hero-subtitle">Membina Umat dengan Sunnah, Mewujudkan Kedamaian Hati, dan Menjaga Amanah Infaq Jemaah Melalui Transparansi Keuangan Terbuka.</p>
+          <div class="hero-actions">
+            <a href="#donasi" class="btn btn-secondary btn-lg">Infaq / Donasi Online</a>
+            <a href="#kegiatan" class="btn btn-outline btn-lg">Jadwal Kajian</a>
           </div>
         </div>
 
-        <div class="donation-form-card">
-          <form id="donation-form" class="donation-form" novalidate>
-            <div class="form-group">
-              <label for="donator-name">Nama Donatur / Hamba Allah</label>
-              <input type="text" id="donator-name" class="form-control" placeholder="Tulis nama atau Hamba Allah" required>
+        <!-- JADWAL SHOLAT -->
+        <div class="sholat-card-wrapper">
+          <h3>Jadwal Sholat &amp; Iqomah</h3>
+          <p class="sholat-date-txt" id="sholat-date">Rabu, 15 Juli 2026</p>
+          <div class="sholat-grid">
+            <div class="sholat-item">
+              <span class="sholat-name">Subuh</span>
+              <span class="sholat-time">04:42</span>
+              <span class="sholat-iqo">Iqomah: 10m</span>
             </div>
-            <div class="form-group">
-              <label for="donator-phone">Nomor WA Donatur (Untuk Konfirmasi)</label>
-              <input type="tel" id="donator-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            <div class="sholat-item">
+              <span class="sholat-name">Dzuhur</span>
+              <span class="sholat-time">12:00</span>
+              <span class="sholat-iqo">Iqomah: 5m</span>
             </div>
+            <div class="sholat-item">
+              <span class="sholat-name">Ashar</span>
+              <span class="sholat-time">15:21</span>
+              <span class="sholat-iqo">Iqomah: 5m</span>
+            </div>
+            <div class="sholat-item">
+              <span class="sholat-name">Maghrib</span>
+              <span class="sholat-time">17:58</span>
+              <span class="sholat-iqo">Iqomah: 7m</span>
+            </div>
+            <div class="sholat-item">
+              <span class="sholat-name">Isya</span>
+              <span class="sholat-time">19:11</span>
+              <span class="sholat-iqo">Iqomah: 10m</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JADWAL KEGIATAN rutin -->
+    <section id="kegiatan" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Agenda Masjid</span>
+          <h2>Jadwal Kajian &amp; Pengajian Rutin</h2>
+          <p class="section-sub">Mari tingkatkan ketakwaan dengan menghadiri majelis ilmu di Masjid Jami Al-Muhajirin.</p>
+        </div>
+
+        <div class="kegiatan-grid">
+          <div class="activity-card">
+            <div class="act-badge">Setiap Ahad Pagi</div>
+            <h4>Kajian Tafsir Al-Qur'an &amp; Hadits</h4>
+            <p class="act-time">⏱️ Pukul 07:00 - 08:30 WIB</p>
+            <p class="act-speaker">🎙️ Pemateri: Ustadz Dr. H. Khalid M.A.</p>
+            <p class="act-desc">Membahas tafsir ayat-ayat pilihan untuk implementasi moral kehidupan sehari-hari.</p>
+          </div>
+          
+          <div class="activity-card featured">
+            <div class="act-badge">Setiap Jumat</div>
+            <h4>Ibadah &amp; Khutbah Sholat Jumat</h4>
+            <p class="act-time">⏱️ Pukul 11:45 WIB - Selesai</p>
+            <p class="act-speaker">🎙️ Khatib Pilihan Bergantian</p>
+            <p class="act-desc">Dengarkan nasihat khutbah Jumat penyejuk hati jemaah untuk bekal ketakwaan sepekan.</p>
+          </div>
+
+          <div class="activity-card">
+            <div class="act-badge">Setiap Rabu Malam</div>
+            <h4>Tadarus &amp; Tahsin Tilawah Dewasa</h4>
+            <p class="act-time">⏱️ Ba'da Maghrib - Isya</p>
+            <p class="act-speaker">🎙️ Pemateri: Ust. Ahmad Fauzi (Al-Hafizh)</p>
+            <p class="act-desc">Bimbingan memperbaiki bacaan huruf Qur'an sesuai kaidah ilmu tajwid praktis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL PENGURUS/TAKMIR -->
+    <section id="pengurus" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Struktur Takmir</span>
+          <h2>Susunan Pengurus Masjid</h2>
+        </div>
+
+        <div class="takmir-grid">
+          <div class="takmir-card">
+            <div class="takmir-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300" alt="Ketua Takmir" loading="lazy">
+            </div>
+            <div class="takmir-info">
+              <h4>H. Rahmat Hidayat, Lc.</h4>
+              <p class="role">Ketua Dewan Takmir Masjid</p>
+            </div>
+          </div>
+          <div class="takmir-card">
+            <div class="takmir-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=300" alt="Sekretaris Takmir" loading="lazy">
+            </div>
+            <div class="takmir-info">
+              <h4>Ahmad Subarjo, S.E.</h4>
+              <p class="role">Sekretaris &amp; Hubungan Masyarakat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARANSI KAS -->
+    <section id="transparansi" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Transparansi Dana</span>
+          <h2>Laporan Kas Masjid Terbuka</h2>
+          <p class="section-sub">Amanah jemaah kami jaga dengan melaporkan seluruh rincian uang masuk &amp; pengeluaran secara terbuka setiap bulan.</p>
+        </div>
+
+        <div class="cash-wrapper">
+          <!-- Live dynamic calculation stats row -->
+          <div class="cash-stats-row">
+            <div class="c-stat-box income">
+              <span class="lbl">Total Pemasukan</span>
+              <h3 id="stat-income">Rp 0</h3>
+            </div>
+            <div class="c-stat-box expense">
+              <span class="lbl">Total Pengeluaran</span>
+              <h3 id="stat-expense">Rp 0</h3>
+            </div>
+            <div class="c-stat-box balance">
+              <span class="lbl">Saldo Kas Bersih</span>
+              <h3 id="stat-balance">Rp 0</h3>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="cash-table" id="cash-table-el">
+              <thead>
+                <tr>
+                  <th>Tanggal</th>
+                  <th>Keterangan Transaksi Keuangan</th>
+                  <th>Jenis</th>
+                  <th class="text-right">Nominal Uang</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Data loaded dynamically via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM DONASI/INFAQ ONLINE -->
+    <section id="donasi" class="section-padding bg-light">
+      <div class="container">
+        <div class="donasi-wrapper">
+          <div class="donasi-info">
+            <span class="section-tag">Amalan Jariyah</span>
+            <h2>Infaq &amp; Wakaf Mandiri</h2>
+            <p>Salurkan amalan jariyah terbaik Anda untuk mendukung operasional dakwah, perawatan bangunan fisik masjid, serta santunan anak yatim &amp; dhuafa di lingkungan sekitar masjid.</p>
+            
+            <div class="bank-accounts">
+              <h4>Informasi Rekening Resmi Transfer:</h4>
+              <div class="bank-card">
+                <span class="bank-logo">BSI</span>
+                <div>
+                  <h5>Bank Syariah Indonesia (BSI)</h5>
+                  <p class="acc-num">💳 No. Rekening: <strong>711-2345-678</strong></p>
+                  <p class="acc-name">a.n. Masjid Jami Al-Muhajirin</p>
+                </div>
+              </div>
+              <div class="bank-card">
+                <span class="bank-logo">Muamalat</span>
+                <div>
+                  <h5>Bank Muamalat</h5>
+                  <p class="acc-num">💳 No. Rekening: <strong>322-8765-432</strong></p>
+                  <p class="acc-name">a.n. Yayasan Al-Muhajirin Bandung</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="donation-form" id="donation-form-el">
+            <h3>Konfirmasi Transfer Infaq</h3>
+            
             <div class="form-group">
-              <label for="donation-type">Pilihan Alokasi Donasi</label>
-              <select id="donation-type" class="form-control" required>
-                <option value="" disabled selected>Pilih alokasi...</option>
-                <option value="operasional">Operasional & Dakwah Masjid</option>
-                <option value="pembangunan">Pembangunan / Renovasi Fisik</option>
-                <option value="yatim">Santunan Anak Yatim & Dhuafa</option>
-                <option value="ramadhan">Sedekah Jumat & Ramadhan</option>
+              <label for="donor-name">Nama Donatur (Bisa Hamba Allah) *</label>
+              <input type="text" id="donor-name" required placeholder="Contoh: Ahmad Fauzi / Hamba Allah">
+            </div>
+
+            <div class="form-group">
+              <label for="donor-phone">Nomor WhatsApp Donatur *</label>
+              <input type="tel" id="donor-phone" required placeholder="Contoh: 08123456789">
+            </div>
+
+            <div class="form-group">
+              <label for="donor-amount">Nominal Transfer (Rp) *</label>
+              <input type="number" id="donor-amount" required placeholder="Contoh: 100000" min="10000">
+            </div>
+
+            <div class="form-group">
+              <label for="donor-bank">Rekening Tujuan Transfer *</label>
+              <select id="donor-bank" required>
+                <option value="" disabled selected>Pilih rekening tujuan...</option>
+                <option value="BSI (Bank Syariah Indonesia)">BSI - 711-2345-678</option>
+                <option value="Bank Muamalat">Muamalat - 322-8765-432</option>
               </select>
             </div>
+
             <div class="form-group">
-              <label for="donation-amount">Nominal Donasi (Rp)</label>
-              <input type="number" id="donation-amount" class="form-control" placeholder="Masukkan jumlah nominal (contoh: 100000)" required>
+              <label for="donor-notes">Pesan / Doa Donatur (Optional)</label>
+              <textarea id="donor-notes" placeholder="Tuliskan titipan doa atau niat infaq..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Konfirmasi Pengiriman via WhatsApp</button>
+
+            <button type="submit" class="btn btn-primary btn-block">Kirim Konfirmasi via WhatsApp</button>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KONTAK & LOKASI -->
-  <section id="kontak" class="contact-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Lokasi Balai Ibadah</span>
-        <h2>Kontak & Alamat Masjid</h2>
-        <p class="section-desc">Kunjungi kami untuk beribadah bersama atau hubungi sekretariat pengurus DKM.</p>
-      </div>
+    <!-- GALERI KEGIATAN -->
+    <section id="galeri" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Galeri Foto</span>
+          <h2>Dokumentasi Kegiatan Kemakmuran Masjid</h2>
+        </div>
 
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Sekretariat DKM</h3>
-          <p style="margin-bottom: 24px; color: #475569;">Jl. Harmoni Indah No. 12, Kel. Dago, Kec. Coblong, Kota Bandung, Jawa Barat 40135</p>
-          
-          <div class="contact-detail-list">
-            <p><strong>Hotline WA:</strong> <span data-mosque="whatsappAdmin">6281234567890</span></p>
-            <p><strong>Operasional DKM:</strong> Setiap hari, 04:00 - 21:00 WIB</p>
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800" data-caption="Jemaah Beribadah Sholat Berjamaah">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400" alt="Ibadah Jamaah" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800" data-caption="Kajian Bedah Kitab Hadits Rutin">
+            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=400" alt="Bedah Kitab" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=800" data-caption="Persiapan Paket Ta'jil Buka Puasa Bersama">
+            <img src="https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?q=80&w=400" alt="Tajil Ramadan" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- KONTAK & LOKASI -->
+    <section id="kontak" class="section-padding bg-light">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Hubungi Kami</span>
+            <h2>DKM / Sekretariat Masjid</h2>
+            <p>Memiliki niat untuk menyumbangkan hewan qurban, konsumsi kajian jumat, atau pengajuan ijin tempat akad nikah? Hubungi kami langsung.</p>
+            
+            <div class="contact-items">
+              <div class="c-item">
+                <span class="c-icon">📍</span>
+                <p>Jl. Masjid Agung No. 78, Coblong, Kota Bandung, Jawa Barat 40132</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">📞</span>
+                <p>0812-3456-7890</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">✉️</span>
+                <p>dkm@almuhajirin-bandung.or.id</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.985959146197!2d107.6186831!3d-6.890693999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e650b2848c7f%3A0xc3cfad8748df1265!2sCoblong%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.04);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Lightbox View">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-mosque="name">Masjid Al-Muhajirin</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">🕌 MASJID AL-MUHAJIRIN</span>
+        <p>Bina Umat dengan Kebajikan &amp; Sunnah. Pelaporan Kas Keuangan Terbuka dan Layanan Infaq Online Jariyah.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#kegiatan">Jadwal Kegiatan</a>
+        <a href="#transparansi">Keuangan Kas</a>
+        <a href="#donasi">Infaq Jariyah</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>DKM Masjid Jami Al-Muhajirin</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Navbar
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>

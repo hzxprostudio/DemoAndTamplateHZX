@@ -1,217 +1,267 @@
 /**
- * HZX Peduli - Rebrandable Foundation & Orphanage Template
+ * Yayasan HZX Peduli - Javascript Logic
  * Powered by HZXPro Studio
  */
 
-const PEDULI_CONFIG = {
-  name: 'Yayasan Peduli Kasih HZX',
-  fullName: 'Yayasan Peduli Kasih HZX Indonesia',
-  tagline: 'Menebar Harapan, Mengasuh Masa Depan Anak-Anak Bangsa',
-  whatsappAdmin: '6281234567890',
-  legality: 'Kemenkumham RI No. AHU-0012345.AH.01.04/2020',
-  
-  bankAccount: {
-    name: 'Bank Mandiri Syariah (BSI)',
-    number: '123-456-789-0',
-    holder: 'YAYASAN PEDULI KASIH HZX'
-  },
-
-  campaigns: [
-    { id: 'pendidikan', title: 'Beasiswa Pendidikan Anak Yatim', collected: 32000000, target: 50000000, desc: 'Bantuan biaya sekolah, buku, dan uang saku untuk 50 anak yatim binaan yayasan.' },
-    { id: 'makanan', title: 'Sedekah Pangan Santri Penghafal Qur\'an', collected: 15400000, target: 20000000, desc: 'Pemenuhan kebutuhan gizi, beras, dan lauk pauk sehat setiap bulan.' },
-    { id: 'renovasi', title: 'Renovasi Gedung Asrama Panti', collected: 78000000, target: 120000000, desc: 'Perbaikan atap bocor dan perluasan kamar tidur anak-anak panti asuhan.' }
-  ],
-
-  recentDonors: [
-    { name: 'Hamba Allah', amount: 500000, date: '14 Juli 2026', campaign: 'Beasiswa Pendidikan' },
-    { name: 'Ibu Ratih Lestari', amount: 1500000, date: '13 Juli 2026', campaign: 'Gedung Asrama' },
-    { name: 'Bapak Budi Hartono', amount: 300000, date: '12 Juli 2026', campaign: 'Sedekah Pangan' },
-    { name: 'Hamba Allah', amount: 1000000, date: '10 Juli 2026', campaign: 'Beasiswa Pendidikan' }
-  ]
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply Config texts
-  document.querySelectorAll('[data-peduli]').forEach(el => {
-    const key = el.getAttribute('data-peduli');
-    if (PEDULI_CONFIG[key]) el.textContent = PEDULI_CONFIG[key];
-  });
-
-  // Render Campaigns with Progress Bars
-  renderCampaigns();
-
-  // Render Recent Donors Table
-  renderRecentDonors();
-
-  // Setup Donation Form
+  setupNavbar();
+  setupScrollspy();
+  setupCampaignSelectors();
+  setupAnonymousToggle();
   setupDonationForm();
+  setupGalleryLightbox();
 });
 
-function renderCampaigns() {
-  const container = document.getElementById('campaigns-grid');
-  if (!container) return;
-
-  container.innerHTML = '';
-  PEDULI_CONFIG.campaigns.forEach(camp => {
-    const percent = Math.min(Math.round((camp.collected / camp.target) * 100), 100);
-    const card = document.createElement('div');
-    card.className = 'campaign-card scroll-reveal revealed';
-    card.innerHTML = `
-      <div class="campaign-info">
-        <h4>${camp.title}</h4>
-        <p>${camp.desc}</p>
-        
-        <div class="progress-bar-wrapper">
-          <div class="progress-bar-track">
-            <div class="progress-bar-fill" style="width: ${percent}%;"></div>
-          </div>
-          <div class="progress-bar-labels">
-            <span>Terkumpul: <strong>Rp ${camp.collected.toLocaleString('id-ID')}</strong></span>
-            <span>Target: <strong>Rp ${camp.target.toLocaleString('id-ID')}</strong></span>
-          </div>
-          <span class="progress-percent-badge">${percent}%</span>
-        </div>
-        <a href="#donasi" class="btn btn-primary campaign-btn" onclick="selectCampaign('${camp.id}')">Donasi Sekarang</a>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-window.selectCampaign = function(campId) {
-  const select = document.getElementById('donation-camp');
-  if (!select) return;
+// 1. NAVBAR MOBILE TOGGLE
+function setupNavbar() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarMenu = document.getElementById('navbar-menu');
   
-  const camp = PEDULI_CONFIG.campaigns.find(c => c.id === campId);
-  if (camp) {
-    select.value = camp.id;
+  if (menuToggle && navbarMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking nav links
+    navbarMenu.querySelectorAll('.nav-link, .btn').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
   }
-};
+}
 
-function renderRecentDonors() {
-  const tbody = document.getElementById('donors-tbody');
-  if (!tbody) return;
+// 2. SCROLLSPY (ACTIVE LINK HIGHLIGHT)
+function setupScrollspy() {
+  const navLinks = document.querySelectorAll('.navbar-menu .nav-link');
+  const scrollspySections = Array.from(navLinks)
+    .map(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        try {
+          return document.querySelector(href);
+        } catch (e) {
+          return null;
+        }
+      }
+      return null;
+    })
+    .filter(Boolean);
 
-  tbody.innerHTML = '';
-  PEDULI_CONFIG.recentDonors.forEach(donor => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td><strong>${donor.name}</strong></td>
-      <td>Rp ${donor.amount.toLocaleString('id-ID')}</td>
-      <td><span class="badge badge-campaign">${donor.campaign}</span></td>
-      <td>${donor.date}</td>
-    `;
-    tbody.appendChild(row);
+  function activeScrollspy() {
+    const scrollPos = window.scrollY + window.innerHeight * 0.3; // 30% offset
+    let activeId = null;
+
+    scrollspySections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos) {
+        activeId = sec.id;
+      }
+    });
+
+    if (activeId) {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === '#' + activeId);
+      });
+    }
+  }
+
+  window.addEventListener('scroll', activeScrollspy, { passive: true });
+  activeScrollspy();
+}
+
+// 3. CAMPAIGN SELECTORS FROM PROGRAM CARDS
+function setupCampaignSelectors() {
+  const selectBtns = document.querySelectorAll('.select-campaign-btn');
+  const campaignSelect = document.getElementById('donor-campaign');
+
+  selectBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const campaignVal = btn.getAttribute('data-campaign');
+      
+      if (campaignSelect && campaignVal) {
+        campaignSelect.value = campaignVal;
+      }
+
+      // Smooth scroll to donasi form
+      const donasiSec = document.getElementById('donasi');
+      if (donasiSec) {
+        donasiSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   });
 }
 
+// 4. ANONYMOUS DONOR TOGGLE
+function setupAnonymousToggle() {
+  const anonCheckbox = document.getElementById('donor-anonymous');
+  const nameInput = document.getElementById('donor-name');
+
+  if (anonCheckbox && nameInput) {
+    anonCheckbox.addEventListener('change', () => {
+      if (anonCheckbox.checked) {
+        nameInput.value = 'Hamba Allah';
+        nameInput.disabled = true;
+        nameInput.style.backgroundColor = '#f1f5f9';
+      } else {
+        nameInput.value = '';
+        nameInput.disabled = false;
+        nameInput.style.backgroundColor = '';
+        nameInput.placeholder = 'Masukkan nama lengkap Anda';
+      }
+    });
+  }
+}
+
+// 5. DONATION FORM VALIDATION & WHATSAPP REDIRECT
 function setupDonationForm() {
-  const form = document.getElementById('donation-form');
-  const select = document.getElementById('donation-camp');
-  
-  if (!form || !select) return;
-
-  // Render Campaign Options
-  select.innerHTML = '<option value="" disabled selected>Pilih program donasi...</option>';
-  PEDULI_CONFIG.campaigns.forEach(camp => {
-    const opt = document.createElement('option');
-    opt.value = camp.id;
-    opt.textContent = camp.title;
-    select.appendChild(opt);
-  });
-
-  // Render Bank Details
-  const bankContainer = document.getElementById('bank-container');
-  if (bankContainer) {
-    bankContainer.innerHTML = `
-      <div class="bank-card">
-        <strong>${PEDULI_CONFIG.bankAccount.name}</strong>
-        <p class="bank-num">${PEDULI_CONFIG.bankAccount.number}</p>
-        <small>A.N. ${PEDULI_CONFIG.bankAccount.holder}</small>
-        <button type="button" class="btn-copy" onclick="copyBankNumber()">Salin Nomor Rekening</button>
-      </div>
-    `;
-  }
+  const form = document.getElementById('donation-social-form');
+  if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const nameInput = document.getElementById('donator-name');
-    const anonInput = document.getElementById('donator-anon');
-    const amountInput = document.getElementById('donator-amount');
-    const campSelect = document.getElementById('donation-camp');
-    const phoneInput = document.getElementById('donator-phone');
-
-    // Reset validation errors
-    document.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+    // Reset errors
     document.querySelectorAll('.form-error-msg').forEach(el => el.remove());
+    document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => el.style.borderColor = '');
+
+    const anonCheckbox = document.getElementById('donor-anonymous');
+    const nameEl = document.getElementById('donor-name');
+    const phoneEl = document.getElementById('donor-phone');
+    const amountEl = document.getElementById('donor-amount');
+    const campaignEl = document.getElementById('donor-campaign');
+    const messageEl = document.getElementById('donor-message');
 
     let isValid = true;
 
     const showError = (el, msg) => {
-      el.classList.add('is-invalid');
+      el.style.borderColor = '#ef4444';
       const err = document.createElement('small');
       err.className = 'form-error-msg';
       err.style.color = '#ef4444';
       err.style.marginTop = '4px';
-      err.style.display = 'block';
+      err.style.fontWeight = '700';
+      err.style.fontSize = '0.78rem';
       err.textContent = msg;
       el.parentNode.appendChild(err);
       isValid = false;
     };
 
-    let donatorName = nameInput.value.trim();
-    if (anonInput.checked) {
-      donatorName = 'Hamba Allah';
-    } else if (!donatorName) {
-      showError(nameInput, 'Nama donatur wajib diisi jika tidak dicentang Hamba Allah.');
+    // Validations
+    if (!anonCheckbox.checked && !nameEl.value.trim()) {
+      showError(nameEl, 'Nama donatur wajib diisi jika tidak berdonasi secara anonim.');
     }
 
-    if (!amountInput.value || isNaN(amountInput.value) || parseInt(amountInput.value) < 1000) {
-      showError(amountInput, 'Nominal donasi minimal Rp 1.000.');
+    const phoneVal = phoneEl.value.trim().replace(/[^0-9]/g, '');
+    if (!phoneEl.value.trim()) {
+      showError(phoneEl, 'Nomor WhatsApp wajib diisi.');
+    } else if (phoneVal.length < 9 || phoneVal.length > 14) {
+      showError(phoneEl, 'Nomor WhatsApp tidak valid (9-14 digit).');
     }
-    if (!campSelect.value) {
-      showError(campSelect, 'Pilih program bantuan donasi.');
+
+    const amountVal = parseFloat(amountEl.value);
+    if (!amountEl.value) {
+      showError(amountEl, 'Nominal donasi wajib diisi.');
+    } else if (isNaN(amountVal) || amountVal < 10000) {
+      showError(amountEl, 'Nominal minimal donasi adalah Rp 10.000.');
     }
-    if (!phoneInput.value.trim()) {
-      showError(phoneInput, 'Nomor Handphone wajib diisi.');
+
+    if (!campaignEl.value) {
+      showError(campaignEl, 'Silakan pilih program tujuan donasi.');
     }
 
     if (isValid) {
-      const waMsg = `*KONFIRMASI DONASI YAYASAN - ${PEDULI_CONFIG.name.toUpperCase()}*\n` +
-        `===================================\n\n` +
-        `Halo Admin Yayasan,\nSaya ingin mengonfirmasi pengiriman donasi sosial:\n\n` +
-        `👤 *Nama Donatur:* ${donatorName}\n` +
-        `📞 *No. Handphone:* ${phoneInput.value.trim()}\n` +
-        `📂 *Program Tujuan:* ${campSelect.options[campSelect.selectedIndex].text}\n` +
-        `💵 *Nominal:* Rp ${parseInt(amountInput.value).toLocaleString('id-ID')}\n` +
-        `🏦 *Bank Tujuan:* ${PEDULI_CONFIG.bankAccount.name}\n\n` +
-        `_(Bukti resi transfer terlampir setelah pesan ini)_`;
+      // Format money for WhatsApp text
+      const formattedAmount = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(amountVal);
 
-      const encoded = encodeURIComponent(waMsg);
-      const url = `https://wa.me/${PEDULI_CONFIG.whatsappAdmin}?text=${encoded}`;
+      // Build WhatsApp message
+      const waNumber = '6282128297825'; // HZXPro Admin WA
+      let msg = `*KONFIRMASI DONASI ONLINE - YAYASAN HZX PEDULI*\n`;
+      msg += `===============================================\n\n`;
+      msg += `Halo Pengurus Yayasan HZX Peduli,\n`;
+      msg += `Saya telah melakukan transfer donasi dengan rincian berikut:\n\n`;
+      msg += `👤 *Nama Donatur:* ${anonCheckbox.checked ? 'Hamba Allah (Anonim)' : nameEl.value.trim()}\n`;
+      msg += `📞 *No. WhatsApp:* ${phoneEl.value.trim()}\n`;
+      msg += `💰 *Nominal Transfer:* ${formattedAmount}\n`;
+      msg += `🏥 *Program Alokasi:* ${campaignEl.value}\n`;
+      if (messageEl.value.trim()) {
+        msg += `📝 *Titipan Doa/Pesan:* ${messageEl.value.trim()}\n`;
+      }
+      msg += `\nSaya akan melampirkan foto struk/bukti transfer setelah pesan ini terkirim. Terima kasih!`;
 
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = 'Menyusun Pesan...';
+      // Visual feedback on button
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Memproses...';
 
       setTimeout(() => {
         form.reset();
-        btn.disabled = false;
-        btn.innerHTML = originalText;
-        alert('Data Tersimpan! Silakan kirimkan bukti transfer Anda ke WhatsApp Admin Yayasan.');
-        window.open(url, '_blank');
+        
+        // Reset anonymous settings
+        nameEl.disabled = false;
+        nameEl.style.backgroundColor = '';
+        nameEl.placeholder = 'Masukkan nama lengkap Anda';
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        
+        alert('Konfirmasi Donasi Berhasil!\nAnda akan diarahkan ke WhatsApp Admin Yayasan untuk penyerahan bukti transfer.');
+        window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
       }, 1000);
     }
   });
 }
 
-window.copyBankNumber = function() {
-  const num = PEDULI_CONFIG.bankAccount.number;
-  navigator.clipboard.writeText(num).then(() => {
-    alert('Nomor rekening yayasan disalin!');
-  }).catch(() => {
-    alert('Gagal menyalin otomatis, silakan salin manual: ' + num);
+// 6. GALLERY LIGHTBOX MODAL
+function setupGalleryLightbox() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+  const lightboxCap = lightbox ? lightbox.querySelector('.lightbox-caption') : null;
+  const closeBtn = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+
+  if (!lightbox || !lightboxImg || !lightboxCap || !closeBtn) return;
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const src = item.getAttribute('data-src');
+      const caption = item.getAttribute('data-caption');
+      
+      lightboxImg.src = src;
+      lightboxCap.textContent = caption;
+      lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
   });
-};
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+      closeLightbox();
+    }
+  });
+}

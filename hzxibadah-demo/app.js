@@ -1,256 +1,268 @@
 /**
- * HZX Ibadah - Rebrandable House of Worship Website Template
+ * Masjid Jami Al-Muhajirin - Transparansi & Infaq Online
  * Powered by HZXPro Studio
  */
 
-const MOSQUE_CONFIG = {
-  name: 'Masjid Al-Muhajirin',
-  fullName: 'Masjid Raya Al-Muhajirin Bandung',
-  tagline: 'Menebar Kedamaian, Membina Keimanan, dan Memakmurkan Umat',
-  whatsappAdmin: '6281234567890',
-  bankAccount: {
-    name: 'BSI (Bank Syariah Indonesia)',
-    number: '777-888-999-0',
-    holder: 'PANITIA MASJID AL-MUHAJIRIN'
-  },
-  
-  sholatSchedule: {
-    Subuh: '04:45',
-    Syuruq: '06:05',
-    Dzuhur: '12:02',
-    Ashar: '15:22',
-    Maghrib: '17:58',
-    Isya: '19:12'
-  },
-
-  activities: [
-    { title: 'Kajian Tafsir Al-Qur\'an', day: 'Setiap Ahad Pagi', hour: '06:00 - 07:30 WIB', speaker: 'Ustadz H. Abdul Malik, Lc.' },
-    { title: 'Kajian Fiqih Kontemporer', day: 'Setiap Selasa Malam', hour: 'Ba\'da Maghrib - Isya', speaker: 'Dr. KH. M. Yusuf, M.A.' },
-    { title: 'Bimbingan Tahsin & Tajwid', day: 'Setiap Kamis Sore', hour: '16:00 - 17:30 WIB', speaker: 'Ustadz Muhammad Ridwan' },
-    { title: 'Pembinaan Anak Yatim', day: 'Setiap Jumat Sore', hour: '15:30 - 17:00 WIB', speaker: 'Panitia Kesra Masjid' }
-  ],
-
-  takmir: [
-    { name: 'H. Achmad Syarifuddin', role: 'Ketua DKM / Takmir', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300' },
-    { name: 'Ustadz H. Abdul Malik, Lc.', role: 'Imam Utama & Pembina', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300' }, // Standard mockups
-    { name: 'H. Bambang Irawan', role: 'Bendahara Kas Masjid', image: 'https://images.unsplash.com/photo-1580894732444-8fecef2271ff?q=80&w=300' }
-  ],
-
-  // Kas entries (pemasukan positif, pengeluaran negatif)
-  cashFlow: [
-    { date: '14 Juli 2026', desc: 'Infaq Kotak Jumat Rutin', amount: 4850000 },
-    { date: '12 Juli 2026', desc: 'Donasi Pembangunan Kanopi Masjid', amount: 15000000 },
-    { date: '10 Juli 2026', desc: 'Sedekah Subuh Jamaah', amount: 1250000 },
-    { date: '08 Juli 2026', desc: 'Pembelian Karpet Saf Baru (3 Roll)', amount: -9000000 },
-    { date: '06 Juli 2026', desc: 'Pembayaran Tagihan Listrik & Air', amount: -2450000 },
-    { date: '03 Juli 2026', desc: 'Honorarium Khatib & Muadzin Jumat', amount: -1500000 }
-  ]
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply Config Info
-  document.querySelectorAll('[data-mosque]').forEach(el => {
-    const key = el.getAttribute('data-mosque');
-    if (MOSQUE_CONFIG[key]) el.textContent = MOSQUE_CONFIG[key];
-  });
-
-  // Render Sholat Times
-  renderSholatTimes();
-
-  // Render Kegiatan
-  renderActivities();
-
-  // Render Takmir
-  renderTakmir();
-
-  // Render Cash Flow & Calculate Auto Totals
-  calculateAndRenderCash();
-
-  // setup Donation Form
+  setupNavbar();
+  setupScrollspy();
+  setupCashTransparency();
   setupDonationForm();
+  setupGalleryLightbox();
 });
 
-function renderSholatTimes() {
-  const container = document.getElementById('sholat-times-grid');
-  if (!container) return;
+// 1. NAVBAR MOBILE TOGGLE
+function setupNavbar() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarMenu = document.getElementById('navbar-menu');
+  
+  if (menuToggle && navbarMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
 
-  container.innerHTML = '';
-  Object.entries(MOSQUE_CONFIG.sholatSchedule).forEach(([key, val]) => {
-    const card = document.createElement('div');
-    card.className = 'sholat-time-card';
-    card.innerHTML = `
-      <span class="sholat-name">${key}</span>
-      <span class="sholat-hour">${val}</span>
-    `;
-    container.appendChild(card);
-  });
+    // Close menu when clicking nav links
+    navbarMenu.querySelectorAll('.nav-link, .btn').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+  }
 }
 
-function renderActivities() {
-  const container = document.getElementById('activities-list');
-  if (!container) return;
+// 2. SCROLLSPY (ACTIVE LINK HIGHLIGHT)
+function setupScrollspy() {
+  const navLinks = document.querySelectorAll('.navbar-menu .nav-link');
+  const scrollspySections = Array.from(navLinks)
+    .map(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        try {
+          return document.querySelector(href);
+        } catch (e) {
+          return null;
+        }
+      }
+      return null;
+    })
+    .filter(Boolean);
 
-  container.innerHTML = '';
-  MOSQUE_CONFIG.activities.forEach(act => {
-    const row = document.createElement('div');
-    row.className = 'activity-row';
-    row.innerHTML = `
-      <div class="act-details">
-        <h4>${act.title}</h4>
-        <span class="act-speaker">Oleh: ${act.speaker}</span>
-      </div>
-      <div class="act-time">
-        <span>📅 ${act.day}</span>
-        <span>🕒 ${act.hour}</span>
-      </div>
-    `;
-    container.appendChild(row);
-  });
+  function activeScrollspy() {
+    const scrollPos = window.scrollY + window.innerHeight * 0.3; // 30% offset
+    let activeId = null;
+
+    scrollspySections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos) {
+        activeId = sec.id;
+      }
+    });
+
+    if (activeId) {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === '#' + activeId);
+      });
+    }
+  }
+
+  window.addEventListener('scroll', activeScrollspy, { passive: true });
+  activeScrollspy();
 }
 
-function renderTakmir() {
-  const container = document.getElementById('takmir-grid');
-  if (!container) return;
+// 3. CASH TRANSPARENCY DYNAMIC TOTAL CALCULATION
+function setupCashTransparency() {
+  const tableBody = document.querySelector('#cash-table-el tbody');
+  const incomeEl = document.getElementById('stat-income');
+  const expenseEl = document.getElementById('stat-expense');
+  const balanceEl = document.getElementById('stat-balance');
 
-  container.innerHTML = '';
-  MOSQUE_CONFIG.takmir.forEach(staff => {
-    const card = document.createElement('div');
-    card.className = 'takmir-card text-center';
-    card.innerHTML = `
-      <div class="takmir-img-wrapper">
-        <img src="${staff.image}" alt="${staff.name}" loading="lazy">
-      </div>
-      <div class="takmir-info">
-        <h4>${staff.name}</h4>
-        <span class="takmir-role">${staff.role}</span>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
+  if (!tableBody) return;
 
-function calculateAndRenderCash() {
-  const tbody = document.getElementById('cash-tbody');
-  const totalIn = document.getElementById('total-in');
-  const totalOut = document.getElementById('total-out');
-  const netBalance = document.getElementById('net-balance');
+  // Dummy cash transactions
+  const transactions = [
+    { date: '02 Jul 2026', desc: 'Kotak Infaq Jum’at Pertama', type: 'masuk', amount: 4850000 },
+    { date: '05 Jul 2026', desc: 'Pembayaran Listrik & Air Bersih Masjid', type: 'keluar', amount: 1250000 },
+    { date: '09 Jul 2026', desc: 'Kotak Infaq Jum’at Kedua', type: 'masuk', amount: 5120000 },
+    { date: '11 Jul 2026', desc: 'Santunan Yatim-Piatu Lingkungan RW 02 & 03', type: 'keluar', amount: 3000000 },
+    { date: '12 Jul 2026', desc: 'Sumbangan Karpet Baru Hamba Allah via Transfer', type: 'masuk', amount: 8000000 },
+    { date: '14 Jul 2026', desc: 'Operasional Pembelian Sabun & Alat Kebersihan', type: 'keluar', amount: 350000 }
+  ];
 
-  if (!tbody || !totalIn || !totalOut || !netBalance) return;
+  let totalIncome = 0;
+  let totalExpense = 0;
 
-  tbody.innerHTML = '';
-  let sumIn = 0;
-  let sumOut = 0;
+  // Format currency
+  const formatRupiah = (num) => {
+    return 'Rp ' + num.toLocaleString('id-ID');
+  };
 
-  MOSQUE_CONFIG.cashFlow.forEach(item => {
-    const isPemasukan = item.amount > 0;
-    if (isPemasukan) {
-      sumIn += item.amount;
+  // Render rows and calculate totals
+  tableBody.innerHTML = '';
+  transactions.forEach(t => {
+    if (t.type === 'masuk') {
+      totalIncome += t.amount;
     } else {
-      sumOut += Math.abs(item.amount);
+      totalExpense += t.amount;
     }
 
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td>${item.date}</td>
-      <td>${item.desc}</td>
-      <td class="text-right text-success">${isPemasukan ? 'Rp ' + item.amount.toLocaleString('id-ID') : '-'}</td>
-      <td class="text-right text-danger">${!isPemasukan ? 'Rp ' + Math.abs(item.amount).toLocaleString('id-ID') : '-'}</td>
+      <td>${t.date}</td>
+      <td>${t.desc}</td>
+      <td><span class="badge-type ${t.type}">${t.type}</span></td>
+      <td class="text-right font-semibold ${t.type === 'masuk' ? 'text-emerald-700' : 'text-red-700'}">${formatRupiah(t.amount)}</td>
     `;
-    tbody.appendChild(row);
+    tableBody.appendChild(row);
   });
 
-  const balance = sumIn - sumOut;
+  const netBalance = totalIncome - totalExpense;
 
-  totalIn.textContent = `Rp ${sumIn.toLocaleString('id-ID')}`;
-  totalOut.textContent = `Rp ${sumOut.toLocaleString('id-ID')}`;
-  netBalance.textContent = `Rp ${balance.toLocaleString('id-ID')}`;
+  // Update DOM stats
+  if (incomeEl) incomeEl.textContent = formatRupiah(totalIncome);
+  if (expenseEl) expenseEl.textContent = formatRupiah(totalExpense);
+  if (balanceEl) balanceEl.textContent = formatRupiah(netBalance);
 }
 
+// 4. DONATION FORM VALIDATION & WHATSAPP REDIRECT
 function setupDonationForm() {
-  const form = document.getElementById('donation-form');
+  const form = document.getElementById('donation-form-el');
   if (!form) return;
-
-  // Insert Bank info dynamically
-  const bankInfo = document.getElementById('bank-info-container');
-  if (bankInfo) {
-    bankInfo.innerHTML = `
-      <div class="bank-card">
-        <strong>${MOSQUE_CONFIG.bankAccount.name}</strong>
-        <p class="bank-num" id="bank-number-text">${MOSQUE_CONFIG.bankAccount.number}</p>
-        <small>A.N. ${MOSQUE_CONFIG.bankAccount.holder}</small>
-        <button type="button" class="btn-copy" onclick="copyBankAccount()">Salin Rekening</button>
-      </div>
-    `;
-  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('donator-name');
-    const amount = document.getElementById('donation-amount');
-    const category = document.getElementById('donation-type');
-    const phone = document.getElementById('donator-phone');
-
-    // Reset styles
-    document.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+    // Reset errors
     document.querySelectorAll('.form-error-msg').forEach(el => el.remove());
+    document.querySelectorAll('.form-group input, .form-group select').forEach(el => el.style.borderColor = '');
+
+    const nameEl = document.getElementById('donor-name');
+    const phoneEl = document.getElementById('donor-phone');
+    const amountEl = document.getElementById('donor-amount');
+    const bankEl = document.getElementById('donor-bank');
+    const notesEl = document.getElementById('donor-notes');
 
     let isValid = true;
 
     const showError = (el, msg) => {
-      el.classList.add('is-invalid');
+      el.style.borderColor = '#ef4444';
       const err = document.createElement('small');
       err.className = 'form-error-msg';
       err.style.color = '#ef4444';
       err.style.marginTop = '4px';
-      err.style.display = 'block';
+      err.style.fontWeight = '600';
+      err.style.fontSize = '0.78rem';
       err.textContent = msg;
       el.parentNode.appendChild(err);
       isValid = false;
     };
 
-    if (!name.value.trim()) showError(name, 'Nama donatur wajib diisi.');
-    if (!amount.value || isNaN(amount.value) || parseInt(amount.value) < 1000) {
-      showError(amount, 'Nominal donasi tidak valid (minimal Rp 1.000).');
+    // Validations
+    if (!nameEl.value.trim()) {
+      showError(nameEl, 'Nama donatur wajib diisi.');
     }
-    if (!category.value) showError(category, 'Pilih kategori alokasi donasi.');
-    if (!phone.value.trim()) showError(phone, 'Nomor Handphone wajib diisi.');
+
+    const phoneVal = phoneEl.value.trim().replace(/[^0-9]/g, '');
+    if (!phoneEl.value.trim()) {
+      showError(phoneEl, 'Nomor WhatsApp wajib diisi.');
+    } else if (phoneVal.length < 9 || phoneVal.length > 14) {
+      showError(phoneEl, 'Nomor WhatsApp tidak valid (9-14 digit).');
+    }
+
+    const amountVal = parseFloat(amountEl.value);
+    if (!amountEl.value) {
+      showError(amountEl, 'Nominal donasi wajib diisi.');
+    } else if (isNaN(amountVal) || amountVal < 10000) {
+      showError(amountEl, 'Minimal donasi adalah Rp 10.000.');
+    }
+
+    if (!bankEl.value) {
+      showError(bankEl, 'Silakan pilih rekening tujuan transfer.');
+    }
 
     if (isValid) {
-      const waMsg = `*KONFIRMASI DONASI/INFAQ - ${MOSQUE_CONFIG.name.toUpperCase()}*\n` +
-        `===================================\n\n` +
-        `Halo Pengurus DKM,\nSaya ingin melakukan konfirmasi donasi dengan data berikut:\n\n` +
-        `👤 *Nama Donatur:* ${name.value.trim()}\n` +
-        `📞 *No. Handphone:* ${phone.value.trim()}\n` +
-        `📂 *Jenis Donasi:* ${category.options[category.selectedIndex].text}\n` +
-        `💵 *Nominal:* Rp ${parseInt(amount.value).toLocaleString('id-ID')}\n` +
-        `🏦 *Tujuan Bank:* ${MOSQUE_CONFIG.bankAccount.name}\n\n` +
-        `_(Bukti resi transfer terlampir setelah pesan ini dikirim)_`;
+      // Build WhatsApp message
+      const waNumber = '6282128297825'; // HZXPro Admin WA
+      let msg = `*KONFIRMASI INFAQ / DONASI ONLINE - MASJID JAMI AL-MUHAJIRIN*\n`;
+      msg += `==========================================================\n\n`;
+      msg += `Assalamu'alaikum Warahmatullahi Wabarakatuh,\n`;
+      msg += `Saya ingin mengonfirmasi transfer infaq dengan rincian berikut:\n\n`;
+      msg += `👤 *Nama Donatur:* ${nameEl.value.trim()}\n`;
+      msg += `📞 *No. WhatsApp:* ${phoneEl.value.trim()}\n`;
+      msg += `💵 *Nominal:* Rp ${parseInt(amountEl.value).toLocaleString('id-ID')}\n`;
+      msg += `🏦 *Tujuan Rekening:* ${bankEl.value}\n`;
+      
+      if (notesEl.value.trim()) {
+        msg += `📝 *Pesan/Doa:* ${notesEl.value.trim()}\n`;
+      }
+      
+      msg += `\nJazakumullah Khairan Katsiran atas amal jariyah yang disalurkan. Semoga berkah bagi jemaah.`;
 
-      const encoded = encodeURIComponent(waMsg);
-      const url = `https://wa.me/${MOSQUE_CONFIG.whatsappAdmin}?text=${encoded}`;
-
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = 'Menyusun Pesan...';
+      // Visual feedback on button
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Memproses...';
 
       setTimeout(() => {
         form.reset();
-        btn.disabled = false;
-        btn.innerHTML = originalText;
-        alert('Data tersimpan! Anda akan diarahkan ke WhatsApp Admin untuk mengirim bukti transfer.');
-        window.open(url, '_blank');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        
+        alert('Konfirmasi Donasi Berhasil!\nAnda akan diarahkan ke WhatsApp Pengurus Masjid untuk pengiriman bukti transfer.');
+        window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
       }, 1000);
     }
   });
 }
 
-window.copyBankAccount = function() {
-  const numberText = MOSQUE_CONFIG.bankAccount.number;
-  navigator.clipboard.writeText(numberText).then(() => {
-    alert('Nomor rekening berhasil disalin!');
-  }).catch(() => {
-    alert('Gagal menyalin otomatis, silakan salin manual: ' + numberText);
+// 5. GALLERY LIGHTBOX MODAL
+function setupGalleryLightbox() {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+  const lightboxCap = lightbox ? lightbox.querySelector('.lightbox-caption') : null;
+  const closeBtn = lightbox ? lightbox.querySelector('.lightbox-close') : null;
+
+  if (!lightbox || !lightboxImg || !lightboxCap || !closeBtn) return;
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const src = item.getAttribute('data-src');
+      const caption = item.getAttribute('data-caption');
+      
+      lightboxImg.src = src;
+      lightboxCap.textContent = caption;
+      lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
   });
-};
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('show');
+    document.body.style.overflow = '';
+  };
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+      closeLightbox();
+    }
+  });
+}

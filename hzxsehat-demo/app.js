@@ -1,206 +1,172 @@
 /**
- * HZX Sehat - Rebrandable Public Health Clinic Template
+ * UPT Puskesmas Sehat Sejahtera - Pendaftaran Online
  * Powered by HZXPro Studio
  */
 
-const PUSKESMAS_CONFIG = {
-  name: 'Puskesmas Sehat Utama',
-  fullName: 'Puskesmas Sehat Utama Bandung',
-  tagline: 'Melayani dengan Kasih, Sigap, Profesional, dan Ramah Masyarakat',
-  whatsappAdmin: '6281234567890',
-  email: 'admin@puskesmassehatutama.go.id',
-  phone: '(022) 5432-1098',
-  emergencyPhone: '119 / (022) 5432-1111',
-  address: 'Jl. Kesehatan Rakyat No. 88, Coblong, Kota Bandung, Jawa Barat 40132',
-  
-  services: [
-    { title: 'Poli Umum', desc: 'Pemeriksaan kesehatan dasar, diagnosa awal penyakit, dan rujukan lanjut.', icon: 'pulse' },
-    { title: 'Poli Gigi', desc: 'Pemeriksaan gigi, cabut gigi, tambal, pembersihan karang gigi.', icon: 'tooth' },
-    { title: 'Poli KIA & KB', desc: 'Kesehatan Ibu dan Anak, imunisasi balita, program KB, kehamilan.', icon: 'mother' },
-    { title: 'Laboratorium & Farmasi', desc: 'Tes darah dasar, urin, serta pengambilan resep obat BPJS/Umum.', icon: 'flask' }
-  ],
-
-  doctorsSchedule: [
-    { day: 'Senin', poli: 'Poli Umum', doctor: 'dr. Hendra Wijaya', hours: '08:00 - 12:00 WIB' },
-    { day: 'Senin', poli: 'Poli Gigi', doctor: 'drg. Fitriani Siregar', hours: '09:00 - 13:00 WIB' },
-    { day: 'Selasa', poli: 'Poli KIA & KB', doctor: 'Bidan Neng Lilis, S.Keb.', hours: '08:00 - 12:00 WIB' },
-    { day: 'Selasa', poli: 'Poli Umum', doctor: 'dr. Sarah Olivia', hours: '10:00 - 14:00 WIB' },
-    { day: 'Rabu', poli: 'Poli Umum', doctor: 'dr. Hendra Wijaya', hours: '08:00 - 12:00 WIB' },
-    { day: 'Rabu', poli: 'Poli Gigi', doctor: 'drg. Fitriani Siregar', hours: '09:00 - 13:00 WIB' },
-    { day: 'Kamis', poli: 'Poli KIA & KB', doctor: 'Bidan Neng Lilis, S.Keb.', hours: '08:00 - 12:00 WIB' },
-    { day: 'Kamis', poli: 'Poli Umum', doctor: 'dr. Sarah Olivia', hours: '10:00 - 14:00 WIB' },
-    { day: 'Jumat', poli: 'Poli Umum', doctor: 'dr. Hendra Wijaya', hours: '08:00 - 11:30 WIB' }
-  ],
-
-  bpjsRequirements: [
-    'Kartu BPJS Kesehatan asli / Mobile JKN yang aktif.',
-    'KTP (Kartu Tanda Penduduk) asli atau Kartu Keluarga (KK).',
-    'Buku KIA (Kesehatan Ibu & Anak) jika mendaftar ke Poli KIA.',
-    'Rujukan FKTP jika rujukan eksternal (opsional).'
-  ],
-
-  programs: [
-    { title: 'Posyandu Balita & Lansia Ceria', date: 'Setiap Rabu Minggu Pertama', desc: 'Pemeriksaan tumbuh kembang anak, penimbangan, pemberian makanan tambahan, dan cek tensi lansia gratis.' },
-    { title: 'Vaksinasi PIN Polio & Imunisasi Dasar', date: 'Setiap Hari Jumat', desc: 'Pemberian imunisasi BCG, DPT, Polio, Campak bagi bayi di ruangan poli KIA.' },
-    { title: 'Penyuluhan Gizi & Stunting Terpadu', date: 'Sabtu, 25 Juli 2026', desc: 'Workshop edukasi pencegahan stunting pada anak usia dini bagi ibu menyusui.' }
-  ]
-};
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Apply Config texts
-  document.querySelectorAll('[data-sehat]').forEach(el => {
-    const key = el.getAttribute('data-sehat');
-    if (PUSKESMAS_CONFIG[key]) el.textContent = PUSKESMAS_CONFIG[key];
-  });
-
-  // Render Services
-  renderServices();
-
-  // Render Doctors Schedule
-  renderDoctorsSchedule();
-
-  // Render BPJS Requirements
-  renderBpjsRequirements();
-
-  // Render Programs
-  renderPrograms();
-
-  // Form Registration Setup
-  setupRegistrationForm();
+  setupNavbar();
+  setupScrollspy();
+  setupPatientForm();
 });
 
-function renderServices() {
-  const container = document.getElementById('services-grid');
-  if (!container) return;
+// 1. NAVBAR MOBILE TOGGLE
+function setupNavbar() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarMenu = document.getElementById('navbar-menu');
+  
+  if (menuToggle && navbarMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
 
-  container.innerHTML = '';
-  PUSKESMAS_CONFIG.services.forEach(srv => {
-    let iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>'; // Pulse default
+    // Close menu when clicking nav links
+    navbarMenu.querySelectorAll('.nav-link, .btn').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      });
+    });
 
-    const card = document.createElement('div');
-    card.className = 'service-card text-center';
-    card.innerHTML = `
-      <div class="service-icon-badge">${iconSvg}</div>
-      <h4>${srv.title}</h4>
-      <p>${srv.desc}</p>
-    `;
-    container.appendChild(card);
-  });
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+      }
+    });
+  }
 }
 
-function renderDoctorsSchedule() {
-  const tbody = document.getElementById('schedule-tbody');
-  if (!tbody) return;
+// 2. SCROLLSPY (ACTIVE LINK HIGHLIGHT)
+function setupScrollspy() {
+  const navLinks = document.querySelectorAll('.navbar-menu .nav-link');
+  const scrollspySections = Array.from(navLinks)
+    .map(link => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        try {
+          return document.querySelector(href);
+        } catch (e) {
+          return null;
+        }
+      }
+      return null;
+    })
+    .filter(Boolean);
 
-  tbody.innerHTML = '';
-  PUSKESMAS_CONFIG.doctorsSchedule.forEach(sch => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td><strong>${sch.day}</strong></td>
-      <td>${sch.poli}</td>
-      <td>${sch.doctor}</td>
-      <td><span class="badge badge-hours">${sch.hours}</span></td>
-    `;
-    tbody.appendChild(row);
-  });
+  function activeScrollspy() {
+    const scrollPos = window.scrollY + window.innerHeight * 0.3; // 30% offset
+    let activeId = null;
+
+    scrollspySections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos) {
+        activeId = sec.id;
+      }
+    });
+
+    if (activeId) {
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === '#' + activeId);
+      });
+    }
+  }
+
+  window.addEventListener('scroll', activeScrollspy, { passive: true });
+  activeScrollspy();
 }
 
-function renderBpjsRequirements() {
-  const container = document.getElementById('bpjs-list');
-  if (!container) return;
-
-  container.innerHTML = '';
-  PUSKESMAS_CONFIG.bpjsRequirements.forEach(req => {
-    const li = document.createElement('li');
-    li.textContent = req;
-    container.appendChild(li);
-  });
-}
-
-function renderPrograms() {
-  const container = document.getElementById('programs-list-wrapper');
-  if (!container) return;
-
-  container.innerHTML = '';
-  PUSKESMAS_CONFIG.programs.forEach(prog => {
-    const row = document.createElement('div');
-    row.className = 'program-row';
-    row.innerHTML = `
-      <div class="prog-details">
-        <h4>${prog.title}</h4>
-        <p>${prog.desc}</p>
-      </div>
-      <div class="prog-time">
-        <span>📅 ${prog.date}</span>
-      </div>
-    `;
-    container.appendChild(row);
-  });
-}
-
-function setupRegistrationForm() {
-  const form = document.getElementById('registration-form');
+// 3. PATIENT FORM VALIDATION & WHATSAPP REDIRECT
+function setupPatientForm() {
+  const form = document.getElementById('patient-form');
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('reg-name');
-    const nik = document.getElementById('reg-nik');
-    const poli = document.getElementById('reg-poli');
-    const type = document.getElementById('reg-type');
-    const complaint = document.getElementById('reg-complaint');
-
-    // Reset validations
-    document.querySelectorAll('.form-control').forEach(el => el.classList.remove('is-invalid'));
+    // Reset errors
     document.querySelectorAll('.form-error-msg').forEach(el => el.remove());
+    document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(el => el.style.borderColor = '');
+
+    const nameEl = document.getElementById('patient-name');
+    const nikEl = document.getElementById('patient-nik');
+    const phoneEl = document.getElementById('patient-phone');
+    const poliEl = document.getElementById('patient-poli');
+    const descEl = document.getElementById('patient-desc');
 
     let isValid = true;
 
     const showError = (el, msg) => {
-      el.classList.add('is-invalid');
+      el.style.borderColor = '#ef4444';
       const err = document.createElement('small');
       err.className = 'form-error-msg';
       err.style.color = '#ef4444';
       err.style.marginTop = '4px';
-      err.style.display = 'block';
+      err.style.fontWeight = '600';
+      err.style.fontSize = '0.78rem';
       err.textContent = msg;
       el.parentNode.appendChild(err);
       isValid = false;
     };
 
-    if (!name.value.trim()) showError(name, 'Nama pasien wajib diisi.');
-    if (nik.value.trim().length !== 16 || isNaN(nik.value.trim())) {
-      showError(nik, 'NIK harus 16 digit angka.');
+    // Validations
+    if (!nameEl.value.trim()) {
+      showError(nameEl, 'Nama lengkap pasien wajib diisi.');
+    } else if (nameEl.value.trim().length < 3) {
+      showError(nameEl, 'Nama lengkap minimal 3 karakter.');
     }
-    if (!poli.value) showError(poli, 'Pilih poli tujuan berobat.');
-    if (!type.value) showError(type, 'Pilih jenis pembiayaan.');
+
+    const nikVal = nikEl.value.trim().replace(/[^0-9]/g, '');
+    if (!nikEl.value.trim()) {
+      showError(nikEl, 'Nomor NIK KTP wajib diisi.');
+    } else if (nikVal.length !== 16) {
+      showError(nikEl, 'NIK harus tepat berisi 16 digit angka.');
+    }
+
+    const phoneVal = phoneEl.value.trim().replace(/[^0-9]/g, '');
+    if (!phoneEl.value.trim()) {
+      showError(phoneEl, 'Nomor WhatsApp wajib diisi.');
+    } else if (phoneVal.length < 9 || phoneVal.length > 14) {
+      showError(phoneEl, 'Nomor WhatsApp tidak valid (9-14 digit).');
+    }
+
+    if (!poliEl.value) {
+      showError(poliEl, 'Silakan pilih poliklinik tujuan berobat.');
+    }
+
+    if (!descEl.value.trim()) {
+      showError(descEl, 'Silakan jelaskan gejala/keluhan medis Anda.');
+    }
 
     if (isValid) {
-      const waMsg = `*PENDAFTARAN PASIEN ONLINE - ${PUSKESMAS_CONFIG.name.toUpperCase()}*\n` +
-        `===================================\n\n` +
-        `Halo Admin Puskesmas,\nSaya ingin melakukan pendaftaran berobat rawat jalan online:\n\n` +
-        `👤 *Nama Pasien:* ${name.value.trim()}\n` +
-        `🪪 *NIK Pasien:* ${nik.value.trim()}\n` +
-        `🏥 *Poli Tujuan:* ${poli.options[poli.selectedIndex].text}\n` +
-        `💳 *Jenis Pembiayaan:* ${type.options[type.selectedIndex].text}\n` +
-        `🩺 *Keluhan Singkat:* ${complaint.value.trim() || '-'}\n\n` +
-        `Mohon info nomor antrean dan estimasi jam kedatangan. Terima kasih!`;
+      // Build WhatsApp message
+      const waNumber = '6282128297825'; // HZXPro Admin WA / Puskesmas Admin
+      let msg = `*PENDAFTARAN BEROBAT ONLINE - PUSKESMAS SEHAT*\n`;
+      msg += `=================================================\n\n`;
+      msg += `Halo Petugas Loket Pendaftaran Puskesmas,\n`;
+      msg += `Saya ingin mendaftarkan pasien untuk berobat dengan rincian berikut:\n\n`;
+      msg += `👤 *Nama Pasien:* ${nameEl.value.trim()}\n`;
+      msg += `💳 *NIK Pasien:* ${nikVal}\n`;
+      msg += `📞 *No. WhatsApp:* ${phoneEl.value.trim()}\n`;
+      msg += `🏥 *Poliklinik Tujuan:* ${poliEl.value}\n`;
+      msg += `📝 *Keluhan Medis:* ${descEl.value.trim()}\n\n`;
+      msg += `Mohon konfirmasi nomor antrean berobat untuk tanggal kedatangan besok. Terima kasih!`;
 
-      const encoded = encodeURIComponent(waMsg);
-      const url = `https://wa.me/${PUSKESMAS_CONFIG.whatsappAdmin}?text=${encoded}`;
-
-      const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = 'Memproses Tiket...';
+      // Visual feedback on button
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Memproses...';
 
       setTimeout(() => {
         form.reset();
-        btn.disabled = false;
-        btn.innerHTML = originalText;
-        alert('Pendaftaran Berhasil! Silakan konfirmasi berkas melalui WhatsApp Admin.');
-        window.open(url, '_blank');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        
+        alert('Pendaftaran Berhasil!\nAnda akan diarahkan ke WhatsApp Loket Puskesmas untuk verifikasi rekam medis dan penomoran antrean.');
+        window.open(`https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`, '_blank');
       }, 1000);
     }
   });

@@ -3,272 +3,450 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Resmi Penerimaan Mahasiswa Baru (PMB) Universitas HZX Cendekia Indonesia. Unggul, Mandiri, dan Berkarakter Global. Powered by HZXPro Studio.">
-  <title>Universitas HZX Cendekia | Portal PMB & Akademik Resmi</title>
+  <meta name="description" content="Portal Penerimaan Mahasiswa Baru &amp; Riset Universitas HZX Bandung. Unggul, Berkarakter, &amp; Berwawasan Global. Jalur Beasiswa &amp; Reguler Online.">
+  <title>Universitas HZX Bandung - Unggul, Berkarakter, Berwawasan Global</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- UPPER DECK BAR -->
-  <div class="upper-nav-bar">
-    <div class="container upper-nav-container">
-      <div class="upper-nav-left">
-        <span>🏫 Terakreditasi UNGGUL oleh BAN-PT</span>
-      </div>
-      <div class="upper-nav-right">
-        <a href="#">Riset</a>
-        <a href="#">Perpustakaan</a>
-        <a href="#">Portal Mahasiswa</a>
-        <a href="#">SIAKAD</a>
-      </div>
-    </div>
-  </div>
-
   <!-- NAVBAR -->
   <header class="navbar-header">
-    <div class="container navbar-container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
-        </span>
-        <span class="brand-name" data-univ="name">Universitas HZX Cendekia</span>
-      </a>
-      
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-
-      <nav class="navbar-menu" id="navbar-menu">
-        <a href="#hero" class="nav-link active">Beranda</a>
-        <a href="#profil" class="nav-link">Profil Kampus</a>
-        <a href="#prodi" class="nav-link">Fakultas & Prodi</a>
-        <a href="#biaya" class="nav-link">Uang Kuliah (UKT)</a>
-        <a href="#riset" class="nav-link">Publikasi Riset</a>
-        <a href="#daftar" class="nav-link">Pendaftaran PMB</a>
-        <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#daftar" class="btn btn-primary nav-cta-btn">Daftar PMB</a>
-      </nav>
+    <!-- Top Row: Centered Logo -->
+    <div class="navbar-top-row">
+      <div class="container navbar-top-container">
+        <a href="#" class="navbar-brand">
+          <span class="brand-icon">🏛️</span>
+          <span class="brand-name">UNIVERSITAS HZX BANDUNG</span>
+        </a>
+        
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bottom Row: Navigation Menu -->
+    <div class="navbar-bottom-row" id="navbar-menu-wrapper">
+      <div class="container navbar-bottom-container">
+        <nav class="navbar-menu" id="navbar-menu">
+          <a href="#hero" class="nav-link active">Beranda</a>
+          <a href="#profil" class="nav-link">Profil Kampus</a>
+          <a href="#fakultas" class="nav-link">Fakultas &amp; Prodi</a>
+          <a href="#dosen" class="nav-link">Profil Dosen</a>
+          <a href="#fasilitas" class="nav-link">Fasilitas</a>
+          <a href="#riset" class="nav-link">Riset &amp; Publikasi</a>
+          <a href="#biaya" class="nav-link">Biaya Kuliah</a>
+          <a href="#pendaftaran" class="nav-link">Pendaftaran PMB</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+          <a href="#pendaftaran" class="btn btn-secondary btn-sm nav-cta-btn">Daftar PMB</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline">Penerimaan Mahasiswa Baru (PMB)</span>
-        <h1 class="hero-title" data-univ="fullName">Universitas HZX Cendekia Indonesia</h1>
-        <p class="hero-subtitle" data-univ="tagline">Membentuk Pemimpin Masa Depan Berkarakter Unggul & Berdaya Saing Global</p>
-        <div class="hero-actions">
-          <a href="#daftar" class="btn btn-primary btn-lg">Daftar Online PMB</a>
-          <a href="#prodi" class="btn btn-outline btn-lg">Jelajahi Program Studi</a>
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to right, rgba(127, 29, 29, 0.95) 40%, rgba(127, 29, 29, 0.6) 100%), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-tag">Penerimaan Mahasiswa Baru (PMB) TA 2026/2027</span>
+          <h1 class="hero-title">Raih Masa Depan Gemilang Bersama Universitas HZX</h1>
+          <p class="hero-subtitle">Kampus riset kelas dunia terakreditasi Unggul BAN-PT. Menyediakan ekosistem inovasi digital, dosen bergelar Ph.D., serta jejaring karir multinasional.</p>
+          <div class="hero-actions">
+            <a href="#pendaftaran" class="btn btn-primary btn-lg">Daftar PMB Online</a>
+            <a href="#fakultas" class="btn btn-outline btn-lg">Jelajahi Fakultas</a>
+          </div>
+        </div>
+
+        <div class="hero-stat-card">
+          <h4>Kualitas Pendidikan Kami</h4>
+          <div class="stat-list">
+            <div class="stat-row">
+              <span class="stat-num">A (Unggul)</span>
+              <p>Akreditasi Institusi BAN-PT</p>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">18,500+</span>
+              <p>Mahasiswa Aktif Berprestasi</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROFIL KAMPUS -->
-  <section id="profil" class="profil-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Profil Almamater</span>
-        <h2>Mewujudkan Pusat Keunggulan Akademik</h2>
-        <p class="section-desc">Universitas HZX Cendekia berkomitmen menyelenggarakan tridharma perguruan tinggi berstandar unggul untuk menciptakan inovasi bagi bangsa.</p>
+    <!-- PROFIL KAMPUS -->
+    <section id="profil" class="section-padding">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="section-tag">Profil Kampus</span>
+            <h2>Pusat Keunggulan Akademik &amp; Inovasi Indonesia</h2>
+            <p>Sejak didirikan pada tahun 1998, Universitas HZX Bandung berkomitmen melahirkan lulusan unggulan berdaya saing global yang menguasai keilmuan mutakhir dan menjunjung tinggi integritas moral kebangsaan.</p>
+          </div>
+
+          <div class="vision-box">
+            <div class="vis-card">
+              <h4>Visi Universitas</h4>
+              <p>"Menjadi universitas riset terkemuka di Asia yang unggul dalam pengembangan IPTEKS dan melahirkan pemimpin berkarakter global."</p>
+            </div>
+            <div class="misi-list">
+              <h4>Misi Utama</h4>
+              <ul>
+                <li>Menyelenggarakan pendidikan berbasis digital berskala internasional.</li>
+                <li>Mendorong riset hilirisasi komersial berdaya guna bagi industri.</li>
+                <li>Menjalin kemitraan global dengan universitas terbaik dunia.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="profil-grid">
-        <div class="about-text">
-          <h3>Sejarah & Visi Misi</h3>
-          <p style="margin-bottom: 20px; color: #475569;">Berdiri sejak tahun 2015 di Bandung, Universitas HZX Cendekia tumbuh pesat menjadi perguruan tinggi swasta terkemuka yang terakreditasi INSTITUSI A oleh BAN-PT. Kami mengedepankan pendidikan berbasis teknologi, entrepreneurship, dan etika karakter moral tinggi.</p>
+    <!-- FAKULTAS & PROGRAM STUDI (EXPANDABLE JS ACCORDION) -->
+    <section id="fakultas" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Program Pendidikan</span>
+          <h2>Fakultas &amp; Program Studi Pilihan</h2>
+          <p class="section-sub">Klik fakultas untuk memperluas daftar program studi sarjana terakreditasi.</p>
+        </div>
+
+        <div class="fakultas-expand-wrapper">
           
-          <div class="vision-mission-box">
-            <div class="vision-box">
-              <h4>Visi Kampus</h4>
-              <p>Menjadi Universitas riset kelas dunia berlandaskan sains-teknologi modern dan kewirausahaan yang berdampak nyata bagi kesejahteraan global.</p>
+          <!-- Faculty Card 1 -->
+          <div class="faculty-accordion-card" data-faculty="teknik">
+            <div class="faculty-header">
+              <div class="fac-title">
+                <span class="fac-icon">⚙️</span>
+                <h4>Fakultas Teknik &amp; Rekayasa</h4>
+              </div>
+              <span class="toggle-arrow">▼</span>
+            </div>
+            <div class="faculty-body" id="fac-teknik">
+              <p>Membekali mahasiswa dengan keahlian rekayasa teknologi dan perancangan infrastruktur ramah lingkungan modern.</p>
+              <ul class="prodi-list">
+                <li>🎓 S1 Teknik Sipil (Akreditasi Unggul)</li>
+                <li>🎓 S1 Teknik Mesin (Akreditasi A)</li>
+                <li>🎓 S1 Teknik Elektro (Akreditasi A)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Faculty Card 2 -->
+          <div class="faculty-accordion-card" data-faculty="komputer">
+            <div class="faculty-header">
+              <div class="fac-title">
+                <span class="fac-icon">💻</span>
+                <h4>Fakultas Ilmu Komputer</h4>
+              </div>
+              <span class="toggle-arrow">▼</span>
+            </div>
+            <div class="faculty-body" id="fac-komputer">
+              <p>Mencetak talenta digital ahli AI, Software Engineering, dan Data Science siap kerja di tech company global.</p>
+              <ul class="prodi-list">
+                <li>🎓 S1 Teknik Informatika (Akreditasi Unggul)</li>
+                <li>🎓 S1 Sistem Informasi (Akreditasi Unggul)</li>
+                <li>🎓 S1 Data Science (Akreditasi A)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Faculty Card 3 -->
+          <div class="faculty-accordion-card" data-faculty="ekonomi">
+            <div class="faculty-header">
+              <div class="fac-title">
+                <span class="fac-icon">📈</span>
+                <h4>Fakultas Ekonomi &amp; Bisnis</h4>
+              </div>
+              <span class="toggle-arrow">▼</span>
+            </div>
+            <div class="faculty-body" id="fac-ekonomi">
+              <p>Menyiapkan analis keuangan korporat, ekonom makro, dan technopreneur handal berintegritas tinggi.</p>
+              <ul class="prodi-list">
+                <li>🎓 S1 Manajemen Bisnis (Akreditasi Unggul)</li>
+                <li>🎓 S1 Akuntansi Sektor Publik (Akreditasi A)</li>
+                <li>🎓 S1 Ekonomi Pembangunan (Akreditasi A)</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL DOSEN UNGGULAN -->
+    <section id="dosen" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Tenaga Pengajar</span>
+          <h2>Dosen &amp; Peneliti Unggulan Kami</h2>
+        </div>
+
+        <div class="dosen-grid">
+          <div class="dosen-card">
+            <h4>Prof. Dr. Ir. Heryanto, Ph.D.</h4>
+            <span class="dept">Teknik Informatika - AI &amp; Robotics Researcher</span>
+            <p class="desc">Penulis 50+ publikasi internasional terindeks Scopus Q1 mengenai Deep Learning dan visi komputer industri.</p>
+          </div>
+          
+          <div class="dosen-card">
+            <h4>Dr. Diana Amalia, M.B.A.</h4>
+            <span class="dept">Manajemen Bisnis - Fintech Strategy Analyst</span>
+            <p class="desc">Mantan konsultan McKinsey &amp; Company, memimpin pusat riset inklusi keuangan digital nasional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASILITAS KAMPUS -->
+    <section id="fasilitas" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Sarana Prasarana</span>
+          <h2>Fasilitas Kampus Standar Internasional</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=800" data-caption="Gedung Perpustakaan Digital HZX Central Library">
+            <img src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=400" alt="Perpustakaan Kampus" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800" data-caption="Laboratorium Rekayasa & Robotika Komputer Lt. 2">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=400" alt="Lab Komputer" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800" data-caption="Ruang Kuliah Teater Auditorium Utama Kampus">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=400" alt="Auditorium Kampus" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BERITA / RISET & PUBLIKASI -->
+    <section id="riset" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Riset &amp; Publikasi</span>
+          <h2>Jurnal Ilmiah &amp; Inovasi Mahasiswa</h2>
+        </div>
+
+        <div class="news-list">
+          <div class="news-card">
+            <span class="date">08 Jul 2026</span>
+            <div class="news-info">
+              <h4>Tim Riset IT HZX Kembangkan Pendeteksi Kanker Kulit Berbasis AI</h4>
+              <p>Kolaborasi Fakultas Ilmu Komputer dan Kedokteran melahirkan aplikasi pendeteksi dini kanker kulit dengan tingkat akurasi mencapai 98,2% diuji klinis.</p>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <span class="date">04 Jul 2026</span>
+            <div class="news-info">
+              <h4>Universitas HZX Menangkan Hibah Riset Energi Terbarukan ASEAN</h4>
+              <p>Menerima pendanaan penuh riset pengembangan sel surya berbasis silikon organik organik untuk daerah terpencil di Indonesia Timur.</p>
             </div>
           </div>
         </div>
-
-        <div class="accreditation-panel">
-          <h3>Akreditasi Institusi Unggul</h3>
-          <div class="accreditation-card text-center">
-            <span class="accred-grade">A</span>
-            <span class="accred-label">Akreditasi BAN-PT</span>
-          </div>
-          <p class="text-center" style="margin-top: 16px; font-size: 0.85rem; color: var(--color-muted);">Sertifikat No. 2345/SK/BAN-PT/Akred/PT/2024</p>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAKULTAS & PROGRAM STUDI -->
-  <section id="prodi" class="prodi-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Program Akademik</span>
-        <h2>Fakultas & Program Studi Pilihan</h2>
-        <p class="section-desc">Pilih rumpun keilmuan yang paling relevan dengan cita-cita karir profesional Anda di masa depan.</p>
-      </div>
-
-      <!-- Faculty filter buttons -->
-      <div class="filter-controls-wrapper" id="faculty-filters">
-        <!-- Rendered by JS -->
-      </div>
-
-      <div class="prodi-grid" id="prodi-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- BIAYA KULIAH (UKT) -->
-  <section id="biaya" class="biaya-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Uang Kuliah Tunggal</span>
-        <h2>Tabel Rincian Biaya Kuliah (UKT)</h2>
-        <p class="section-desc">Daftar biaya kuliah per semester untuk program Sarjana (S1) berdasarkan program studi masing-masing.</p>
-      </div>
-
-      <div class="ukt-table-card">
-        <table class="ukt-table">
-          <thead>
-            <tr>
-              <th>Program Studi</th>
-              <th>Fakultas</th>
-              <th>Akreditasi Prodi</th>
-              <th>Biaya UKT per Semester</th>
-            </tr>
-          </thead>
-          <tbody id="ukt-tbody">
-            <!-- Rendered dynamically by app.js -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- PUBLIKASI & RISET KAMPUS -->
-  <section id="riset" class="riset-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Pusat Penelitian</span>
-        <h2>Publikasi & Jurnal Riset Terkini</h2>
-        <p class="section-desc">Kompilasi artikel ilmiah dan hasil riset mahasiswa serta dosen unggulan yang terbit di jurnal bereputasi.</p>
-      </div>
-
-      <div class="publications-list" id="publications-list">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM PENDAFTARAN PMB -->
-  <section id="daftar" class="register-section section-padding">
-    <div class="container">
-      <div class="register-card">
-        <div class="register-header text-center">
-          <span class="register-badge">Portal Seleksi PMB</span>
-          <h2>Formulir Pendaftaran Mahasiswa Baru</h2>
-          <p>Lengkapi formulir pendaftaran di bawah ini. Anda akan langsung diarahkan ke kontak WhatsApp Panitia PMB Kampus untuk panduan pengisian berkas persyaratan ujian saringan masuk.</p>
+    <!-- BIAYA KULIAH / UKT TABLE -->
+    <section id="biaya" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Info Finansial</span>
+          <h2>Info Biaya Kuliah &amp; UKT Sarjana</h2>
+          <p class="section-sub">Daftar biaya kuliah Uang Kuliah Tunggal (UKT) per semester berdasarkan program studi.</p>
         </div>
 
-        <form id="pmb-form" class="register-form" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="pmb-name">Nama Lengkap Pendaftar</label>
-              <input type="text" id="pmb-name" class="form-control" placeholder="Contoh: Rian Hidayat" required>
+        <div class="table-wrapper">
+          <table class="ukt-table">
+            <thead>
+              <tr>
+                <th>Program Studi</th>
+                <th>Akreditasi</th>
+                <th class="text-right">UKT Reguler / Sem</th>
+                <th class="text-right">UKT Jalur Beasiswa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S1 Teknik Informatika</td>
+                <td>Unggul</td>
+                <td class="text-right">Rp 8.500.000</td>
+                <td class="text-right free">Bebas UKT (0 Rupiah)</td>
+              </tr>
+              <tr>
+                <td>S1 Teknik Sipil</td>
+                <td>Unggul</td>
+                <td class="text-right">Rp 8.000.000</td>
+                <td class="text-right free">Bebas UKT (0 Rupiah)</td>
+              </tr>
+              <tr>
+                <td>S1 Manajemen Bisnis</td>
+                <td>Unggul</td>
+                <td class="text-right">Rp 6.500.000</td>
+                <td class="text-right free">Bebas UKT (0 Rupiah)</td>
+              </tr>
+              <tr>
+                <td>S1 Data Science</td>
+                <td>A</td>
+                <td class="text-right">Rp 7.500.000</td>
+                <td class="text-right free">Bebas UKT (0 Rupiah)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM PMB (PENERIMAAN MAHASISWA BARU) -->
+    <section id="pendaftaran" class="section-padding">
+      <div class="container">
+        <div class="pmb-wrapper">
+          <div class="pmb-text">
+            <span class="section-tag">PMB Online</span>
+            <h2>Daftar Kuliah di Universitas HZX</h2>
+            <p>Silakan isi formulir registrasi awal PMB Anda secara mandiri. Sistem kami akan segera melakukan verifikasi dan mengarahkan berkas nilai rapor Anda ke panitia pendaftaran PMB via WhatsApp.</p>
+            
+            <div class="path-card">
+              <h5>Pilihan Jalur Masuk:</h5>
+              <p>💼 **Jalur Reguler**: Tes tertulis berbasis komputer CAT.<br>🎓 **Jalur Beasiswa Berprestasi**: Free UKT penuh dengan syarat nilai rata-rata Rapor Semester 1-5 minimal 85.</p>
             </div>
+          </div>
+
+          <form class="pmb-form" id="pmb-form-el">
+            <h3>Formulir Registrasi Awal PMB</h3>
             
             <div class="form-group">
-              <label for="pmb-path">Pilih Jalur Seleksi PMB</label>
-              <select id="pmb-path" class="form-control" required>
-                <option value="" disabled selected>Pilih jalur...</option>
-                <option value="reguler">Jalur Reguler (Tes Saringan Masuk)</option>
-                <option value="prestasi">Jalur Prestasi Akademik/Raport (Bebas Tes)</option>
-                <option value="beasiswa">Jalur Beasiswa KIP Kuliah / Hafizh Quran</option>
-              </select>
+              <label for="apply-name">Nama Calon Mahasiswa Baru *</label>
+              <input type="text" id="apply-name" required placeholder="Masukkan nama lengkap Anda">
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="apply-school">Sekretariat Asal Sekolah (SMA/SMK) *</label>
+                <input type="text" id="apply-school" required placeholder="Contoh: SMAN 3 Bandung">
+              </div>
+              <div class="form-group">
+                <label for="apply-phone">No. WhatsApp Aktif *</label>
+                <input type="tel" id="apply-phone" required placeholder="Contoh: 08123456789">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="apply-path">Jalur Masuk Pilihan *</label>
+                <select id="apply-path" required>
+                  <option value="" disabled selected>Pilih jalur...</option>
+                  <option value="Jalur Reguler (Tes Tulis)">Jalur Reguler (Tes Tulis)</option>
+                  <option value="Jalur Beasiswa Berprestasi (Nilai Rapor)">Jalur Beasiswa Berprestasi (Nilai Rapor)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="apply-prodi">Program Studi Pilihan Utama *</label>
+                <select id="apply-prodi" required>
+                  <option value="" disabled selected>Pilih prodi...</option>
+                  <option value="S1 Teknik Informatika">S1 Teknik Informatika</option>
+                  <option value="S1 Data Science">S1 Data Science</option>
+                  <option value="S1 Teknik Sipil">S1 Teknik Sipil</option>
+                  <option value="S1 Manajemen Bisnis">S1 Manajemen Bisnis</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
-              <label for="pmb-prodi">Pilihan Program Studi (Prodi)</label>
-              <select id="pmb-prodi" class="form-control" required>
-                <!-- Rendered dynamically by app.js -->
-              </select>
+              <label for="apply-address">Alamat Rumah Calon Mahasiswa *</label>
+              <textarea id="apply-address" required placeholder="Tuliskan alamat lengkap tempat tinggal sekarang..."></textarea>
             </div>
 
-            <div class="form-group">
-              <label for="pmb-phone">Nomor WA Pendaftar Aktif</label>
-              <input type="tel" id="pmb-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            <button type="submit" class="btn btn-primary btn-block">Kirim Registrasi via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK & LOKASI KAMPUS (MULTI-GEDUNG) -->
+    <section id="kontak" class="section-padding bg-light">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Kampus Kami</span>
+            <h2>Hubungi Kampus Kami</h2>
+            <p>Universitas HZX Bandung menyelenggarakan layanan akademik terbagi di dua kampus strategis Kota Bandung.</p>
+            
+            <div class="campus-locations">
+              <div class="loc-item">
+                <h5>🏢 Kampus Utama (Rektorat &amp; FEB)</h5>
+                <p>📍 Jl. Sumatra No. 12, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40113</p>
+              </div>
+              <div class="loc-item">
+                <h5>🏢 Kampus IT &amp; Teknik</h5>
+                <p>📍 Jl. Cisitu Indah VI, Dago, Coblong, Kota Bandung, Jawa Barat 40135</p>
+              </div>
+              <div class="loc-item">
+                <p>📞 Hotline PMB: <strong>(022) 420-1234</strong> / Email: <strong>pmb@hzx-university.ac.id</strong></p>
+              </div>
             </div>
           </div>
 
-          <div class="form-actions text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Kirim Berkas PMB via WhatsApp</button>
-            <p class="form-note">Draf pendaftaran Anda akan langsung diterima oleh petugas Panitia PSB DKM.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK & LOKASI -->
-  <section id="kontak" class="contact-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Temukan Kami</span>
-        <h2>Kontak Layanan Kampus & Peta Lokasi</h2>
-        <p class="section-desc">Kunjungi sekretariat PMB di jam operasional (Senin - Sabtu: 08.00 - 16.00 WIB).</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Pusat Pelayanan Akademik</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;" data-univ="address">Kampus Pusat Ika HZX, Jl. Cendekia Raya No. 45, Dago, Bandung 40135</p>
-          
-          <div class="contact-details">
-            <p><strong>Hotline Bantuan PMB:</strong> <span data-univ="phone">(022) 5555-8888</span></p>
-            <p><strong>WhatsApp Panitia Seleksi:</strong> <span data-univ="whatsappAdmin">6281234567890</span></p>
-            <p><strong>Email Penerimaan:</strong> <span data-univ="email">pmb@hzxcendekia.ac.id</span></p>
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.912959146197!2d107.6186831!3d-6.900693999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64fb2848c7f%3A0xc3cfad8748df1265!2sBandung%20Wetan%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:12px; box-shadow: 0 4px 12px rgba(127,29,29,0.06);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
-
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Lightbox View">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-univ="name">Universitas HZX Cendekia</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">🏛️ UNIVERSITAS HZX</span>
+        <p>Lembaga Pendidikan Tinggi Terakreditasi Unggul BAN-PT. Pusat Pendidikan Berkualitas, Riset Terapan, dan Pengabdian Warga.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Akses Menu</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#profil">Profil Kampus</a>
+        <a href="#fakultas">Fakultas &amp; Prodi</a>
+        <a href="#pendaftaran">Daftar PMB</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>Universitas HZX Bandung</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Navbar toggler
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>

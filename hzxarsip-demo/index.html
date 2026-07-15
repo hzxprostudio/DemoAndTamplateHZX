@@ -3,215 +3,316 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Resmi & Katalog Koleksi Museum HZX Arsip. Lestarikan sejarah, jelajahi literasi dunia. Powered by HZXPro Studio.">
-  <title>HZX Arsip & Museum | Portal Resmi & Katalog Literasi</title>
+  <meta name="description" content="Portal Resmi Arsip &amp; Perpustakaan Nasional HZX - Menjaga Ingatan Sejarah &amp; Memfasilitasi Literasi Bangsa. Booking Kunjungan Online.">
+  <title>Arsip &amp; Perpustakaan HZX - Pusat Literasi &amp; Data Sejarah</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar-header">
-    <div class="container navbar-container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        </span>
-        <span class="brand-name" data-arsip="name">HZX Arsip & Museum</span>
-      </a>
-      
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-
-      <nav class="navbar-menu" id="navbar-menu">
-        <a href="#hero" class="nav-link active">Beranda</a>
-        <a href="#katalog" class="nav-link">Katalog Koleksi</a>
-        <a href="#event" class="nav-link">Event Pameran</a>
-        <a href="#booking" class="nav-link">Booking Kunjungan</a>
-        <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#booking" class="btn btn-primary nav-cta-btn">Booking Tiket</a>
-      </nav>
+    <!-- Top Row: Centered Logo -->
+    <div class="navbar-top-row">
+      <div class="container navbar-top-container">
+        <a href="#" class="navbar-brand">
+          <span class="brand-icon">📂</span>
+          <span class="brand-name">ARSIP &amp; PERPUSTAKAAN HZX</span>
+        </a>
+        
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bottom Row: Navigation Menu -->
+    <div class="navbar-bottom-row" id="navbar-menu-wrapper">
+      <div class="container navbar-bottom-container">
+        <nav class="navbar-menu" id="navbar-menu">
+          <a href="#hero" class="nav-link active">Beranda</a>
+          <a href="#katalog" class="nav-link">Katalog Koleksi</a>
+          <a href="#event" class="nav-link">Agenda Event</a>
+          <a href="#booking" class="nav-link">Booking Kunjungan</a>
+          <a href="#galeri" class="nav-link">Galeri</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+          <a href="#booking" class="btn btn-secondary btn-sm nav-cta-btn">Booking Tiket</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline">Pusat Kebudayaan & Literasi Kuno</span>
-        <h1 class="hero-title" data-arsip="fullName">Perpustakaan & Museum HZX Arsip Nasional</h1>
-        <p class="hero-subtitle" data-arsip="tagline">Melestarikan Sejarah, Membuka Jendela Ilmu Pengetahuan Dunia</p>
-        <div class="hero-actions">
-          <a href="#booking" class="btn btn-primary btn-lg">Booking Kunjungan / Tur</a>
-          <a href="#katalog" class="btn btn-outline btn-lg">Lihat Katalog Koleksi</a>
-        </div>
-      </div>
-      
-      <!-- Open Hours Box -->
-      <div class="hours-card-wrapper">
-        <div class="hours-card">
-          <h3>Jam Operasional Kunjungan</h3>
-          <p class="hours-sub">Jadwal Operasional Tur & Galeri:</p>
-          <ul id="hours-list">
-            <!-- Rendered by JS -->
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KATALOG KOLEKSI & FILTER -->
-  <section id="katalog" class="catalog-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Arsip & Artefak</span>
-        <h2>Katalog Koleksi Pustaka Kuno</h2>
-        <p class="section-desc">Cari dan jelajahi manuskrip sejarah, artefak purbakala, serta koleksi buku edukasi terbaik kami.</p>
-      </div>
-
-      <!-- Search & Filter Controls -->
-      <div class="filter-controls-wrapper">
-        <div class="search-box">
-          <input type="text" id="catalog-search" class="form-control search-input" placeholder="Cari berdasarkan judul, deskripsi, atau penulis...">
-        </div>
-        <div class="filter-buttons">
-          <button class="btn-filter active" data-filter="semua">Semua Koleksi</button>
-          <button class="btn-filter" data-filter="artefak">Artefak & Benda Bersejarah</button>
-          <button class="btn-filter" data-filter="buku">Buku & Manuskrip Kuno</button>
-        </div>
-      </div>
-
-      <div class="catalog-grid" id="catalog-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- JADWAL EVENT / PAMERAN -->
-  <section id="event" class="events-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Agenda Pameran</span>
-        <h2>Jadwal Event & Pameran Mendatang</h2>
-        <p class="section-desc">Ikuti keseruan pameran edukasi musiman, kelas membatik kuno, dan tur sejarah malam hari di museum.</p>
-      </div>
-
-      <div class="events-grid" id="events-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM BOOKING KUNJUNGAN -->
-  <section id="booking" class="booking-section section-padding">
-    <div class="container">
-      <div class="booking-card">
-        <div class="booking-header text-center">
-          <span class="booking-badge">E-Tiket Reservasi</span>
-          <h2>Booking Kunjungan Kelompok & Tur Mandiri</h2>
-          <p>Lengkapi formulir di bawah ini untuk memesan slot kunjungan tur kelompok belajar atau kunjungan keluarga. Konfirmasi instan akan dikirim via WhatsApp.</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 40%, rgba(15, 23, 42, 0.6) 100%), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-tag">Akses Literasi Publik Terbuka</span>
+          <h1 class="hero-title">Menghubungkan Masa Lalu, Membangun Literasi Masa Depan</h1>
+          <p class="hero-subtitle">Jelajahi ribuan arsip dokumen sejarah langka, manuskrip kuno abad ke-18, serta buku referensi sains digital terlengkap di Jawa Barat.</p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary btn-lg">Booking Kunjungan</a>
+            <a href="#katalog" class="btn btn-outline btn-lg">Jelajahi Katalog</a>
+          </div>
         </div>
 
-        <form id="booking-form" class="booking-form" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="book-name">Nama Pemesan / Penanggung Jawab</label>
-              <input type="text" id="book-name" class="form-control" placeholder="Contoh: Rian Hidayat" required>
+        <div class="hero-info-card">
+          <h4>Waktu Layanan Kunjungan</h4>
+          <div class="info-list">
+            <div class="info-row">
+              <span>Senin - Kamis</span>
+              <strong>08:30 - 15:30 WIB</strong>
             </div>
+            <div class="info-row">
+              <span>Jumat</span>
+              <strong>08:30 - 11:30 WIB &amp; 13:00 - 15:30 WIB</strong>
+            </div>
+            <div class="info-row">
+              <span>Sabtu</span>
+              <strong>09:00 - 14:00 WIB</strong>
+            </div>
+            <div class="info-row closed">
+              <span>Minggu &amp; Hari Libur Nasional</span>
+              <strong>Tutup Layanan</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KATALOG KOLEKSI & FILTER -->
+    <section id="katalog" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Arsip Mandiri</span>
+          <h2>Katalog &amp; Koleksi Unggulan</h2>
+          <p class="section-sub">Cari dokumen sejarah atau buku referensi pilihan yang terdaftar di sistem kami.</p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-controls">
+          <div class="search-box">
+            <input type="text" id="search-input" placeholder="Cari berdasarkan judul koleksi...">
+            <span class="search-icon">🔍</span>
+          </div>
+
+          <div class="category-filters" id="category-filters-el">
+            <button class="filter-btn active" data-category="all">Semua Koleksi</button>
+            <button class="filter-btn" data-category="Buku Langka">Buku Langka</button>
+            <button class="filter-btn" data-category="Naskah Kuno">Naskah Kuno</button>
+            <button class="filter-btn" data-category="Dokumen Sejarah">Dokumen Sejarah</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Grid of Cards -->
+        <div class="katalog-grid" id="katalog-grid-el">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- JADWAL EVENT / PAMERAN -->
+    <section id="event" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Agenda Budaya</span>
+          <h2>Event &amp; Pameran Seni Sejarah Terdekat</h2>
+        </div>
+
+        <div class="event-grid">
+          <div class="event-card">
+            <div class="event-date-badge">
+              <span class="day">20</span>
+              <span class="month">Jul</span>
+            </div>
+            <div class="event-info">
+              <h4>Pameran Manuskrip Aksara Sunda Kuno</h4>
+              <p class="time">⏰ Pukul 09:00 - 15:00 WIB</p>
+              <p class="loc">📍 Ruang Aula Utama Pameran Lt. 1</p>
+              <p class="desc">Melihat dari dekat naskah daun lontar kuno pra-kolonial abad ke-16 yang direstorasi secara khusus.</p>
+            </div>
+          </div>
+          
+          <div class="event-card">
+            <div class="event-date-badge">
+              <span class="day">25</span>
+              <span class="month">Jul</span>
+            </div>
+            <div class="event-info">
+              <h4>Bedah Buku: Jalur Rempah Nusantara &amp; Kolonialisme</h4>
+              <p class="time">⏰ Pukul 10:00 - 12:30 WIB</p>
+              <p class="loc">📍 Ruang Teater Mini Literasi Lt. 3</p>
+              <p class="desc">Diskusi interaktif bersama sejarawan nasional mengenai jalur pelayaran perdagangan rempah dunia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM BOOKING KUNJUNGAN/TUR -->
+    <section id="booking" class="section-padding">
+      <div class="container">
+        <div class="booking-wrapper">
+          <div class="booking-info">
+            <span class="section-tag">Registrasi Kunjungan</span>
+            <h2>Booking Jadwal Tur &amp; Kunjungan Penelitian</h2>
+            <p>Bagi peneliti, rombongan sekolah, atau masyarakat umum yang ingin melakukan studi arsip atau tur sejarah terarah, silakan lakukan pemesanan jadwal tiket berobat gratis secara mandiri.</p>
+            
+            <div class="rules-card">
+              <h5>Aturan Kunjungan Rombongan:</h5>
+              <p>Maksimal rombongan adalah 30 orang per sesi tur untuk menjaga kenyamanan pembaca di dalam ruang penyimpanan arsip rahasia negara.</p>
+            </div>
+          </div>
+
+          <form class="booking-form" id="booking-form-el">
+            <h3>Formulir Pemesanan Jadwal</h3>
             
             <div class="form-group">
-              <label for="book-visitors">Jumlah Pengunjung (Orang)</label>
-              <input type="number" id="book-visitors" class="form-control" min="1" placeholder="Masukkan jumlah pengunjung" required>
+              <label for="visitor-name">Nama Penanggung Jawab *</label>
+              <input type="text" id="visitor-name" required placeholder="Masukkan nama lengkap Anda">
             </div>
 
             <div class="form-group">
-              <label for="book-date">Tanggal Kunjungan</label>
-              <input type="date" id="book-date" class="form-control" required>
+              <label for="visitor-phone">No. WhatsApp Aktif *</label>
+              <input type="tel" id="visitor-phone" required placeholder="Contoh: 08123456789">
             </div>
 
             <div class="form-group">
-              <label for="book-time">Jam Kunjungan / Tur</label>
-              <select id="book-time" class="form-control" required>
-                <option value="" disabled selected>Pilih jam kunjungan...</option>
-                <option value="sesi1">Sesi 1: Pukul 09:00 - 11:00 WIB</option>
-                <option value="sesi2">Sesi 2: Pukul 11:00 - 13:00 WIB</option>
-                <option value="sesi3">Sesi 3: Pukul 13:00 - 15:00 WIB</option>
-              </select>
+              <label for="visitor-count">Jumlah Pengunjung (Orang) *</label>
+              <input type="number" id="visitor-count" required min="1" max="50" placeholder="Contoh: 5">
             </div>
 
-            <div class="form-group full-width">
-              <label for="book-phone">Nomor WA Pemesan (Aktif)</label>
-              <input type="tel" id="book-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="visit-date">Tanggal Kunjungan *</label>
+                <input type="date" id="visit-date" required>
+              </div>
+              <div class="form-group">
+                <label for="visit-time">Pilihan Jam Sesi *</label>
+                <select id="visit-time" required>
+                  <option value="" disabled selected>Pilih sesi jam...</option>
+                  <option value="Sesi Pagi (09:00 - 11:30 WIB)">Sesi Pagi (09:00 - 11:30 WIB)</option>
+                  <option value="Sesi Siang (13:00 - 15:30 WIB)">Sesi Siang (13:00 - 15:30 WIB)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="visit-purpose">Tujuan Kunjungan / Riset *</label>
+              <textarea id="visit-purpose" required placeholder="Tuliskan materi riset atau tujuan tur rombongan sekolah..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Kirim Pemesanan via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Dokumentasi</span>
+          <h2>Galeri Foto Ruang Koleksi &amp; Pameran</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800" data-caption="Ruang Koleksi Buku Referensi Utama">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=400" alt="Ruang Koleksi" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=800" data-caption="Rak Buku Langka Kategori Sejarah Kolonial">
+            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=400" alt="Buku Langka" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=800" data-caption="Proses Digitalisasi Naskah Lembaran Kuno">
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=400" alt="Digitalisasi" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK & LOKASI -->
+    <section id="kontak" class="section-padding">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Hubungi Layanan</span>
+            <h2>Hubungi Kami</h2>
+            <p>Memiliki manuskrip bersejarah keluarga yang ingin disumbangkan untuk dilestarikan, atau ijin peliputan jurnalistik? Kontak sekretariat kami.</p>
+            
+            <div class="contact-items">
+              <div class="c-item">
+                <span class="c-icon">📍</span>
+                <p>Jl. Merdeka No. 44, Sumur Bandung, Kota Bandung, Jawa Barat 40117</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">📞</span>
+                <p>(022) 420-9988</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">✉️</span>
+                <p>layanan@arsip-hzx.org</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-actions text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Kirim Formulir Reservasi via WhatsApp</button>
-            <p class="form-note">Data yang dikirim akan langsung menyusun draf pesan WhatsApp ke petugas e-tiket untuk persetujuan slot.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK & LOKASI -->
-  <section id="kontak" class="contact-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Temukan Kami</span>
-        <h2>Kontak Sekretariat & Peta Lokasi</h2>
-        <p class="section-desc">Punya pertanyaan seputar donasi benda bersejarah, izin penelitian arsip, atau tur sekolah? Hubungi kami.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Kantor Sekretariat</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;" data-arsip="address">Jl. Merdeka No. 100, Sumur Bandung, Kota Bandung, Jawa Barat 40111</p>
-          
-          <div class="contact-details">
-            <p><strong>Hotline Telepon:</strong> <span data-arsip="phone">(022) 2000-8888</span></p>
-            <p><strong>WhatsApp Layanan:</strong> <span data-arsip="whatsappAdmin">6281234567890</span></p>
-            <p><strong>Email Hubungan Masyarakat:</strong> <span data-arsip="email">info@hzxarsip.org</span></p>
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.832959146197!2d107.6106831!3d-6.910693999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e640b2848c7f%3A0xc3cfad8748df1265!2sSumur%20Bandung%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:0; box-shadow: 4px 4px 0px #0f172a;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
-
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Lightbox View">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-arsip="name">HZX Arsip & Museum</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">📂 ARSIP &amp; PERPUSTAKAAN HZX</span>
+        <p>Lembaga Perlindungan Data Sejarah Bangsa, Restorasi Naskah Kuno Sunda, dan Penyedia Fasilitas Literasi Mandiri.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#katalog">Katalog Koleksi</a>
+        <a href="#event">Agenda Event</a>
+        <a href="#booking">Booking Kunjungan</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>Badan Arsip &amp; Perpustakaan HZX</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Navbar toggler
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>

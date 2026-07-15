@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Publik Resmi & Pelayanan Mandiri Desa Makmur Jaya. Transparan, Akuntabel, dan Responsif. Powered by HZXPro Studio.">
-  <title>Desa Makmur Jaya | Portal Resmi Pemerintahan Desa</title>
+  <meta name="description" content="Portal Resmi Pemerintahan Desa Makmur Jaya - Transparan, Responsif, dan Melayani. Layanan Mandiri Surat Online & Info Keuangan Desa.">
+  <title>Desa Makmur Jaya - Portal Resmi & Pelayanan Publik Mandiri</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
+  <!-- TOP BAR INFO -->
+  <div class="top-bar-info">
     <div class="container top-bar-container">
-      <div class="top-bar-left">
-        <span>⏰ Jam Pelayanan: Senin - Jumat (08:00 - 15:30)</span>
-      </div>
-      <div class="top-bar-right">
-        <span>📞 Layanan Pengaduan: <strong>0812-3456-7890</strong></span>
-      </div>
+      <span>⏰ Jam Pelayanan Kantor: Senin - Jumat (08:00 - 15:30 WIB)</span>
+      <span>📞 Layanan Pengaduan Warga: 0812-3456-7890</span>
     </div>
   </div>
 
@@ -28,13 +28,11 @@
   <header class="navbar-header">
     <div class="container navbar-container">
       <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-        </span>
-        <span class="brand-name" data-desa="name">Desa Makmur Jaya</span>
+        <span class="brand-icon">🏡</span>
+        <span class="brand-name">DESA MAKMUR JAYA</span>
       </a>
       
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+      <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
         <span class="toggler-icon"></span>
         <span class="toggler-icon"></span>
         <span class="toggler-icon"></span>
@@ -45,326 +43,388 @@
         <a href="#profil" class="nav-link">Profil</a>
         <a href="#layanan" class="nav-link">Layanan Surat</a>
         <a href="#statistik" class="nav-link">Statistik</a>
-        <a href="#anggaran" class="nav-link">Anggaran</a>
+        <a href="#anggaran" class="nav-link">Transparansi</a>
         <a href="#berita" class="nav-link">Pengumuman</a>
+        <a href="#galeri" class="nav-link">Galeri</a>
         <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#layanan" class="btn btn-primary nav-cta-btn">Ajukan Surat</a>
+        <a href="#layanan" class="btn btn-secondary nav-cta-btn">Ajukan Surat</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline"><span data-desa="subdistrict">Kecamatan Cisarua</span> • <span data-desa="district">Kabupaten Bogor</span></span>
-        <h1 class="hero-title">Selamat Datang di Portal Resmi Pemerintahan <br><span class="text-gradient" data-desa="name">Desa Makmur Jaya</span></h1>
-        <p class="hero-subtitle" data-desa="tagline">Mewujudkan Desa Mandiri, Sejahtera, Transparan, dan Berteknologi</p>
-        <div class="hero-actions">
-          <a href="#layanan" class="btn btn-primary btn-lg">Layanan Pengajuan Surat</a>
-          <a href="#profil" class="btn btn-outline btn-lg">Sambutan Kepala Desa</a>
-        </div>
-      </div>
-      
-      <div class="kades-welcome-card">
-        <div class="kades-image">
-          <img src="kades-avatar.jpg" alt="Kepala Desa">
-        </div>
-        <div class="kades-welcome-text">
-          <span class="kades-role">Kepala Desa</span>
-          <h4 data-desa="kadesName">H. Mulyadi, S.H.</h4>
-          <p data-desa="kadesWelcome">Selamat datang di portal pelayanan publik online Desa Makmur Jaya. Kami hadir untuk mempermudah pelayanan surat menyurat serta meningkatkan transparansi anggaran pembangunan.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROFIL DESA -->
-  <section id="profil" class="profil-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Profil Desa</span>
-        <h2>Mengenal Lebih Dekat Wilayah Kami</h2>
-        <p class="section-desc">Sejarah, visi misi, serta susunan kepengurusan struktural pemerintahan desa.</p>
-      </div>
-
-      <div class="profil-grid">
-        <div class="about-text">
-          <h3>Sejarah & Visi Misi</h3>
-          <p data-desa="about.history" style="margin-bottom: 24px; color: #475569;">Desa Makmur Jaya didirikan pada tahun 1978 sebagai pemekaran wilayah pertanian yang subur di lereng bukit Cisarua.</p>
-          
-          <div class="vision-mission-box">
-            <div class="vision-box">
-              <h4>Visi</h4>
-              <p data-desa="about.vision">Mewujudkan Desa Makmur Jaya yang mandiri, berkeadilan sosial, unggul dalam tata kelola pemerintahan yang bersih berbasis IT.</p>
-            </div>
-            <div class="mission-box">
-              <h4>Misi</h4>
-              <ul id="mission-list">
-                <!-- Rendered dynamically by app.js -->
-              </ul>
-            </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to right, rgba(11, 37, 23, 0.95) 40%, rgba(11, 37, 23, 0.5) 100%), url('https://images.unsplash.com/photo-1508962914676-134849a727f0?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-eyebrow">Kecamatan Cisarua • Kabupaten Bogor</span>
+          <h1 class="hero-title">Selamat Datang di Portal Publik Desa Makmur Jaya</h1>
+          <p class="hero-subtitle">Mewujudkan pelayanan desa yang cepat, transparan, akuntabel, serta bebas dari pungutan liar melalui sistem digitalisasi terpadu.</p>
+          <div class="hero-actions">
+            <a href="#layanan" class="btn btn-primary btn-lg">Layanan Surat Online</a>
+            <a href="#anggaran" class="btn btn-outline btn-lg">Transparansi Anggaran</a>
           </div>
         </div>
 
-        <div class="org-chart-wrapper">
-          <h3 class="text-center" style="margin-bottom: 32px; color: var(--color-primary);">Struktur Pemerintahan Desa</h3>
-          <div class="org-chart">
-            <div class="chart-node head-node text-center">
-              <span class="node-title">Kepala Desa</span>
-              <p class="node-name" data-desa="kadesName">H. Mulyadi, S.H.</p>
+        <div class="hero-kades-card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300" alt="Kepala Desa Makmur Jaya" class="kades-img">
+          <div class="kades-content">
+            <h4>Sambutan Kepala Desa</h4>
+            <p class="welcome-text">"Hadirnya portal resmi ini adalah wujud komitmen kami dalam mendekatkan pelayanan kantor desa ke genggaman warga, serta menjaga keterbukaan keuangan desa demi kemajuan bersama."</p>
+            <h5 class="kades-name">H. Mulyadi, S.H.</h5>
+            <span class="kades-title">Kepala Desa Makmur Jaya</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL DESA -->
+    <section id="profil" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Profil Desa</span>
+          <h2>Mengenal Desa Makmur Jaya</h2>
+        </div>
+
+        <div class="profile-grid">
+          <div class="profile-main">
+            <h3>Sejarah &amp; Visi Misi</h3>
+            <p>Didirikan sejak tahun 1978, Desa Makmur Jaya terletak di lereng pegunungan Cisarua yang subur. Awalnya merupakan pemukiman perkebunan sayur organik yang kemudian berkembang pesat menjadi pusat agrowisata unggulan daerah.</p>
+            <div class="vis-misi-box">
+              <h5>Visi Utama</h5>
+              <p class="lead-quote">"Membangun Desa Makmur Jaya yang mandiri, berkeadilan sosial, unggul dalam pelayanan publik berbasis teknologi informatika."</p>
             </div>
-            
-            <div class="chart-branch"></div>
-            
-            <div class="chart-row">
-              <div class="chart-node text-center">
-                <span class="node-title">Sekretaris Desa</span>
-                <p class="node-name">Roni Wijaya, S.P.</p>
+          </div>
+
+          <div class="profile-structure">
+            <h3>Struktur Organisasi Pemerintahan</h3>
+            <div class="org-tree">
+              <div class="tree-node leader">
+                <span class="node-role">Kepala Desa</span>
+                <span class="node-name">H. Mulyadi, S.H.</span>
               </div>
-              <div class="chart-node text-center">
-                <span class="node-title">Ketua BPD</span>
-                <p class="node-name">Drs. Cecep Hermawan</p>
-              </div>
-            </div>
-            
-            <div class="chart-row">
-              <div class="chart-node text-center">
-                <span class="node-title">Kaur Keuangan</span>
-                <p class="node-name">Indah Lestari, A.Md.</p>
-              </div>
-              <div class="chart-node text-center">
-                <span class="node-title">Kaur Pemerintahan</span>
-                <p class="node-name">Herman Sutisna</p>
-              </div>
-              <div class="chart-node text-center">
-                <span class="node-title">Kaur Kesra</span>
-                <p class="node-name">Ustadz M. Subhan</p>
+              <div class="tree-children">
+                <div class="tree-node">
+                  <span class="node-role">Sekretaris Desa</span>
+                  <span class="node-name">Nurdin Wijaya</span>
+                </div>
+                <div class="tree-node">
+                  <span class="node-role">Kaur Keuangan</span>
+                  <span class="node-name">Siti Aminah</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- LAYANAN SURAT ONLINE -->
-  <section id="layanan" class="letter-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Pelayanan Warga</span>
-        <h2>Layanan Surat Online</h2>
-        <p class="section-desc">Kini warga dapat mengajukan permohonan surat administrasi secara online dari rumah. Berkas akan disiapkan sebelum warga datang ke Balai Desa.</p>
-      </div>
+    <!-- LAYANAN SURAT ONLINE -->
+    <section id="layanan" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Pelayanan Mandiri</span>
+          <h2>Pengajuan Layanan Surat Online</h2>
+          <p class="section-sub">Layanan pengurusan surat administrasi langsung terhubung ke WhatsApp operator desa.</p>
+        </div>
 
-      <div class="letter-grid">
-        <div class="letter-info">
-          <h3>Panduan Pengajuan Surat</h3>
-          <p style="margin-bottom: 24px; color: #475569;">Proses pengajuan surat hanya membutuhkan waktu kurang dari 5 menit. Silakan lengkapi formulir di sebelah kanan.</p>
-          
-          <div class="step-card-list">
-            <div class="step-card">
-              <div class="step-num">1</div>
-              <div>
-                <h4>Isi Data Lengkap</h4>
-                <p>Isi NIK, Nama, dan pilih jenis surat yang diajukan.</p>
+        <div class="services-wrapper">
+          <div class="services-types">
+            <h3>Jenis Layanan Tersedia</h3>
+            <div class="type-grid">
+              <div class="type-item">
+                <span class="type-icon">📄</span>
+                <h5>Surat Pengantar SKTM</h5>
+                <p>Untuk beasiswa sekolah atau bantuan rumah sakit.</p>
               </div>
-            </div>
-            <div class="step-card">
-              <div class="step-num">2</div>
-              <div>
-                <h4>Kirim Form via WhatsApp</h4>
-                <p>Klik tombol submit untuk meneruskan draf permohonan ke WhatsApp Admin Desa.</p>
+              <div class="type-item">
+                <span class="type-icon">👤</span>
+                <h5>Surat Pengantar KTP</h5>
+                <p>Untuk pembuatan KTP baru maupun surat hilang.</p>
               </div>
-            </div>
-            <div class="step-card">
-              <div class="step-num">3</div>
-              <div>
-                <h4>Ambil Berkas di Kantor</h4>
-                <p>Bawa dokumen fisik asli (KTP/KK) untuk verifikasi akhir saat mengambil surat fisik.</p>
+              <div class="type-item">
+                <span class="type-icon">📍</span>
+                <h5>Surat Keterangan Domisili</h5>
+                <p>Bukti kependudukan sementara warga luar daerah.</p>
+              </div>
+              <div class="type-item">
+                <span class="type-icon">💍</span>
+                <h5>Surat Keterangan Usaha (SKU)</h5>
+                <p>Dokumen legalitas usaha mikro/UMKM desa.</p>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="letter-form-card">
-          <form id="letter-form" class="letter-form" novalidate>
+          <form class="services-form" id="letter-form">
+            <h3>Form Pengajuan Surat</h3>
+            
             <div class="form-group">
-              <label for="letter-name">Nama Lengkap Sesuai KTP</label>
-              <input type="text" id="letter-name" class="form-control" placeholder="Contoh: Budi Santoso" required>
+              <label for="citizen-name">Nama Lengkap Sesuai KTP *</label>
+              <input type="text" id="citizen-name" required placeholder="Masukkan nama lengkap Anda">
             </div>
+
             <div class="form-group">
-              <label for="letter-nik">Nomor Induk Kependudukan (NIK)</label>
-              <input type="text" id="letter-nik" class="form-control" maxlength="16" placeholder="Masukkan 16 digit NIK" required>
+              <label for="citizen-nik">Nomor Induk Kependudukan (NIK) *</label>
+              <input type="text" id="citizen-nik" required placeholder="Masukkan 16 digit NIK" maxlength="16">
             </div>
+
             <div class="form-group">
-              <label for="letter-phone">Nomor WA / Handphone Aktif</label>
-              <input type="tel" id="letter-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+              <label for="citizen-phone">Nomor WhatsApp Aktif *</label>
+              <input type="tel" id="citizen-phone" required placeholder="Contoh: 08123456789">
             </div>
+
             <div class="form-group">
-              <label for="letter-type">Jenis Surat Pengajuan</label>
-              <select id="letter-type" class="form-control" required>
+              <label for="letter-select">Jenis Surat Pengajuan *</label>
+              <select id="letter-select" required>
                 <option value="" disabled selected>Pilih jenis surat...</option>
-                <option value="skd">Surat Keterangan Domisili (SKD)</option>
-                <option value="sktm">Surat Keterangan Tidak Mampu (SKTM)</option>
-                <option value="sku">Surat Keterangan Usaha (SKU)</option>
-                <option value="skkel">Surat Keterangan Kelahiran / Kematian</option>
+                <option>Surat Keterangan Tidak Mampu (SKTM)</option>
+                <option>Surat Pengantar Pembuatan KTP</option>
+                <option>Surat Keterangan Domisili Warga</option>
+                <option>Surat Keterangan Usaha (SKU)</option>
               </select>
             </div>
+
             <div class="form-group">
-              <label for="letter-notes">Keterangan / Keperluan Surat</label>
-              <textarea id="letter-notes" class="form-control" rows="3" placeholder="Tuliskan alasan pengajuan (contoh: Syarat Beasiswa Anak)"></textarea>
+              <label for="letter-desc">Keperluan / Keterangan Tambahan *</label>
+              <textarea id="letter-desc" required placeholder="Jelaskan alasan pengajuan surat secara ringkas..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Ajukan Sekarang via WhatsApp</button>
+
+            <button type="submit" class="btn btn-primary btn-block">Kirim Berkas via WhatsApp</button>
           </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- STATISTIK PENDUDUK -->
-  <section id="statistik" class="stats-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Data Demografi</span>
-        <h2>Statistik Kependudukan</h2>
-        <p class="section-desc">Data statistik sebaran kependudukan desa berdasarkan wilayah Dusun secara riil dan transparan.</p>
-      </div>
-
-      <div class="stats-grid">
-        <div class="stats-counter-panel">
-          <div class="stats-count-card">
-            <span class="stats-count-num" data-desa="statistics.totalJiwa">4,030</span>
-            <span class="stats-count-lbl">Total Jiwa Penduduk</span>
-          </div>
-          <div class="stats-count-card">
-            <span class="stats-count-num" data-desa="statistics.totalKk">960</span>
-            <span class="stats-count-lbl">Total Kepala Keluarga (KK)</span>
-          </div>
-          <div class="stats-count-card">
-            <span class="stats-count-num">4</span>
-            <span class="stats-count-lbl">Total RW Wilayah</span>
-          </div>
+    <!-- STATISTIK PENDUDUK -->
+    <section id="statistik" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Data Statistik</span>
+          <h2>Kependudukan Desa Makmur Jaya</h2>
         </div>
 
-        <div class="stats-chart-card">
-          <h4>Sebaran Jumlah Jiwa Per Dusun</h4>
-          <div class="stats-chart-container" id="stats-chart-container">
-            <!-- Custom bars drawn by JS -->
+        <div class="stats-grid">
+          <div class="stats-card-numeric">
+            <div class="num-box">
+              <h3>4,030</h3>
+              <p>Total Jiwa</p>
+            </div>
+            <div class="num-box">
+              <h3>960</h3>
+              <p>Kepala Keluarga (KK)</p>
+            </div>
+            <div class="num-box">
+              <h3>4 Dusun</h3>
+              <p>Wilayah Administratif</p>
+            </div>
+          </div>
+
+          <div class="stats-chart-card">
+            <h3>Penyebaran Jumlah Jiwa Per Dusun</h3>
+            <div class="custom-bar-chart">
+              <div class="chart-row">
+                <span class="bar-lbl">Dusun 1 (Mekar Sari)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 80%;"></div></div>
+                <span class="bar-val">1,020 Jiwa</span>
+              </div>
+              <div class="chart-row">
+                <span class="bar-lbl">Dusun 2 (Suka Damai)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 61%;"></div></div>
+                <span class="bar-val">780 Jiwa</span>
+              </div>
+              <div class="chart-row">
+                <span class="bar-lbl">Dusun 3 (Tanjung Jaya)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 74%;"></div></div>
+                <span class="bar-val">950 Jiwa</span>
+              </div>
+              <div class="chart-row">
+                <span class="bar-lbl">Dusun 4 (Pasir Indah)</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+                <span class="bar-val">1,280 Jiwa</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TRANSPARANSI ANGGARAN DESA -->
-  <section id="anggaran" class="budget-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Transparansi Keuangan</span>
-        <h2>Penggunaan Dana APBDes Tahun 2026</h2>
-        <p class="section-desc">Sebagai bentuk pertanggungjawaban publik, berikut alokasi utama Dana Desa untuk pembangunan dan pelayanan masyarakat.</p>
+    <!-- TRANSPARANSI ANGGARAN -->
+    <section id="anggaran" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Transparansi Keuangan</span>
+          <h2>Laporan Realisasi APBDes 2026</h2>
+          <p class="section-sub">Sebagai bentuk transparansi anggaran dana desa secara berkala kepada publik.</p>
+        </div>
+
+        <div class="budget-grid">
+          <table class="budget-table">
+            <thead>
+              <tr>
+                <th>Alokasi Pembangunan / Bidang</th>
+                <th class="text-right">Nominal Realisasi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pembangunan Jalan Rabat Beton &amp; Irigasi</td>
+                <td class="text-right">Rp 450.000.000</td>
+              </tr>
+              <tr>
+                <td>Pelayanan Kesehatan (PMT Balita &amp; Posyandu)</td>
+                <td class="text-right">Rp 180.000.000</td>
+              </tr>
+              <tr>
+                <td>Pemberdayaan UMKM Desa &amp; BUMDes</td>
+                <td class="text-right">Rp 150.000.000</td>
+              </tr>
+              <tr>
+                <td>Pembinaan Keagamaan &amp; Operasional PAUD</td>
+                <td class="text-right">Rp 120.000.000</td>
+              </tr>
+              <tr>
+                <td>Mitigasi Bencana &amp; Penanggulangan Darurat</td>
+                <td class="text-right">Rp 100.000.000</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total Dana Desa Terealisasi</td>
+                <td class="text-right highlight-total">Rp 1.000.000.000</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
       </div>
+    </section>
 
-      <div class="budget-card">
-        <h3>Alokasi Rencana APBDes 2026</h3>
-        <table class="budget-table">
-          <thead>
-            <tr>
-              <th>Bidang Alokasi Pengeluaran</th>
-              <th class="text-right">Nominal Anggaran</th>
-            </tr>
-          </thead>
-          <tbody id="budget-tbody">
-            <!-- Rendered by JS -->
-          </tbody>
-          <tfoot>
-            <tr>
-              <th>Total Dana Pengeluaran</th>
-              <th class="text-right" id="budget-total">Rp 0</th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-  </section>
+    <!-- BERITA / PENGUMUMAN -->
+    <section id="berita" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Warta Desa</span>
+          <h2>Pengumuman &amp; Berita Terbaru</h2>
+        </div>
 
-  <!-- BERITA & PENGUMUMAN -->
-  <section id="berita" class="news-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Papan Informasi</span>
-        <h2>Pengumuman Terbaru Warga</h2>
-        <p class="section-desc">Ketahui agenda kegiatan kemasyarakatan, bantuan sosial, dan berita pembangunan terkini.</p>
-      </div>
-
-      <div class="news-grid" id="news-grid">
-        <!-- Rendered by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK & JAM LAYANAN -->
-  <section id="kontak" class="contact-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Hubungi Kantor Desa</span>
-        <h2>Kontak & Jam Pelayanan Balai Desa</h2>
-        <p class="section-desc">Kami siap melayani kebutuhan administratif Anda pada jam operasional kantor.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Kantor Balai Desa</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;" data-desa="address">Jl. Raya Puncak No. 123, Cisarua, Kabupaten Bogor, Jawa Barat 16750</p>
+        <div class="news-grid">
+          <article class="news-card">
+            <span class="news-date">12 Jul 2026</span>
+            <h4>Penyaluran BLT Dana Desa Tahap 3 Tahun Anggaran 2026</h4>
+            <p>Diberitahukan bagi keluarga penerima manfaat, pembagian BLT akan dilaksanakan pada Jumat pukul 09:00 WIB di Kantor Balai Desa.</p>
+          </article>
           
-          <div class="contact-details">
-            <p><strong>Telepon:</strong> <span data-desa="phone">(0251) 8765-4321</span></p>
-            <p><strong>Email:</strong> <span data-desa="email">info@desamakmurjaya.go.id</span></p>
-          </div>
+          <article class="news-card">
+            <span class="news-date">08 Jul 2026</span>
+            <h4>Kerja Bakti Massal RW 01 - RW 04 Selokan &amp; Drainase Desa</h4>
+            <p>Menjelang datangnya musim hujan, seluruh warga diimbau ikut serta membersihkan tumpukan sampah selokan mulai pukul 07:00 pagi.</p>
+          </article>
 
-          <div class="work-hours">
-            <h4>Jam Kerja Pelayanan:</h4>
-            <ul>
-              <li><span>Senin - Kamis</span> <span>08:00 - 15:00 WIB</span></li>
-              <li><span>Jumat</span> <span>08:00 - 14:00 WIB</span></li>
-              <li><span>Sabtu - Minggu</span> <span>Tutup</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.593883017267!2d106.93721367584777!3d-6.697073693298634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69b592adfa01ff%3A0xc3b946261546cc59!2sCisarua%20Bogor!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          <article class="news-card">
+            <span class="news-date">05 Jul 2026</span>
+            <h4>Imunisasi Tetes Polio Gratis PIN Posyandu Melati</h4>
+            <p>Daftarkan anak usia 0-7 tahun untuk mendapatkan tetes imunisasi pencegahan polio secara gratis di Posyandu Melati terdekat.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- GALERI KEGIATAN DESA -->
+    <section id="galeri" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Dokumentasi</span>
+          <h2>Galeri Kegiatan Pemerintahan Desa</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=600" data-caption="Rapat Musyawarah Rencana Pembangunan Desa (Musrenbangdes)">
+            <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=400" alt="Musrenbang" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?q=80&w=600" data-caption="Pengecekan Kebun Organik Kelompok Tani">
+            <img src="https://images.unsplash.com/photo-1605001011156-cbf0b0f67a51?q=80&w=400" alt="Kebun Desa" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+          <div class="gallery-item" data-src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600" data-caption="Pelatihan Kader Posyandu Baru">
+            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400" alt="Pelatihan Posyandu" loading="lazy">
+            <div class="gallery-overlay"><span>Zoom</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK & JAM PELAYANAN -->
+    <section id="kontak" class="section-padding">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Kontak &amp; Alamat</span>
+            <h2>Hubungi Kantor Balai Desa</h2>
+            <p>Kantor Desa Makmur Jaya siap melayani pengaduan, pengurusan administrasi kependudukan, serta keperluan kepublikan warga lainnya.</p>
+            
+            <div class="c-items">
+              <div class="c-row">
+                <span class="c-icon">📍</span>
+                <p>Jl. Raya Puncak No. 123, Cisarua, Kabupaten Bogor, Jawa Barat 16750</p>
+              </div>
+              <div class="c-row">
+                <span class="c-icon">📧</span>
+                <p>info@desamakmurjaya.go.id</p>
+              </div>
+              <div class="c-row">
+                <span class="c-icon">📞</span>
+                <p>(0251) 8765-4321</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15852.12497672289!2d106.91893895000002!3d-6.64303495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69b596e1ec737f%3A0xc3cfad8748df1265!2sCisarua%2C%20Bogor%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="" alt="Lightbox View">
+    <div class="lightbox-caption"></div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-desa="name">Desa Makmur Jaya</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">🏡 DESA MAKMUR JAYA</span>
+        <p>Portal Pelayanan Kependudukan Mandiri &amp; Sistem Informasi Transparansi Anggaran Keuangan Desa Terpadu.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Tautan Cepat</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#profil">Profil Desa</a>
+        <a href="#layanan">Layanan Surat</a>
+        <a href="#anggaran">Transparansi</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>Pemerintah Desa Makmur Jaya</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Mobile Navbar
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>

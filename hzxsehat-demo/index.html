@@ -3,272 +3,381 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Layanan Resmi Puskesmas Sehat Utama. Pendaftaran Online Rawat Jalan Terintegrasi BPJS Kesehatan. Powered by HZXPro Studio.">
-  <title>Puskesmas Sehat Utama | Portal Resmi Layanan Publik & BPJS</title>
+  <meta name="description" content="Portal Resmi Puskesmas Sehat Sejahtera - Layanan Kesehatan Masyarakat Terpadu. BPJS Kesehatan & Pendaftaran Pasien Online.">
+  <title>Puskesmas Sehat Sejahtera - Pelayanan Cepat &amp; Bersahabat</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- EMERGENCY TOP BAR -->
-  <div class="emergency-bar">
-    <div class="container emergency-container">
-      <span>🚨 <strong>Layanan Gawat Darurat (24 Jam):</strong> Call Center <span data-sehat="emergencyPhone">119 / (022) 5432-1111</span></span>
-    </div>
-  </div>
-
   <!-- NAVBAR -->
   <header class="navbar-header">
-    <div class="container navbar-container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-        </span>
-        <span class="brand-name" data-sehat="name">Puskesmas Sehat Utama</span>
-      </a>
-      
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-
-      <nav class="navbar-menu" id="navbar-menu">
-        <a href="#hero" class="nav-link active">Beranda</a>
-        <a href="#layanan" class="nav-link">Layanan Poli</a>
-        <a href="#jadwal" class="nav-link">Jadwal Poli</a>
-        <a href="#daftar" class="nav-link">Daftar Online</a>
-        <a href="#bpjs" class="nav-link">Syarat BPJS</a>
-        <a href="#program" class="nav-link">Program Kesmas</a>
-        <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#daftar" class="btn btn-primary nav-cta-btn">Daftar Online</a>
-      </nav>
+    <!-- TOP EMERGENCY BAR -->
+    <div class="emergency-bar">
+      <div class="container emergency-container">
+        <span>🚨 Panggilan Darurat Ambulans: (022) 9876-543 • Bebas Pulsa</span>
+        <span>⏰ Jam Operasional UGD: 24 Jam Non-Stop</span>
+      </div>
+    </div>
+    <!-- Top Row: Logo Centered -->
+    <div class="navbar-top-row">
+      <div class="container navbar-top-container">
+        <a href="#" class="navbar-brand">
+          <span class="brand-icon">🏥</span>
+          <span class="brand-name">PUSKESMAS SEHAT SEJAHTERA</span>
+        </a>
+        
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bottom Row: Navigation Menu -->
+    <div class="navbar-bottom-row" id="navbar-menu-wrapper">
+      <div class="container navbar-bottom-container">
+        <nav class="navbar-menu" id="navbar-menu">
+          <a href="#hero" class="nav-link active">Beranda</a>
+          <a href="#layanan" class="nav-link">Layanan Poli</a>
+          <a href="#jadwal" class="nav-link">Jadwal Poli</a>
+          <a href="#bpjs" class="nav-link">Persyaratan BPJS</a>
+          <a href="#program" class="nav-link">Program Posyandu</a>
+          <a href="#daftar" class="nav-link">Daftar Online</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+          <a href="#daftar" class="btn btn-secondary btn-sm nav-cta-btn">Daftar Online</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline">Pelayanan Kesehatan Primer Rakyat</span>
-        <h1 class="hero-title" data-sehat="fullName">Puskesmas Sehat Utama Bandung</h1>
-        <p class="hero-subtitle" data-sehat="tagline">Melayani dengan Kasih, Sigap, Profesional, dan Ramah Masyarakat</p>
-        <div class="hero-actions">
-          <a href="#daftar" class="btn btn-primary btn-lg">Pendaftaran Online Rawat Jalan</a>
-          <a href="#jadwal" class="btn btn-outline btn-lg">Jadwal Dokter Poli</a>
-        </div>
-      </div>
-      
-      <!-- Opening Hours Box -->
-      <div class="hours-card-wrapper">
-        <div class="hours-card">
-          <h3>Jam Pelayanan Rawat Jalan</h3>
-          <p class="hours-sub">Pendaftaran Loket Fisik / Online:</p>
-          <ul>
-            <li><span>Senin - Kamis</span> <span>07:30 - 12:00 WIB</span></li>
-            <li><span>Jumat</span> <span>07:30 - 10:30 WIB</span></li>
-            <li><span>Sabtu</span> <span>07:30 - 11:00 WIB</span></li>
-            <li><span class="emergency-badge">IGD Gawat Darurat</span> <span class="text-danger font-bold">Buka 24 Jam</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- POLI LAYANAN -->
-  <section id="layanan" class="services-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Unit Pelayanan</span>
-        <h2>Layanan Poli Spesialis & Dasar</h2>
-        <p class="section-desc">Puskesmas kami menyediakan berbagai unit pelayanan poliklinik untuk memenuhi kebutuhan kesehatan dasar keluarga Anda.</p>
-      </div>
-
-      <div class="services-grid" id="services-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- JADWAL DOKTER / POLI -->
-  <section id="jadwal" class="schedule-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Kalender Tugas</span>
-        <h2>Jadwal Pelayanan Poli Hari Kerja</h2>
-        <p class="section-desc">Berikut pembagian jadwal hari bertugas dokter, bidan, dan perawat pelaksana di masing-masing poliklinik.</p>
-      </div>
-
-      <div class="schedule-table-card">
-        <table class="schedule-table">
-          <thead>
-            <tr>
-              <th>Hari</th>
-              <th>Poli Klinik</th>
-              <th>Tenaga Medis Bertugas</th>
-              <th>Jam Layanan</th>
-            </tr>
-          </thead>
-          <tbody id="schedule-tbody">
-            <!-- Rendered dynamically by app.js -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM PENDAFTARAN ONLINE -->
-  <section id="daftar" class="register-section section-padding">
-    <div class="container">
-      <div class="register-card">
-        <div class="register-header text-center">
-          <span class="register-badge">Layanan Tanpa Antre</span>
-          <h2>Pendaftaran Antrean Online Rawat Jalan</h2>
-          <p>Daftarkan diri Anda H-1 sebelum berobat untuk mendapatkan nomor antrean poli lebih cepat. Berlaku untuk pasien BPJS maupun Umum.</p>
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to right, rgba(255, 255, 255, 0.96) 50%, rgba(240, 253, 250, 0.7) 100%), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge-status">UGD &amp; Persalinan Melayani 24 Jam</div>
+          <h1 class="hero-title">Layanan Kesehatan Masyarakat Terpadu &amp; Terjangkau</h1>
+          <p class="hero-subtitle">Puskesmas Sehat Sejahtera melayani pemeriksaan umum, gigi, KIA, serta imunisasi anak dengan asuransi BPJS Kesehatan dan umum secara cepat.</p>
+          <div class="hero-actions">
+            <a href="#daftar" class="btn btn-primary btn-lg">Daftar Berobat Online</a>
+            <a href="#layanan" class="btn btn-outline btn-lg">Lihat Layanan Poli</a>
+          </div>
         </div>
 
-        <form id="registration-form" class="registration-form" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="reg-name">Nama Lengkap Pasien</label>
-              <input type="text" id="reg-name" class="form-control" placeholder="Masukkan nama pasien" required>
+        <div class="hero-hours-card">
+          <h4>Jam Pelayanan Rawat Jalan</h4>
+          <div class="hours-list">
+            <div class="hours-row">
+              <span>Senin - Kamis</span>
+              <strong>07:30 - 14:00 WIB</strong>
             </div>
+            <div class="hours-row">
+              <span>Jumat</span>
+              <strong>07:30 - 11:30 WIB</strong>
+            </div>
+            <div class="hours-row">
+              <span>Sabtu</span>
+              <strong>07:30 - 12:30 WIB</strong>
+            </div>
+            <div class="hours-row alert">
+              <span>Minggu &amp; Tanggal Merah</span>
+              <strong>Tutup (Kecuali UGD)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYANAN POLIKLINIK -->
+    <section id="layanan" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Poliklinik</span>
+          <h2>Layanan Kesehatan Rawat Jalan</h2>
+          <p class="section-sub">Puskesmas kami menyediakan berbagai poliklinik dengan fasilitas memadai.</p>
+        </div>
+
+        <div class="layanan-grid">
+          <div class="layanan-card">
+            <div class="lay-icon">🩺</div>
+            <h3>Poli Umum</h3>
+            <p>Pemeriksaan kesehatan umum, diagnosis penyakit, konsultasi medis, dan pembuatan surat rujukan.</p>
+          </div>
+          <div class="layanan-card">
+            <div class="lay-icon">🦷</div>
+            <h3>Poli Gigi &amp; Mulut</h3>
+            <p>Pembersihan karang gigi, penambalan, pencabutan, serta konsultasi kesehatan gigi anak &amp; dewasa.</p>
+          </div>
+          <div class="layanan-card">
+            <div class="lay-icon">👶</div>
+            <h3>Poli KIA &amp; KB</h3>
+            <p>Pemeriksaan kehamilan, imunisasi bayi, pemeriksaan tumbuh kembang anak, dan konsultasi alat kontrasepsi.</p>
+          </div>
+          <div class="layanan-card">
+            <div class="lay-icon">🧪</div>
+            <h3>Laboratorium</h3>
+            <p>Pemeriksaan darah sederhana, kolesterol, gula darah, asam urat, serta tes urine rutin cepat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JADWAL DOKTER / POLI -->
+    <section id="jadwal" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Jadwal Pelayanan</span>
+          <h2>Jadwal Poliklinik &amp; Dokter Hari Ini</h2>
+        </div>
+
+        <div class="schedule-table-wrapper">
+          <table class="schedule-table">
+            <thead>
+              <tr>
+                <th>Poliklinik</th>
+                <th>Nama Dokter Penanggung Jawab</th>
+                <th>Hari Pelayanan</th>
+                <th>Jam Pelayanan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Poli Umum</strong></td>
+                <td>dr. Andi Susilo</td>
+                <td>Senin - Sabtu</td>
+                <td>08:00 - 13:00 WIB</td>
+              </tr>
+              <tr>
+                <td><strong>Poli Gigi</strong></td>
+                <td>drg. Maria Indah</td>
+                <td>Senin, Rabu, Jumat</td>
+                <td>08:30 - 12:00 WIB</td>
+              </tr>
+              <tr>
+                <td><strong>Poli KIA / Imunisasi</strong></td>
+                <td>Bidan Herlina, S.Tr.Keb.</td>
+                <td>Selasa, Kamis, Sabtu</td>
+                <td>08:00 - 12:00 WIB</td>
+              </tr>
+              <tr>
+                <td><strong>Konsultasi Gizi</strong></td>
+                <td>Fitriana, S.Gz.</td>
+                <td>Selasa &amp; Kamis</td>
+                <td>09:00 - 11:30 WIB</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO BPJS & PERSYARATAN BEROBAT -->
+    <section id="bpjs" class="section-padding">
+      <div class="container">
+        <div class="bpjs-grid">
+          <div class="bpjs-text">
+            <span class="section-tag">BPJS Kesehatan</span>
+            <h2>Persyaratan Berobat Menggunakan BPJS</h2>
+            <p>Puskesmas Sehat Sejahtera merupakan Fasilitas Kesehatan Tingkat Pertama (FKTP) resmi. Untuk mendapatkan pengobatan gratis seluruhnya menggunakan BPJS, silakan lengkapi berkas berikut:</p>
             
+            <div class="req-box">
+              <div class="req-item">
+                <span class="req-check">✓</span>
+                <p>Kartu Indonesia Sehat (KIS) / BPJS Kesehatan aktif (Asli &amp; Fotokopi).</p>
+              </div>
+              <div class="req-item">
+                <span class="req-check">✓</span>
+                <p>Kartu Tanda Penduduk (KTP) / Kartu Keluarga untuk pasien anak.</p>
+              </div>
+              <div class="req-item">
+                <span class="req-check">✓</span>
+                <p>Kartu Berobat Puskesmas (Bagi jemaah/warga yang sudah terdaftar sebelumnya).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bpjs-flow">
+            <h3>Alur Pelayanan Pasien</h3>
+            <ol class="flow-list">
+              <li>
+                <strong>1. Meja Registrasi</strong>
+                <p>Warga mengambil nomor antrean loket dan menyerahkan berkas persyaratan.</p>
+              </li>
+              <li>
+                <strong>2. Pemeriksaan Awal</strong>
+                <p>Perawat melakukan penimbangan berat badan dan tensi darah di ruang pra-pemeriksaan.</p>
+              </li>
+              <li>
+                <strong>3. Ruang Poli / Dokter</strong>
+                <p>Pemeriksaan oleh dokter spesialis/umum dan penulisan resep obat.</p>
+              </li>
+              <li>
+                <strong>4. Apotek / Loket Obat</strong>
+                <p>Penyerahan resep obat dan pengambilan obat secara gratis bagi pasien BPJS.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAM KESEHATAN MASYARAKAT -->
+    <section id="program" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Kesehatan Masyarakat</span>
+          <h2>Program &amp; Penyuluhan Terdekat</h2>
+          <p class="section-sub">Ikuti program kesehatan gratis puskesmas di lingkungan posyandu RW terdekat Anda.</p>
+        </div>
+
+        <div class="program-list-grid">
+          <div class="program-item-card">
+            <span class="prog-date">Sabtu, 18 Juli 2026</span>
+            <h4>Imunisasi Polio &amp; Posyandu Balita RW 03</h4>
+            <p>Kegiatan rutin penimbangan balita, PMT (Pemberian Makanan Tambahan), dan vaksinasi polio polio gratis di Balai RW 03.</p>
+          </div>
+          
+          <div class="program-item-card">
+            <span class="prog-date">Selasa, 21 Juli 2026</span>
+            <h4>Penyuluhan Bahaya Demam Berdarah (DBD)</h4>
+            <p>Sosialisasi gerakan 3M Plus (Menguras, Menutup, Mendaur ulang) serta pembagian bubuk abate gratis oleh kader kesehatan desa.</p>
+          </div>
+
+          <div class="program-item-card">
+            <span class="prog-date">Kamis, 23 Juli 2026</span>
+            <h4>Pos Binaan Terpadu (Posbindu) Penyakit Tidak Menular</h4>
+            <p>Pemeriksaan tensi darah, cek kolesterol, dan konsultasi pola hidup sehat gratis bagi warga usia produktif &amp; lansia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM PENDAFTARAN ONLINE -->
+    <section id="daftar" class="section-padding">
+      <div class="container">
+        <div class="register-wrapper">
+          <div class="register-info">
+            <span class="section-tag">Antrean Mandiri</span>
+            <h2>Form Pendaftaran Pasien Online</h2>
+            <p>Hindari antrean panjang di loket pendaftaran fisik dengan mengisi form pendaftaran online. Setelah melakukan pendaftaran, Anda akan dikirimi Nomor Antrean melalui WhatsApp untuk ditunjukkan langsung saat berobat.</p>
+            
+            <div class="notice-card">
+              <h5>Penting Sebelum Mendaftar:</h5>
+              <p>Pendaftaran online dilakukan maksimal 1 hari sebelum tanggal berobat yang dituju untuk keperluan persiapan berkas rekam medis pasien oleh petugas kami.</p>
+            </div>
+          </div>
+
+          <form class="register-form" id="patient-form">
             <div class="form-group">
-              <label for="reg-nik">Nomor Induk Kependudukan (NIK) / No. BPJS</label>
-              <input type="text" id="reg-nik" class="form-control" maxlength="16" placeholder="Masukkan 16 digit NIK" required>
+              <label for="patient-name">Nama Lengkap Pasien *</label>
+              <input type="text" id="patient-name" required placeholder="Masukkan nama lengkap pasien">
             </div>
 
             <div class="form-group">
-              <label for="reg-poli">Pilih Poli Tujuan</label>
-              <select id="reg-poli" class="form-control" required>
-                <option value="" disabled selected>Pilih poli klinik...</option>
-                <option value="umum">Poli Umum</option>
-                <option value="gigi">Poli Gigi</option>
-                <option value="kia">Poli Kesehatan Ibu & Anak (KIA/KB)</option>
+              <label for="patient-nik">Nomor NIK KTP Pasien *</label>
+              <input type="text" id="patient-nik" required placeholder="16 Digit NIK" maxlength="16">
+            </div>
+
+            <div class="form-group">
+              <label for="patient-phone">No. WhatsApp Aktif *</label>
+              <input type="tel" id="patient-phone" required placeholder="Contoh: 08123456789">
+            </div>
+
+            <div class="form-group">
+              <label for="patient-poli">Poliklinik Tujuan Berobat *</label>
+              <select id="patient-poli" required>
+                <option value="" disabled selected>Pilih Poliklinik...</option>
+                <option>Poliklinik Umum</option>
+                <option>Poliklinik Gigi &amp; Mulut</option>
+                <option>Poliklinik KIA &amp; Imunisasi</option>
+                <option>Konsultasi Gizi</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="reg-type">Jenis Pembayaran / Jaminan</label>
-              <select id="reg-type" class="form-control" required>
-                <option value="" disabled selected>Pilih jenis pembayaran...</option>
-                <option value="bpjs">BPJS Kesehatan / JKN</option>
-                <option value="umum">Mandiri / Umum Cash</option>
-              </select>
+              <label for="patient-desc">Keluhan Medis Singkat *</label>
+              <textarea id="patient-desc" required placeholder="Jelaskan secara singkat gejala medis yang dirasakan..."></textarea>
             </div>
 
-            <div class="form-group full-width">
-              <label for="reg-complaint">Keluhan Singkat Pasien</label>
-              <textarea id="reg-complaint" class="form-control" rows="3" placeholder="Tuliskan keluhan atau gejala sakit yang dirasakan pasien"></textarea>
+            <button type="submit" class="btn btn-primary btn-block">Kirim Pendaftaran via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK & MAP -->
+    <section id="kontak" class="section-padding bg-light">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Hubungi Kami</span>
+            <h2>Hubungi Puskesmas Sehat</h2>
+            <p>Ada pengaduan pelayanan, pertanyaan ketersediaan vaksin, atau ijin operasional ambulance? Hubungi kami langsung.</p>
+            
+            <div class="contact-items">
+              <div class="c-item">
+                <span class="c-icon">📍</span>
+                <p>Jl. Raya Kesehatan No. 12, Coblong, Kota Bandung, Jawa Barat 40135</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">📞</span>
+                <p>(022) 9876-543</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">✉️</span>
+                <p>admin@puskesmas-sehat.go.id</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-actions text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Kirim Formulir Pendaftaran via WhatsApp</button>
-            <p class="form-note">Admin loket pendaftaran akan memberikan nomor antrean dan estimasi jam kedatangan.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- INFO BPJS & PERSYARATAN -->
-  <section id="bpjs" class="bpjs-section section-padding bg-light">
-    <div class="container">
-      <div class="bpjs-grid">
-        <div class="bpjs-text">
-          <span class="section-tagline">Jaminan Kesehatan</span>
-          <h2>Panduan Berobat Menggunakan BPJS</h2>
-          <p style="margin-bottom: 24px; color: #475569;">Puskesmas Sehat Utama melayani pasien BPJS Kesehatan FKTP (Fasilitas Kesehatan Tingkat Pertama). Pastikan kartu Anda aktif saat melakukan pendaftaran.</p>
-          
-          <ul class="bpjs-list" id="bpjs-list">
-            <!-- Rendered by JS -->
-          </ul>
-        </div>
-        
-        <div class="bpjs-card-graphic">
-          <div class="bpjs-card text-center">
-            <div class="card-logo">BPJS</div>
-            <h4>Faskes Tingkat Pertama (FKTP)</h4>
-            <p class="card-desc">Kode Faskes: <strong>0112B001</strong></p>
-            <p class="card-note">Hubungi Mobile JKN untuk pindah faskes ke Puskesmas Sehat Utama</p>
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.985959146197!2d107.6186831!3d-6.890693999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e650b2848c7f%3A0xc3cfad8748df1265!2sCoblong%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:6px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROGRAM KESEHATAN MASYARAKAT -->
-  <section id="program" class="programs-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Pelayanan Luar Gedung</span>
-        <h2>Program Kesehatan Masyarakat (Kesmas)</h2>
-        <p class="section-desc">Upaya preventif dan penyuluhan kesehatan guna membangun masyarakat desa yang cerdas gizi dan bebas stunting.</p>
-      </div>
-
-      <div class="programs-list-wrapper" id="programs-list-wrapper">
-        <!-- Rendered by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK & LOKASI DARURAT -->
-  <section id="kontak" class="contact-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Hubungi Kami</span>
-        <h2>Kontak Puskesmas & Peta Lokasi</h2>
-        <p class="section-desc">Butuh informasi rujukan, jadwal, atau sedang dalam keadaan darurat? Tim administrasi dan medis kami siap siaga.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Kontak Administrasi</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;" data-sehat="address">Jl. Kesehatan Rakyat No. 88, Coblong, Kota Bandung, Jawa Barat 40132</p>
-          
-          <div class="contact-details">
-            <p><strong>Nomor Telepon:</strong> <span data-sehat="phone">(022) 5432-1098</span></p>
-            <p><strong>Hotline WhatsApp:</strong> <span data-sehat="whatsappAdmin">6281234567890</span></p>
-            <p><strong>Email:</strong> <span data-sehat="email">admin@puskesmassehatutama.go.id</span></p>
-          </div>
-        </div>
-
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-sehat="name">Puskesmas Sehat Utama</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">🏥 PUSKESMAS SEHAT</span>
+        <p>Unit Pelayanan Teknis Layanan Kesehatan Masyarakat Terpadu Kabupaten Terakreditasi Paripurna.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#layanan">Layanan Poli</a>
+        <a href="#jadwal">Jadwal Dokter</a>
+        <a href="#daftar">Daftar Online</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>UPT Puskesmas Sehat Sejahtera</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Navbar toggler
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>

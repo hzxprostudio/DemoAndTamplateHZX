@@ -3,282 +3,391 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portal Resmi Koperasi Simpan Pinjam HZX Sejahtera. Aman, Terpercaya, Amanah, dan Berazaskan Kekeluargaan. Powered by HZXPro Studio.">
-  <title>KSP HZX Sejahtera | Koperasi Simpan Pinjam Terpercaya</title>
+  <meta name="description" content="Portal Resmi Koperasi HZX Sejahtera - Solusi Simpanan &amp; Pinjaman Aman, Terpercaya, dan Sesuai Prinsip Koperasi Indonesia. Ajukan Anggota Online.">
+  <title>Koperasi HZX Sejahtera - Tumbuh Bersama, Mensejahterakan Anggota</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar-header">
-    <div class="container navbar-container">
-      <a href="#" class="navbar-brand">
-        <span class="brand-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-        </span>
-        <span class="brand-name" data-koperasi="name">KSP HZX Sejahtera</span>
-      </a>
-      
-      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-        <span class="toggler-icon"></span>
-      </button>
-
-      <nav class="navbar-menu" id="navbar-menu">
-        <a href="#hero" class="nav-link active">Beranda</a>
-        <a href="#produk" class="nav-link">Produk Koperasi</a>
-        <a href="#simulasi" class="nav-link">Simulasi Pinjaman</a>
-        <a href="#syarat" class="nav-link">Syarat Anggota</a>
-        <a href="#shu" class="nav-link">Laporan SHU</a>
-        <a href="#daftar" class="nav-link">Pengajuan Online</a>
-        <a href="#kontak" class="nav-link">Kontak</a>
-        <a href="#daftar" class="btn btn-primary nav-cta-btn">Ajukan Pinjaman</a>
-      </nav>
+    <!-- Top Row: Centered Logo -->
+    <div class="navbar-top-row">
+      <div class="container navbar-top-container">
+        <a href="#" class="navbar-brand">
+          <span class="brand-icon">💼</span>
+          <span class="brand-name">KOPERASI HZX SEJAHTERA</span>
+        </a>
+        
+        <button class="navbar-toggler" id="menu-toggle" aria-label="Buka Menu">
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+          <span class="toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Bottom Row: Navigation Menu -->
+    <div class="navbar-bottom-row" id="navbar-menu-wrapper">
+      <div class="container navbar-bottom-container">
+        <nav class="navbar-menu" id="navbar-menu">
+          <a href="#hero" class="nav-link active">Beranda</a>
+          <a href="#produk" class="nav-link">Produk Layanan</a>
+          <a href="#simulasi" class="nav-link">Simulasi Cicilan</a>
+          <a href="#syarat" class="nav-link">Syarat Anggota</a>
+          <a href="#shu" class="nav-link">Laporan SHU</a>
+          <a href="#pengajuan" class="nav-link">Form Pengajuan</a>
+          <a href="#kontak" class="nav-link">Kontak</a>
+          <a href="#pengajuan" class="btn btn-secondary btn-sm nav-cta-btn">Gabung Anggota</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="hero-section">
-    <div class="container hero-container">
-      <div class="hero-content">
-        <span class="hero-tagline">Solusi Keuangan Gotong Royong</span>
-        <h1 class="hero-title" data-koperasi="fullName">Koperasi Simpan Pinjam HZX Sejahtera</h1>
-        <p class="hero-subtitle" data-koperasi="tagline">Membangun Ekonomi Bersama Berazaskan Kekeluargaan & Gotong Royong</p>
-        <div class="hero-actions">
-          <a href="#daftar" class="btn btn-primary btn-lg">Gabung Jadi Anggota</a>
-          <a href="#simulasi" class="btn btn-outline btn-lg">Kalkulator Simulasi Cicilan</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUK KOPERASI -->
-  <section id="produk" class="products-section section-padding">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Unit Layanan</span>
-        <h2>Produk Simpanan & Pinjaman Kami</h2>
-        <p class="section-desc">Koperasi menawarkan skema tabungan suku bunga kompetitif serta pinjaman dana modal usaha dengan angsuran ringan.</p>
-      </div>
-
-      <div class="products-grid" id="products-grid">
-        <!-- Rendered dynamically by app.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- SIMULASI PINJAMAN -->
-  <section id="simulasi" class="simulation-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Kalkulator Cicilan</span>
-        <h2>Simulasi Pinjaman Modal Sejahtera</h2>
-        <p class="section-desc">Hitung estimasi pengeluaran cicilan bulanan Anda secara instan menggunakan simulasi bunga flat 1.2% koperasi.</p>
-      </div>
-
-      <div class="simulation-grid">
-        <div class="simulator-card">
-          <h3>Parameter Pinjaman</h3>
-          <div class="form-group">
-            <label for="sim-amount">Nominal Pinjaman (Rp)</label>
-            <input type="number" id="sim-amount" class="form-control" value="5000000" min="1000000" step="500000">
-          </div>
-          <div class="form-group">
-            <label for="sim-tenor">Tenor Angsuran (Bulan)</label>
-            <select id="sim-tenor" class="form-control">
-              <option value="6">6 Bulan</option>
-              <option value="12" selected>12 Bulan</option>
-              <option value="18">18 Bulan</option>
-              <option value="24">24 Bulan</option>
-              <option value="36">36 Bulan</option>
-            </select>
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" style="background: linear-gradient(to right, rgba(30, 58, 138, 0.95) 40%, rgba(30, 58, 138, 0.6) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800') no-repeat center center/cover;">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-tag">Koperasi Berbadan Hukum Resmi</span>
+          <h1 class="hero-title">Layanan Finansial Adil, Bergotong-Royong</h1>
+          <p class="hero-subtitle">Koperasi HZX Sejahtera menyediakan simpanan berjangka dengan bagi hasil bersaing serta pinjaman tanpa potongan administrasi yang mencekik.</p>
+          <div class="hero-actions">
+            <a href="#pengajuan" class="btn btn-primary btn-lg">Ajukan Pinjaman</a>
+            <a href="#simulasi" class="btn btn-outline btn-lg">Kalkulator Cicilan</a>
           </div>
         </div>
 
-        <div class="simulation-results-card">
-          <h3>Rincian Estimasi Bulanan</h3>
-          <div class="result-row">
-            <span>Cicilan Pokok:</span>
-            <strong id="sim-result-pokok">Rp 0</strong>
-          </div>
-          <div class="result-row">
-            <span>Cicilan Bunga (Flat 1.2%):</span>
-            <strong id="sim-result-bunga">Rp 0</strong>
-          </div>
-          <div class="result-divider"></div>
-          <div class="result-row total-row">
-            <span>Total Cicilan Bulanan:</span>
-            <strong id="sim-result-total" class="text-primary">Rp 0</strong>
-          </div>
-          <small class="sim-note">*Simulasi di atas menggunakan perhitungan bunga flat dasar. Biaya administrasi awal belum terhitung.</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SYARAT ANGGOTA -->
-  <section id="syarat" class="requirements-section section-padding">
-    <div class="container">
-      <div class="requirements-grid">
-        <div class="requirements-text">
-          <span class="section-tagline">Keanggotaan KSP</span>
-          <h2>Persyaratan Menjadi Anggota Koperasi</h2>
-          <p style="margin-bottom: 24px; color: #475569;">Berdasarkan UU Perkoperasian, seluruh anggota berhak mendapatkan deviden berupa Sisa Hasil Usaha (SHU) tahunan yang dihitung secara adil berdasarkan partisipasi unit.</p>
-          
-          <ul class="req-list" id="req-list">
-            <!-- Rendered by JS -->
-          </ul>
-        </div>
-
-        <div class="requirements-graphic">
-          <div class="benefit-card">
-            <h4>💡 Keuntungan Anggota Dapatkan:</h4>
-            <ul>
-              <li>Pembagian Deviden SHU Adil</li>
-              <li>Akses Pinjaman Modal Cepat</li>
-              <li>Pelatihan Wirausaha UMKM</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LAPORAN SHU TAHUNAN -->
-  <section id="shu" class="shu-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Transparansi Finansial</span>
-        <h2>Ringkasan Pembagian SHU Tahunan</h2>
-        <p class="section-desc">Laporan pertanggungjawaban keuntungan koperasi yang dibagikan kembali kepada seluruh anggota aktif.</p>
-      </div>
-
-      <div class="shu-table-card">
-        <table class="shu-table">
-          <thead>
-            <tr>
-              <th>Tahun Buku</th>
-              <th>Total Keuntungan SHU</th>
-              <th>Alokasi SHU Anggota</th>
-              <th>Catatan Perkembangan</th>
-            </tr>
-          </thead>
-          <tbody id="shu-tbody">
-            <!-- Rendered dynamically by app.js -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM PENGAJUAN ONLINE -->
-  <section id="daftar" class="request-section section-padding">
-    <div class="container">
-      <div class="request-card">
-        <div class="request-header text-center">
-          <span class="request-badge">Pendaftaran & Pinjaman</span>
-          <h2>Formulir Pengajuan Keanggotaan & Pinjaman</h2>
-          <p>Lengkapi formulir pengajuan di bawah ini. Tim analis kredit koperasi kami akan menghubungi Anda melalui WhatsApp untuk proses verifikasi lanjutan.</p>
-        </div>
-
-        <form id="request-form" class="request-form" novalidate>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="req-name">Nama Lengkap Anggota / Calon Anggota</label>
-              <input type="text" id="req-name" class="form-control" placeholder="Masukkan nama lengkap sesuai KTP" required>
+        <div class="hero-badge-card">
+          <h4>Mengapa Memilih Kami?</h4>
+          <div class="badge-list">
+            <div class="b-item">
+              <span class="b-icon">✔️</span>
+              <div>
+                <h5>Bunga Flat Ringan</h5>
+                <p>Pinjaman dengan suku bunga tetap 1% flat per bulan.</p>
+              </div>
             </div>
+            <div class="b-item">
+              <span class="b-icon">✔️</span>
+              <div>
+                <h5>Aman &amp; Terbuka</h5>
+                <p>Rapat Anggota Tahunan (RAT) rutin diselenggarakan setiap tahun.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUK LAYANAN -->
+    <section id="produk" class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Produk Finansial</span>
+          <h2>Jenis Simpanan &amp; Pinjaman Koperasi</h2>
+          <p class="section-sub">Pilih produk simpan pinjam yang sesuai dengan perencanaan keuangan keluarga Anda.</p>
+        </div>
+
+        <div class="produk-grid">
+          <!-- Card 1 -->
+          <div class="produk-card">
+            <div class="prod-type">Simpanan</div>
+            <h4>Simpanan Pokok &amp; Wajib</h4>
+            <p class="desc">Syarat wajib keanggotaan. Simpanan pokok dibayar sekali di awal, wajib dibayar setiap bulan.</p>
+            <div class="prod-details">
+              <span>Pokok: <strong>Rp 100.000</strong></span>
+              <span>Wajib: <strong>Rp 25.000 / bln</strong></span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="produk-card">
+            <div class="prod-type">Simpanan</div>
+            <h4>Simpanan Sukarela (HZX Tabungan)</h4>
+            <p class="desc">Simpanan bebas setor dan bebas tarik kapan saja. Memberikan bagi hasil SHU tahunan.</p>
+            <div class="prod-details">
+              <span>Setoran Awal: <strong>Rp 50.000</strong></span>
+              <span>Bagi Hasil: <strong>Uang Jasa Anggota</strong></span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="produk-card loan-card">
+            <div class="prod-type">Pinjaman</div>
+            <h4>Pinjaman Multiguna Sahabat</h4>
+            <p class="desc">Pinjaman modal kerja, biaya sekolah anak, renovasi rumah dengan jaminan BPKB / sertifikat.</p>
+            <div class="prod-details">
+              <span>Bunga: <strong>1.0% Flat / bln</strong></span>
+              <span>Tenor: <strong>3 s.d. 24 Bulan</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMULASI PINJAMAN (CALCULATOR) -->
+    <section id="simulasi" class="section-padding bg-light">
+      <div class="container">
+        <div class="simulasi-wrapper">
+          <div class="simulasi-info">
+            <span class="section-tag">Simulasi Finansial</span>
+            <h2>Kalkulator Estimasi Cicilan Pinjaman</h2>
+            <p>Gunakan kalkulator simulasi ini untuk menghitung secara cepat angsuran bulanan Anda. Penghitungan menggunakan metode **Bunga Flat 1% per Bulan** tanpa biaya provisi tersembunyi.</p>
+            
+            <div class="calc-formula-card">
+              <h5>Rumus Flat Angsuran:</h5>
+              <p>Cicilan Pokok = Nominal Pinjaman / Tenor<br>Bunga Per Bulan = Nominal Pinjaman x 1%<br><strong>Total Angsuran = Cicilan Pokok + Bunga Per Bulan</strong></p>
+            </div>
+          </div>
+
+          <div class="calc-card">
+            <h3>Hitung Simulasi Cicilan</h3>
             
             <div class="form-group">
-              <label for="req-type">Jenis Pengajuan Layanan</label>
-              <select id="req-type" class="form-control" required>
-                <option value="" disabled selected>Pilih jenis layanan...</option>
-                <option value="anggota">Daftar Menjadi Anggota Koperasi</option>
-                <option value="pinjaman">Pengajuan Pinjaman Modal Usaha</option>
+              <label for="calc-amount">Jumlah Pinjaman (Rupiah)</label>
+              <input type="number" id="calc-amount" value="5000000" min="1000000" max="50000000" step="500000">
+              <span class="range-info">Min: Rp 1 Juta • Max: Rp 50 Juta</span>
+            </div>
+
+            <div class="form-group">
+              <label for="calc-tenor">Tenor Pinjaman (Bulan)</label>
+              <select id="calc-tenor">
+                <option value="3">3 Bulan</option>
+                <option value="6">6 Bulan</option>
+                <option value="12" selected>12 Bulan</option>
+                <option value="24">24 Bulan</option>
+              </select>
+            </div>
+
+            <div class="calc-results">
+              <div class="res-row">
+                <span>Angsuran Pokok:</span>
+                <strong id="res-principal">Rp 416.667 / bln</strong>
+              </div>
+              <div class="res-row">
+                <span>Bunga Flat (1%):</span>
+                <strong id="res-interest">Rp 50.000 / bln</strong>
+              </div>
+              <div class="res-row total">
+                <span>Total Estimasi Cicilan:</span>
+                <strong id="res-total">Rp 466.667 / bln</strong>
+              </div>
+            </div>
+
+            <a href="#pengajuan" class="btn btn-secondary btn-block use-simulation-btn">Ajukan Pinjaman Ini</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYARAT JADI ANGGOTA -->
+    <section id="syarat" class="section-padding">
+      <div class="container">
+        <div class="syarat-grid">
+          <div class="syarat-info">
+            <span class="section-tag">Keanggotaan</span>
+            <h2>Cara &amp; Persyaratan Menjadi Anggota Koperasi</h2>
+            <p>Sesuai dengan Undang-Undang Perkoperasian, hanya anggota terdaftar yang berhak mengajukan permohonan pinjaman modal usaha.</p>
+          </div>
+
+          <div class="syarat-steps">
+            <div class="step-card">
+              <span class="step-num">01</span>
+              <div>
+                <h5>Kartu Identitas KTP</h5>
+                <p>Fotokopi KTP penanggung jawab berdomisili sewilayah Jawa Barat.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <span class="step-num">02</span>
+              <div>
+                <h5>Setoran Awal Keanggotaan</h5>
+                <p>Membayar Simpanan Pokok Rp 100.000 (sekali) dan Simpanan Wajib Rp 25.000.</p>
+              </div>
+            </div>
+            <div class="step-card">
+              <span class="step-num">03</span>
+              <div>
+                <h5>Mengikuti RAT Pertama</h5>
+                <p>Berkomitmen mengikuti Rapat Anggota Tahunan sebagai pemegang saham koperasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAPORAN SHU (SISA HASIL USAHA) -->
+    <section id="shu" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Transparansi Koperasi</span>
+          <h2>Laporan Sisa Hasil Usaha (SHU) Buku 2025</h2>
+          <p class="section-sub">Sebagai bentuk transparansi, berikut alokasi pembagian SHU koperasi untuk anggota binaan.</p>
+        </div>
+
+        <div class="shu-stats-grid">
+          <div class="shu-card">
+            <h5>Total Pendapatan SHU Bersih</h5>
+            <span class="shu-num">Rp 124.500.000</span>
+            <p>Total sisa hasil usaha bersih tahun buku 2025.</p>
+          </div>
+          
+          <div class="shu-card">
+            <h5>Jasa Pembagian Anggota (40%)</h5>
+            <span class="shu-num highlight">Rp 49.800.000</span>
+            <p>Dibagikan langsung ke tabungan simpanan anggota terdaftar.</p>
+          </div>
+
+          <div class="shu-card">
+            <h5>Dana Cadangan Koperasi (30%)</h5>
+            <span class="shu-num">Rp 37.350.000</span>
+            <p>Dialokasikan untuk penguatan kas modal simpan pinjam tahun depan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM PENGAJUAN ANGGOTA/PINJAMAN -->
+    <section id="pengajuan" class="section-padding">
+      <div class="container">
+        <div class="form-wrapper">
+          <div class="form-text-info">
+            <span class="section-tag">Formulir Pengajuan</span>
+            <h2>Ajukan Keanggotaan atau Permohonan Pinjaman Online</h2>
+            <p>Silakan isi data diri Anda di bawah ini secara lengkap. Petugas Account Officer Koperasi kami akan melakukan verifikasi berkas jaminan dan survei ke lokasi usaha Anda.</p>
+            
+            <div class="disclaimer-card">
+              <h5>Catatan Penting:</h5>
+              <p>Survei dilakukan 1x24 jam setelah data dikirim. Kami tidak memungut biaya survei sepeser pun.</p>
+            </div>
+          </div>
+
+          <form class="loan-submission-form" id="loan-form-el">
+            <h3>Form Pengajuan Simpan Pinjam</h3>
+            
+            <div class="form-group">
+              <label for="apply-type">Jenis Pengajuan *</label>
+              <select id="apply-type" required>
+                <option value="" disabled selected>Pilih jenis pengajuan...</option>
+                <option value="Daftar Menjadi Anggota Koperasi">Daftar Menjadi Anggota Koperasi</option>
+                <option value="Pengajuan Pinjaman Multiguna Sahabat">Pengajuan Pinjaman Multiguna Sahabat</option>
+                <option value="Pembukaan Simpanan Berjangka">Pembukaan Simpanan Berjangka</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="req-amount">Nominal Pinjaman (Hanya Untuk Jenis Pinjaman)</label>
-              <input type="number" id="req-amount" class="form-control" placeholder="Hanya untuk pengajuan pinjaman" disabled style="opacity:0.4;">
+              <label for="apply-name">Nama Lengkap Pemohon (Sesuai KTP) *</label>
+              <input type="text" id="apply-name" required placeholder="Masukkan nama lengkap Anda">
             </div>
 
             <div class="form-group">
-              <label for="req-job">Pekerjaan Saat Ini</label>
-              <input type="text" id="req-job" class="form-control" placeholder="Contoh: Karyawan Swasta / Pemilik Toko" required>
+              <label for="apply-phone">No. WhatsApp Pemohon *</label>
+              <input type="tel" id="apply-phone" required placeholder="Contoh: 08123456789">
             </div>
 
-            <div class="form-group full-width">
-              <label for="req-phone">Nomor WA / Handphone Aktif</label>
-              <input type="tel" id="req-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            <div class="form-group" id="loan-fields-wrapper" style="display:none;">
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label for="apply-amount">Nominal Pinjaman Diajukan *</label>
+                  <input type="number" id="apply-amount" placeholder="Contoh: 5000000" min="1000000" max="50000000">
+                </div>
+                <div class="form-group">
+                  <label for="apply-tenor">Tenor Cicilan *</label>
+                  <select id="apply-tenor">
+                    <option value="3 Bulan">3 Bulan</option>
+                    <option value="6 Bulan">6 Bulan</option>
+                    <option value="12 Bulan" selected>12 Bulan</option>
+                    <option value="24 Bulan">24 Bulan</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="apply-desc">Keterangan Tambahan / Detail Usaha *</label>
+              <textarea id="apply-desc" required placeholder="Jelaskan jenis usaha Anda, jaminan yang digunakan, atau tujuan pembukaan simpanan..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Kirim Pengajuan via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK & LOKASI KANTOR -->
+    <section id="kontak" class="section-padding bg-light">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="section-tag">Kontak Kantor</span>
+            <h2>Hubungi Kantor Koperasi</h2>
+            <p>Butuh konsultasi tatap muka? Kunjungi kantor operasional kami pada jam kerja koperasi simpan pinjam.</p>
+            
+            <div class="contact-items">
+              <div class="c-item">
+                <span class="c-icon">📍</span>
+                <p>Jl. Diponegoro No. 22, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">📞</span>
+                <p>(022) 205-1234</p>
+              </div>
+              <div class="c-item">
+                <span class="c-icon">✉️</span>
+                <p>cs@koperasihzx.co.id</p>
+              </div>
             </div>
           </div>
 
-          <div class="form-actions text-center">
-            <button type="submit" class="btn btn-primary btn-lg">Kirim Berkas Pengajuan via WhatsApp</button>
-            <p class="form-note">Draf data pengajuan akan langsung dikirim ke staf pengawas keanggotaan/pinjaman DKM.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAK & LOKASI -->
-  <section id="kontak" class="contact-section section-padding bg-light">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tagline">Temukan Kami</span>
-        <h2>Kontak Kantor Koperasi & Peta Lokasi</h2>
-        <p class="section-desc">Kunjungi sekretariat kami di jam kerja operasional atau hubungi call center bantuan.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3>Kantor Pusat</h3>
-          <p style="margin-bottom: 24px; opacity: 0.85;" data-koperasi="address">Jl. Kemakmuran No. 12, Kelapa Gading, Jakarta Utara 14240</p>
-          
-          <div class="contact-details">
-            <p><strong>Hotline Bantuan:</strong> <span data-koperasi="phone">(021) 8888-7777</span></p>
-            <p><strong>WhatsApp Admin:</strong> <span data-koperasi="whatsappAdmin">6281234567890</span></p>
-            <p><strong>Email Resmi:</strong> <span data-koperasi="email">info@ksphzxsejahtera.co.id</span></p>
+          <div class="contact-map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.912959146197!2d107.6186831!3d-6.900693999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64fb2848c7f%3A0xc3cfad8748df1265!2sBandung%20Wetan%2C%20Bandung%20City%2C%20West%20Java!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+              width="100%" 
+              height="350" 
+              style="border:0; border-radius:12px; box-shadow: 0 4px 12px rgba(30,58,138,0.06);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
-
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6501150493863!2d106.90089407584288!3d-6.17757999380965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698ab458c9735d%3A0xe54d3bc919864d4b!2sKelapa%20Gading!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 <strong data-koperasi="name">KSP HZX Sejahtera</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">💼 KOPERASI HZX SEJAHTERA</span>
+        <p>Lembaga Simpan Pinjam Adil, Mandiri, dan Terpercaya Terdaftar Kementerian Koperasi dan UKM Indonesia.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigasi</h4>
+        <a href="#hero">Beranda</a>
+        <a href="#produk">Produk Layanan</a>
+        <a href="#simulasi">Simulasi Cicilan</a>
+        <a href="#shu">Laporan SHU</a>
+      </div>
+      <div class="footer-credits">
+        <p>&copy; 2026 <strong>KSP HZX Sejahtera Mandiri</strong>. Hak Cipta Dilindungi.<br><span>Demo Showcase Portofolio oleh HZXPro Studio</span></p>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Responsive Navbar toggler
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbarMenu = document.getElementById('navbar-menu');
-    menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navbarMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navbarMenu.classList.remove('active');
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-  </script>
+  <!-- Script -->
   <script src="app.js"></script>
 </body>
 </html>
