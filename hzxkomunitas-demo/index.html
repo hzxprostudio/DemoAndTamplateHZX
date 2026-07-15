@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal Kegiatan & Pengaduan Warga Karang Taruna Tunas Bangsa RW 05 Dago. Kolaboratif, kreatif, dan mandiri. Powered by HZXPro Studio.">
+  <title>Karang Taruna Tunas Bangsa | Portal Komunitas & Warga RW 05</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header">
+    <div class="container navbar-container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </span>
+        <span class="brand-name" data-komunitas="name">Karang Taruna Tunas Bangsa</span>
+      </a>
+      
+      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+      </button>
+
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="#hero" class="nav-link active">Beranda</a>
+        <a href="#profil" class="nav-link">Profil & Pengurus</a>
+        <a href="#kegiatan" class="nav-link">Program Kerja</a>
+        <a href="#pengumuman" class="nav-link">Berita Warga</a>
+        <a href="#aduan" class="nav-link">Aduan Warga</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+        <a href="#aduan" class="btn btn-primary nav-cta-btn">Pengaduan Warga</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline" data-komunitas="scope">Unit RW 05 Dago, Kota Bandung</span>
+        <h1 class="hero-title">Kolaborasi Pemuda Demi Kemajuan <br><span class="text-gradient">Lingkungan Warga</span></h1>
+        <p class="hero-subtitle" data-komunitas="tagline">Kreatif, Aktif, Solid, dan Berbakti demi Kemajuan Lingkungan Kita</p>
+        <div class="hero-actions">
+          <a href="#aduan" class="btn btn-primary btn-lg">Aspirasi & Laporan Warga</a>
+          <a href="#kegiatan" class="btn btn-outline btn-lg">Lihat Program Kerja</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIL ORGANISASI & PENGURUS -->
+  <section id="profil" class="profil-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Profil Organisasi</span>
+        <h2>Struktur Pengurus Karang Taruna</h2>
+        <p class="section-desc">Mengenal susunan struktur organisasi pemuda penggerak pembaruan di lingkungan RW 05 Dago.</p>
+      </div>
+
+      <div class="profil-grid">
+        <div class="vision-mission-panel">
+          <h3>Visi & Misi Pemuda</h3>
+          <div class="vision-box">
+            <h4>Visi</h4>
+            <p data-komunitas="about.vision">Mewujudkan kepemudaan RW 05 Dago yang kompak, kreatif, memiliki kepedulian sosial yang tinggi, serta mandiri secara ekonomi.</p>
+          </div>
+          <div class="mission-box">
+            <h4>Misi</h4>
+            <ul id="mission-list">
+              <li>Menyelenggarakan kegiatan olahraga, seni, dan keagamaan bagi generasi muda.</li>
+              <li>Mengaktifkan unit usaha kreatif kepemudaan melalui koperasi karang taruna.</li>
+              <li>Melaksanakan aksi tanggap sosial dan kepedulian bagi warga dhuafa & lansia.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="committee-panel">
+          <h3 class="text-center" style="margin-bottom: 24px; color: var(--color-primary);">Struktur Teras Inti</h3>
+          <div class="committee-grid" id="committee-grid">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM & KEGIATAN -->
+  <section id="kegiatan" class="activities-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Program Kerja</span>
+        <h2>Daftar Kegiatan Pemuda & Warga</h2>
+        <p class="section-desc">Rangkaian agenda rutin kepemudaan, gotong royong, olahraga, serta peningkatan keterampilan digital.</p>
+      </div>
+
+      <div class="activities-grid" id="activities-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BERITA / PENGUMUMAN WARGA -->
+  <section id="pengumuman" class="announcements-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Papan Pengumuman</span>
+        <h2>Informasi & Berita Warga Terkini</h2>
+        <p class="section-desc">Simak pemberitahuan penting lingkup RW 05 Dago seputar bansos, kerja bakti, dan perayaan hari besar.</p>
+      </div>
+
+      <div class="announcements-list" id="announcements-list">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM PENGADUAN WARGA -->
+  <section id="aduan" class="complaint-section section-padding bg-light">
+    <div class="container">
+      <div class="complaint-card">
+        <div class="complaint-header text-center">
+          <span class="complaint-badge">Layanan Aspirasi</span>
+          <h2>Layanan Pengaduan & Aspirasi Warga</h2>
+          <p>Laporkan masalah ketertiban, kebersihan, fasilitas rusak, atau usulan program kerja baru. Pengaduan Anda akan otomatis diteruskan ke WhatsApp Pengurus RW/Taruna.</p>
+        </div>
+
+        <form id="complaint-form" class="complaint-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="comp-name">Nama Lengkap Warga</label>
+              <input type="text" id="comp-name" class="form-control" placeholder="Contoh: Budi Susanto" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="comp-rtrw">Wilayah Tinggal (RT / RW)</label>
+              <input type="text" id="comp-rtrw" class="form-control" placeholder="Contoh: RT 03 / RW 05" required>
+            </div>
+
+            <div class="form-group">
+              <label for="comp-type">Kategori Aduan / Usulan</label>
+              <select id="comp-type" class="form-control" required>
+                <option value="" disabled selected>Pilih kategori...</option>
+                <option value="keamanan">Keamanan & Ketertiban Lingkungan</option>
+                <option value="kebersihan">Kebersihan & Sampah Selokan</option>
+                <option value="fasilitas">Fasilitas Umum Rusak (Lampu Jalan, dll)</option>
+                <option value="usulan">Usulan Program / Aksi Sosial</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="comp-phone">Nomor WA Warga (Aktif)</label>
+              <input type="tel" id="comp-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="comp-detail">Detail Pengaduan / Aspirasi</label>
+              <textarea id="comp-detail" class="form-control" rows="4" placeholder="Tuliskan keluhan atau saran Anda secara jelas dan sopan" required></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Kirim Laporan via WhatsApp</button>
+            <p class="form-note">Draf laporan yang dikirim akan otomatis masuk ke kontak koordinasi unit kepemudaan Karang Taruna.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK PENGURUS -->
+  <section id="kontak" class="contact-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Hubungi Kami</span>
+        <h2>Kontak Pengurus Karang Taruna</h2>
+        <p class="section-desc">Punya pertanyaan seputar keanggotaan atau ingin berkolaborasi membuat event di wilayah kami?</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3>Sekretariat Kepemudaan</h3>
+          <p style="margin-bottom: 24px; opacity: 0.85;">Balai Warga RW 05, Kel. Dago, Kec. Coblong, Kota Bandung, Jawa Barat 40135</p>
+          
+          <div class="contact-details">
+            <p><strong>Hotline Hubmas:</strong> <span data-komunitas="phone">0812-3456-7890</span></p>
+            <p><strong>WhatsApp Koordinator:</strong> <span data-komunitas="whatsappAdmin">6281234567890</span></p>
+            <p><strong>Email Sekretariat:</strong> <span data-komunitas="email">tunasbangsa@dago05.org</span></p>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 <strong data-komunitas="name">Karang Taruna Tunas Bangsa</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Responsive Navbar toggler
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

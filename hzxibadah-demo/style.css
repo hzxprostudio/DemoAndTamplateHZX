@@ -1,0 +1,692 @@
+/* ==========================================================================
+   MASJID AL-MUHAJIRIN STYLESHEET
+   ========================================================================== */
+:root {
+  --color-primary: #047857; /* Deep Teal Green */
+  --color-secondary: #d97706; /* Golden Amber */
+  --color-accent: #059669;
+  --color-bg-light: #f0fdf4; /* Emerald Light Tint */
+  --color-text-dark: #0f172a;
+  --color-text-light: #ffffff;
+  --color-muted: #475569;
+  --color-border: #cbd5e1;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-dark);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amiri', serif;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.bg-light {
+  background-color: var(--color-bg-light);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-success { color: var(--color-primary); }
+.text-danger { color: #dc2626; }
+.text-primary { color: var(--color-secondary); }
+
+/* Section Header */
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-tagline {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 8px;
+}
+
+.section-header h2 {
+  font-size: 2.25rem;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--color-muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 10px rgba(4, 120, 87, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 14px 30px;
+  font-size: 1rem;
+}
+
+/* NAVBAR */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  background-color: #064e3b;
+  border-bottom: 3px solid var(--color-secondary);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  font-family: 'Amiri', serif;
+}
+
+.brand-icon {
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.navbar-toggler {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.toggler-icon {
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--color-secondary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-secondary);
+}
+
+/* HERO */
+.hero-section {
+  position: relative;
+  padding: 120px 0;
+  background: linear-gradient(rgba(11, 37, 23, 0.8), rgba(11, 37, 23, 0.85)),
+              url('mosque-hero.jpg') no-repeat center center/cover;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-tagline {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  background-color: rgba(217, 119, 6, 0.15);
+  padding: 4px 12px;
+  border-radius: 9999px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.15;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Sholat Times Box */
+.sholat-card-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 32px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.sholat-card-header h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.sholat-card-header p {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 20px;
+}
+
+.sholat-times-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sholat-time-card {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sholat-name {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.sholat-hour {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+
+/* JADWAL KEGIATAN */
+.activities-list-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  gap: 20px;
+}
+
+.activity-row:hover {
+  transform: translateX(6px);
+  border-color: rgba(4, 120, 87, 0.2);
+}
+
+.act-details h4 {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+}
+
+.act-speaker {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.act-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+  text-align: right;
+  min-width: 200px;
+}
+
+/* PROFIL PENGURUS/TAKMIR */
+.takmir-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.takmir-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.takmir-img-wrapper {
+  height: 240px;
+  background-color: #f1f5f9;
+}
+
+.takmir-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.takmir-info {
+  padding: 20px;
+}
+
+.takmir-info h4 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.takmir-role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+  display: block;
+}
+
+/* TRANSPARANSI KAS */
+.cash-card-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.cash-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.cash-lbl {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.cash-amount {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.cash-table-wrapper {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow-x: auto;
+}
+
+.cash-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.cash-table th, .cash-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.cash-table th {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+}
+
+/* DONASI SECTION */
+.donation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.bank-info-panel {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.bank-info-panel h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.bank-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.bank-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  margin: 8px 0;
+}
+
+.btn-copy {
+  margin-top: 16px;
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-copy:hover {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+}
+
+/* Donation Form */
+.donation-form-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.donation-form .form-group {
+  margin-bottom: 20px;
+}
+
+.donation-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #ffffff;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+}
+
+.form-control.is-invalid {
+  border-color: #dc2626 !important;
+}
+
+.donation-form button {
+  width: 100%;
+}
+
+/* KONTAK & LOKASI */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 50px;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.contact-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.map-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: 6px;
+  background-color: white;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #062f22;
+  color: #94a3b8;
+  padding: 40px 0;
+  border-top: 1px solid #044431;
+}
+
+.footer strong {
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-container, .donation-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .takmir-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sholat-card-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .navbar-toggler {
+    display: flex;
+  }
+  
+  .navbar-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 30px 24px;
+    gap: 20px;
+    transition: var(--transition);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+  }
+  
+  .navbar-menu.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .nav-cta-btn {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .takmir-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .takmir-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .cash-card-summary {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .donation-form-card, .bank-info-panel {
+    padding: 24px;
+  }
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal Resmi & Transparansi Donasi Masjid Al-Muhajirin. Menuju Masjid yang Mandiri, Makmur, dan Transparan. Powered by HZXPro Studio.">
+  <title>Masjid Al-Muhajirin | Portal Resmi & Laporan Donasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header">
+    <div class="container navbar-container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </span>
+        <span class="brand-name" data-mosque="name">Masjid Al-Muhajirin</span>
+      </a>
+      
+      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+      </button>
+
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="#hero" class="nav-link active">Beranda</a>
+        <a href="#kegiatan" class="nav-link">Kegiatan</a>
+        <a href="#pengurus" class="nav-link">Pengurus</a>
+        <a href="#transparansi" class="nav-link">Transparansi Kas</a>
+        <a href="#donasi" class="nav-link">Donasi</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+        <a href="#donasi" class="btn btn-primary nav-cta-btn">Infaq Online</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline">Portal Informasi & Transparansi</span>
+        <h1 class="hero-title" data-mosque="fullName">Masjid Raya Al-Muhajirin Bandung</h1>
+        <p class="hero-subtitle" data-mosque="tagline">Menebar Kedamaian, Membina Keimanan, dan Memakmurkan Umat</p>
+        <div class="hero-actions">
+          <a href="#donasi" class="btn btn-primary btn-lg">Donasi & Infaq Online</a>
+          <a href="#kegiatan" class="btn btn-outline btn-lg">Jadwal Kajian</a>
+        </div>
+      </div>
+      
+      <!-- Sholat Schedule Card Panel -->
+      <div class="sholat-card-wrapper">
+        <div class="sholat-card-header text-center">
+          <h3>Jadwal Sholat Fardhu Hari Ini</h3>
+          <p>Waktu Bandung dan Sekitarnya</p>
+        </div>
+        <div class="sholat-times-grid" id="sholat-times-grid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JADWAL KEGIATAN -->
+  <section id="kegiatan" class="activities-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Agenda Masjid</span>
+        <h2>Jadwal Kegiatan & Kajian Rutin</h2>
+        <p class="section-desc">Mari makmurkan masjid dengan menghadiri bimbingan keilmuan, majelis taklim, dan program pemberdayaan umat.</p>
+      </div>
+
+      <div class="activities-list-wrapper" id="activities-list">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIL PENGURUS/TAKMIR -->
+  <section id="pengurus" class="takmir-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Struktur Takmir</span>
+        <h2>Pengurus & Takmir Masjid</h2>
+        <p class="section-desc">Panitia pelaksana kegiatan kemasjidan dan pengelola amanah dana infaq umat.</p>
+      </div>
+
+      <div class="takmir-grid" id="takmir-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARANSI KAS -->
+  <section id="transparansi" class="transparansi-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Laporan Keuangan</span>
+        <h2>Transparansi Laporan Kas Masjid</h2>
+        <p class="section-desc">Berikut rekapitulasi data pemasukan infaq jamaah dan pengeluaran operasional masjid secara akuntabel dan aktual.</p>
+      </div>
+
+      <div class="cash-card-summary">
+        <div class="cash-card text-center">
+          <span class="cash-lbl">Total Pemasukan Bulan Ini</span>
+          <h3 class="cash-amount text-success" id="total-in">Rp 0</h3>
+        </div>
+        <div class="cash-card text-center">
+          <span class="cash-lbl">Total Pengeluaran Bulan Ini</span>
+          <h3 class="cash-amount text-danger" id="total-out">Rp 0</h3>
+        </div>
+        <div class="cash-card text-center">
+          <span class="cash-lbl">Saldo Bersih (Net)</span>
+          <h3 class="cash-amount text-primary" id="net-balance">Rp 0</h3>
+        </div>
+      </div>
+
+      <div class="cash-table-wrapper">
+        <table class="cash-table">
+          <thead>
+            <tr>
+              <th>Tanggal</th>
+              <th>Keterangan / Alokasi Kegiatan</th>
+              <th class="text-right">Pemasukan (+)</th>
+              <th class="text-right">Pengeluaran (-)</th>
+            </tr>
+          </thead>
+          <tbody id="cash-tbody">
+            <!-- Rendered dynamically by app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONASI ONLINE -->
+  <section id="donasi" class="donation-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Amal Jariyah</span>
+        <h2>Donasi & Infaq Online</h2>
+        <p class="section-desc">Salurkan infaq terbaik Anda untuk operasional dakwah, pemeliharaan fasilitas masjid, serta pembinaan anak yatim.</p>
+      </div>
+
+      <div class="donation-grid">
+        <div class="bank-info-panel">
+          <h3>Informasi Rekening Resmi</h3>
+          <p style="margin-bottom: 24px; opacity: 0.85;">Silakan transfer melalui bank di bawah ini, lalu isi formulir konfirmasi di sebelah kanan.</p>
+          
+          <div id="bank-info-container">
+            <!-- Bank account template rendered by app.js -->
+          </div>
+        </div>
+
+        <div class="donation-form-card">
+          <form id="donation-form" class="donation-form" novalidate>
+            <div class="form-group">
+              <label for="donator-name">Nama Donatur / Hamba Allah</label>
+              <input type="text" id="donator-name" class="form-control" placeholder="Tulis nama atau Hamba Allah" required>
+            </div>
+            <div class="form-group">
+              <label for="donator-phone">Nomor WA Donatur (Untuk Konfirmasi)</label>
+              <input type="tel" id="donator-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            </div>
+            <div class="form-group">
+              <label for="donation-type">Pilihan Alokasi Donasi</label>
+              <select id="donation-type" class="form-control" required>
+                <option value="" disabled selected>Pilih alokasi...</option>
+                <option value="operasional">Operasional & Dakwah Masjid</option>
+                <option value="pembangunan">Pembangunan / Renovasi Fisik</option>
+                <option value="yatim">Santunan Anak Yatim & Dhuafa</option>
+                <option value="ramadhan">Sedekah Jumat & Ramadhan</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="donation-amount">Nominal Donasi (Rp)</label>
+              <input type="number" id="donation-amount" class="form-control" placeholder="Masukkan jumlah nominal (contoh: 100000)" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Konfirmasi Pengiriman via WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK & LOKASI -->
+  <section id="kontak" class="contact-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Lokasi Balai Ibadah</span>
+        <h2>Kontak & Alamat Masjid</h2>
+        <p class="section-desc">Kunjungi kami untuk beribadah bersama atau hubungi sekretariat pengurus DKM.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Sekretariat DKM</h3>
+          <p style="margin-bottom: 24px; color: #475569;">Jl. Harmoni Indah No. 12, Kel. Dago, Kec. Coblong, Kota Bandung, Jawa Barat 40135</p>
+          
+          <div class="contact-detail-list">
+            <p><strong>Hotline WA:</strong> <span data-mosque="whatsappAdmin">6281234567890</span></p>
+            <p><strong>Operasional DKM:</strong> Setiap hari, 04:00 - 21:00 WIB</p>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 <strong data-mosque="name">Masjid Al-Muhajirin</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Responsive Navbar
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

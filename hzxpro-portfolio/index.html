@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Showcase Portofolio HZXPro Studio. Katalog 11 Demo Website Generik & Rebrandable untuk berbagai sektor publik.">
+  <title>HZXPro Studio | Showcase Hub Portofolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Dark Mode Premium Style */
+    :root {
+      --bg-dark: #090d16;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --color-primary: #3b82f6;
+      --color-secondary: #f59e0b;
+      --color-accent: #10b981;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 0 40px;
+    }
+
+    .logo-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 20px;
+      border-radius: 9999px;
+      border: 1px solid var(--card-border);
+      margin-bottom: 24px;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+
+    .logo-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #f1f5f9;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Filters */
+    .filter-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 10px 24px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-white);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-top {
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .card-category {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cat-pendidikan { color: #60a5fa; background: rgba(59, 130, 246, 0.1); }
+    .cat-publik { color: #34d399; background: rgba(16, 185, 129, 0.1); }
+    .cat-sosial { color: #f472b6; background: rgba(244, 114, 182, 0.1); }
+    .cat-finansial { color: #fbbf24; background: rgba(251, 191, 36, 0.1); }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.825rem;
+      color: #cbd5e1;
+    }
+
+    .feature-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .card-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      padding: 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-top: 24px;
+    }
+
+    .card-btn:hover {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding-top: 80px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 100px;
+    }
+
+    footer p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.25rem; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 50px 0 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">HZXPRO STUDIO</div>
+      </div>
+      <h1>Katalog <span>Showcase Portofolio</span></h1>
+      <p>Koleksi template demo website pelayanan publik, lembaga, dan organisasi kemasyarakatan. Sepenuhnya responsif, estetik, dan mudah di-rebrand.</p>
+    </header>
+
+    <div class="filter-wrapper">
+      <button class="filter-btn active" data-filter="semua">Semua Demo</button>
+      <button class="filter-btn" data-filter="pendidikan">Pendidikan</button>
+      <button class="filter-btn" data-filter="publik">Layanan Publik</button>
+      <button class="filter-btn" data-filter="sosial">Sosial & Komunitas</button>
+      <button class="filter-btn" data-filter="finansial">Finansial</button>
+    </div>
+
+    <div class="grid" id="portfolio-grid">
+      <!-- Cards rendered by script below -->
+    </div>
+
+    <footer>
+      <p>&copy; 2026 HZXPro Studio. Hak Cipta Dilindungi.<br>Dibuat untuk portofolio dan demo rebrandable website.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Data katalog 11 website demo
+    const PORTFOLIO_DATA = [
+      {
+        title: "HZX EDU",
+        category: "pendidikan",
+        catLabel: "Pendidikan (Sekolah)",
+        desc: "Demo website SMA/sekolah menengah. Target audiens: orang tua murid & calon siswa.",
+        features: ["Konfigurasi Rebranding Cepat", "Galeri Kegiatan Lightbox", "Form PPDB Online & WhatsApp Redirect"],
+        link: "../hzxedu-demo/index.html"
+      },
+      {
+        title: "HZX Desa",
+        category: "publik",
+        catLabel: "Pemerintahan",
+        desc: "Portal transparansi & pelayanan surat publik terintegrasi desa/kelurahan.",
+        features: ["Pengajuan Surat Online (SKTM, KTP)", "Statistik Penduduk Interaktif", "Transparansi Anggaran Desa"],
+        link: "../hzxdesa-demo/index.html"
+      },
+      {
+        title: "HZX Ibadah",
+        category: "sosial",
+        catLabel: "Rumah Ibadah",
+        desc: "Website informasi kajian/ibadah rutin dan laporan pertanggungjawaban donasi.",
+        features: ["Jadwal Ibadah Dinamis", "Laporan Transparansi Kas Terhitung Otomatis", "Konfirmasi Donasi via WA"],
+        link: "../hzxibadah-demo/index.html"
+      },
+      {
+        title: "HZX Sehat",
+        category: "publik",
+        catLabel: "Layanan Kesehatan",
+        desc: "Demo Puskesmas/klinik kesehatan masyarakat yang fokus ke pelayanan BPJS & rujukan.",
+        features: ["Jadwal Dokter & Poli Aktif", "Pendaftaran Online WhatsApp", "Persyaratan BPJS & KIA Card"],
+        link: "../hzxsehat-demo/index.html"
+      },
+      {
+        title: "HZX Arsip",
+        category: "pendidikan",
+        catLabel: "Perpustakaan & Museum",
+        desc: "Katalog arsip kebudayaan/buku dengan fitur pencarian & filter instan.",
+        features: ["Katalog Buku & Koleksi Museum", "Search & Filter Instan (Vanilla JS)", "Booking Kunjungan Online"],
+        link: "../hzxarsip-demo/index.html"
+      },
+      {
+        title: "HZX Peduli",
+        category: "sosial",
+        catLabel: "Yayasan Sosial",
+        desc: "Membangun kepercayaan donatur melalui transparansi penyaluran dana yayasan.",
+        features: ["Laporan Dana Bantuan Masuk", "Campaign Donasi Progress Bar", "Form Donasi WhatsApp"],
+        link: "../hzxpeduli-demo/index.html"
+      },
+      {
+        title: "HZX Koperasi",
+        category: "finansial",
+        catLabel: "Simpan Pinjam",
+        desc: "Layanan koperasi simpan pinjam terpercaya dengan simulasi kalkulator cicilan.",
+        features: ["Kalkulator Simulasi Cicilan", "Bunga Flat / Menurun Dinamis", "Formulir Keanggotaan Koperasi"],
+        link: "../hzxkoperasi-demo/index.html"
+      },
+      {
+        title: "HZX Komunitas",
+        category: "sosial",
+        catLabel: "Karang Taruna / PKK / RT-RW",
+        desc: "Portal organisasi pemuda dan komunikasi warga lingkup RT/RW setempat.",
+        features: ["Bagan Struktur Organisasi", "Pengaduan Warga WhatsApp", "Pengumuman Kegiatan Wilayah"],
+        link: "../hzxkomunitas-demo/index.html"
+      },
+      {
+        title: "HZX Alumni",
+        category: "sosial",
+        catLabel: "Ikatan Alumni",
+        desc: "Website jejaring keluarga alumni sekolah/universitas untuk tetap terhubung.",
+        features: ["Direktori Alumni (Cari & Saring)", "Informasi Reuni & Event", "Form Pendaftaran Anggota"],
+        link: "../hzxalumni-demo/index.html"
+      },
+      {
+        title: "HZX Santri",
+        category: "pendidikan",
+        catLabel: "Pondok Pesantren",
+        desc: "Profil lembaga asrama pendidikan pesantren, fokus program Tahfidz & Kitab Kuning.",
+        features: ["Program Tahfidz Card", "Galeri Fasilitas Lightbox", "Form Pendaftaran Santri Baru"],
+        link: "../hzxsantri-demo/index.html"
+      },
+      {
+        title: "HZX Univ",
+        category: "pendidikan",
+        catLabel: "Kampus / Universitas",
+        desc: "Portal Penerimaan Mahasiswa Baru (PMB) tingkat perguruan tinggi.",
+        features: ["Filter Fakultas & Program Studi", "Tabel UKT / Biaya Kuliah", "Jalur Masuk Reguler/Beasiswa"],
+        link: "../hzxuniv-demo/index.html"
+      }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("portfolio-grid");
+      
+      // Render cards function
+      function renderCards(filter = "semua") {
+        grid.innerHTML = "";
+        
+        PORTFOLIO_DATA.forEach(data => {
+          if (filter !== "semua" && data.category !== filter) return;
+          
+          const card = document.createElement("div");
+          card.className = "card";
+          
+          let featuresHtml = "";
+          data.features.forEach(f => {
+            featuresHtml += `
+              <div class="feature-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>${f}</span>
+              </div>
+            `;
+          });
+          
+          card.innerHTML = `
+            <div class="card-top">
+              <div class="card-header">
+                <span class="card-category cat-${data.category}">${data.catLabel}</span>
+              </div>
+              <h3 class="card-title">${data.title}</h3>
+              <p class="card-desc">${data.desc}</p>
+              <div class="feature-list">
+                ${featuresHtml}
+              </div>
+            </div>
+            <a href="${data.link}" class="card-btn" target="_blank">Buka Demo Website &rarr;</a>
+          `;
+          
+          grid.appendChild(card);
+        });
+      }
+      
+      // Initial render
+      renderCards();
+      
+      // Filter button listener
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          renderCards(btn.getAttribute("data-filter"));
+        });
+      });
+    });
+  </script>
+</body>
+</html>

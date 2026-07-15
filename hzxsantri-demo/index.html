@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal Resmi Pendaftaran Santri Baru Pondok Pesantren Al-Hikmah HZX. Unggul dalam Al-Qur'an, Luas dalam Kitab Kuning, Mandiri Sains. Powered by HZXPro Studio.">
+  <title>Pesantren Al-Hikmah HZX | Portal Resmi & Pendaftaran Santri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar-header">
+    <div class="container navbar-container">
+      <a href="#" class="navbar-brand">
+        <span class="brand-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </span>
+        <span class="brand-name" data-santri="name">Pesantren Al-Hikmah HZX</span>
+      </a>
+      
+      <button class="navbar-toggler" id="menu-toggle" aria-label="Toggle navigation">
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+      </button>
+
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="#hero" class="nav-link active">Beranda</a>
+        <a href="#profil" class="nav-link">Profil</a>
+        <a href="#program" class="nav-link">Program</a>
+        <a href="#fasilitas" class="nav-link">Fasilitas</a>
+        <a href="#ustadz" class="nav-link">Ustadz</a>
+        <a href="#daftar" class="nav-link">Daftar Santri</a>
+        <a href="#kontak" class="nav-link">Kontak</a>
+        <a href="#daftar" class="btn btn-primary nav-cta-btn">Daftar PSB</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-tagline">Penerimaan Santri Baru (PSB)</span>
+        <h1 class="hero-title" data-santri="fullName">Pondok Pesantren Al-Hikmah HZX Bandung</h1>
+        <p class="hero-subtitle" data-santri="tagline">Mencetak Huffazh Al-Qur'an, Berilmu Luas, dan Berakhlak Karimah</p>
+        <div class="hero-actions">
+          <a href="#daftar" class="btn btn-primary btn-lg">Daftar Santri Baru</a>
+          <a href="#profil" class="btn btn-outline btn-lg">Profil Pesantren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIL PESANTREN -->
+  <section id="profil" class="profil-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Profil Lembaga</span>
+        <h2>Mengenal Pondok Pesantren Al-Hikmah HZX</h2>
+        <p class="section-desc">Mengkombinasikan khazanah intelektual klasik pesantren salafiyah dengan sains teknologi modern.</p>
+      </div>
+
+      <div class="profil-grid">
+        <div class="about-text">
+          <h3>Sejarah & Visi Misi</h3>
+          <p data-santri="about.history" style="margin-bottom: 24px; color: #475569;">Didirikan pada tahun 2012 di bawah asuhan KH. Dr. M. Syarif Hidayat, Lc. Pesantren Al-Hikmah HZX memadukan kurikulum salafiyah (kitab kuning) dengan sistem pendidikan modern formal dan tahfidz Al-Qur'an 30 Juz.</p>
+          
+          <div class="vision-mission-box">
+            <div class="vision-box">
+              <h4>Visi</h4>
+              <p data-santri="about.vision">Menjadi lembaga pendidikan Islam unggulan yang melahirkan ulama, cendekiawan Muslim, dan huffazh berkarakter global.</p>
+            </div>
+            <div class="mission-box">
+              <h4>Misi</h4>
+              <ul id="mission-list">
+                <!-- Rendered dynamically by app.js -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-card">
+          <h3>Sistem Kurikulum Pendidikan</h3>
+          <div class="curr-row">
+            <div class="curr-num">1</div>
+            <div>
+              <h4>Kurikulum Salafiyah</h4>
+              <p>Sorogan, wetonan, kajian turots kitab kuning (fiqih, nahwu shorof, tauhid, akhlak).</p>
+            </div>
+          </div>
+          <div class="curr-row">
+            <div class="curr-num">2</div>
+            <div>
+              <h4>Tahfidz Al-Qur'an 30 Juz</h4>
+              <p>Sistem setoran talaqqi hafalan harian dan murajaah berkala bersertifikat syahadah.</p>
+            </div>
+          </div>
+          <div class="curr-row">
+            <div class="curr-num">3</div>
+            <div>
+              <h4>Kurikulum Kemendikbud Ristek</h4>
+              <p>Pendidikan formal tingkat SMP dan SMA yang fokus pada sains dasar, matematika, dan IT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM UNGGULAN -->
+  <section id="program" class="programs-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Program Unggulan</span>
+        <h2>Program Pendidikan Pesantren</h2>
+        <p class="section-desc">Pilihan program pembelajaran santri guna mempersiapkan kemandirian dakwah dan akademis di masa depan.</p>
+      </div>
+
+      <div class="programs-grid" id="programs-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FASILITAS PESANTREN (GRID + LIGHTBOX) -->
+  <section id="fasilitas" class="facilities-section section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Sarana Kampus</span>
+        <h2>Galeri Fasilitas Pondok Asrama</h2>
+        <p class="section-desc">Prasarana penunjang kenyamanan tinggal santri untuk mendukung konsentrasi belajar dan menghafal.</p>
+      </div>
+
+      <div class="facilities-grid" id="facilities-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFIL USTADZ / TENAGA PENDIDIK -->
+  <section id="ustadz" class="ustadz-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Dewan Masyayikh</span>
+        <h2>Asatidzah & Pengasuh Pesantren</h2>
+        <p class="section-desc">Dibimbing oleh ulama lulusan Timur Tengah dan universitas nasional terkemuka yang ahli di bidang keagamaannya.</p>
+      </div>
+
+      <div class="ustadz-grid" id="ustadz-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM PENDAFTARAN SANTRI BARU (PSB) -->
+  <section id="daftar" class="register-section section-padding">
+    <div class="container">
+      <div class="register-card">
+        <div class="register-header text-center">
+          <span class="register-badge">Penerimaan Santri Baru (PSB)</span>
+          <h2>Formulir Pendaftaran Online Santri Baru</h2>
+          <p>Lengkapi formulir di bawah ini dengan data wali dan calon santri secara valid. Pengajuan akan diteruskan ke WhatsApp Panitia PSB untuk berkas administrasi awal.</p>
+        </div>
+
+        <form id="register-form" class="register-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="reg-name">Nama Lengkap Calon Santri</label>
+              <input type="text" id="reg-name" class="form-control" placeholder="Masukkan nama lengkap anak" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="reg-parent">Nama Lengkap Orang Tua / Wali</label>
+              <input type="text" id="reg-parent" class="form-control" placeholder="Masukkan nama ayah / ibu / wali" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-program">Pilihan Program Pendidikan</label>
+              <select id="reg-program" class="form-control" required>
+                <option value="" disabled selected>Pilih program...</option>
+                <option value="tahfidz">Hafalan Tahfidz Qur'an (Asrama)</option>
+                <option value="salaf">Kajian Kitab Kuning Salafiyah</option>
+                <option value="smp">SMP Sains & IT Al-Hikmah</option>
+                <option value="sma">SMA Sains & IT Al-Hikmah</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-phone">Nomor WA Orang Tua / Wali (Aktif)</label>
+              <input type="tel" id="reg-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+            </div>
+          </div>
+
+          <div class="form-actions text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Daftar Santri via WhatsApp</button>
+            <p class="form-note">Draf pendaftaran santri baru akan langsung dikirim ke WhatsApp sekretariat pendaftaran pondok.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK & LOKASI -->
+  <section id="kontak" class="contact-section section-padding bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tagline">Temukan Kami</span>
+        <h2>Hubungi Kami & Peta Lokasi Pondok</h2>
+        <p class="section-desc">Silakan kunjungi kompleks pesantren kami untuk melihat langsung sarana asrama dan masjid santri.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3>Sekretariat Pendaftaran</h3>
+          <p style="margin-bottom: 24px; opacity: 0.85;" data-santri="address">Jl. Pesantren No. 9, Dago Atas, Kota Bandung, Jawa Barat 40135</p>
+          
+          <div class="contact-details">
+            <p><strong>Hotline PSB WA:</strong> <span data-santri="whatsappAdmin">6281234567890</span></p>
+            <p><strong>Hotline Kantor:</strong> <span data-santri="phone">(022) 1111-2222</span></p>
+            <p><strong>Email Humas:</strong> <span data-santri="email">info@alhikmahhzx.ponpes.id</span></p>
+          </div>
+        </div>
+
+        <div class="map-card">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026477161726!2d107.61462067584981!3d-6.887413693111718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6580f4f9cc7%3A0x6b772c84285b9e!2sInstitut%20Teknologi%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2026 <strong data-santri="name">Pesantren Al-Hikmah HZX</strong>. Hak Cipta Dilindungi. <br><span style="opacity: 0.6; font-size: 0.85rem;">Demo Portofolio HZXPro Studio • Kustomisasi Rebranding Tersedia</span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Responsive Navbar toggler
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
